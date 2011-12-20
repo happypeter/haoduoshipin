@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ccc</title>
+  <title>Happycasts</title>
+  <link rel="shortcut icon" href="/images/"/>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body>	
+
+<% if current_user %>  <%# only myself can see this debug message %>
+  <% @user= User.find(current_user.id) %>
+  <% if @user.name == "happypeter"%>
+    <% flash.each do |name, msg| %>
+	  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+  <%end%>
+<%end%>
+
+<div id="container">
+<table  width="100%" id="pagetoptable">
+	<tr>
+		
+		<td style="text-align:left;">
+			<span class="pagetop">
+			<b><%= link_to 'HOME', users_path %></b>
+			</span>
+		</td>
+
+		<td style="text-align:right;">
+			<span class="pagetop">
+				           
+			<% if current_user %>  
+			<% @user= User.find(current_user.id) %>
+			<%= link_to current_user.name, user_path(@user) %> |
+ 			<%= link_to "Log out", log_out_path %>  
+			<% else %>  
+			<img src="/images/login.png" width=48 height=23></img> 
+			<%= link_to "Log in", log_in_path %>  
+			<% end %>  
+			</span>
+		</td>
+
+	</tr>
+</table>
 
 <%= yield %>
 
+<div class="footer">
+	<a href="http://happypeter.org">happpeter.org</a> &middot;
+	<a href="/users">Users</a>
+</div><%# id="container" %>
 </body>
 </html>
