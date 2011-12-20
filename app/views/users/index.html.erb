@@ -1,2 +1,19 @@
-hi I  am user#index page
-<%= @user.name %>
+<%= link_to "sign up", sign_up_path %>
+<table>
+  <tr>
+     <th>name</th>
+  </tr>
+<% if @users != nil %>
+  <% @users.each do |user| %>
+  <p>
+    <tr>
+       <td><%= link_to user.name, user %></td>
+     </tr>
+  </p>
+  <% end %>
+<% else %>
+  <p>
+  No user found
+  </p>
+<% end %>
+</table>
