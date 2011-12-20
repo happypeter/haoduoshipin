@@ -2,18 +2,21 @@ class EpisodesController < ApplicationController
   def index
     @episodes = Episode.all
     respond_to do |format|
-      format.html { @episodes = @episodes.paginate(:page => params[:page], :per_page => episodes_per_page) }
+      format.html 
       format.rss
     end
   end
 
   def show
+    @episode = Episode.find(params[:id])
   end
 
   def new
+    @episode = Episode.new
   end
 
   def create
+    @episode = Episode.new(params[:episode])
     if @episode.save
       redirect_to @episode, :notice => "Successfully created episode."
     else
@@ -31,4 +34,4 @@ class EpisodesController < ApplicationController
       render :edit
     end
   end
-
+end
