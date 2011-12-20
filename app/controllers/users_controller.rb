@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   end  
 
   def index
+    @user = User.find(1)
     respond_to do |format|
       format.html # index.html.erb
     end
