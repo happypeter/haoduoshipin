@@ -1,9 +1,13 @@
-<p>
-<%= link_to "new episode", new_episode_path %>
-</p>
+<div class="content">
+  <p>
+  <%= link_to "new episode", new_episode_path %>
+  </p>
 
-<h1> Episodes:</h1>
-<% for episode in @episodes %>
-  <%= link_to episode.name, episode %>
-  <br \>
-<% end %>
+  <div class="episodes">
+    <h1> Episodes:</h1>
+    <% for episode in @episodes %>
+      <%= render episode %>
+      <br \>
+    <% end %>
+  </div> <%# class="episodes" %>
+</div> <%# class="content" %>
