@@ -7,6 +7,34 @@ div.footer {
   text-align:center;
 }
 
-.episode {
-  text-align:center;
+#episode {
+  margin: 0 auto;
+  width: 962px;
+}
+
+#episode video {
+  display: block;
+}
+
+#episode > .info {
+  position: relative;
+  margin-top: 14px;
+  margin-bottom: 15px;
+  background-color: #FFF;
+}
+#episode .info h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+#episode .info h1 .position {
+  color: #999;
+}
+#episode .info .details a {
+  color: #777;
+}
+#episode .info .details {
+  color: #777;
+  font-size: 12px;
 }
