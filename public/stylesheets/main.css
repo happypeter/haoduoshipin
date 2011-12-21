@@ -38,3 +38,45 @@ div.footer {
   color: #777;
   font-size: 12px;
 }
+/*** CODE BLOCKS ***/
+.highlight {
+  font-family: 'Menlo', 'Courier New', 'Terminal', monospace;
+  margin: 10px;
+  background-color: #232323;
+  color: #E6E0DB;
+}
+
+
+.an { color:#E7BE69 }                      /* html attribute */
+.cm { color:#BC9358; font-style: italic; } /* comment */
+.c1 { color:#BC9358; font-style: italic; } /* comment */
+.ch { color:#509E4F }                      /* escaped character */
+.mi { color:#FFF }                         /* constant */
+.fl { color:#A4C260 }                      /* float */
+.nf { color:#FFC56D }                      /* function: yellow. ie. "main()" in C*/
+.gv { color:#D0CFFE }                      /* global variable */
+.i  { color:#A4C260 }                      /* integer */
+.il { background:#151515 }                 /* inline code */
+.iv { color:#D0CFFE }                      /* instance variable */
+.pp { color:#E7BE69 }                      /* doctype */
+.kt { color:#CB7832 }                      /* keyword */
+.kw { color:#CB7832 }                      /* keyword */
+.rx { color:#A4C260 }                      /* regex */
+.s  { color:#A4C260 }                      /* string : green. for "string"*/
+.s1  { color:#A4C260 }                      /* string : green. for 'string'*/
+.s2 { color:#A4C260 }                      /* string */
+.k  { color:#CB783D }                      /* keyword : dark orange*/
+.ss { color:#6C9CBD }                      /* symbol */
+.ta { color:#E7BE69 }                      /* html tag */
+.pc { color:#6C9CBD }                      /* boolean */
+
+
+.gi { color:#A4C260 }                      /* diff: +++: green*/
+.gd { color:#faa}                          /* diff: ---: github red */
+.gu { color:#6C9CBD }                      /* diff: FIXME*/
+.gh { color:#6C9CBD }                      /* diff: FIXME */
+
+
+.nt { color:#FFC56D } 						/* xml: nt. yellow as C function */
+.cp { color:#FFC56D } 						/* xml:  yellow as C function */
+.na { color:#FFC56D } 						/* xml:  yellow as C function */
