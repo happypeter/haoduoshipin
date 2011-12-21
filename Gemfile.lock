@@ -71,7 +71,7 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
-    redcarpet (2.0.1)
+    redcarpet (1.17.1)
     thor (0.14.6)
     treetop (1.4.10)
       polyglot
@@ -88,4 +88,4 @@ DEPENDENCIES
   mysql2 (~> 0.2.6)
   nokogiri
   rails (= 3.0.9)
-  redcarpet
+  redcarpet (= 1.17.1)
