@@ -1,5 +1,9 @@
+<p>
+<%= link_to "new episode", new_episode_path %>
+</p>
 
-                <%= link_to "new episode", new_episode_path %>
-          <% for episode in @episodes %>
-                <%= link_to episode.name, episode %>
-          <% end %>
+<h1> Episodes:</h1>
+<% for episode in @episodes %>
+  <%= link_to episode.name, episode %>
+  <br \>
+<% end %>
