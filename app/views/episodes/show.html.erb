@@ -12,6 +12,8 @@
     <div class="details">
       <%= @episode.created_at.strftime('%b %d, %Y') %> 
     </div>
+
+     <%= markdown(@episode.notes) %>
   </div>
 
 </div>
