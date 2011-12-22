@@ -13,8 +13,12 @@
       <%= @episode.created_at.strftime('%b %d, %Y') %> 
     </div>
     <div class="notes">
+    <% if @episode.notes %>
      this is my show notes
       <%= markdown(@episode.notes) %>
+    <% else %>
+      no show notes
+    <% end %>
     </div>
   </div>
 </div>
