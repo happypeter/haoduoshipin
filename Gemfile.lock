@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/ryanb/cancan.git
+  revision: c94de4ab1805d2e080ebd658051c59d0ec5147ce
+  branch: 2.0
+  specs:
+    cancan (2.0.0.alpha)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -85,6 +92,7 @@ DEPENDENCIES
   albino
   ancestry
   bcrypt-ruby
+  cancan!
   mysql2 (~> 0.2.6)
   nokogiri
   rails (= 3.0.9)
