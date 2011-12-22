@@ -25,7 +25,7 @@ class EpisodesController < ApplicationController
   end
 
   def edit
-    @episode = Episode.find(params[:id]) #in auth-love, I do not need this FIXME
+    @episode = Episode.find(params[:id]) #in auth-love, I do not need this FIXME, but when I check railscasts 192-cancan, I found this in Rbates' controller, I am feeling good now
   end
 
   def update

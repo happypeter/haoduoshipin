@@ -10,4 +10,5 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'ancestry'
 gem 'redcarpet',"1.17.1"
 gem 'albino'
+gem "cancan", :git => "git://github.com/ryanb/cancan.git", :branch => "2.0"
 gem 'nokogiri'
