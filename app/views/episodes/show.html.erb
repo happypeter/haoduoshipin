@@ -11,6 +11,9 @@
     </h1>
     <div class="details">
       <%= @episode.created_at.strftime('%b %d, %Y') %> 
+      <span class="edit">
+        <%= link_to "edit", edit_episode_path(@episode) %> 
+      </span>
     </div>
     <div class="notes">
     <% if @episode.notes %>

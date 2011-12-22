@@ -25,9 +25,11 @@ class EpisodesController < ApplicationController
   end
 
   def edit
+    @episode = Episode.find(params[:id]) #in auth-love, I do not need this FIXME
   end
 
   def update
+    @episode = Episode.find(params[:id]) # in auth-love, I do not need this FIXME
     if @episode.update_attributes(params[:episode])
       redirect_to @episode, :notice => "Successfully updated episode."
     else
