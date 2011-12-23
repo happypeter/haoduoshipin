@@ -5,9 +5,6 @@
     <% if can? :update, episode %>
       <%= link_to "edit", edit_episode_path(episode) %>
     <% end %>
-    <% if can? :read, episode %>
-      (read episode)
-    <% end %>
     <div class="watch">
     </div>
   </div>
