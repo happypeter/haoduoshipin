@@ -1,16 +1,24 @@
 <div class="content">
-  <%= form_for(@episode) do |f| %>
+  <%= form_for @episode do |f| %>
     <div class="field">
       <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
     <div class="field">
-      <%= f.label :position %>
-      <%= f.text_field :position %>
+      <%= f.label :description %>
+      <%= f.text_area :description, :rows => 6 %>
     </div>
     <div class="field">
       <%= f.label :notes %>
-      <%= f.text_area :notes %>
+      <%= f.text_area :notes, :rows => 10 %>
+    </div>
+    <div class="field">
+      <%= f.label :published_at, "Publish Date" %>
+      <%= f.date_select :published_at %>
+    </div>
+    <div class="field">
+      <%= f.label :seconds %>
+      <%= f.text_field :seconds %>
     </div>
     <div class="actions"><%= f.submit %></div>
   <% end %>
