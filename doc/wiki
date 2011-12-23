@@ -1,0 +1,12 @@
+### cancan
+
+first thing I messed up is I wrote
+
+   can? :read, @episode
+
+when I shall have
+
+    can? :read, episode
+
+
+
