@@ -17,7 +17,10 @@
     </div>
     <div class="notes">
     <% if @episode.notes %>
-     this is my show notes
+    <ul class="nav horizontal">
+      <li class="selected">Show Notes </li>
+      <li >Comments</li>
+    </ul>
       <%= markdown(@episode.notes) %>
     <% else %>
       no show notes
