@@ -245,10 +245,6 @@ label {
   float: left;
 }
 
-.screenshot img {
-  border: solid 1px #999;
-  display: block;
-}
 
 .full .main {
   margin-left: 215px;
@@ -1062,8 +1058,10 @@ div.screenshot {
   float: left;
 }
 
-img.screenshot {
-  border: 10px solid #DF5B00;
+.screenshot img {
+  margin-right: 20px;
+  border: solid 1px #999;
+  display: block;
 }
 
 #episode {
