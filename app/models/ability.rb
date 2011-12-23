@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     can :read, :episodes
-    if user
+    if user && user.name == "happypeter"
       can :create, :episodes
     end
   end
