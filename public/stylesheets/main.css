@@ -1,7 +1,1055 @@
+/* steal from RC */
+
 body {
-  background-color:;
+  background-color: #FFF;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+  margin: 0;
 }
 
+a {
+  color: #1B97F2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a img {
+  border: none;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+h4 {
+  font-size: 12px;
+}
+
+.clear {
+  clear: both;
+}
+
+ul {
+  margin: 4px 0;
+  padding-left: 17px;
+}
+
+ul.horizontal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.horizontal li {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+#flash_notice, #flash_alert {
+  padding: 10px 0;
+}
+
+#flash_notice {
+  color: #0B0;
+}
+
+#flash_alert {
+  color: #D00;
+}
+
+.field {
+  margin: 10px 0;
+}
+
+.special_email_field {
+  display: none;
+}
+
+label {
+  display: block;
+}
+
+
+/*** ERRORS ***/
+
+.field_with_errors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin: 20px 0;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+  margin-left: 10px;
+}
+
+
+
+/*** SECTIONS ***/
+
+#top {
+  position: relative;
+}
+
+#top .logo {
+  margin-top: 50px;
+  margin-left: 100px;
+  padding-bottom: 10px;
+}
+
+#top .subscribe {
+  position: absolute;
+  bottom: 10px;
+  right: 100px;
+}
+
+#top .subscribe li {
+  position: relative;
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+#top .subscribe li .name {
+  display: none;
+}
+
+#top .subscribe li:hover .name {
+  display: block;
+  position: absolute;
+  top: -22px; left: -84px; width: 200px;
+  color: #000;
+  text-align: center;
+}
+
+#nav_bar {
+  position: relative;
+  padding: 8px 100px;
+  background-color: #333;
+  border-top: solid 1px #FFF;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5C5C5C), to(#111));
+  background: -moz-linear-gradient(top,  #5C5C5C, #111);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5C5C5C', endColorstr='#111');
+  border-bottom: solid 3px #DE9F00;
+  margin-bottom: 30px;
+}
+
+#nav_bar .nav {
+  float: right;
+  padding-top: 2px;
+}
+
+#nav_bar .nav li {
+  padding-left: 25px;
+  font-size: 14px;
+  color: #BBB;
+}
+
+#nav_bar .nav li a {
+  color: #FFF;
+}
+
+#main {
+  max-width: 1500px;
+}
+
+#footer {
+  clear: both;
+  font-size: 11px;
+  text-align: center;
+  padding: 25px 0;
+  color: #555;
+}
+
+
+.content, #flash_notice, #flash_error {
+  margin: 0 100px;
+}
+
+.content {
+  position: relative;
+}
+
+.actions {
+  margin: 8px 0;
+}
+
+.actions a {
+  padding: 3px 8px 2px 8px;
+  font-size: 12px;
+  color: #000;
+  border: 1px solid #999;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  background: #DDD;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(#DDD));
+  background: -moz-linear-gradient(top,  #F5F5F5, #DDD);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F5F5F5', endColorstr='#DDD');
+  text-decoration: none;
+}
+
+
+
+/*** EPISODES ***/
+
+.episodes {
+  margin-right: 200px;
+}
+
+.episodes h2 .remove {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.full .episode {
+  padding-bottom: 18px;
+  border-bottom: solid 1px #E5E5E5;
+  margin-bottom: 20px;
+}
+
+.full .screenshot {
+  float: left;
+}
+
+.screenshot img {
+  border: solid 1px #999;
+  display: block;
+}
+
+.full .main {
+  margin-left: 215px;
+}
+
+.full .info {
+  color: #999;
+  font-size: 12px;
+}
+
+.full .number {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.full h2, .episode h2 a {
+  color: #E98C08;
+}
+
+.full h2 {
+  margin: 3px 0;
+}
+
+.full .description {
+  margin-bottom: 17px;
+}
+
+.full .stats {
+  font-size: 11px;
+  color: #777;
+  font-weight: normal;
+  padding-left: 5px;
+}
+
+.full .stats a {
+  color: #777;
+}
+
+.full .watch_button {
+  font-size: 13px;
+  padding: 5px 10px 6px 10px;
+  font-weight: bold;
+  border: 1px solid #466A98;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #FFF;
+  background: #386FB2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#67B0EF), to(#2B5EA4));
+  background: -moz-linear-gradient(top,  #579CEA,  #2B5EA4);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#579CEA', endColorstr='#2B5EA4');
+  text-decoration: none;
+  text-shadow: 0 -1px 0 #036;
+}
+
+.full .notes {
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+
+
+.list {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.list td, .list th {
+  border-bottom: solid 1px #CCC;
+}
+
+.list td {
+  padding: 5px;
+}
+
+.list th {
+  padding: 5px;
+  text-align: left;
+  color: #777;
+}
+
+.list .comment_count {
+  color: #000;
+}
+
+
+.episodes .grid {
+  margin-right: -30px;
+}
+
+.grid .episode {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.grid .name {
+  font-size: 13px;
+  position: absolute;
+  top: 135px;
+  left: 0;
+}
+
+/*** FILTERS ***/
+
+.episodes .filters {
+  margin-bottom: 15px;
+}
+
+.episodes .filter {
+  border: solid 1px #999;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  background-color: #DDD;
+  padding: 2px 8px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.episodes .filter a {
+  padding-left: 5px;
+}
+
+
+/*** PAGINATION ***/
+
+.pagination {
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+.pagination .disabled {
+  color: #999;
+}
+
+.pagination em {
+  font-style: normal;
+}
+
+.pagination a, .pagination em, .pagination .previous_page, .pagination .next_page {
+  padding: 4px;
+}
+
+
+/*** SIDE ***/
+
+.side {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.side .banner {
+  margin-top: 15px;
+}
+
+.episode_views {
+  padding: 0 20px;
+  margin: 0;
+  font-weight: normal;
+  color: #444;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border: solid 1px #BBB;
+  background-color: #DDD;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
+  background: -moz-linear-gradient(top,  #EEE, #CCC);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
+  margin-bottom: 14px;
+}
+
+.episode_views .view {
+  padding-left: 3px;
+}
+
+.episode_views .view img {
+  background-color: #FFF;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#FFF));
+  background: -moz-linear-gradient(top,  #EEE, #FFF);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#FFF');
+  padding: 7px;
+  vertical-align: middle;
+  border: solid 1px #BBB;
+  border-top: none;
+  border-bottom: none;
+}
+
+.episode_views .view a img {
+  background: none;
+  padding: 2px;
+  border: none;
+}
+
+
+/*** CATEGORIES ***/
+
+.categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #BBB;
+  border-top: none;
+  padding: 5px 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+}
+
+.categories li {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.categories h2 {
+  padding: 4px 20px;
+  margin: 0;
+  font-weight: normal;
+  color: #444;
+  font-size: 14px;
+  text-align: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  border: solid 1px #BBB;
+  border-bottom-color: #AAA;
+  background-color: #DDD;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
+  background: -moz-linear-gradient(top,  #EEE, #CCC);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
+}
+
+
+
+/*** EPISODE ***/
+
+#episode {
+  margin: 0 auto;
+  width: 962px;
+}
+
+#episode.legacy {
+  width: 802px;
+}
+
+#episode #video_wrapper {
+  border: solid 1px #777;
+}
+
+#episode video {
+  display: block;
+}
+
+#episode > .info {
+  position: relative;
+  margin-top: 14px;
+  margin-bottom: 15px;
+  background-color: #FFF;
+}
+
+#episode .info .screenshot {
+  float: left;
+  padding-right: 14px;
+}
+
+#episode .info h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+#episode .info h1 .position {
+  color: #999;
+}
+
+#episode .info .details {
+  color: #777;
+  font-size: 12px;
+}
+
+#episode .info .watch {
+  padding-bottom: 8px;
+}
+
+#episode .info .watch_button {
+  font-size: 13px;
+  padding: 5px 10px 6px 10px;
+  font-weight: bold;
+  border: 1px solid #466A98;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #FFF;
+  background: #386FB2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#67B0EF), to(#2B5EA4));
+  background: -moz-linear-gradient(top,  #579CEA,  #2B5EA4);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#579CEA', endColorstr='#2B5EA4');
+  text-decoration: none;
+  text-shadow: 0 -1px 0 #036;
+}
+
+#episode .info .details a {
+  color: #777;
+}
+
+#episode .info .description {
+  margin-top: 6px;
+  margin-bottom: 18px;
+  margin-right: 140px;
+}
+
+#episode.legacy .info .description {
+  margin-right: 0;
+}
+
+#episode .info .social {
+  position: absolute;
+  right: -14px;
+  bottom: 18px;
+}
+
+#episode .info .downloads {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 13px;
+}
+
+#episode .info .downloads li {
+  margin-left: 8px;
+}
+
+#episode .info .downloads li .overlay {
+  font-size: 12px;
+  display: none;
+  color: #999;
+  position: absolute;
+  top: -22px;
+  right: 110px;
+  width: 220px;
+  text-align: right;
+}
+
+#episode .info .downloads li:hover .overlay {
+  display: block;
+}
+
+#episode .video_info .screenshot, #episode .video_info .description, #episode .video_info .watch {
+  display: none;
+}
+
+/*#top .subscribe {
+  position: absolute;
+  bottom: 10px;
+  right: 100px;
+}
+
+#top .subscribe li {
+  position: relative;
+  margin-left: 8px;
+  font-size: 12px;
+}
+*/
+
+#episode .nav {
+  padding: 0 8px;
+  margin: 0;
+  height: 35px;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  border: solid 1px #BBB;
+  border-bottom-color: #AAA;
+  background-color: #DDD;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
+  background: -moz-linear-gradient(top,  #EEE, #CCC);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
+}
+
+#episode .nav li {
+  margin: 0 6px;
+  margin-top: 9px;
+}
+
+#episode .nav li a {
+  color: #393939;
+  padding: 5px 8px;
+  padding-bottom: 10px;
+}
+
+#episode .nav li a.selected {
+  border: solid 1px #CCC;
+  border-bottom: none;
+  background-color: #F5F5F5;
+  color: #555;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  cursor: default;
+}
+
+#episode .nav li a.selected:hover {
+  text-decoration: none;
+}
+
+#episode .nav .previous, #episode .nav .next {
+  float: right;
+}
+
+#episode .nav_section {
+  background-color: #F5F5F5;
+  border: solid 1px #BBB;
+  border-top: none;
+  padding: 10px 20px;
+  position: relative;
+}
+
+#episode .nav_section .progress {
+  z-index: 100;
+  position: absolute;
+  top: 40px;
+  left: 400px;
+  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.70);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  padding: 50px;
+}
+
+#episode.legacy .nav_section .progress {
+  left: 320px;
+}
+
+#episode .show_notes ul {
+  margin-top: -10px; /* quick hack to move resources list under headline */
+  padding-top: 0;
+  margin-bottom: 20px;
+}
+
+#episode .similar {
+  margin-top: 15px;
+}
+
+#episode .similar .episode:last-child {
+  border-bottom: none;
+}
+
+
+/*** COMMENTS ***/
+
+#comments {
+  margin-top: 10px;
+}
+
+.comment {
+  margin: 20px 0;
+}
+
+.comment .avatar {
+  float: left;
+  border: solid 1px #CCC;
+  color: #FFF;
+  padding: 4px;
+}
+
+.comment .avatar img {
+  display: block;
+}
+
+.comment .main {
+  margin-left: 83px;
+}
+
+.nested_comments {
+  margin-left: 83px;
+}
+
+.nested_comments .nested_comments .nested_comments .nested_comments {
+  margin-left: 0;
+}
+
+.comment .headline {
+  padding: 5px 14px;
+  font-size: 12px;
+  background-color: #DDD;
+  border: solid 1px #BBB;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
+  background: -moz-linear-gradient(top,  #EEE, #CCC);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
+}
+
+.comment .position, .comment .name {
+  font-weight: bold;
+}
+
+.comment .created_at {
+  color: #666;
+  padding-left: 8px;
+}
+
+.comment_content {
+  padding: 1px 15px;
+  background-color: #FFF;
+  border: solid 1px #CCC;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+}
+
+.comment .actions {
+  margin-bottom: 12px;
+}
+
+.comment blockquote {
+  margin: 0;
+  padding-left: 10px;
+  border-left: solid 5px #CCC;
+  color: #777;
+}
+
+.comment .hidden .avatar {
+  padding: 2px;
+}
+
+.comment .hidden .main {
+  margin-left: 34px;
+  padding: 7px 10px;
+  background-color: #EEE;
+  border: solid 1px #CCC;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  font-size: 12px;
+  color: #777;
+  position: relative;
+}
+
+.comment .hidden .name a {
+  color: #777;
+}
+
+.comment .hidden .main .actions {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  display: none;
+}
+
+.comment .hidden .main:hover .actions {
+  display: block;
+}
+
+
+
+#add_comment {
+  margin-top: 30px;
+}
+
+.formatting {
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.markdown_examples {
+  margin-top: 5px;
+}
+
+.markdown_examples table {
+  border-collapse: collapse;
+}
+
+.markdown_examples table td {
+  border: solid 1px #CCC;
+  padding: 2px 10px;
+}
+
+.markdown_examples .code_block {
+  width: 200px;
+}
+
+
+/*** CODE BLOCKS ***/
+
+.code_block {
+  margin: 12px 0;
+}
+
+.code_header {
+  position: relative;
+  background-color: #E0E0E0;
+  font-size: 12px;
+  padding: 4px 7px;
+  border: solid 1px #B6B6B6;
+  border-bottom: none;
+}
+
+.code_header .clippy {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+}
+
+.clippy_label {
+  position: absolute;
+  right: 20px;
+  top: 1px;
+  text-align: right;
+  width: 200px;
+  font-size: 10px;
+  color: #555;
+}
+
+.CodeRay {
+  overflow: auto;
+  border: 1px solid #777;
+  border-top: none;
+  padding: 5px 7px;
+  font-size: 13px;
+  margin: 0;
+  line-height: 17px;
+}
+
+code {
+  border: solid 1px #CCC;
+  background-color: #EEE;
+  font-family: 'Menlo', 'Courier New', 'Terminal', monospace;
+  padding: 0 3px;
+}
+
+pre code {
+  display: block;
+  background-color: #EEE;
+  padding: 5px 7px;
+}
+
+
+
+/*** ABOUT ***/
+
+#about {
+  margin-right: 300px;
+}
+
+#about .ryan {
+  float: right;
+  padding: 7px;
+  margin-left: 50px;
+  border: solid 1px #CCC;
+  text-align: center;
+  font-weight: bold;
+}
+
+#about .ryan img {
+  display: block;
+  padding-bottom: 5px;
+}
+
+#about h2 {
+  margin-top: 25px;
+  margin-bottom: 8px;
+}
+
+#about p {
+  margin: 8px 0;
+}
+
+
+/*** FEEDBACK ***/
+
+#feedback {
+  width: 680px;
+  float: left;
+}
+
+#feedback_instructions {
+  margin-left: 700px;
+  min-width: 225px;
+}
+
+#feedback_instructions li {
+  margin: 5px 0;
+}
+
+#feedback h2.bar {
+  padding: 4px 20px;
+  margin: 0;
+  font-weight: normal;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  border: solid 1px #BBB;
+  border-bottom-color: #AAA;
+  background-color: #DDD;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F3F3F3), to(#BBB));
+  background: -moz-linear-gradient(top,  #F3F3F3, #BBB);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3F3F3', endColorstr='#BBB');
+}
+
+#feedback form {
+  background-color: #EEE;
+  padding: 10px 20px;
+  border: solid 1px #BBB;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+}
+
+#feedback .info {
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+#feedback label {
+  float: left;
+  width: 160px;
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 2px;
+}
+
+#feedback .actions {
+  padding-left: 170px;
+}
+
+#feedback input, #feedback textarea {
+  font-size: 14px;
+}
+
+
+/*** GIVE BACK ***/
+
+#give_back {
+  float: left;
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+
+#give_back_instructions {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+#give_back_instructions ol {
+  margin: 0;
+  padding: 0;
+}
+
+#give_back_instructions li {
+  padding: 0;
+  margin: 30px 28px;
+  margin-right: 0;
+}
+
+#give_back_instructions li li {
+  padding: 0;
+  margin: 15px 28px;
+  margin-right: 0;
+}
+/* my own crap */
 div.footer {
   font-size:50%;
   text-align:center;
@@ -11,12 +1059,12 @@ img {
 }
 
 div.screenshot {
-  border: 1px solid #DF5B00;
+  float: left;
 }
 
 img.screenshot {
   border: 10px solid #DF5B00;
-
+}
 
 #episode {
   margin: 0 auto;
