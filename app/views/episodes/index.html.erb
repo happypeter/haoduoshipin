@@ -1,7 +1,7 @@
 <div class="content">
-  <p>
-  <%= link_to "new episode", new_episode_path %>
-  </p>
+  <% if can? :create, :episodes %>
+    <div class="actions"><%= link_to "New Episode", new_episode_path %></div>
+  <% end %>
 
   <div class="episodes">
     <h1> Episodes:</h1>
