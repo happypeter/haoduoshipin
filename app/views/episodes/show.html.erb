@@ -12,9 +12,7 @@
     <div class="details">
       <%= @episode.created_at.strftime('%b %d, %Y') %> 
       <span class="edit">
-        <% if can? :update, @episode %>
-          <%= link_to "edit", edit_episode_path(@episode) %>
-        <% end %>
+          <%= link_to "edit", edit_episode_path(@episode) if can? :update, @episode  %>
       </span>
     </div>
     <div class="notes">

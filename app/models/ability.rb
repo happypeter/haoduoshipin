@@ -5,7 +5,7 @@ class Ability
     can :read, :episodes
     if user # when sb logged in
       if user.name == "happypeter"
-        can :create, :episodes
+        can [:update, :create], :episodes
       end
     end
   end
