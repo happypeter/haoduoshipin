@@ -1,3 +1,7 @@
+/*
+  color: #1B97F2;  the light blue you see on shownote links 
+*/
+
 /* steal from RC */
 
 body {
@@ -7,18 +11,6 @@ body {
   margin: 0;
 }
 
-a {
-  color: #1B97F2;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a img {
-  border: none;
-}
 
 h1 {
   font-size: 24px;
@@ -887,6 +879,18 @@ pre code {
   margin-right: 0;
 }
 /* my own crap */
+a {
+  color: #1B97F2; /* the light blue you see on shownote links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a img {
+  border: none;
+}
 div.footer {
   font-size:50%;
   text-align:center;
