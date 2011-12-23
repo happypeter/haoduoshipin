@@ -45,17 +45,6 @@ ul {
   padding-left: 17px;
 }
 
-ul.horizontal {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul.horizontal li {
-  margin: 0;
-  padding: 0;
-  float: left;
-}
 
 #flash_notice, #flash_alert {
   padding: 10px 0;
@@ -155,32 +144,6 @@ label {
   text-align: center;
 }
 
-#nav_bar {
-  position: relative;
-  padding: 8px 100px;
-  background-color: #333;
-  border-top: solid 1px #FFF;
-  background: -webkit-gradient(linear, left top, left bottom, from(#5C5C5C), to(#111));
-  background: -moz-linear-gradient(top,  #5C5C5C, #111);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5C5C5C', endColorstr='#111');
-  border-bottom: solid 3px #DE9F00;
-  margin-bottom: 30px;
-}
-
-#nav_bar .nav {
-  float: right;
-  padding-top: 2px;
-}
-
-#nav_bar .nav li {
-  padding-left: 25px;
-  font-size: 14px;
-  color: #BBB;
-}
-
-#nav_bar .nav li a {
-  color: #FFF;
-}
 
 #main {
   max-width: 1500px;
@@ -300,10 +263,6 @@ label {
   text-shadow: 0 -1px 0 #036;
 }
 
-.full .notes {
-  font-size: 11px;
-  margin-top: 10px;
-}
 
 
 
@@ -571,62 +530,10 @@ label {
   margin-right: 0;
 }
 
-#episode .info .social {
-  position: absolute;
-  right: -14px;
-  bottom: 18px;
-}
-
-#episode .info .downloads {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 13px;
-}
-
-#episode .info .downloads li {
-  margin-left: 8px;
-}
-
-#episode .info .downloads li .overlay {
-  font-size: 12px;
-  display: none;
-  color: #999;
-  position: absolute;
-  top: -22px;
-  right: 110px;
-  width: 220px;
-  text-align: right;
-}
-
-#episode .info .downloads li:hover .overlay {
-  display: block;
-}
-
-#episode .video_info .screenshot, #episode .video_info .description, #episode .video_info .watch {
-  display: none;
-}
-
-/*#top .subscribe {
-  position: absolute;
-  bottom: 10px;
-  right: 100px;
-}
-
-#top .subscribe li {
-  position: relative;
-  margin-left: 8px;
-  font-size: 12px;
-}
-*/
-
-#episode .nav {
-  padding: 0 8px;
-  margin: 0;
-  height: 35px;
+#episode .notes div.head {
   font-weight: normal;
-  font-size: 14px;
-  text-align: center;
+  padding: 5px;
+  text-align: left;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   -webkit-border-top-left-radius: 6px;
@@ -641,76 +548,10 @@ label {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
 }
 
-#episode .nav li {
-  margin: 0 6px;
-  margin-top: 9px;
-}
-
-#episode .nav li a {
-  color: #393939;
-  padding: 5px 8px;
-  padding-bottom: 10px;
-}
-
-#episode .nav li a.selected {
-  border: solid 1px #CCC;
-  border-bottom: none;
-  background-color: #F5F5F5;
-  color: #555;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  cursor: default;
-}
-
-#episode .nav li a.selected:hover {
-  text-decoration: none;
-}
-
-#episode .nav .previous, #episode .nav .next {
-  float: right;
-}
-
-#episode .nav_section {
-  background-color: #F5F5F5;
+#episode .notes div.body {
+  padding: 5px;
   border: solid 1px #BBB;
-  border-top: none;
-  padding: 10px 20px;
-  position: relative;
-}
 
-#episode .nav_section .progress {
-  z-index: 100;
-  position: absolute;
-  top: 40px;
-  left: 400px;
-  background-color: #333;
-  background-color: rgba(0, 0, 0, 0.70);
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  padding: 50px;
-}
-
-#episode.legacy .nav_section .progress {
-  left: 320px;
-}
-
-#episode .show_notes ul {
-  margin-top: -10px; /* quick hack to move resources list under headline */
-  padding-top: 0;
-  margin-bottom: 20px;
-}
-
-#episode .similar {
-  margin-top: 15px;
-}
-
-#episode .similar .episode:last-child {
-  border-bottom: none;
 }
 
 

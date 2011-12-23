@@ -16,15 +16,16 @@
       </span>
     </div>
     <div class="notes">
-    <% if @episode.notes %>
-    <ul class="nav horizontal">
-      <li class="selected">Show Notes </li>
-      <li >Comments</li>
-    </ul>
-      <%= markdown(@episode.notes) %>
-    <% else %>
-      no show notes
-    <% end %>
+      <% if @episode.notes %>
+      <div class="head">
+        Show Notes
+      </div>
+      <div class="body">
+        <%= markdown(@episode.notes) %>
+      </div>
+      <% else %>
+        no show notes
+      <% end %>
     </div>
   </div>
 </div>
