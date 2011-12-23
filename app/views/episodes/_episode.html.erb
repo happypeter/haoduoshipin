@@ -2,14 +2,11 @@
   <div class="screenshot"><%= link_to image_tag("http://media.happypeter.org/happycasts/episodes/stills/#{episode.position}-#{episode.name}.png", :size => "200x125", :alt => episode.name), episode %></div>
   <div class="main">
     <h2><%= link_to episode.name, episode %></h2>
-    <% if can? :update, @episode %>
+    <% if can? :update, episode %>
       <%= link_to "edit", edit_episode_path(episode) %>
     <% end %>
-    <% if can? :destory, @episode %>
-      destory
-    <% end %>
-    <% if can? :read, @episode %>
-      read
+    <% if can? :read, episode %>
+      (read episode)
     <% end %>
     <div class="watch">
     </div>
