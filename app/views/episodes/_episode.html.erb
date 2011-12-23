@@ -1,5 +1,5 @@
 <div class="episode">
-  <div class="screenshot"><%= link_to image_tag("http://media.happypeter.org/happycasts/episodes/stills/#{episode.position}-#{episode.name}.png", :size => "200x125", :alt => episode.name), episode %></div>
+  <div class="screenshot"><%= link_to image_tag("http://media.happypeter.org/happycasts/episodes/stills/#{episode.position}-#{episode.name}.png", :class => "screenshot", :size => "200x125", :alt => episode.name), episode %></div>
   <div class="main">
     <h2><%= link_to episode.name, episode %></h2>
     <% if can? :update, episode %>

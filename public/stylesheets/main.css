@@ -10,6 +10,14 @@ img {
   border: 0;
 }
 
+div.screenshot {
+  border: 1px solid #DF5B00;
+}
+
+img.screenshot {
+  border: 10px solid #DF5B00;
+
+
 #episode {
   margin: 0 auto;
   width: 962px;
