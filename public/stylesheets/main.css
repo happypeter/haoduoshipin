@@ -6,6 +6,9 @@ div.footer {
   font-size:50%;
   text-align:center;
 }
+img {
+  border: 0;
+}
 
 #episode {
   margin: 0 auto;
