@@ -20,18 +20,6 @@
 <%end%>
 
 <div id="container">
-<table  width="100%" id="pagetoptable">
-	<tr>
-		
-		<td style="text-align:left;">
-			<span class="pagetop">
-            <a href="/"><img width="40" height="40" src="/images/screen.png" /></a>
-			</span>
-		</td>
-
-		<td style="text-align:right;">
-			<span class="pagetop">
-				           
 			<% if current_user %>  
 			<% @user= User.find(current_user.id) %>
 			<%= link_to current_user.name, user_path(@user) %> |
@@ -40,18 +28,52 @@
 			<img src="/images/icons/login.png" width=48 height=23></img> 
 			<%= link_to "Log in", log_in_path %>  
 			<% end %>  
-			</span>
-		</td>
+    <div id="top">
+      <div class="logo"><%= link_to image_tag("logo.png", :size => "234x56", :alt => "RailsCasts - Ruby on Rails Screencasts"), root_path %></div>
+      <ul class="subscribe horizontal">
+        <li>
+          <%= link_to image_tag("icons/browse_code.png", :size => "34x34"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=218282043" %>
+          <span class="name">watch on iTunes</span>
+        </li>
+        <li>
+          <%= link_to image_tag("icons/twitter.png", :size => "34x34"), "http://twitter.com/railscasts" %>
+          <span class="name">follow on Twitter</span>
+        </li>
+        <li>
+          <%= link_to image_tag("icons/facebook.png", :size => "34x34"), "http://www.facebook.com/pages/railscasts/197415140659" %>
+          <span class="name">follow on Facebook</span>
+        </li>
+        <li>
+          <%= link_to image_tag("icons/rss.png", :size => "34x34"), "http://feeds.feedburner.com/railscasts" %>
+          <span class="name">subscribe to RSS feed</span>
+        </li>
+      </ul>
+    </div>
+    <div id="nav_bar">
+      <ul class="nav horizontal">
+        <li><%= link_to_unless_current "Browse Episodes", root_url %></li>
+        <li><%= link_to_unless_current "About RailsCasts", "" %></li>
+      </ul>
+      <%= form_tag episodes_path, :method => "get" do %>
+        <%= text_field_tag :search, params[:search], :size => 35 %>
+        <%= submit_tag "Search Episodes", :name => nil %>
+      <% end %>
+    </div>
+    <div id="main">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end -%>
 
-	</tr>
-</table>
-<div class="page_body">
-  <%= yield %>
-</div>
-
-<div class="footer">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <div class="inner">
+	<a href="/users">Users</a> &middot;
 	<a href="http://happypeter.org">happpeter.org</a> &middot;
-	<a href="/users">Users</a>
+        &copy;<%= Date.today.year %> HappyCasts - This site is <%= link_to "open source", "https://github.com/happypeter/happycasts" %>
+      </div>
+    </div>
+
 </div><%# id="container" %>
 </body>
 </html>
