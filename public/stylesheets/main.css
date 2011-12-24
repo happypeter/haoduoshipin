@@ -899,6 +899,28 @@ div.footer {
 img {
   border: 0;
 }
+html .page_body {
+  padding:10px;
+}
+/* page top table */
+#pagetoptable {
+  background:#e77709;
+  color:#fff;
+  text-shadow: rgba(0,0,0,.3) 1px 1px 1px;
+  position:relative;
+}
+.pagetop  {
+  color:#FFE16E;
+}
+
+.pagetop a {
+  color:#FFE16E;
+  text-decoration:none;
+  font-weight:bold;
+}
+.pagetop a:hover { 
+  text-decoration:underline;
+}
 
 div.screenshot {
   float: left;
