@@ -10,15 +10,18 @@
       <%= @episode.name %>
     </h1>
     <div class="details">
-      <%= @episode.created_at.strftime('%b %d, %Y') %> 
+      <%= @episode.published_at.strftime('%b %d, %Y') %> 
       <span class="edit">
           <%= link_to "edit", edit_episode_path(@episode) if can? :update, @episode  %>
       </span>
     </div>
+    <div class ="download">
+      Download: <%= link_to "mov", "http://media.happypeter.org/happycasts/episodes/videos/#{@episode.position}-#{@episode.name}.mov" %>
+    </div>
     <div class="notes">
       <% if @episode.notes %>
       <div class="head">
-        Show Notes
+          Show Notes
       </div>
       <div class="body">
         <%= markdown(@episode.notes) %>
