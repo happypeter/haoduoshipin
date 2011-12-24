@@ -9,25 +9,8 @@
   
 </head>
 <body>	
-
-<% if current_user %>  <%# only myself can see this debug message %>
-  <% @user= User.find(current_user.id) %>
-  <% if @user.name == "happypeter"%>
-    <% flash.each do |name, msg| %>
-	  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-	<% end %>
-  <%end%>
-<%end%>
-
-			<% if current_user %>  
-			<% @user= User.find(current_user.id) %>
-			<%= link_to current_user.name, user_path(@user) %> |
- 			<%= link_to "Log out", log_out_path %>  
-			<% else %>  
-			<%= link_to "Log in", log_in_path %>  
-			<% end %>  
-    <div id="top">
       <div class="logo"><%= link_to image_tag("logo.png", :size => "234x56", :alt => "RailsCasts - Ruby on Rails Screencasts"), root_path %></div>
+    <div id="top">
       <ul class="subscribe horizontal">
         <li>
           <%= link_to image_tag("icons/browse_code.png", :size => "34x34"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=218282043" %>
@@ -41,16 +24,21 @@
           <%= link_to image_tag("icons/facebook.png", :size => "34x34"), "http://www.facebook.com/pages/railscasts/197415140659" %>
           <span class="name">follow on Facebook</span>
         </li>
-        <li>
-          <%= link_to image_tag("icons/rss.png", :size => "34x34"), "http://feeds.feedburner.com/railscasts" %>
-          <span class="name">subscribe to RSS feed</span>
-        </li>
+         <li>
+                  <% if current_user %>  
+                  <% @user= User.find(current_user.id) %>
+                  <%= link_to current_user.name, user_path(@user) %> |
+                  <%= link_to "Log out", log_out_path %>  
+                  <% else %>  
+                  <%= link_to "Log in", log_in_path %>  
+                  <% end %>  
+         </li>
       </ul>
     </div>
     <div id="nav_bar">
       <ul class="nav horizontal">
         <li><%= link_to_unless_current "Browse Episodes", root_url %></li>
-        <li><%= link_to_unless_current "About RailsCasts", "" %></li>
+        <li><%= link_to_unless_current "About HappyCasts", "" %></li>
       </ul>
       <%= form_tag episodes_path, :method => "get" do %>
         <%= text_field_tag :search, params[:search], :size => 35 %>
