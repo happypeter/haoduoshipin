@@ -19,13 +19,11 @@
   <%end%>
 <%end%>
 
-<div id="container">
 			<% if current_user %>  
 			<% @user= User.find(current_user.id) %>
 			<%= link_to current_user.name, user_path(@user) %> |
  			<%= link_to "Log out", log_out_path %>  
 			<% else %>  
-			<img src="/images/icons/login.png" width=48 height=23></img> 
 			<%= link_to "Log in", log_in_path %>  
 			<% end %>  
     <div id="top">
@@ -74,6 +72,5 @@
       </div>
     </div>
 
-</div><%# id="container" %>
 </body>
 </html>
