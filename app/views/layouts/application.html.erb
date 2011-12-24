@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Happycasts</title>
-  <link rel="shortcut icon" href="/images/"/>
+  <link rel="shortcut icon" href="/images/screen.png"/>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag "http://cdn.sublimevideo.net/js/ubisak9n.js" %>
   <%= csrf_meta_tag %>
@@ -25,7 +25,7 @@
 		
 		<td style="text-align:left;">
 			<span class="pagetop">
-            <a href="/"><img width="20" height="20" src="/images/dog.png" /></a>
+            <a href="/"><img width="40" height="40" src="/images/screen.png" /></a>
 			</span>
 		</td>
 
@@ -37,7 +37,7 @@
 			<%= link_to current_user.name, user_path(@user) %> |
  			<%= link_to "Log out", log_out_path %>  
 			<% else %>  
-			<img src="/images/login.png" width=48 height=23></img> 
+			<img src="/images/icons/login.png" width=48 height=23></img> 
 			<%= link_to "Log in", log_in_path %>  
 			<% end %>  
 			</span>
