@@ -4,9 +4,11 @@
   <% end %>
 
   <div class="episodes">
-    <% for episode in @episodes %>
-      <%= render episode %>
-      <br \>
-    <% end %>
+    <div class="full">
+      <% for episode in @episodes %>
+        <%= render episode %>
+        <br \>
+      <% end %>
+    </div>
   </div> <%# class="episodes" %>
 </div> <%# class="content" %>
