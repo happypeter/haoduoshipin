@@ -12,25 +12,14 @@
       <div class="logo"><%= link_to image_tag("logo.png", :size => "234x56", :alt => "RailsCasts - Ruby on Rails Screencasts"), root_path %></div>
     <div id="top">
       <ul class="subscribe horizontal">
-        <li>
-          <%= link_to image_tag("icons/browse_code.png", :size => "34x34"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=218282043" %>
-          <span class="name">watch on iTunes</span>
-        </li>
-        <li>
-          <%= link_to image_tag("icons/twitter.png", :size => "34x34"), "http://twitter.com/railscasts" %>
-          <span class="name">follow on Twitter</span>
-        </li>
-        <li>
-          <%= link_to image_tag("icons/facebook.png", :size => "34x34"), "http://www.facebook.com/pages/railscasts/197415140659" %>
-          <span class="name">follow on Facebook</span>
-        </li>
          <li>
                   <% if current_user %>  
                   <% @user= User.find(current_user.id) %>
                   <%= link_to current_user.name, user_path(@user) %> |
                   <%= link_to "Log out", log_out_path %>  
                   <% else %>  
-                  <%= link_to "Log in", log_in_path %>  
+                   <%= link_to image_tag("icons/login_gray.png", :size => "65x30"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=218282043" %>
+                   <%= link_to "Log in", log_in_path %>  
                   <% end %>  
          </li>
       </ul>
