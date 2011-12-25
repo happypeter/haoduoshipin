@@ -6,13 +6,6 @@
       <%= episode_video_tag @episode %>
     </script>
   <% end %>
-
-<h1> VVVVVVVVVVVVV</h1>
-  <div class="video">
-    <video class="sublime" width="768" height="576" poster="http://media.happypeter.org/happycasts/episodes/stills/load.png" preload="none">
-      <source src="http://media.happypeter.org/happycasts/episodes/videos/<%=@episode.position%>-<%= @episode.name %>.mov " />
-    </video>
-  </div>
   <div class="info">
     <h1>
       <span class="position">#<%= @episode.position %></span>
