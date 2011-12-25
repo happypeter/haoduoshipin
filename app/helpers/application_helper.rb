@@ -5,6 +5,11 @@ module ApplicationHelper
     syntax_highlighter(Redcarpet.new(text, *options).to_html).html_safe
   end
 
+  def tab_link(name, url)
+    selected = url.all? { |key, value| params[key] == value }
+    link_to(name, url, :class => (selected ? "selected tab" : "tab"))
+  end
+
   def syntax_highlighter(html)
     #DO install pygment first, bundler won't take care of this for you
     doc = Nokogiri::HTML(html)

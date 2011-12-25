@@ -33,14 +33,11 @@
     </ul>
     <div class="clear"></div>
   </div>
-    <div class ="download">
-      Download: <%= link_to "mov", "http://media.happypeter.org/happycasts/episodes/videos/#{@episode.position}-#{@episode.name}.mov" %>
-    </div>
+  <ul class="nav horizontal">
+    <li class="selected"><%= tab_link "Show Notes", :view => nil %></li>
+  </ul>
     <div class="notes">
       <% if @episode.notes %>
-      <div class="head">
-          Show Notes
-      </div>
       <div class="body">
         <%= markdown(@episode.notes) %>
       </div>
