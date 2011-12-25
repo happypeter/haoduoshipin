@@ -7,7 +7,7 @@
     </script>
   <% end %>
   <div class="info<%= " video_info" if params[:autoplay] %>">
-    <div class="screenshot"><%= link_to image_tag("/assets/episodes/stills/#{@episode.asset_name}.png", :size => "200x125", :alt => @episode.name), {:autoplay => true}, :class => "play_video" %></div>
+    <div class="screenshot"><%= link_to image_tag("http://media.happypeter.org/happycasts/episodes/stills/#{@episode.asset_name}.png", :size => "200x125", :alt => @episode.name), {:autoplay => true}, :class => "play_video" %></div>
     <h1>
       <span class="position">#<%= @episode.position %></span>
       <%= @episode.name %>
@@ -21,9 +21,6 @@
       <%= link_to({:autoplay => true}, {:class => "play_video watch_button"}) do %>
         Click to Play Video &#9654;
       <% end %>
-    </div>
-    <div class="social">
-      <a href="http://twitter.com/share" class="twitter-share-button" data-url="<%= episode_url(@episode) %>" data-text="Watching <%= @episode.name %> on RailsCasts" data-count="horizontal" data-via="railscasts">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </div>
     <ul class="downloads horizontal">
       <li>Download:</li>
