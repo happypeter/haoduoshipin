@@ -9,7 +9,7 @@ class Episode < ActiveRecord::Base
     position.to_s.rjust(3, "0") # so we need file name "001-xxx.mov" not "1-xxx.mov"
   end
   def permalink
-    "hello"
+    self.name #RC has sth smarter, will use later
   end
 
 end
