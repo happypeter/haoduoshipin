@@ -1,21 +1,23 @@
-<%= form_tag sessions_path do %>  
-  <p>  
-    <%= label_tag :name %><br />  
-    <%= text_field_tag :name, params[:name] %>  
-  </p>  
-  <p>  
-    <%= label_tag :password %><br />  
-    <%= password_field_tag :password %>  
-  </p>  
+<div class="content" id="login">
+  <%= form_tag sessions_path do %>  
+    <p>  
+      <%= label_tag :name %><br />  
+      <%= text_field_tag :name, params[:name] %>  
+    </p>  
+    <p>  
+      <%= label_tag :password %><br />  
+      <%= password_field_tag :password %>  
+    </p>  
 
-  <p class="button"><%= submit_tag("login") %></p>  
-<% end %>  
+    <p class="button"><%= submit_tag("login") %></p>  
+  <% end %>  
 
 
 
-<p>
-Don't have a account?
+  <p>
+  Don't have a account?
 
-<a href="/sign_up">Sign Up</a>
+  <a href="/sign_up">Sign Up</a>
 
-</p>
+  </p>
+</div>
