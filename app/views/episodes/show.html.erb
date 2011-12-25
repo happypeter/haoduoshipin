@@ -35,7 +35,13 @@
   </div>
   <ul class="nav horizontal">
     <li class="selected"><%= tab_link "Show Notes", :view => nil %></li>
+    <li><%= tab_link pluralize(10, "Comment"), :view => "comments" %></li>
   </ul>
+  <div class="nav_section">
+    <%= %w[comments].include?(params[:view]) ? render(params[:view]) : render("show_notes") %>
+  </div>
+</div>
+my own:
     <div class="notes">
       <% if @episode.notes %>
       <div class="body">
@@ -45,5 +51,3 @@
         no show notes
       <% end %>
     </div>
-  </div>
-</div>
