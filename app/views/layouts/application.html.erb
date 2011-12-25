@@ -27,7 +27,7 @@
     <div id="nav_bar">
       <ul class="nav horizontal">
         <li><%= link_to_unless_current "Browse Episodes", root_url %></li>
-        <li><%= link_to_unless_current "About HappyCasts", "" %></li>
+        <li><%= link_to_unless_current "About HappyCasts", "/about" %></li>
       </ul>
       <%= form_tag episodes_path, :method => "get" do %>
         <%= text_field_tag :search, params[:search], :size => 35 %>
