@@ -41,13 +41,3 @@
     <%= %w[comments].include?(params[:view]) ? render(params[:view]) : render("show_notes") %>
   </div>
 </div>
-my own:
-    <div class="notes">
-      <% if @episode.notes %>
-      <div class="body">
-        <%= markdown(@episode.notes) %>
-      </div>
-      <% else %>
-        no show notes
-      <% end %>
-    </div>

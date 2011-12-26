@@ -42,6 +42,7 @@ GEM
     arel (2.0.10)
     bcrypt-ruby (3.0.1)
     builder (2.1.2)
+    coderay (1.0.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
@@ -93,6 +94,7 @@ DEPENDENCIES
   ancestry
   bcrypt-ruby
   cancan!
+  coderay
   mysql2 (~> 0.2.6)
   nokogiri
   rails (= 3.0.9)
