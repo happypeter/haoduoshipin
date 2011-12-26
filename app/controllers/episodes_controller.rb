@@ -9,6 +9,7 @@ class EpisodesController < ApplicationController
 
   def show
     @episode = Episode.find(params[:id])
+    @comment = Comment.new(:episode => @episode, :user => current_user)
   end
 
   def new
