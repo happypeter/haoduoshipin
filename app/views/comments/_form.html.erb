@@ -2,7 +2,6 @@
   <p>First <%= link_to "sign in through GitHub", login_path(:return_to => request.url) %> to post a comment.</p>
 <% else %>
   <%= div_for @comment do %>
-    <div class="avatar"><%= image_tag avatar_url(@comment), :size => "64x64", :alt => "Avatar" %></div>
     <div class="main">
       <%= render "comments/comment_headline", :comment => @comment %>
       <div class="comment_content">
