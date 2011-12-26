@@ -23,8 +23,6 @@
 .CodeRay .r  { color:#CB7832 }                      /* keyword */
 .CodeRay .kw { color:#CB7832 }                      /* keyword */
 .CodeRay .rx { color:#A4C260 }                      /* regex */
-.CodeRay .s  { color:#A4C260 }                      /* string */
-.CodeRay .sy { color:#6C9CBD }                      /* symbol */
 .CodeRay .ta { color:#E7BE69 }                      /* html tag */
 .CodeRay .pc { color:#6C9CBD }                      /* boolean */
 
@@ -36,3 +34,4 @@
 .CodeRay .predefined-type { color: #23ab34 }
 
 .CodeRay .symbol { color:#6C9CBD }                      /* symbol */
+.CodeRay .string  { color:#A4C260 }                      /* string */
