@@ -13,7 +13,9 @@ module Ccc
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    # Peter: from rails 3.0.x, none dir is autoloaded, so even your class is
+    # in lib/, you still need to manually add it to autoload_paths
+    config.autoload_paths += %W(#{Rails.root}/lib)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
