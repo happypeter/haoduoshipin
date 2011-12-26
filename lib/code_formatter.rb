@@ -31,7 +31,7 @@ class CodeFormatter
   def language(path)
     case path
     when /\.yml$/ then "yaml"
-    when /\.c$/ then "c"
+    when /\.c$/,/\.h$/  then "c"
     when /\.js$/ then "java_script"
     when /\.scss$/ then "css"
     when /\.erb$/, /\.html$/ then "rhtml"
