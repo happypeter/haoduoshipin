@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :password  
   before_save :encrypt_password  
+  has_many :comments
 
   validates_confirmation_of :password  
   validates_presence_of :password, :on => :create
