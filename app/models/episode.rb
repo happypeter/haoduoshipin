@@ -1,4 +1,5 @@
 class Episode < ActiveRecord::Base
+  has_many :comments, :dependent => :destroy
   def asset_name
     [padded_position, permalink].join('-')
   end
