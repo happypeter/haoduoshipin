@@ -35,7 +35,7 @@
   </div>
   <ul class="nav horizontal">
     <li class="selected"><%= tab_link "Show Notes", :view => nil %></li>
-    <li><%= tab_link pluralize(10, "Comment"), :view => "comments" %></li>
+    <li><%= tab_link pluralize(@episode.comments.size, "Comment"), :view => "comments" %></li>
   </ul>
   <div class="nav_section">
     <%= %w[comments].include?(params[:view]) ? render(params[:view]) : render("show_notes") %>
