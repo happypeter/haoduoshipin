@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @comments = @comments.search(params[:comment_search]).recent.paginate(:page => params[:page], :per_page => 50)
   end
 
   def new
