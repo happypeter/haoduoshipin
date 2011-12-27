@@ -1,5 +1,5 @@
 class EpisodesController < ApplicationController
-  load_and_authorize_resource :find_by => :param
+  load_and_authorize_resource 
   def index
     @episodes = Episode.accessible_by(current_ability).recent
     respond_to do |format|
