@@ -1,6 +1,7 @@
 class EpisodesController < ApplicationController
+  load_and_authorize_resource :find_by => :param
   def index
-    @episodes = Episode.all
+    @episodes = Episode.accessible_by(current_ability).recent
     respond_to do |format|
       format.html 
       format.rss

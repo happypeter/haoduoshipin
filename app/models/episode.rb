@@ -1,5 +1,6 @@
 class Episode < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
+  scope :recent, order('position DESC')
   def asset_name
     [padded_position, permalink].join('-')
   end
