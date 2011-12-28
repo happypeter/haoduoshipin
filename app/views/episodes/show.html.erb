@@ -15,6 +15,7 @@
     <div class="details">
       <%= @episode.published_at.strftime('%b %d, %Y') %> |
       <%= pluralize (@episode.seconds/60).round, "minute" %> |
+      <%= link_to pluralize(@episode.comments.size, "comment"), episode_path(@episode, :view => "comments") %>
     </div>
     <div class="description"><%= @episode.description %></div>
     <div class="watch">
