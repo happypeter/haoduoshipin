@@ -1,5 +1,5 @@
 <% if current_user.nil? %>
-  <p>First <%= link_to "sign in through GitHub", login_path(:return_to => request.url) %> to post a comment.</p>
+  <p>First <%= link_to "sign in", log_in_path %> to post a comment.</p>
 <% else %>
   <%= div_for @comment do %>
     <div class="main">
