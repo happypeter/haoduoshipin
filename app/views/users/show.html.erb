@@ -1,2 +1,19 @@
-Name: <%= @user.name %>
+<%# title "#{@user.display_name}'s Profile" %>
+
+<div class="content">
+  <% if @user == current_user %>
+    <p><%= link_to "Edit Profile", edit_user_path(@user) %> | <%= link_to "Log Out", log_out_path %></p>
+    <p><strong>This is your profile.</strong></p>
+  <% end %>
+  Name: <%= @user.name %>
+  <br />
+  Email: <%= @user.email %>
+
+  <div id="comments">
+    <p><strong>Your Comments .</strong></p>
+  <% for comment in @user.comments.recent %>
+    <%= render comment %>
+  <% end %>
+  </div>
+</div>
 

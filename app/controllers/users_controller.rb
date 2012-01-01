@@ -3,9 +3,11 @@ class UsersController < ApplicationController
     @user = User.new  
   end
   def edit
+    @user = User.find(params[:id])  
   end
 
   def update
+    @user = User.find(params[:id])  
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(@user, :notice => 'Profile was successfully updated.') }
