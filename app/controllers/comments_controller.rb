@@ -25,6 +25,8 @@ class CommentsController < ApplicationController
 
   def edit
   end
+  def show
+  end
 
   def update
     @comment.update_attributes(params[:comment])
