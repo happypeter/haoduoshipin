@@ -15,7 +15,6 @@ class Episode < ActiveRecord::Base
   end
   def files
     [
-      {:name => "mp4",         :info => "Full Size H.264 Video",  :url => asset_url("videos", "mp4"),  :size => 1},
       {:name => "mov",         :info => "Smaller H.264 Video",    :url => asset_url("videos", "mov"),  :size => 1}, #FIXME: size shall be fetched
     ]
   end
