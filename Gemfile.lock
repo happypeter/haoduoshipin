@@ -46,6 +46,9 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
+    jquery-rails (1.0.19)
+      railties (~> 3.0)
+      thor (~> 0.14)
     json (1.6.3)
     mail (2.2.19)
       activesupport (>= 2.3.6)
@@ -95,6 +98,7 @@ DEPENDENCIES
   bcrypt-ruby
   cancan!
   coderay
+  jquery-rails
   mysql2 (~> 0.2.6)
   nokogiri
   rails (= 3.0.9)

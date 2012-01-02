@@ -13,3 +13,4 @@ gem 'albino'
 gem "cancan", :git => "git://github.com/ryanb/cancan.git", :branch => "2.0"
 gem 'nokogiri'
 gem 'coderay'
+gem "jquery-rails"
