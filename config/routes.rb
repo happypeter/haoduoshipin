@@ -1,4 +1,4 @@
-Ccc::Application.routes.draw do
+Happycasts::Application.routes.draw do
   
   resources :users
   resources :episodes
