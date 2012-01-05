@@ -768,7 +768,7 @@ label {
   -moz-border-radius-topright: 5px;
   background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
   background: -moz-linear-gradient(top,  #EEE, #CCC);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#CCCCCC');
 }
 
 .comment .position, .comment .name {
