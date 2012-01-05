@@ -6,9 +6,10 @@ class Ability
       episode.published_at <= Time.now.utc
     end
     can :access, :info # everybody can visit the about page
-    can [:read, :create, :log_in], :users
+    can [:read, :create], :users
+    can [:new, :create], :sessions
     if user # when sb logged in
-      can :log_out, :users
+      can [:destroy], :sessions
       can :update, :users, :id => user.id
       if user.name == "happypeter"
         can :access, :all
