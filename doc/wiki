@@ -10,3 +10,11 @@ when I shall have
 
 
 
+
+### screencasts spec
+
+have a  ubuntu gnome-terminal profile named "happycasts", use "black on white", "font: monospace 17", set this profile as defualt.
+
+then have a command "gohappycasts"
+
+    gnome-terminal --full-screen --hide-menubar
