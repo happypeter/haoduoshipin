@@ -196,7 +196,7 @@ label {
 }
 
 
-.content, #flash_notice, #flash_error {
+.content, #flash_notice, #flash_alert, #flash_error {
   margin: 0 100px;
 }
 
