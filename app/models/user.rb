@@ -3,10 +3,6 @@ class User < ActiveRecord::Base
   before_save :encrypt_password  
   has_many :comments
 
-  validates_confirmation_of :password  
-  validates_presence_of :password, :on => :create
-
-  validates_presence_of :name  
   validates_uniqueness_of :name  
   def self.create_from_omniauth(omniauth)
     User.new.tap do |user|
@@ -16,12 +12,10 @@ class User < ActiveRecord::Base
       user.name = omniauth["user_info"]["name"]
       user.site_url = omniauth["user_info"]["urls"]["Blog"] if omniauth["user_info"]["urls"]
       user.gravatar_token = omniauth["extra"]["user_hash"]["gravatar_id"] if omniauth["extra"] && omniauth["extra"]["user_hash"]
-      user.email_on_reply = true
       user.save!
     end
   end
 
-  end
 
   def self.authenticate(name, password)  
     user = find_by_name(name)  

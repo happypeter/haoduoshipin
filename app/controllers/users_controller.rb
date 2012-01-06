@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     omniauth = request.env["omniauth.auth"]
     @user = User.find_by_github_uid(omniauth["uid"]) || User.create_from_omniauth(omniauth)
     cookies.permanent[:token] = @user.token
-    redirect_to_target_or_default root_url, :notice => "Signed in successfully"
+    redirect_to root_url, :notice => "Signed in successfully"
   end
 
   def index
