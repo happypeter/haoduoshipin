@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111227095831) do
+ActiveRecord::Schema.define(:version => 20120106022939) do
 
   create_table "comments", :force => true do |t|
     t.integer  "episode_id"
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(:version => 20111227095831) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.string   "token"
+    t.string   "github_username"
+    t.string   "site_url"
+    t.string   "gravatar_token"
+    t.string   "github_uid"
   end
 
 end
