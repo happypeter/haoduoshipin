@@ -1,3 +1,19 @@
+### callbacks
+
+Q: When before_create is called?
+
+http://guides.rubyonrails.org/active_record_validations_callbacks.html
+
+http://apidock.com/rails/ActiveRecord/Callbacks/before_create
+
+    before_create() public
+    Is called before Base.save on new objects that haven’t been saved yet (no record exists).
+
+http://apidock.com/rails/ActiveRecord/Callbacks/before_save
+
+    before_save() public
+    Is called before Base.save (regardless of whether it’s a create or update save).
+
 ### cancan
 
 first thing I messed up is I wrote
