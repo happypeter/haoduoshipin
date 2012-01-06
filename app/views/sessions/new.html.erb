@@ -13,7 +13,8 @@
     <p class="button"><%= submit_tag("login") %></p>  
   <% end %>  
 
-  <%= link_to "Log in with github", "auth/github" %>
+  Log in with 
+  <%= link_to image_tag("icons/github.png", :size => "60x20", :alt => "github"), "/auth/github" %>
 </div>
 
 <div class="content" id="signup">
