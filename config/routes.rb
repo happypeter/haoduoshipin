@@ -2,7 +2,6 @@ Happycasts::Application.routes.draw do
   
   resources :users
   resources :episodes
-  resources :sessions
   resources :comments
 
   match "/auth/:provider/callback" => "users#login_with_github"
