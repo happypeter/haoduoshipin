@@ -18,12 +18,14 @@ class UsersController < ApplicationController
       end
     end
   end  
+
   def login_with_github #this will create a new user acount on local db, if this is the first time login
     omniauth = request.env["omniauth.auth"]
     @user = User.find_by_github_uid(omniauth["uid"]) || User.create_from_omniauth(omniauth)
     cookies.permanent[:token] = @user.token
     redirect_to root_url, :notice => "Signed in successfully"
   end
+
   def create # signup a new user account locally
     @user = User.new(params[:user])
     @user.encrypt_password
@@ -31,17 +33,19 @@ class UsersController < ApplicationController
     cookies.permanent[:token] = @user.token
     redirect_to root_url, :notice => "Signed in successfully"
   end
+
   def login  #login with a local account
     user = User.authenticate(params[:name], params[:password])  
     if user
       cookies.permanent[:token] = user.token
       redirect_to root_url, :notice => "Logged in!"
     else
-      flash.now.alert = "Invalid name or password"
+      flash.alert = "Invalid name or password"
       redirect_to :action => "new"
     end
 
   end
+
   def logout
     cookies.delete(:token)
     redirect_to root_url, :notice => "You have been logged out."
