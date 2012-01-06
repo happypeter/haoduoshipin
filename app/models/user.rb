@@ -1,5 +1,10 @@
 class User < ActiveRecord::Base
+  attr_accessor :password
+
   attr_accessible :name, :password, :email, :site_url
+
+  validates_confirmation_of :password
+
   before_create { generate_token(:token) }
   has_many :comments
 
@@ -13,6 +18,21 @@ class User < ActiveRecord::Base
       user.site_url = omniauth["user_info"]["urls"]["Blog"] if omniauth["user_info"]["urls"]
       user.gravatar_token = omniauth["extra"]["user_hash"]["gravatar_id"] if omniauth["extra"] && omniauth["extra"]["user_hash"]
       user.save!
+    end
+  end
+
+  def self.save_local_signup(password)
+    User.new.tap do |user|
+      user.password_salt = BCrypt::Engine.generate_salt
+      user.password_hash = BCrypt::Engine.hash_secret(password, user.password_salt)
+      user.save!
+    end
+  end
+    
+  def encrypt_password
+    if password.present?
+      self.password_salt = BCrypt::Engine.generate_salt
+      self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
 

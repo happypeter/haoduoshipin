@@ -17,10 +17,14 @@ class UsersController < ApplicationController
       end
     end
   end  
-  def create
+  def login_with_github
     omniauth = request.env["omniauth.auth"]
     @user = User.find_by_github_uid(omniauth["uid"]) || User.create_from_omniauth(omniauth)
     cookies.permanent[:token] = @user.token
+    redirect_to root_url, :notice => "Signed in successfully"
+  end
+  def create
+    User.save_local_signup(params[:password])
     redirect_to root_url, :notice => "Signed in successfully"
   end
   def logout
