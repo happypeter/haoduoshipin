@@ -18,16 +18,10 @@ class UsersController < ApplicationController
       end
     end
   end  
-    
-  def create  
-    @user = User.new(params[:user])  
-    if @user.save  
-      session[:user_id] = @user.id 
-      redirect_to root_url, :notice => "signed up!"  
-    else  
-      render "new"  
-    end  
-  end  
+  def create
+    omniauth = request.env["omniauth.auth"]
+    raise omniauth.to_yaml
+  end
 
   def index
     @users = User.all
