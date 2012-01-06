@@ -14,9 +14,5 @@ class SessionsController < ApplicationController
       # render "new", won't have a new @user instance, which result in failing to render new.html.erb
     end
   end
-
-  def destroy
-    session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
-  end
+  #destroy is now done by users#logout
 end

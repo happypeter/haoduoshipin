@@ -13,7 +13,7 @@ class Ability
       can :update, :users, :id => user.id
       can :edit, :users, :id =>user.id
       can :logout, :users
-      if user.github_username == "happypeter"
+      if user.github_username == "happypeter"||user.name == "happypeter" # the latter is for test on VM
         can :access, :all
       end
     end
