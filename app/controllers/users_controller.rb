@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       end
     end
   end  
-  def login_with_github
+  def login_with_github #this will create a new user acount on local db, if this is the first time login
     omniauth = request.env["omniauth.auth"]
     @user = User.find_by_github_uid(omniauth["uid"]) || User.create_from_omniauth(omniauth)
     cookies.permanent[:token] = @user.token
@@ -38,8 +38,7 @@ class UsersController < ApplicationController
       redirect_to root_url, :notice => "Logged in!"
     else
       flash.now.alert = "Invalid name or password"
-      redirect_to :action => "new" 
-      # render "new", won't have a new @user instance, which result in failing to render new.html.erb
+      redirect_to :action => "new"
     end
 
   end

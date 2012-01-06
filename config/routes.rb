@@ -5,7 +5,7 @@ Happycasts::Application.routes.draw do
   resources :comments
 
   match "/auth/:provider/callback" => "users#login_with_github"
-  post "/users" =>"users#login" # when user try to login with their local account
+  match "/user_login" =>"users#login" # when user try to login with their local account
   match "about" => "info#about", :as => "about"
   get "log_in" => "users#new", :as => "log_in"  
   get "log_out" => "users#logout", :as => "log_out"  

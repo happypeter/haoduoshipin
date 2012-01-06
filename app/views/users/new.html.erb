@@ -1,6 +1,6 @@
 <div class="content" id="login">
 <h1>Login</h1>  
-  <%= form_tag users_path do %>  
+  <%= form_tag "/user_login" do %>  
     <p>  
       <%= label_tag :name %><br />  
       <%= text_field_tag :name, params[:name] %>  
