@@ -19,7 +19,7 @@
                   <%= link_to current_user.name, user_path(@user) %> |
                   <%= link_to "Log out", log_out_path %>  
                   <% else %>  
-                   <%= link_to image_tag("icons/login_gray.png", :size => "65x30"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=218282043" %>
+                   <%= link_to image_tag("icons/login_gray.png", :size => "65x30"), "/log_in" %>
                    <%= link_to "login", "/log_in" %>  
                   <% end %>  
          </li>
