@@ -1,4 +1,5 @@
 <div class="content" id="login">
+<h1>Login</h1>  
   <%= form_tag sessions_path do %>  
     <p>  
       <%= label_tag :name %><br />  
@@ -12,16 +13,10 @@
     <p class="button"><%= submit_tag("login") %></p>  
   <% end %>  
 
-
  <%= link_to "Log in with github", "auth/github" %>
-  <p>
-  Don't have a account?
-
-  <a href="/sign_up">Sign Up</a>
-
-  </p>
+</div>
 <div class="content" id="signup">
-<h1>Sign Up</h1>  
+<h1>Create Account</h1>  
   
 <%= form_for @user do |f| %>  
   <% if @user.errors.any? %>  
@@ -52,5 +47,4 @@
   </p>  
   <p class="button"><%= f.submit("create account") %></p>  
 <% end %>  
-</div>
 </div>
