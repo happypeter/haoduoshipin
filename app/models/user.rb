@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :site_url
+  attr_accessible :name, :password, :email, :site_url
   before_create { generate_token(:token) }
   has_many :comments
 
