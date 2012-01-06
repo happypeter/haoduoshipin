@@ -6,7 +6,7 @@ class Ability
       episode.published_at <= Time.now.utc
     end
     can :access, :info # everybody can visit the about page
-    can [:read, :create], :users
+    can [:read, :create, :login_with_github], :users
     can [:new, :create], :sessions
     if user # when sb logged in
       can [:destroy], :sessions
