@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   validates_confirmation_of :password
 
-  before_create { generate_token(:token) }
+  before_create { generate_token(:token) }# will this be called before "user.save!"???
   has_many :comments
 
   validates_uniqueness_of :name  
