@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by_token(cookies[:token]) if cookies[:token]
   end
   enable_authorization do |exception|
     redirect_to root_url, :alert => exception.message
