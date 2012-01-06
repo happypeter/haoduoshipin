@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :email, :site_url
   before_create { generate_token(:token) }
-  before_save :encrypt_password  
   has_many :comments
 
   validates_uniqueness_of :name  
@@ -29,12 +28,6 @@ class User < ActiveRecord::Base
       user
     else  
       nil  
-    end  
-  end  
-  def encrypt_password  
-    if password.present?  
-      self.password_salt = BCrypt::Engine.generate_salt  
-      self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)  
     end  
   end  
   def generate_token(column)
