@@ -11,6 +11,7 @@ gem 'ancestry'
 gem 'redcarpet',"1.17.1"
 gem 'albino'
 gem "cancan", :git => "git://github.com/ryanb/cancan.git", :branch => "2.0"
-gem 'nokogiri'
+gem 'nokogiri', "1.4.7"
 gem 'coderay'
 gem "jquery-rails"
+gem "omniauth", '0.2.2'
