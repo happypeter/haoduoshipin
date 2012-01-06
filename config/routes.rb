@@ -5,7 +5,7 @@ Happycasts::Application.routes.draw do
   resources :sessions
   resources :comments
 
-  match "/auth/github/callback" => "users#create"
+  match "/auth/:provider/callback" => "users#create"
   match "about" => "info#about", :as => "about"
   get "log_in" => "sessions#new", :as => "log_in" 
   get "log_out" => "sessions#destroy", :as => "log_out"  
