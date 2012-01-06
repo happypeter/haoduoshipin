@@ -21,14 +21,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.save_local_signup(password)
-    User.new.tap do |user|
-      user.password_salt = BCrypt::Engine.generate_salt
-      user.password_hash = BCrypt::Engine.hash_secret(password, user.password_salt)
-      user.save!
-    end
-  end
-    
   def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt

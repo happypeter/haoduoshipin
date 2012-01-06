@@ -24,7 +24,10 @@ class UsersController < ApplicationController
     redirect_to root_url, :notice => "Signed in successfully"
   end
   def create
-    User.save_local_signup(params[:password])
+    @user = User.new(params[:user])
+    @user.encrypt_password
+    @user.save
+    cookies.permanent[:token] = @user.token
     redirect_to root_url, :notice => "Signed in successfully"
   end
   def logout
