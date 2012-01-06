@@ -11,6 +11,7 @@ class Ability
     if user # when sb logged in
       can [:destroy], :sessions
       can :update, :users, :id => user.id
+      can :edit, :users, :id =>user.id
       can :logout, :users
       if user.github_username == "happypeter"
         can :access, :all
