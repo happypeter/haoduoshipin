@@ -1,7 +1,9 @@
 <% title @episode.name, false %>
 <div id="episode">
   <div class="info">
-    <div class="screenshot"><%= link_to image_tag("http://media.happypeter.org/happycasts/episodes/stills/#{@episode.asset_name}.png", :size => "200x125", :alt => @episode.name), :class => "play_video" %></div>
+    <div class="screenshot">
+      <%= image_tag("http://media.happypeter.org/happycasts/episodes/stills/#{@episode.asset_name}.png", :size => "200x125", :alt => @episode.name) %>
+    </div>
     <h1>
       <span class="position">#<%= @episode.position %></span>
       <%= @episode.name %>
