@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120106022939) do
+ActiveRecord::Schema.define(:version => 20120108063142) do
 
   create_table "comments", :force => true do |t|
     t.integer  "episode_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20120106022939) do
     t.integer  "seconds"
     t.text     "description"
     t.integer  "comments_count", :default => 0, :null => false
+    t.string   "youku"
   end
 
   create_table "users", :force => true do |t|
