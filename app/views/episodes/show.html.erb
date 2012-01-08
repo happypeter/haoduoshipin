@@ -1,7 +1,7 @@
 <% title @episode.name, false %>
 <div id="episode">
   <div class="info">
-    <div class="screenshot"><%= link_to image_tag("http://media.happypeter.org/happycasts/episodes/stills/#{@episode.asset_name}.png", :size => "200x125", :alt => @episode.name), {:autoplay => true}, :class => "play_video" %></div>
+    <div class="screenshot"><%= link_to image_tag("http://media.happypeter.org/happycasts/episodes/stills/#{@episode.asset_name}.png", :size => "200x125", :alt => @episode.name), :class => "play_video" %></div>
     <h1>
       <span class="position">#<%= @episode.position %></span>
       <%= @episode.name %>
@@ -13,9 +13,11 @@
     </div>
     <div class="description"><%= @episode.description %></div>
     <div class="watch">
-      <%= link_to({:autoplay => true}, {:class => "play_video watch_button"}) do %>
-        Click to Play Video &#9654;
-      <% end %>
+        <div class="watch">
+           <a href="http://www.youku.com" class="play_video watch_button">
+             Youku &#9654;
+           </a>    
+        </div>
     </div>
     <ul class="downloads horizontal">
       <li>Download:</li>
