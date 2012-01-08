@@ -21,12 +21,6 @@ module ApplicationHelper
     end
     doc.to_s
   end
-  def video_tag(path, options = {})
-    xml = Builder::XmlMarkup.new
-    xml.video :class => "sublime",:width => options[:width], :height => options[:height], :poster => options[:poster],  :preload => "none" do
-      xml.source :src => "#{path}.mov"
-    end.html_safe
-  end
 end
 
 
