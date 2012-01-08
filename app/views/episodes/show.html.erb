@@ -1,5 +1,8 @@
 <% title @episode.name, false %>
 <div id="episode">
+  <div id="video_wrapper">
+    <%= raw @episode.youku %> 
+  </div>
   <div class="info">
     <div class="screenshot">
       <%= image_tag("http://media.happypeter.org/happycasts/episodes/stills/#{@episode.asset_name}.png", :size => "200x125", :alt => @episode.name) %>
