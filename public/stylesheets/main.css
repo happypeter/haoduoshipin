@@ -164,7 +164,7 @@ label {
   background: -webkit-gradient(linear, left top, left bottom, from(#5C5C5C), to(#111));
   background: -moz-linear-gradient(top,  #5C5C5C, #111);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5C5C5C', endColorstr='#111');
-  border-bottom: solid 3px #DE9F00;
+  border-bottom: solid 4px #ff6600;
   margin-bottom: 30px;
 }
 
@@ -266,7 +266,7 @@ label {
 }
 
 .full h2, .episode h2 a {
-  color: #E98C08;
+  color: #ff6600;
 }
 
 .full h2 {
