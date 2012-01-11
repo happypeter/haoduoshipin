@@ -160,7 +160,7 @@ label {
   padding-bottom: 28px;
   padding-right: 100px;
   margin-top: 10px;
-  border-bottom: solid 6px #ff6600;
+  border-bottom: solid 3px #ff6600;
   margin-bottom: 30px;
 }
 
@@ -172,7 +172,7 @@ label {
 #nav_bar .nav li {
   padding-left: 25px;
   font-size: 14px;
-  color: #BBB;
+  color: #ff6600;
 }
 
 #nav_bar .nav li a {

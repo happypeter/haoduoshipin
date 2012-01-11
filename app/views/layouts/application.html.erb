@@ -16,10 +16,10 @@
          <li>
                   <% if current_user %>  
                   <% @user= User.find(current_user.id) %>
-                  <%= link_to current_user.name, user_path(@user) %> |
+                  <%= link_to_unless_current current_user.name, user_path(@user) %> |
                   <%= link_to "Log out", log_out_path %>  
                   <% else %>  
-                   <%= link_to "login", "/log_in" %>  
+                   <%= link_to_unless_current "login", "/log_in" %>  
                   <% end %>  
          </li>
       </ul>
