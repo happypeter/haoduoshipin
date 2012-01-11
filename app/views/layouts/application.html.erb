@@ -23,10 +23,6 @@
                   <% end %>  
          </li>
       </ul>
-      <%= form_tag episodes_path, :method => "get" do %>
-        <%= text_field_tag :search, params[:search], :size => 35 %>
-        <%= submit_tag "Search Episodes", :name => nil %>
-      <% end %>
     </div>
     <div id="main">
       <% flash.each do |name, msg| %>

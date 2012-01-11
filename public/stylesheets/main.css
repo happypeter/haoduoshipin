@@ -157,10 +157,10 @@ label {
 }
 
 #nav_bar {
-  position: relative;
-  padding: 8px 100px;
-  border-top: solid 5px #FFF;
-  border-bottom: solid 3px #ff6600;
+  padding-bottom: 28px;
+  padding-right: 100px;
+  margin-top: 10px;
+  border-bottom: solid 6px #ff6600;
   margin-bottom: 30px;
 }
 
@@ -233,23 +233,24 @@ label {
 
 .full .episode {
   padding-bottom: 18px;
-  border-bottom: solid 1px #E5E5E5;
+  border-bottom: solid 5px #E5E5E5;
   margin-bottom: 20px;
   padding-left: 10px;
-  border-left: solid 3px #ff6600;
+  border-left: solid 5px #E5E5E5;
 }
 
 .full .screenshot {
-  float: left;
+  float: right;
 }
 
 .screenshot img {
-  border: solid 1px #999;
+  border: solid 3px #E5E5E5;
+  margin-left: 10px;
   display: block;
 }
 
 .full .main {
-  margin-left: 215px;
+  margin-left: 5px;
 }
 
 .full .info {
