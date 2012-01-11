@@ -235,6 +235,8 @@ label {
   padding-bottom: 18px;
   border-bottom: solid 1px #E5E5E5;
   margin-bottom: 20px;
+  padding-left: 10px;
+  border-left: solid 3px #ff6600;
 }
 
 .full .screenshot {
