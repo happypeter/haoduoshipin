@@ -21,6 +21,8 @@ class UsersController < ApplicationController
 
   def login_with_github #this will create a new user acount on local db, if this is the first time login
     omniauth = request.env["omniauth.auth"]
+    # if find_by_github_uid return ture, create_from_omniauth won't be
+    # executed. that's the nature of || 
     @user = User.find_by_github_uid(omniauth["uid"]) || User.create_from_omniauth(omniauth)
     cookies.permanent[:token] = @user.token
     redirect_to root_url, :notice => "Signed in successfully"
