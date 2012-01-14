@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= content_for?(:title) ? yield(:title) : "HappyCasts" %></title>
-  <link rel="shortcut icon" href="/images/play.png"/>
+  <title><%= content_for?(:title) ? yield(:title) : "HappyCasts" %></title>
+  <link href="/images/play.png" rel="icon" type="image/x-png" />
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag "jquery","application"%>
   <%= csrf_meta_tag %>
