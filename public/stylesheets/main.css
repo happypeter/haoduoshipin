@@ -590,21 +590,6 @@ label {
   margin-left: 8px;
 }
 
-#episode .info .downloads li .overlay {
-  font-size: 12px;
-  display: none;
-  color: #999;
-  position: absolute;
-  top: -22px;
-  right: 110px;
-  width: 220px;
-  text-align: right;
-}
-
-#episode .info .downloads li:hover .overlay {
-  display: block;
-}
-
 #episode .video_info .screenshot, #episode .video_info .description, #episode .video_info .watch {
   display: none;
 }

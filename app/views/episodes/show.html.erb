@@ -13,7 +13,6 @@
       <% for file in @episode.available_files %>
         <li>
           <%= link_to file[:name], file[:url] %>
-          <span class="overlay"><%= file[:info] %> (<%= number_to_human_size(file[:size]) %>)</span>
         </li>
       <% end %>
     </ul>
