@@ -10,6 +10,18 @@ body {
   margin: 0;
 }
 
+div#maintitle {
+  font:        italic 2em "ff-tisa-web-pro-1","ff-tisa-web-pro-2";
+  text-shadow: 1px 1px rgba(190, 190, 190, 0.6);
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: -30px;
+}
+div#maintitle a{
+  color: #ff6600;
+  text-decoration: none;
+}
+
 a {
   color: #1B97F2;
   text-decoration: none;
