@@ -10,6 +10,18 @@ body {
   margin: 0;
 }
 
+div#maintitle {
+  font:        italic 2em "ff-tisa-web-pro-1","ff-tisa-web-pro-2";
+  text-shadow: 1px 1px rgba(190, 190, 190, 0.6);
+  margin-top: 10px;
+  margin-left: 10%;
+  margin-bottom: -30px;
+}
+div#maintitle a{
+  color: #ff6600;
+  text-decoration: none;
+}
+
 a {
   color: #1B97F2;
   text-decoration: none;
@@ -192,7 +204,7 @@ label {
 
 
 .content, #flash_notice, #flash_alert, #flash_error {
-  margin: 0 100px;
+  margin: 0 10%;
 }
 
 .content {
@@ -223,7 +235,7 @@ label {
 /*** EPISODES ***/
 
 .episodes {
-  margin-right: 200px;
+  margin-right: 10%;
 }
 
 .episodes h2 .remove {
