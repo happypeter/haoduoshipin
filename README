@@ -6,4 +6,4 @@ http://media.happypeter.org/happycasts/episodes/stills/#{episode.position}-#{epi
 http://media.happypeter.org/happycasts/episodes/videos/#{episode.position}-#{episode.name}.mov
 
 so when I give episode.name it must be xxx-xxx-xxx style.
-and when it is displayed I will replace the dash with a space, so it is just jekyll style.
+and when it is displayed I will replace the dash with a space, it is just jekyll style.
