@@ -1,8 +1,8 @@
 <% title @episode.name, false %>
 <div id="episode">
-  <div id="video_wrapper">
-    <%= raw @episode.youku %> 
-  </div>
+     <div class="watch">
+       <%= link_to "Watch at youku.com", @episode.youku, :class => "watch_button" %>
+     </div>
   <div class="info">
     <h1>
       <span class="position">#<%= @episode.position %></span>
