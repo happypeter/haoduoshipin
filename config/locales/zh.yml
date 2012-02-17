@@ -2,5 +2,4 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 zh:
-  hello: "你好"
   new_ep: "创建新视频"
