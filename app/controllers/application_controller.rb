@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :current_user
+  before_filter :set_locale
+   
+  def set_locale
+    I18n.locale = params[:locale] || "zh" # default to chinese, need http://casts.sme.com/?locale=en to switch to English
+  end
 
   private
 
