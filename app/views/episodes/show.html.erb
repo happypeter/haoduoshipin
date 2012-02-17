@@ -8,14 +8,6 @@
       <span class="position">#<%= @episode.position %></span>
       <%= @episode.name %>
     </h1>
-    <ul class="downloads horizontal">
-      <li>Download:</li>
-      <% for file in @episode.available_files %>
-        <li>
-          <%= link_to file[:name], file[:url] %>
-        </li>
-      <% end %>
-    </ul>
     <div class="clear"></div>
   </div>
   <ul class="nav horizontal">
