@@ -33,22 +33,6 @@ when I shall have
 
 
 
-### screencasts spec
-
-have a  ubuntu gnome-terminal profile named "happycasts", use "black on white", "font: monospace 17", set this profile as defualt.
-
-then have a command "gohappycasts"
-
-    gnome-terminal --full-screen --hide-menubar
-
-fullscreen the vm, that will make my later work in screenflow to make the video 1024x768, a lot easier.
-
-Turn keycastr background color to "Teal"(looks like the blackboard), it is more comfortable to look, and clearer.
-
-make it 10 mins, try to show people as much as I can, lead them step by step towards getting the job done.
-10 mins means the audience's time is cherished, and 10mins means not too much works for myself, so limit does bring goodies.
-
-
 
 
 
