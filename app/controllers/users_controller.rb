@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     redirect_to root_url, :notice => "Signed in successfully"
   end
   def login_with_github_failure
-
+    @reason = params[:message]  
   end
 
   def create # signup a new user account locally
