@@ -27,6 +27,9 @@ class UsersController < ApplicationController
     cookies.permanent[:token] = @user.token
     redirect_to root_url, :notice => "Signed in successfully"
   end
+  def login_with_github_failure
+
+  end
 
   def create # signup a new user account locally
     @user = User.new(params[:user])
