@@ -15,3 +15,4 @@ gem 'nokogiri', "1.4.7"
 gem 'coderay'
 gem "jquery-rails"
 gem "omniauth", '0.2.2'
+gem 'simple_form'

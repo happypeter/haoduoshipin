@@ -140,6 +140,9 @@ GEM
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
     rubyntlm (0.1.1)
+    simple_form (2.0.1)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     thor (0.14.6)
     treetop (1.4.10)
       polyglot
@@ -161,3 +164,4 @@ DEPENDENCIES
   omniauth (= 0.2.2)
   rails (= 3.0.9)
   redcarpet (= 1.17.1)
+  simple_form
