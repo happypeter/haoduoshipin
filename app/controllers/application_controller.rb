@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
    
   def set_locale
-    I18n.locale = params[:locale] || "zh" # default to chinese, need http://casts.sme.com/?locale=en to switch to English
+    I18n.locale = params[:locale] || "en"
+    #I18n.locale = params[:locale] || "zh" # default to chinese, need http://casts.sme.com/?locale=en to switch to English
   end
 
   private

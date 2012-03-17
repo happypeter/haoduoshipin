@@ -1,13 +1,13 @@
 <div class="content">
   <%= simple_form_for @episode do |f| %>
 
+      <%= f.input :published_at %>
       <%= f.input :name %>
       <%= f.input :youku %>
       <%= f.input :position %>
       <%= f.input :description %>
-      <%= f.input :notes %>
-      <%= f.input :published_at %>
       <%= f.input :seconds %>
+      <%= f.input :notes %>
       <%= f.button :submit %>
   <% end %>
 </div>
