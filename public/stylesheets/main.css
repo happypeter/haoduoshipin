@@ -243,14 +243,14 @@ label {
   font-weight: normal;
 }
 
-.full .episode {
+.episode {
   padding-bottom: 18px;
   margin-bottom: 20px;
   padding-left: 10px;
   border-left: solid 5px #E5E5E5;
 }
 
-.full .screenshot {
+.screenshot {
   float: right;
 }
 
@@ -260,40 +260,40 @@ label {
   display: block;
 }
 
-.full .main {
+.main {
   margin-left: 5px;
 }
 
-.full .info {
+.info {
   color: #999;
   font-size: 12px;
 }
 
-.full .number {
+.number {
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.full h2, .episode h2 a {
+ h2, .episode h2 a {
   color: #ff6600;
 }
 
-.full h2 {
+ h2 {
   margin: 3px 0;
 }
 
-.full .description {
+.description {
   margin-bottom: 17px;
 }
 
-.full .stats {
+.stats {
   font-size: 11px;
   color: #777;
   font-weight: normal;
   padding-left: 5px;
 }
 
-.full .stats a {
+.stats a {
   color: #777;
 }
 
@@ -314,7 +314,7 @@ label {
   text-shadow: 0 -1px 0 #036;
 }
 
-.full .notes {
+.notes {
   font-size: 11px;
   margin-top: 10px;
 }
