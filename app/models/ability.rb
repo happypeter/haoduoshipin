@@ -8,8 +8,8 @@ class Ability
     can :access, :info # everybody can visit the about page
     can [:login, :read, :create, :login_with_github], :users
     if user # when sb logged in
-      can :update, :users, :id => user.id
-      can :edit, :users, :id =>user.id
+      can [:edit, :update], :users, :id => user.id
+      can [:create, :update], :comments
       can :logout, :users
       if user.github_username == "happypeter"||user.name == "happypeter" # the latter is for test on VM
         can :access, :all
