@@ -1,7 +1,4 @@
-/*
-  color: #1B97F2;  the light blue you see on shownote links 
-*/
-
+$railscasts_shownotes_link_blue: #1B97F2;
 $main_width: 960px;
 @mixin github-hero {
   background:#839ba9;
@@ -153,7 +150,7 @@ label {
 }
 
  h2, .episode h2 a {
-  color: #ff6600;
+  color: $railscasts_shownotes_link_blue;
 }
 
  h2 {
