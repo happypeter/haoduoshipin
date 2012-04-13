@@ -1,17 +1,14 @@
 <div class="episode">
-  <div class="screenshot">
-  <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png", :size => "200x125", :alt => episode.name), episode %>
-  </div>
-  <div class="main">
-    <div class="info">
+  <div class="episode_head">
       <span class="number">Episode #<%= episode.position %></span> &ndash;
       <span class="published_at"><%= episode.published_at.strftime('%b %d, %Y') %></span>
       <span class="stats">(<%= pluralize (episode.seconds/60).round, "minute" %>, <%= link_to pluralize(episode.comments.size, "comment"), episode_path(episode, :view => "comments") %>)</span>
-    </div>
     <h2><%= link_to episode.name, episode %></h2>
-    <div class="description">
-      <%= episode.description %>
-    </div>
   </div>
-  <div class="clear"></div>
+  <div class="episode_body">
+    <div class="episode_body_right">
+      <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png", :alt => episode.name), episode %>
+    </div>
+    <%= episode.description %>
+  </div>
 </div>
