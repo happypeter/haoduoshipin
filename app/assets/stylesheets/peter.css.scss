@@ -2,7 +2,7 @@
   color: #1B97F2;  the light blue you see on shownote links 
 */
 
-/* steal from RC */
+$main_width: 960px;
 body {
   background-color: #FFF;
   font-family: Verdana, Helvetica, Arial;
@@ -10,10 +10,13 @@ body {
   margin: 0;
 }
 
-div#maintitle img{
-  width: 230px;
-  height: 100px;
+#container {
+	text-align:left;
+    margin:0 auto;
+    width:$main_width;
+    padding: 10px;
 }
+
 
 a {
   color: #1B97F2;
@@ -90,43 +93,6 @@ label {
 }
 
 
-/*** ERRORS ***/
-
-.field_with_errors {
-  display: inline;
-}
-
-.error_messages {
-  width: 400px;
-  border: 2px solid #CF0000;
-  padding: 0px;
-  padding-bottom: 12px;
-  margin: 20px 0;
-  background-color: #f0f0f0;
-  font-size: 12px;
-}
-
-.error_messages h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 10px;
-  font-size: 12px;
-  margin: 0;
-  background-color: #c00;
-  color: #fff;
-}
-
-.error_messages p {
-  margin: 8px 10px;
-}
-
-.error_messages ul {
-  margin: 0;
-  margin-left: 10px;
-}
-
-
-
 /*** SECTIONS ***/
 
 #top {
@@ -181,10 +147,6 @@ label {
 }
 
 #nav_bar .nav li a {
-}
-
-#main {
-  max-width: 1500px;
 }
 
 #footer {
@@ -497,15 +459,6 @@ label {
 
 
 /*** EPISODE ***/
-
-#episode {
-  margin: 0 auto;
-  width: 768px;
-}
-
-#episode.legacy {
-  width: 802px;
-}
 
 #episode #video_wrapper {
   border: solid 1px #777;
@@ -936,110 +889,6 @@ pre code {
 }
 
 
-/*** FEEDBACK ***/
-
-#feedback {
-  width: 680px;
-  float: left;
-}
-
-#feedback_instructions {
-  margin-left: 700px;
-  min-width: 225px;
-}
-
-#feedback_instructions li {
-  margin: 5px 0;
-}
-
-#feedback h2.bar {
-  padding: 4px 20px;
-  margin: 0;
-  font-weight: normal;
-  color: #333;
-  font-size: 14px;
-  text-align: center;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  -webkit-border-top-left-radius: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -moz-border-radius-topleft: 6px;
-  -moz-border-radius-topright: 6px;
-  border: solid 1px #BBB;
-  border-bottom-color: #AAA;
-  background-color: #DDD;
-  background: -webkit-gradient(linear, left top, left bottom, from(#F3F3F3), to(#BBB));
-  background: -moz-linear-gradient(top,  #F3F3F3, #BBB);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3F3F3', endColorstr='#BBB');
-}
-
-#feedback form {
-  background-color: #EEE;
-  padding: 10px 20px;
-  border: solid 1px #BBB;
-  border-top: none;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-bottomright: 5px;
-}
-
-#feedback .info {
-  font-size: 13px;
-  margin-bottom: 30px;
-}
-
-#feedback label {
-  float: left;
-  width: 160px;
-  text-align: right;
-  padding-right: 10px;
-  padding-top: 2px;
-}
-
-#feedback .actions {
-  padding-left: 170px;
-}
-
-#feedback input, #feedback textarea {
-  font-size: 14px;
-}
-
-
-/*** GIVE BACK ***/
-
-#give_back {
-  float: left;
-  margin-right: 8px;
-  margin-bottom: 5px;
-}
-
-#give_back_instructions {
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-#give_back_instructions ol {
-  margin: 0;
-  padding: 0;
-}
-
-#give_back_instructions li {
-  padding: 0;
-  margin: 30px 28px;
-  margin-right: 0;
-}
-
-#give_back_instructions li li {
-  padding: 0;
-  margin: 15px 28px;
-  margin-right: 0;
-}
-
-
-/* Peter add */
 
 /*** LOGIN ***/
 
