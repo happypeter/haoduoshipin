@@ -7,12 +7,11 @@
       <div class="categories_title">
         Categroies
       </div>
+      <% for tag in Tag.order("name") %>
       <div class="category">
-        vim
+        <%= link_to_unless(params[:tag_id].to_i == tag.id, tag.display_name, params.merge(:tag_id => tag.id, :page => nil)) %>
       </div>
-      <div class="category">
-        git
-      </div>
+      <% end %>
     </div>
   </div>
   <div class="span9">
