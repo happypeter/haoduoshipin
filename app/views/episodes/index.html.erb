@@ -1,13 +1,23 @@
-<div class="content">
   <% if can? :create, :episodes %>
     <div class="actions"><%= link_to t('new_ep'), new_episode_path %></div>
   <% end %>
-  <div class="episodes">
-    <div class="full">
+<div class="row-fluid">
+  <div class="span3">
+    <div class="categories">
+      <div class="categories_title">
+        Categroies
+      </div>
+      <div class="category">
+        vim
+      </div>
+      <div class="category">
+        git
+      </div>
+    </div>
+  </div>
+  <div class="span9">
       <% for episode in @episodes %>
         <%= render episode %>
         <br \>
       <% end %>
-    </div>
-  </div> <%# class="episodes" %>
-</div> <%# class="content" %>
+  </div>

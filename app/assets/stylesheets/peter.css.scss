@@ -3,6 +3,12 @@
 */
 
 $main_width: 960px;
+@mixin github-hero {
+  background:#839ba9;
+  background:-moz-linear-gradient(#839ba9,#405a6a);
+  background:-webkit-linear-gradient(#839ba9,#405a6a);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#839ba9',endColorstr='#405a6a')";
+}
 body {
   background-color: #FFF;
   font-family: Verdana, Helvetica, Arial;
@@ -17,6 +23,22 @@ body {
     padding: 10px;
 }
 
+.categories {
+  border: solid 10px green;
+}
+
+.categories_title {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  font-size: 120%;
+  @include github-hero;
+}
+.category {
+  border: solid 1px red;
+  font-weight: bold;
+  padding: 5px;
+}
 
 a {
   color: #1B97F2;
