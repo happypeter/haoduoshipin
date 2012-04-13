@@ -21,7 +21,7 @@ body {
 }
 
 .categories {
-  border: solid 10px green;
+  border: solid 1px green;
 }
 
 .categories_title {
@@ -32,9 +32,9 @@ body {
   @include github-hero;
 }
 .category {
-  border: solid 1px red;
+  border-bottom: solid 1px red;
   font-weight: bold;
-  padding: 5px;
+  padding: 10px;
 }
 
 a {
