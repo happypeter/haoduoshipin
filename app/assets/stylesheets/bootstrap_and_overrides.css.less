@@ -28,10 +28,8 @@ body { padding-top: 60px; }
 // Example:
 // @linkColor: #ff0000;
 
-
-@navbarBackground: rgba(255,102,00,0.6);
-@navbarBackgroundHighlight: rgba(255,102,00,0.6);
-
+@navbarBackground: @grayLighter;
+@navbarBackgroundHighlight: @grayLighter;
 
 .navbar .brand {
   color: black;
@@ -41,7 +39,7 @@ body { padding-top: 60px; }
 .navbar .brand:hover {
   color: @blue;
 }
-@navbarLinkColor: @white  ; 
+@navbarLinkColor:   black; 
 @navbarLinkColorHover:  @blue; 
 
 
@@ -74,4 +72,5 @@ body { padding-top: 60px; }
     width: 960px;
   }
 }
+
 
