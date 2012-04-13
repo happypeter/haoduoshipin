@@ -1,7 +1,12 @@
 class EpisodesController < ApplicationController
   load_and_authorize_resource 
   def index
-    @episodes = Episode.accessible_by(current_ability).recent
+    @tag = Tag.find(params[:tag_id]) if params[:tag_id]
+    if params[:search].blank?
+      @episodes = (@tag ? @tag.episodes : Episode).accessible_by(current_ability).recent
+    else
+      @episodes = Episode.search_published(params[:search], params[:tag_id])
+    end
     respond_to do |format|
       format.html 
       format.rss
