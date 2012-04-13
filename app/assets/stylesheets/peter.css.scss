@@ -1,10 +1,16 @@
 $railscasts_shownotes_link_blue: #1B97F2;
 $main_width: 960px;
+$peter-gray: #ececec;
 @mixin github-hero {
   background:#839ba9;
   background:-moz-linear-gradient(#839ba9,#405a6a);
   background:-webkit-linear-gradient(#839ba9,#405a6a);
   -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#839ba9',endColorstr='#405a6a')";
+}
+@mixin peter-shadow {
+  -webkit-box-shadow: 0 0 6px $peter-gray;
+  -moz-box-shadow: 0 0 6px $peter-gray;
+  box-shadow: 0 0 6px $peter-gray;
 }
 body {
   background-color: #FFF;
@@ -21,7 +27,8 @@ body {
 }
 
 .categories {
-  border: solid 1px green;
+  border: solid 0.5px darken($peter-gray, 10%);
+  @include peter-shadow;
 }
 
 .categories_title {
@@ -32,7 +39,7 @@ body {
   @include github-hero;
 }
 .category {
-  border-bottom: solid 1px red;
+  border-bottom: solid 0.5px darken($peter-gray, 10%);
   font-weight: bold;
   padding: 10px;
 }
