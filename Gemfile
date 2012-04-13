@@ -19,7 +19,7 @@ gem 'execjs'
 gem 'therubyracer'
 
 
-gem 'mysql2', '~> 0.2.6'
+gem 'mysql2', '0.3.6'
 gem 'bcrypt-ruby', :require => 'bcrypt'  
 gem 'ancestry'
 gem 'redcarpet',"1.17.1"
