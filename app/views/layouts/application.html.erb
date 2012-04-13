@@ -9,36 +9,35 @@
   
 </head>
 <body>	
-<% if params[:locale] == 'en' %>
-<%# link_to "中文", "?locale=zh" %> <%# FIXME: just want to link to curent page with no param%>
-<% else %>
-<%# link_to "English", "?locale=en" %>
-<% end %>
-    <div id="maintitle">
-      <%= image_tag("hc_logo.png", :alt => "HappyCasts") %>
-    </div>
-    <div id="nav_bar">
-      <ul class="nav horizontal">
-        <li><%= link_to_unless_current "Browse Episodes", root_url %></li>
-        <li><%= link_to_unless_current "About HappyCasts", "/about" %></li>
-         <li>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <h3><a class="brand" href="/">Happycasts</a></h3>
+            <ul class="nav">
+
+            </ul>
+            <ul class="nav pull-right">
                   <% if current_user %>  
-                  <% @user= User.find(current_user.id) %>
-                  <%= link_to_unless_current current_user.name, user_path(@user) %> |
-                  <%= link_to "Log out", log_out_path %>  
+                    <% @user= User.find(current_user.id) %>
+                    <li><%= link_to_unless_current current_user.name, user_path(@user) %></li>
+                    <li><%= link_to "Log out", log_out_path %></li>
                   <% else %>  
-                   <%= link_to_unless_current "login", "/log_in" %>  
+                    <li><%= link_to "Log in", log_in_path %></li>
                   <% end %>  
-         </li>
-      </ul>
+            </ul>
+        </div>
     </div>
-    <div id="main">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end -%>
+</div>
+<div id="container">
+  <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+     <a class="close" data-dismiss="alert">×</a>
+      <%= msg %>
+    </div>
+  <% end %>
 
       <%= yield %>
-    </div>
+</div>
     <div id="footer">
       <div class="inner">
         <a href="http://happypeter.org">HappyNews</a>

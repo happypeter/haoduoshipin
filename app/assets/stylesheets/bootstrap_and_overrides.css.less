@@ -1,0 +1,77 @@
+@import "twitter/bootstrap/bootstrap";
+body { padding-top: 60px; }
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-path('fontawesome-webfont.eot');
+@fontAwesomeWoffPath: asset-path('fontawesome-webfont.woff');
+@fontAwesomeTtfPath: asset-path('fontawesome-webfont.ttf');
+@fontAwesomeSvgzPath: asset-path('fontawesome-webfont.svgz');
+@fontAwesomeSvgPath: asset-path('fontawesome-webfont.svg');
+
+// Font Awesome
+@import "fontawesome";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+
+@navbarBackground: rgba(255,102,00,0.6);
+@navbarBackgroundHighlight: rgba(255,102,00,0.6);
+
+
+.navbar .brand {
+  color: black;
+  font-weight: bold;
+  font-size: 130%;
+}
+.navbar .brand:hover {
+  color: @blue;
+}
+@navbarLinkColor: @white  ; 
+@navbarLinkColorHover:  @blue; 
+
+
+// peter copied below form gemdir/twitter-bootstrap-xxx/navbar.less
+// Links
+.navbar .nav > li > a {
+  float: none;
+  line-height: 19px;
+  color: @navbarLinkColor;
+  margin-top: 3px;
+  text-decoration: none;
+  text-shadow: none;
+  font-weight: bold;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+// Hover
+.navbar .nav > li > a:hover {
+  background-color: @navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
+  color: @navbarLinkColorHover;
+  text-decoration: none;
+}
+// Secondary (floated right) nav in topbar
+.navbar .nav.pull-right {
+  margin-left: 0px;
+}
+
+.navbar-inner {    
+  .container {
+    width: 960px;
+  }
+}
+
