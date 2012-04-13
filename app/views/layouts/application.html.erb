@@ -3,8 +3,8 @@
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "HappyCasts" %></title>
   <link href="/images/play.png" rel="icon" type="image/x-png" />
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag "jquery","application"%>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application"%>
   <%= csrf_meta_tag %>
   
 </head>
@@ -15,7 +15,7 @@
 <%# link_to "English", "?locale=en" %>
 <% end %>
     <div id="maintitle">
-      <img src="/images/hc_logo.png" />
+      <%= image_tag("hc_logo.png", :alt => "HappyCasts") %>
     </div>
     <div id="nav_bar">
       <ul class="nav horizontal">

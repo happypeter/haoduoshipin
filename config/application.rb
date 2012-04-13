@@ -4,9 +4,12 @@ require 'rails/all'
 require 'yaml'
 APP_CONFIG = YAML.load(File.read(File.expand_path('../app_config.yml', __FILE__)))
 
-# If you have a Gemfile, require the gems listed there, including any gems
-# you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  Bundler.require *Rails.groups(:assets => %w(development test))
+  # If you want your assets lazily compiled in production, use this line
+  # Bundler.require(:default, :assets, Rails.env)
+end
 
 module Happycasts
   class Application < Rails::Application
@@ -18,6 +21,12 @@ module Happycasts
     # Peter: from rails 3.0.x, none dir is autoloaded, so even your class is
     # in lib/, you still need to manually add it to autoload_paths
     config.autoload_paths += %W(#{Rails.root}/lib)
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
+
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
