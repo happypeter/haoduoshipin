@@ -99,15 +99,14 @@ ul.horizontal li {
   @include peter-shadow;
   border: solid 1px darken($peter-gray, 20%);
   margin-bottom: 20px;
-  height: 160px;
 
   .episode_head {
-    background-color: $peter-gray;
     padding: 10px;
   }
   .episode_body {
     padding: 10px;
-    background-color: white;
+    background-color: $peter-gray;
+    height: 160px;
     .episode_body_right {
       margin-left: 5px;
       display: block;
