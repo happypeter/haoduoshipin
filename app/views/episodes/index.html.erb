@@ -2,10 +2,19 @@
     <div class="actions"><%= link_to t('new_ep'), new_episode_path %></div>
   <% end %>
 <div class="row-fluid">
-  <div class="span3">
+  <div class="span10">
+      <% for episode in @episodes %>
+        <%= render episode %>
+        <br \>
+      <% end %>
+  </div>
+  <div class="span2">
     <div class="categories">
       <div class="categories_title">
         Categroies
+      </div>
+      <div class="category">
+        <%= link_to_unless(params[:tag_id].to_i == 0, "ALL", params.merge(:tag_id => 0, :page => nil)) %>
       </div>
       <% for tag in Tag.order("name") %>
       <div class="category">
@@ -14,9 +23,4 @@
       <% end %>
     </div>
   </div>
-  <div class="span9">
-      <% for episode in @episodes %>
-        <%= render episode %>
-        <br \>
-      <% end %>
-  </div>
+</div>
