@@ -96,22 +96,22 @@ ul.horizontal li {
 
 /*** EPISODES ***/
 .episode {
-  @include peter-shadow;
-  border: solid 1px darken($peter-gray, 20%);
-  margin-bottom: 20px;
-
-  .episode_head {
-    padding: 10px;
+  margin-bottom: 30px;
+  .episode_snapshot {
+    float: left;
+    border: solid 1px #BBB;
   }
-  .episode_body {
-    padding: 10px;
-    background-color: $peter-gray;
-    height: 160px;
-    .episode_body_right {
-      margin-left: 5px;
-      display: block;
-      float:right;
+  .episode_intro {
+    padding-left: 210px;
+    .episode_intro_title {
+      color: darken($peter-gray, 50%);
+      font-size: 80%;
+      margin-bottom: -5px;
     }
+  }
+  .episode_watch_btn {
+    padding-left: 210px;
+    margin: 5px;
   }
 }
 /*** PAGINATION ***/
