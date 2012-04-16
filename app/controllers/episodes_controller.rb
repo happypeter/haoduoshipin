@@ -1,11 +1,7 @@
 class EpisodesController < ApplicationController
   load_and_authorize_resource 
   def index
-    if params[:tag_id]  
-      if params[:tag_id].to_i != 0
-        @tag = Tag.find(params[:tag_id]) 
-      end
-    end
+    @tag = Tag.find(params[:tag_id]) if params[:tag_id]  
     if params[:search].blank?
       @episodes = (@tag ? @tag.episodes : Episode).accessible_by(current_ability).recent
     else

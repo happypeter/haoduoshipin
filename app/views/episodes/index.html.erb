@@ -14,7 +14,7 @@
         Categroies
       </div>
       <div class="category">
-        <%= link_to_unless(params[:tag_id].to_i == 0, "ALL", params.merge(:tag_id => 0, :page => nil)) %>
+        <%= link_to_unless(params[:tag_id] == nil, "ALL") %>
       </div>
       <% for tag in Tag.order("name") %>
       <div class="category">
