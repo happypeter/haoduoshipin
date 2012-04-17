@@ -1,7 +1,23 @@
 <% title @episode.name, false %>
 <div id="episode">
   <%= render @episode %>
-  <br />
+    <div class="row-fluid">
+      <div class="span9">
+ -
+      </div>
+      <div class="span3">
+        <!-- JiaThis Button BEGIN -->
+        <div id="jiathis_style_32x32">
+            <a class="jiathis_button_tsina"></a>
+            <a class="jiathis_button_tqq"></a>
+            <a class="jiathis_button_renren"></a>
+            <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+            <a class="jiathis_counter_style"></a>
+        </div>
+        <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+    </div>
+    </div>
   <ul class="nav horizontal">
     <li class="selected"><%= tab_link "Show Notes", :view => nil %></li>
     <li><%= tab_link pluralize(@episode.comments.size, "Comment"), :view => "comments" %></li>
