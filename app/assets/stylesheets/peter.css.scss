@@ -254,6 +254,10 @@ div.nice_comment {
 i.icon-comment {
   color: darken($peter-gray, 30%);
 }
+i.icon-file {
+  color: darken($peter-gray, 30%);
+  font-size: 20px;
+}
 div.comment {
   @include peter-shadow;
   margin-bottom: 15px;
@@ -367,72 +371,22 @@ div.comment {
   margin-right: 300px;
 }
 
-/**** episode#show *****/
+/* shownotes */
+.show_notes {
+  padding: 20px;
+  border: 1px solid ;
+  margin-bottom: 20px;
+  @include peter-shadow;
 
-#episode .nav {
-  padding: 0 8px;
-  margin: 0;
-  height: 35px;
-  font-weight: normal;
-  font-size: 14px;
-  text-align: center;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  -webkit-border-top-left-radius: 6px;
-  -webkit-border-top-right-radius: 6px;
-  -moz-border-radius-topleft: 6px;
-  -moz-border-radius-topright: 6px;
-  border: solid 1px #BBB;
-  border-bottom-color: #AAA;
-  background-color: #DDD;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
-  background: -moz-linear-gradient(top,  #EEE, #CCC);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
 }
 
-#episode .nav li {
-  margin: 0 6px;
-  margin-top: 9px;
-}
-
-#episode .nav li a {
-  color: #393939;
-  padding: 5px 8px;
-  padding-bottom: 10px;
-}
-
-#episode .nav li a.selected {
-  border: solid 1px #CCC;
-  border-bottom: none;
-  background-color: #F5F5F5;
-  color: #555;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  cursor: default;
-}
-
-#episode .nav li a.selected:hover {
-  text-decoration: none;
-}
-
-#episode .nav .previous, #episode .nav .next {
-  float: right;
-}
-
-#episode .show_notes ul {
-  margin-top: -10px; /* quick hack to move resources list under headline */
-  padding-top: 0;
+.code_block {
+  .code_header {
+    span.filename {
+      background: $peter-gray;
+      padding: 5px;
+      border: 1px solid darken($peter-gray, 20%);
+    }
+  }
   margin-bottom: 20px;
 }
-#episode .nav_section {
-  background-color: #F5F5F5;
-  border: solid 1px #BBB;
-  border-top: none;
-  padding: 10px 20px;
-  position: relative;
-}
-

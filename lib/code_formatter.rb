@@ -28,7 +28,10 @@ class CodeFormatter
         <<-EOS
           <div class="code_block">
             <div class="code_header">
-              #{CGI.escapeHTML(code[:name].to_s)}
+              <span class="filename">
+                <i class="icon-file"></i>
+                #{CGI.escapeHTML(code[:name].to_s)}
+              </span>
             </div>
             #{Pygments.highlight(code[:content], lexer: language(code[:name]))}
           </div>
