@@ -1,6 +1,12 @@
 $railscasts_shownotes_link_blue: #1B97F2;
 $main_width: 960px;
 $peter-gray: #ececec;
+@mixin github-fileheader {
+  background:#ececec;
+  background:-moz-linear-gradient(#ececec, darken($peter-gray, 20%));
+  background:-webkit-linear-gradient(#ececec, darken($peter-gray, 20%));
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececec',endColorstr='darken($peter-gray, 20%)')";
+}
 @mixin github-hero {
   background:#839ba9;
   background:-moz-linear-gradient(#839ba9,#405a6a);
@@ -382,11 +388,9 @@ div.comment {
 
 .code_block {
   .code_header {
-    span.filename {
-      background: $peter-gray;
-      padding: 5px;
-      border: 1px solid darken($peter-gray, 20%);
-    }
+    @include github-fileheader;
+    padding: 5px;
+    border: 1px solid darken($peter-gray, 20%);
   }
   margin-bottom: 20px;
 }
