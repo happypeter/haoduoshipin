@@ -5,8 +5,9 @@ module ApplicationHelper
 
   class HTMLwithPygments < Redcarpet::Render::HTML
     def block_code(code, language)
-      if language == "terminal"
-        language = nil #FIXME: what is language can not be  recognized by pygments
+      languages = ["bash","ruby","python","c"]
+      if !languages.include?language
+        language = nil 
       end
       sha = Digest::SHA1.hexdigest(code)
       Rails.cache.fetch ["code", language, sha].join('-') do
