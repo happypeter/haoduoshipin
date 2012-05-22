@@ -49,10 +49,10 @@ body {
 }
 
 #container {
-	text-align:left;
-    margin:0 auto;
-    width:$main_width;
-    padding: 10px;
+  text-align:left;
+  margin:0 auto;
+  width:$main_width;
+  padding: 10px;
 }
 
 .categories {
@@ -385,10 +385,13 @@ div.comment {
 /* shownotes */
 .show_notes {
   padding: 20px;
-  border: 1px solid ;
+  border: 1px solid $peter-gray;
   margin-bottom: 20px;
   @include peter-shadow;
 
+}
+.comment_view {
+  display: none;
 }
 
 .code_block {
@@ -398,4 +401,8 @@ div.comment {
     border: 1px solid darken($peter-gray, 20%);
   }
   margin-bottom: 20px;
+}
+
+#markdown_cheatsheet {
+  display: none;
 }

@@ -3,30 +3,59 @@
   <%= render @episode %>
 </div>
 
-<%= render "show_notes" %>
-<%= render :partial => "comments/editable_comment", :collection => @episode.comments %>
+<ul class="nav nav-tabs">
+  <li id="show_note_btn" class="active">
+    <%= link_to "show notes", "#" %>
+  </li>
+  <li id="show_comment_btn">
+    <%= link_to "Comments", "#" %>
+  </li>
+</ul>
 
-<% if current_user %>
-  <div class="nice_comment">
-    <%= form_for(Comment.new(:episode_id => @episode.id, :user_id => current_user.id)) do |f| %>
-      <%= f.hidden_field :episode_id %>
-      <%= f.hidden_field :user_id  %>
-      <%= f.label "Comment on this meetup" %>
-      <a  class="formatting_tips" data-toggle="modal" href="#markdown_cheatsheet" >Formatting Tips</a>
-      <div class="error">
-        You must write something to leave a comment
-      </div>
-      <%= f.text_area :content %>
-      <%= f.submit "Comment", :class=>"btn btn-success", :id => "comment_btn" %>
-    <% end %>
+<%= render "show_notes" %>
+
+<div class="comment_view">
+  <div class="comments">
+    <%= render :partial => "comments/editable_comment", :collection => @episode.comments %>
   </div>
-<% else %>
-  <%= link_to "Log in", log_in_path(:return_to => request.url) %> to Comment.
-  <br \>
-<% end %>
+
+  <% if current_user %>
+    <div class="nice_comment">
+      <%= form_for(Comment.new(:episode_id => @episode.id, :user_id => current_user.id), :remote => true) do |f| %>
+        <%= f.hidden_field :episode_id %>
+        <%= f.hidden_field :user_id  %>
+        <%= f.label "Comment on this meetup" %>
+        <a  class="formatting_tips" data-toggle="modal" href="#markdown_cheatsheet" >Formatting Tips</a>
+        <div class="error">
+          You must write something to leave a comment
+        </div>
+        <%= f.text_area :content %>
+        <%= f.submit "Comment", :class=>"btn btn-success", :id => "comment_btn" %>
+      <% end %>
+    </div>
+  <% else %>
+    <%= link_to "Log in", log_in_path(:return_to => request.url) %> to Comment.
+    <br \>
+  <% end %>
+</div>
 
 <%= render "comments/markdown_cheatsheet" %>
 <script>
+  $("#show_note_btn").click(function() {
+    $("#show_comment_btn").removeClass("active");
+    $("#show_note_btn").addClass("active");
+    $('.comment_view').hide();
+    $('.show_notes').show();
+    return false
+  });
+  $("#show_comment_btn").click(function() {
+    $("#show_note_btn").removeClass("active");
+    $("#show_comment_btn").addClass("active");
+    $('.show_notes').hide();
+    $('.comment_view').show();
+    return false
+  });
+
   $("#comment_btn").click(function() {
     if ($.trim($('#new_comment textarea').val()) == "") 
     {
@@ -35,7 +64,6 @@
     }
   });
   
-$('#markdown_cheatsheet').hide()
 $('#markdown_cheatsheet').modal({
   show: false
 })
