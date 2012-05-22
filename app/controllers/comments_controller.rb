@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
         if @comment.errors.present?
           render :edit
         else
-          redirect_to(episode_path(@comment.episode, :view => "comments"))
+          redirect_to_target_or_default root_url
         end
       end
       format.js
@@ -44,10 +44,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    #FIXME: this action does not work yet
-    flash[:notice] = "Deleted comment. #{undo_link}"
     respond_to do |format|
-      format.html { redirect_to episode_path(@comment.episode, :view => "comments") }
+      format.html { redirect_to_target_or_default(root_url) }
       format.js
     end
   end

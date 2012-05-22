@@ -22,11 +22,10 @@ gem 'therubyracer'
 gem 'mysql2', '0.3.6'
 gem 'bcrypt-ruby', :require => 'bcrypt'  
 gem 'ancestry'
-gem 'redcarpet',"1.17.1"
-gem 'albino'
+gem 'redcarpet'
 gem "cancan", :git => "git://github.com/ryanb/cancan.git", :branch => "2.0"
 gem 'nokogiri', "1.4.7"
-gem 'coderay'
+gem 'pygments.rb'
 gem "jquery-rails"
 gem "omniauth"
 gem 'omniauth-github'

@@ -1,27 +1,30 @@
-require "builder"
 module ApplicationHelper
   def textilize(text)
     CodeFormatter.new(text).to_html.html_safe unless text.blank?
   end
-  def markdown(text)
-    options = [:hard_wrap, :autolink, :no_intraemphasis, :fenced_code, :gh_blockcode]
-    syntax_highlighter(Redcarpet.new(text, *options).to_html).html_safe
-  end
 
-  def tab_link(name, url)
-    selected = url.all? { |key, value| params[key] == value }
-    link_to(name, url, :class => (selected ? "selected tab" : "tab"))
-  end
-
-  def syntax_highlighter(html)
-    #DO install pygment first, bundler won't take care of this for you
-    doc = Nokogiri::HTML(html)
-    doc.search("//pre[@lang]").each do |pre|
-      pre.replace Albino.colorize(pre.text.rstrip, pre[:lang])
+  class HTMLwithPygments < Redcarpet::Render::HTML
+    def block_code(code, language)
+      if language == "terminal"
+        language = nil #FIXME: what is language can not be  recognized by pygments
+      end
+      sha = Digest::SHA1.hexdigest(code)
+      Rails.cache.fetch ["code", language, sha].join('-') do
+        Pygments.highlight(code, lexer: language)
+      end
     end
-    doc.to_s
+  end
+
+  def markdown(text)
+    renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true)
+    options = {
+      autolink: true,
+      no_intra_emphasis: true,
+      fenced_code_blocks: true,
+      lax_html_blocks: true,
+      strikethrough: true,
+      superscript: true
+    }
+    Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
 end
-
-
-

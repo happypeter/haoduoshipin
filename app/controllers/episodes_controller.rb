@@ -14,6 +14,7 @@ class EpisodesController < ApplicationController
   end
 
   def show
+    session[:return_to] = request.url
     @episode = Episode.find(params[:id])
     @comment = Comment.new(:episode => @episode, :user => current_user)
   end

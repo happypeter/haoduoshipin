@@ -4,7 +4,7 @@
     <div class="episode_intro_title">
       Episode #<%= episode.position %>
       <%= episode.published_at.strftime('%b %d, %Y') %>
-      - <%= link_to pluralize(episode.comments.size, "comment"), episode_path(episode, :view => "comments") %>
+      - <%= pluralize(episode.comments.size, "comment") %>
     </div>
     <h2><%= link_to episode.name, episode %></h2>
     <%= episode.description %>
