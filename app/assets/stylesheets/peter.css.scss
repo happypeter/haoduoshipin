@@ -280,12 +280,7 @@ div.comment {
   }
   .comment_body {
     position: relative;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 14px;
-    margin-top: -5px;
-    margin-bottom: -5px;
-    color: #555;
+    padding: 10px;
     ul.actions {
       position: absolute;
       top: 4px;
@@ -333,61 +328,6 @@ div.comment {
     right: 10px;
   } 
 }
-
-/*** CODE BLOCKS ***/
-
-.code_block {
-  margin: 12px 0;
-}
-
-.code_header {
-  position: relative;
-  background-color: #E0E0E0;
-  font-size: 12px;
-  padding: 4px 7px;
-  border: solid 1px #B6B6B6;
-  border-bottom: none;
-}
-
-.code_header .clippy {
-  position: absolute;
-  top: 4px;
-  right: 7px;
-}
-
-.clippy_label {
-  position: absolute;
-  right: 20px;
-  top: 1px;
-  text-align: right;
-  width: 200px;
-  font-size: 10px;
-  color: #555;
-}
-
-.CodeRay {
-  overflow: auto;
-  border: 1px solid #777;
-  border-top: none;
-  padding: 5px 7px;
-  font-size: 13px;
-  margin: 0;
-  line-height: 17px;
-}
-
-code {
-  border: solid 1px #CCC;
-  background-color: #EEE;
-  font-family: 'Menlo', 'Courier New', 'Terminal', monospace;
-  padding: 0 3px;
-}
-
-pre code {
-  display: block;
-  background-color: #EEE;
-  padding: 5px 7px;
-}
-
 
 
 /*** ABOUT ***/
