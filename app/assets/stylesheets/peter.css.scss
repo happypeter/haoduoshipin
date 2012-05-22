@@ -300,6 +300,11 @@ div.comment {
         display:inline-block; 
         vertical-align:top; 
       } 
+      &:hover{
+        a {
+          text-decoration: none;
+        }
+     }
     }
   }
 }
