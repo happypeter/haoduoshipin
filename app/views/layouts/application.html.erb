@@ -9,7 +9,8 @@
   
 </head>
 <body>	
-<div class="navbar navbar-fixed-top">
+<div id="wrapper">
+<div class="navbar">
     <div class="navbar-inner">
         <div class="container">
             <h3><a class="brand" href="/">Happycasts</a></h3>
@@ -32,11 +33,21 @@
       <%= yield %>
  <div id="footer-push"></div><!-- hack for sticky footer -->
 </div>
-    <div id="footer">
-      <div class="inner">
-        footer
-      </div>
-    </div>
-
+</div>
+<div class="footer">
+  <div class="container">
+    <div id="blacktocat"></div>
+    <ul class="footer_nav">
+      <h4>Happycasts</h4>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <ul class="footer_nav">
+           <h4>Interesting Sites</h4>
+      <li><a href="http://www.catonmat.net/">Catonmat</a></li>
+      <li><a href="http://www.linfo.org/">Linfo</a></li>
+      <li><a href="http://www.github.com/">Github</a></li>
+    </ul>
+  </div>
+</div>
 </body>
 </html>
