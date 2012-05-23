@@ -29,17 +29,12 @@
     </div>
 </div>
 <div id="container">
-  <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
-     <a class="close" data-dismiss="alert">×</a>
-      <%= msg %>
-    </div>
-  <% end %>
-
       <%= yield %>
+ <div id="footer-push"></div><!-- hack for sticky footer -->
 </div>
     <div id="footer">
       <div class="inner">
+        footer
       </div>
     </div>
 

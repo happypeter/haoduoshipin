@@ -48,13 +48,6 @@ body {
   margin: 0;
 }
 
-#container {
-  text-align:left;
-  margin:0 auto;
-  width:$main_width;
-  padding: 10px;
-}
-
 .categories {
   border: solid 0.5px darken($peter-gray, 10%);
   @include peter-shadow;
@@ -406,3 +399,32 @@ div.comment {
 #markdown_cheatsheet {
   display: none;
 }
+
+/* footer */
+
+html,body{
+  margin:0;
+  border:0;
+  height:100%;
+}
+
+#footer-push {
+  height:330px;
+  clear:both;
+}
+#footer {
+  color:#636363;
+  padding:45px 0 0 0;
+  font-size:12px;
+  clear:both;
+}
+#container {
+  width:$main_width;
+  min-height:100%;
+  height:auto!important;
+  height:100%;
+  margin:0 auto;
+  margin-bottom:-330px;
+  text-align:left;
+}
+
