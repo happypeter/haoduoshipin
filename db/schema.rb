@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120413123247) do
+ActiveRecord::Schema.define(:version => 20120523082213) do
 
   create_table "comments", :force => true do |t|
     t.integer  "episode_id"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20120413123247) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "position"
     t.text     "notes"
     t.datetime "published_at"
     t.integer  "seconds"

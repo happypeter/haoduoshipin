@@ -8,7 +8,7 @@
     <%= link_to "show notes", "#" %>
   </li>
   <li id="show_comment_btn">
-    <%= link_to "Comments", "#" %>
+    <%= link_to "#{pluralize(@episode.comments.size, "comment")}" %>
   </li>
 </ul>
 

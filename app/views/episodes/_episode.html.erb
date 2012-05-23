@@ -2,7 +2,7 @@
     <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png", :class => "episode_snapshot",  :alt => episode.name), episode %>
   <div class="episode_intro">
     <div class="episode_intro_title">
-      Episode #<%= episode.position %>
+      Episode #<%= episode.id %>
       <%= episode.published_at.strftime('%b %d, %Y') %>
       - <%= pluralize(episode.comments.size, "comment") %>
     </div>

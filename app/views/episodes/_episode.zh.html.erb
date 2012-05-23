@@ -4,7 +4,7 @@
   </div>
   <div class="main">
     <div class="info">
-      <span class="number">第<%= episode.position %>集</span> &ndash;
+      <span class="number">第<%= episode.id %>集</span> &ndash;
       <span class="published_at"><%= episode.published_at.strftime('%b %d, %Y') %></span>
       <span class="stats">(<%= pluralize (episode.seconds/60).round, "minute" %>, <%= link_to pluralize(episode.comments.size, "comment"), episode_path(episode, :view => "comments") %>)</span>
     </div>

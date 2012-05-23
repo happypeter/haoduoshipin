@@ -46,7 +46,8 @@ class CodeFormatter
     when /\.scss$/ then "css"
     when /\.erb$/, /\.html$/ then "rhtml"
     when /\.rb$/, /\.rake$/, /\.gemspec/, /file$/, /console$/ then "ruby"
-    when /\./ then path[/\.([^.]+?)$/, 1]
+    when /\.conf/ then "apache"
+    when /\.vimrc/ then "vim"
     else nil
     end
   end

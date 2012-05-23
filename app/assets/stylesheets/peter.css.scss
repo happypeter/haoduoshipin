@@ -377,11 +377,16 @@ div.comment {
 
 /* shownotes */
 .show_notes {
+  position: relative;
   padding: 20px;
   border: 1px solid $peter-gray;
   margin-bottom: 20px;
   @include peter-shadow;
-
+  .edit_shownotes_btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
 }
 .comment_view {
   display: none;
@@ -458,3 +463,31 @@ html,body{
   margin-bottom:-160px;
 }
 
+/* markdown example */
+table {
+  margin-left:20px;
+  tr {
+      border-bottom: 1px solid darken($peter-gray, 10%);
+    td {
+      padding-top: 10px;
+      padding-left: 20px;
+    }
+    th {
+      padding-left: 20px;
+    }
+  }
+}
+
+/* for new episode form */
+textarea#episode_description {
+    width: 960px;
+    height: 48px;
+    margin-bottom: 9px;
+    @include textarea-style;
+} 
+textarea#episode_notes {
+    width: 960px;
+    height: 520px;
+    margin-bottom: 9px;
+    @include textarea-style;
+} 
