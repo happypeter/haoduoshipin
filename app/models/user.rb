@@ -2,13 +2,15 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   attr_accessible :name, :password, :email, :site_url
-
+  before_validation :strip_blanks
   validates_confirmation_of :password
 
   before_create { generate_token(:token) }# will this be called before "user.save!"???
   has_many :comments
-
   validates_uniqueness_of :name  
+  validates_presence_of :password, :on => :create
+  validates_uniqueness_of :name, :email, :case_sensitive => false
+
   def self.create_from_omniauth(omniauth)
     User.new.tap do |user|
       user.github_uid = omniauth["uid"]
@@ -47,4 +49,9 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
+  def strip_blanks
+    self.name = self.name.strip
+    self.email = self.email.strip
+  end
+
 end

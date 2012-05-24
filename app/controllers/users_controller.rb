@@ -34,9 +34,12 @@ class UsersController < ApplicationController
   def create # signup a new user account locally
     @user = User.new(params[:user])
     @user.encrypt_password
-    @user.save
-    cookies.permanent[:token] = @user.token
-    redirect_to root_url, :notice => "Signed in successfully"
+    if @user.save
+      cookies.permanent[:token] = @user.token
+      redirect_to user_path(@user), :notice => "signed up!"
+    else
+      render "new"
+    end
   end
 
   def login  #login with a local account

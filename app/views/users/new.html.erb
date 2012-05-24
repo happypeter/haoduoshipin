@@ -1,52 +1,36 @@
-<div class="content" id="login">
-<h1>Login</h1>  
-  <%= form_tag "/user_login" do %>  
-    <p>  
-      <%= label_tag :name %><br />  
-      <%= text_field_tag :name, params[:name] %>  
-    </p>  
-    <p>  
-      <%= label_tag :password %><br />  
-      <%= password_field_tag :password %>  
-    </p>  
+<div class="row-fluid">
+  <div class="span6">
+    <h1 class="login">Login</h2>  
+    <%= form_tag "/user_login" do %>  
+      <p>  
+        <%= label_tag :name %>
+        <%= text_field_tag :name, params[:name] %>  
+      </p>  
+      <p>  
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>  
+      </p>  
 
-    <p class="button"><%= submit_tag("login") %></p>  
-  <% end %>  
-
-  Log in with 
-  <%= link_to image_tag("icons/github.png", :size => "60x20", :alt => "github"), "/auth/github" %>
-  <%# if you want /auth/xxx to work, xxx has to be one of the ominiauth "strategies", qq is not one of it, so I can not use ominauth for qq. someone is doing Strategy gem for weibo,https://github.com/intridea/omniauth/wiki/List-of-Strategies%>
-</div>
-
-<div class="content" id="signup">
-  <h1>Create Account</h1>  
-  <%= form_for @user do |f| %>  
-    <% if @user.errors.any? %>  
-      <div class="error_messages">  
-        <h2>Form is invalid</h2>  
-        <ul>  
-          <% for message in @user.errors.full_messages %>  
-            <li><%= message %></li>  
-          <% end %>  
-        </ul>  
-      </div>  
+      <p class="button"><%= submit_tag("login", :class=> "btn btn-info") %></p>  
     <% end %>  
-    <p>  
-      <%= f.label :name %><br />  
-      <%= f.text_field :name %>  
-    </p>  
-    <p>  
-      <%= f.label :password %><br />  
-      <%= f.password_field :password %>  
-    </p>  
-    <p>  
-      <%= f.label :password_confirmation %><br />  
-      <%= f.password_field :password_confirmation %>  
-    </p>  
-    <p>  
-      <%= f.label :email %><br />  
-      <%= f.text_field :email %>  
-    </p>  
-    <p class="button"><%= f.submit("create account") %></p>  
-  <% end %>  
+    You can also log in with your
+    <%= link_to image_tag("icons/github.png", :size => "60x20", :alt => "github"), "/auth/github" %> account
+  </div>
+  <div class="span6">
+    <div id="signup_form">
+      <h1 class="signup">Or create your account</h1>  
+        
+      <%= simple_form_for @user do |f| %>  
+          <%= f.input :name, :required => false, :label => "User Name"%>
+          <%= f.input :password, :required => false %>
+          <%= f.input :password_confirmation %>
+          <%= f.input :email, :required => false %>
+          <%= f.button :submit, :class => "btn btn-info" %>
+      <% end %>  
+          
+    </div> 
+  </div>
 </div>
+
+
+
