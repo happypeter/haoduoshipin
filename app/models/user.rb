@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password
 
-  attr_accessible :name, :password, :email, :site_url
   before_validation :strip_blanks
   validates_confirmation_of :password
 
