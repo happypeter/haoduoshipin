@@ -2,6 +2,7 @@ class Episode < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
+  validates_presence_of :seconds, :name, :description, :notes
 
   scope :recent, order('id DESC')
   

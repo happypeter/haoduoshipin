@@ -10,6 +10,11 @@
     <%= episode.description %>
   </div>
   <div class="episode_watch_btn">
-        <%= link_to "Watch (#{pluralize (episode.seconds/60).round, "minute"})", episode.youku, :class => "btn btn-info" %>
+        <% if !episode.seconds.nil? %>
+          <% @time_str =  "Watch (#{pluralize (episode.seconds/60).round, "minute"})" %>
+        <% else %>
+          <% @time_str = "Watch" %>
+        <% end %>
+        <%= link_to "#{@time_str.to_s}", episode.youku, :class => "btn btn-info" %>
   </div>
 </div>
