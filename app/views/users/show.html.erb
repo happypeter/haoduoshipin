@@ -1,19 +1,29 @@
 <% title "#{@user.name}'s Profile" %>
 
-<div class="content">
-  <% if @user == current_user %>
-    <p><%= link_to "Edit Profile", edit_user_path(@user) %> | <%= link_to "Log Out", log_out_path %></p>
-    <p><strong>This is your profile.</strong></p>
-  <% end %>
-  Name: <%= @user.name %>
-  <br />
-  Email: <%= @user.email %>
+<div id="user_show">
+<div class="row-fluid profile">
+  <div class="span9 main_info">
+    <div id="user_name">
+      <%= @user.name %>
+    </div>
+    <div id="user_email">
+      <%= @user.email %>
+    </div>
+  </div>
 
-  <div id="comments">
-    <p><strong>Your Comments .</strong></p>
-  <% for comment in @user.comments.recent %>
-    <%= render comment %>
-  <% end %>
+  <div class="span3 edit_profile_btn">
+    <div id="admin_zone">
+      <% if can? :edit, :users %>  
+        <%= link_to "Edit Your Profile", edit_user_path, :class => "btn" %>
+      <% end %>
+      <% if can? :create, :episodes %>
+        <div class="actions"><%= link_to t('new_ep'), new_episode_path, :class => "btn" %></div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+  <h2 class="comments">Comments:</h2>
+  <%= render @user.comments.reverse %>
+</div><!-- user_show -->
 

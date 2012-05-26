@@ -1,6 +1,3 @@
-  <% if can? :create, :episodes %>
-    <div class="actions"><%= link_to t('new_ep'), new_episode_path, :class => "btn btn-success" %></div>
-  <% end %>
 <div class="row-fluid">
   <div class="span10">
       <% for episode in @episodes %>
