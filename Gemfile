@@ -17,6 +17,7 @@ end
 # for the "no javascript runtime error" upgrading to 3.1
 gem 'execjs'
 gem 'therubyracer'
+gem 'will_paginate', '> 3.0'
 
 
 gem 'mysql2', '0.3.6'
