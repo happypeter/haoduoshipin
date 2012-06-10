@@ -524,6 +524,24 @@ textarea#episode_notes {
     color: darken($peter-gray, 50%);
     font-style: italic;
   }
+}
 
+/*** PAGINATION ***/
+
+.pagination {
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+.pagination .disabled {
+  color: #999;
+}
+
+.pagination em {
+  font-style: normal;
+}
+
+.pagination a, .pagination em, .pagination .previous_page, .pagination .next_page {
+  padding: 4px;
 }
 
