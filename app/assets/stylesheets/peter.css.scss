@@ -128,14 +128,50 @@ ul.horizontal li {
     .episode_intro_title {
       color: darken($peter-gray, 50%);
       font-size: 80%;
-      margin-bottom: -5px;
     }
   }
   .episode_watch_btn {
+    padding-top: 5px;
     padding-left: 210px;
-    margin: 5px;
   }
 }
+
+#episode {
+  margin-bottom: 50px;
+  .episode_snapshot {
+    float: left;
+    border: solid 1px #BBB;
+  }
+  .episode_intro {
+    padding-left: 210px;
+    .episode_intro_title {
+      color: darken($peter-gray, 50%);
+      font-size: 80%;
+    }
+  }
+  .episode_watch_btn {
+    padding-top: 5px;
+    padding-left: 210px;
+  }
+  span#episode_no {
+    color: darken($peter-gray, 30%);
+  }
+  .alternatives {
+    ul {
+      list-style: none;
+      li {
+        float: left;
+        padding-left: 20px;
+      }
+    }
+    float: right;
+  }
+  #video_wrapper {
+    border: solid 1px #777;
+    margin-bottom: 14px;
+  }     
+}
+
 /*** PAGINATION ***/
 
 .pagination {

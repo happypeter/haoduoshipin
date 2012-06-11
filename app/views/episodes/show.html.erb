@@ -1,6 +1,31 @@
 <% title @episode.name, false %>
 <div id="episode">
-  <%= render @episode %>
+  <% if params[:autoplay] %>
+    <div id="video_wrapper"><%= episode_video_tag @episode %></div>
+    <h1> <span id="episode_no">#<%= @episode.id %></span> <%= @episode.name %></h1>
+  <% else %>
+    <script type="text/html" id="video_template">
+      <%= episode_video_tag @episode %>
+    </script>
+    <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{@episode.asset_name}.png", :class => "episode_snapshot",  :alt => @episode.name), episode_path(@episode, :autoplay => true) %>
+  <div class="episode_intro">
+    <div class="episode_intro_title">
+      Episode #<%= @episode.id %>
+      <%= @episode.published_at.strftime('%b %d, %Y') %>
+    </div>
+    <h2><%= @episode.name %></h2>
+    <%= @episode.description %>
+  </div>
+  <div class="episode_watch_btn">
+    <%= link_to "Click to Play", episode_path(@episode, :autoplay => true), :class => "btn btn-info"%>
+  </div>
+  <% end %>
+  <div class="alternatives">
+    <ul>
+      <li><%= link_to "Watch at youku.com", @episode.youku %></li>
+      <li><%= link_to "Download file(mov)", video_url(@episode) %></li>
+  </ul>
+  </div>
 </div>
 
 <ul class="nav nav-tabs">

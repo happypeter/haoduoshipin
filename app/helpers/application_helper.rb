@@ -1,3 +1,4 @@
+require 'builder'
 module ApplicationHelper
   def textilize(text)
     CodeFormatter.new(text).to_html.html_safe unless text.blank?
@@ -27,5 +28,12 @@ module ApplicationHelper
       superscript: true
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+  end
+
+  def video_tag(path, options = {})
+    xml = Builder::XmlMarkup.new
+    xml.video :class => "sublime",:width => options[:width], :height => options[:height], :poster => options[:poster],  :preload => "none" do
+      xml.source :src => "#{path}"
+    end.html_safe
   end
 end

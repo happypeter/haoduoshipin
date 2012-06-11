@@ -2,19 +2,19 @@
     <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png", :class => "episode_snapshot",  :alt => episode.name), episode %>
   <div class="episode_intro">
     <div class="episode_intro_title">
+      <% if !episode.seconds.nil? %>
+        <% @mins = pluralize (episode.seconds/60).round, "minute" %>
+      <% else %>
+        <% @mins = "unknown length" %>
+      <% end %>
       Episode #<%= episode.id %>
       <%= episode.published_at.strftime('%b %d, %Y') %>
       - <%= pluralize(episode.comments.size, "comment") %>
     </div>
     <h2><%= link_to episode.name, episode %></h2>
-    <%= episode.description %>
+    <%= episode.description %> (<%= @mins.to_s %>)
   </div>
-  <div class="episode_watch_btn">
-        <% if !episode.seconds.nil? %>
-          <% @time_str =  "Watch (#{pluralize (episode.seconds/60).round, "minute"})" %>
-        <% else %>
-          <% @time_str = "Watch" %>
-        <% end %>
-        <%= link_to "#{@time_str.to_s}", episode.youku, :class => "btn btn-info" %>
-  </div>
+    <div class="episode_watch_btn">
+      <%= link_to "Watch", episode_path(episode, :autoplay => true), :class => "btn btn-info"%>
+    </div>
 </div>

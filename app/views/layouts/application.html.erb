@@ -5,6 +5,7 @@
   <link href="/assets/play.png" rel="icon" type="image/x-png" />
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application"%>
+  <%= javascript_include_tag "http://cdn.sublimevideo.net/js/2d4ddo2n.js" %>
   <%= csrf_meta_tag %>
   
 </head>
@@ -20,7 +21,7 @@
             <ul class="nav pull-right">
                   <% if current_user %>  
                     <% @user= User.find(current_user.id) %>
-                    <li><%= link_to current_user.name, user_path(@user) %></li>
+                    <li><%= link_to current_user.name, user_path(@user) %></li> 
                     <li><%= link_to "Log out", log_out_path %></li>
                   <% else %>  
                     <li><%= link_to "Log in", log_in_path %></li>
