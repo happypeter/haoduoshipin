@@ -19,6 +19,7 @@
       </div>
       <% end %>
     </div>
+    <%= link_to "Recent Comments", comments_path, :class => "btn" %>
   </div>
 </div>
 <%= will_paginate @episodes, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>

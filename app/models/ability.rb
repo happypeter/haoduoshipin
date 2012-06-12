@@ -9,7 +9,7 @@ class Ability
     can [:login, :read, :create, :login_with_github], :users
     if user # when sb logged in
       can [:edit, :update], :users, :id => user.id
-      can [:create, :update, :destroy], :comments
+      can [:read, :create, :update, :destroy], :comments
       can :logout, :users
       if user.github_username == "happypeter"||user.name == "happypeter" # the latter is for test on VM
         can :access, :all

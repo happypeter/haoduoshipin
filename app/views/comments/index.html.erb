@@ -1,0 +1,6 @@
+      <% for comment in @comments %>
+        <%= render comment %>
+        <hr>
+      <% end %>
+
+<%= will_paginate @comments, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>

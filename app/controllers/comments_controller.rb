@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @comments = Comment.recent.page(params[:page]).per_page(10)
   end
 
   def new
