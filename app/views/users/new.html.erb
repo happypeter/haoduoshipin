@@ -1,24 +1,43 @@
 <div class="row-fluid">
   <div class="span6">
-    <h1 class="login">Login</h2>  
-    <%= form_tag "/user_login" do %>  
-      <p>  
-        <%= label_tag :name %>
-        <%= text_field_tag :name, params[:name] %>  
-      </p>  
-      <p>  
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>  
-      </p>  
-
-      <p class="button"><%= submit_tag("login", :class=> "btn btn-info") %></p>  
-    <% end %>  
-    You can also log in with your
-    <%= link_to image_tag("icons/github.png", :size => "60x20", :alt => "github"), "/auth/github" %> account
+    <div id="login_form"> 
+      <div id="login_form_head">
+        Login   
+      </div>
+        
+      <div id="login_form_body">
+        <% flash.each do |name, msg| %>
+          <div class="alert alert-error">
+            <%= msg %>
+          </div>
+        <% end %>
+        <div class="error">
+          <div class="alert alert-error">
+            Blank Input!
+          </div>
+        </div>
+        <%= form_tag "/user_login" do %>
+          <div class="input-prepend">
+            <div class="username">Username</div>
+            <%= text_field_tag :name, params[:name] %>
+          </div>
+          <div class="input-prepend">
+            <div class="password">
+              Password <%# link_to "(forget password?)", forget_password_path %>
+            </div>
+            <%= password_field_tag :password,params[:password] %>
+          </div>
+          <div class="login_btn"><%= submit_tag("login", :class => "btn btn-info") %></div>
+        <% end %>
+      </div>
+    </div>
+    <%= image_tag("icons/github.png", :size => "60x20", :alt => "github")%> 
+    Or <%= link_to "click here to log in with your github account", "/auth/github" %>
   </div>
+
   <div class="span6">
     <div id="signup_form">
-      <h1 class="signup">Or create your account</h1>  
+      <h1 class="signup"> Don't have a account yet? Sign Up </h1>  
         
       <%= simple_form_for @user do |f| %>  
           <%= f.input :name, :required => false, :label => "User Name"%>
@@ -33,4 +52,12 @@
 </div>
 
 
-
+<script>
+  $(".login_btn").click(function() {
+    if ($.trim($('#login_form input#password').val()) == ""||$.trim($('#login_form input#name').val()) == "") 
+    {
+        $('#login_form .error').show();
+        return false
+    }
+  });
+</script>

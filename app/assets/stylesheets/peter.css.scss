@@ -1,6 +1,7 @@
 $railscasts_shownotes_link_blue: #1B97F2;
 $main_width: 960px;
 $peter-gray: #ececec;
+$github-blue:#839ba9;
 @mixin github-fileheader {
   background:#ececec;
   background:-moz-linear-gradient(#ececec, darken($peter-gray, 20%));
@@ -579,5 +580,28 @@ textarea#episode_notes {
 
 .pagination a, .pagination em, .pagination .previous_page, .pagination .next_page {
   padding: 4px;
+}
+
+/*** LOGIN ***/
+#login_form {
+  margin-top: 40px;
+  width: 300px;
+  margin-bottom: 20px;
+  .error {
+    display: none;
+  }
+}
+#login_form_head {
+  background-color: $github-blue ;
+  color: white;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 10px;
+  @include github-hero;
+}
+#login_form_body {
+  background-color: lighten($github-blue, 30%);
+  padding: 20px;
+  padding-bottom: 1px;
 }
 

@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 
   before_create { generate_token(:token) }# will this be called before "user.save!"???
   has_many :comments
-  validates_uniqueness_of :name  
   validates_presence_of :password, :on => :create
+  validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
   def self.create_from_omniauth(omniauth)
