@@ -1,8 +1,8 @@
 xml.instruct! :xml, version: "1.0" 
 xml.rss version: "2.0" do
   xml.channel do
-    xml.title "Superhero Articles"
-    xml.description "From Batman to Superman"
+    xml.title "Happycasts Episodes"
+    xml.description "Linux Tips For Programmers"
     xml.link episodes_url
 
     @episodes.each do |ep|
