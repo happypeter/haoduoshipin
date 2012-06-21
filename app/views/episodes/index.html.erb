@@ -10,7 +10,7 @@
   </div>
   <div class="span2">
     <div id="rss-tag"> 
-      <%= link_to image_tag("rss.png"), episodes_url(format: "rss") %>
+      <%= link_to image_tag("feed-icon-28x28.png"), episodes_url(format: "rss"), :id =>"rss" %>
     </div>
     <div class="categories">
       <div class="categories_title">
@@ -25,7 +25,7 @@
       </div>
       <% end %>
     </div>
-    <%= link_to "Recent Comments", comments_path, :class => "btn" %>
+    <%= link_to "Recent Comments", comments_path, :class => "recent-comments btn btn-inverse" %>
   </div>
 </div>
 <%= will_paginate @episodes, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>
