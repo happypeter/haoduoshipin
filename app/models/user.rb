@@ -6,19 +6,18 @@ class User < ActiveRecord::Base
 
   before_create { generate_token(:token) }# will this be called before "user.save!"???
   has_many :comments
-  validates_presence_of :password, :on => :create
+  #validates_presence_of :password, :on => :create # validate this with client
+  #side code
   validates_presence_of :name
-  validates_uniqueness_of :name, :email, :case_sensitive => false
 
   def self.create_from_omniauth(omniauth)
-    User.new.tap do |user|
+    create! do |user|
       user.github_uid = omniauth["uid"]
-      user.github_username = omniauth["user_info"]["nickname"]
-      user.email = omniauth["user_info"]["email"]
-      user.name = omniauth["user_info"]["name"]
-      user.site_url = omniauth["user_info"]["urls"]["Blog"] if omniauth["user_info"]["urls"]
-      user.gravatar_token = omniauth["extra"]["user_hash"]["gravatar_id"] if omniauth["extra"] && omniauth["extra"]["user_hash"]
-      user.save!
+      user.github_username = omniauth["info"]["name"]
+      user.email = omniauth["info"]["email"]
+      user.name = omniauth["info"]["nickname"] 
+      user.site_url = omniauth["info"]["urls"]["Blog"] if omniauth["info"]["urls"]
+      user.gravatar_token = omniauth["extra"]["raw_info"]["gravatar_id"] if omniauth["extra"] && omniauth["extra"]["raw_info"]
     end
   end
 
