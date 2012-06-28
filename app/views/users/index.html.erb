@@ -1,12 +1,25 @@
 <table>
   <tr>
      <th>name</th>
+     <th>comments</th>
+     <th>member since</th>
   </tr>
 <% if @users != nil %>
   <% @users.each do |user| %>
   <p>
     <tr>
-       <td><%= link_to user.name, user %></td>
+      <td>
+          <a href="http://gravatar.com">
+            <%= image_tag avatar_url(user),:alt => "Your Image", :size => "23x23"%>
+          </a>
+          <%= link_to user.name, user %>
+      </td>
+      <td>
+        <%= user.comments.count %>
+      </td>
+      <td>
+        <%= user.created_at %>
+      </td>
      </tr>
   </p>
   <% end %>
