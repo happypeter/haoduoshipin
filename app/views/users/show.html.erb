@@ -1,16 +1,20 @@
 <% title "#{@user.name}'s Profile" %>
 
 <div id="user_show">
-<div class="row-fluid profile">
-  <div class="span9 main_info">
+  <div class="row-fluid profile">
+  <div class="span2">
+    <a href="http://gravatar.com">
+      <%= image_tag avatar_url(@user),:alt => "Your Image", :size => "120x120"%>
+    </a>
+  </div>
+
+  <div class="span7 main_info">
     <div id="user_name">
       <%= @user.name %>
     </div>
     <div id="user_email">
       <%= @user.email %>
-    </div>
-  </div>
-
+   </div>
   <div class="span3 edit_profile_btn">
     <div id="admin_zone">
       <% if can? :edit, :users %>  
