@@ -15,19 +15,26 @@
     <div id="user_email">
       <%= @user.email %>
    </div>
-  <div class="span3 edit_profile_btn">
-    <div id="admin_zone">
-      <% if can? :edit, :users %>  
-        <%= link_to "Edit Your Profile", edit_user_path, :class => "btn" %>
-      <% end %>
-      <% if can? :create, :episodes %>
-        <div class="actions"><%= link_to t('new_ep'), new_episode_path, :class => "btn" %></div>
-      <% end %>
-    </div>
   </div>
-</div>
+  <div class="span3 edit_profile_btn">
+    <% if current_user.name == @user.name %>
+      <div id="admin_zone">
+        <% if can? :edit, :users %>  
+          <%= link_to "Edit Your Profile", edit_user_path, :class => "btn" %>
+        <% end %>
+        <% if can? :create, :episodes %>
+          <div class="actions"><%= link_to t('new_ep'), new_episode_path, :class => "btn" %></div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  </div>
 
   <h2 class="comments">Comments:</h2>
-  <%= render @user.comments.reverse %>
+  <% if @user.comments.nil? %>
+    <%= render @user.comments.reverse %>
+  <% else %>
+    No Comments Yet.
+  <% end %>
 </div><!-- user_show -->
 

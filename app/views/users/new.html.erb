@@ -31,8 +31,7 @@
         <% end %>
       </div>
     </div>
-    <%= image_tag("icons/github.png", :size => "60x20", :alt => "github")%> 
-    Or <%= link_to "click here to log in with your github account", "/auth/github" %>
+    <%= link_to "Login with your github account.", "/auth/github", :id => "github_login" %>
   </div>
 
   <div class="span6">
