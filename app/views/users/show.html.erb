@@ -31,10 +31,10 @@
   </div>
 
   <h2 class="comments">Comments:</h2>
-  <% if @user.comments.nil? %>
-    <%= render @user.comments.reverse %>
-  <% else %>
+  <% if @user.comments.blank? %>
     No Comments Yet.
+  <% else %>
+    <%= render @user.comments.reverse %>
   <% end %>
 </div><!-- user_show -->
 
