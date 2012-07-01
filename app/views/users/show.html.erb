@@ -17,7 +17,7 @@
    </div>
   </div>
   <div class="span3 edit_profile_btn">
-    <% if current_user && current_user.name == @user.name %>
+    <% if current_user.try(:name) == @user.name %>
       <div id="admin_zone">
         <% if can? :edit, :users %>  
           <%= link_to "Edit Your Profile", edit_user_path, :class => "btn" %>
