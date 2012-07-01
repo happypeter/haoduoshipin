@@ -2,13 +2,22 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   before_validation :strip_blanks
-  validates_confirmation_of :password
 
   before_create { generate_token(:token) }# will this be called before "user.save!"???
   has_many :comments
-  #validates_presence_of :password, :on => :create # validate this with client
-  #side code
+
+  #validate the below two with client-side code
+  #
+  #  validates_confirmation_of :password
+  #  validates_presence_of :password, :on => :create 
+  #
+  #this has two advatages:
+  #  1. fast
+  #  2. when login with github, there is no password
+
   validates_presence_of :name
+  validates_uniqueness_of :name, :case_sensitive => false
+
 
   def self.create_from_omniauth(omniauth)
     create! do |user|
