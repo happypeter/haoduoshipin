@@ -565,6 +565,18 @@ textarea#episode_notes {
   }
 }
 
+/* login and signup form*/
+
+#not_match_error {
+  display: none;
+}
+#blank_password_error {
+  display: none;
+}
+#blank_username_error {
+  display: none;
+}
+
 /*** PAGINATION ***/
 
 .pagination {

@@ -38,14 +38,26 @@
     <div id="signup_form">
       <h1 class="signup"> Don't have a account yet? Sign Up </h1>  
         
-      <%= simple_form_for @user do |f| %>  
-          <%= f.input :name, :required => false, :label => "User Name"%>
-          <%= f.input :password, :required => false %>
-          <%= f.input :password_confirmation %>
-          <%= f.input :email, :required => false %>
-          <%= f.button :submit, :class => "btn btn-info" %>
+      <%= form_for @user do |f| %>  
+        <%= f.error_messages %>
+        <label class="string optional control-label" for="user_name"> User Name</label>
+        <input class="string optional" id="user_name" name="user[name]" size="50" type="text" />
+        <span id="blank_username_error">Username can not be blank</span>
+
+        <label class="password optional control-label" for="user_password"> Password</label>
+        <input class="password optional" id="user_password" name="user[password]" size="50" type="password" />
+        <span id="blank_password_error">Password can not be blank</span>
+
+        <label class="password optional control-label" for="user_password_confirmation"> Type it again</label>
+        <input class="password optional" id="user_password_confirmation" size="50" type="password" />
+        <span id="not_match_error">Does not match</span>
+
+        <label class="optional control-label" for="user_email">Email</label>
+        <input class="optional" id="user_email" name="user[email]" size="50" type="text" />
+
+        <br>
+         <%= submit_tag("Create Account", :class => "btn-info signup_btn") %>
       <% end %>  
-          
     </div> 
   </div>
 </div>
@@ -56,7 +68,24 @@
     if ($.trim($('#login_form input#password').val()) == ""||$.trim($('#login_form input#name').val()) == "") 
     {
         $('#login_form .error').show();
-        return false
+        return false;
+    }
+  });
+  $(".signup_btn").click(function() {
+    if ($.trim($('#signup_form input#user_name').val()) == "") 
+    {
+      $('#blank_username_error').show();
+      return false;
+    }
+    if ($.trim($('#signup_form input#user_password').val()) == "") 
+    {
+      $('#blank_password_error').show();
+      return false;
+    }
+    if ($('#signup_form input#user_password').val() != $('#signup_form input#user_password_confirmation').val())
+    {
+      $('#not_match_error').show();
+      return false;
     }
   });
 </script>

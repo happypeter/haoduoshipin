@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :password
 
+  #user may submit "hisname ", so this is nice to have
   before_validation :strip_blanks
 
   before_create { generate_token(:token) }# will this be called before "user.save!"???
