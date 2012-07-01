@@ -31,13 +31,8 @@ class User < ActiveRecord::Base
 
   def self.authenticate(name, password)  
     user = find_by_name(name)  
-    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)  
+    if user && !user.password_salt.blank? && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)  
       user  
-    elsif user && (user.password_hash == nil)
-    # when the user lost his password, I will go to mysql and remove password_hash
-    # then the user can login without password, and update his profile to give
-    # a new password
-      user
     else  
       nil  
     end  
