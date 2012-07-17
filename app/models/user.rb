@@ -53,8 +53,8 @@ class User < ActiveRecord::Base
     end while User.exists?(column => self[column])
   end
   def strip_blanks
-    self.name = self.name.strip
-    self.email = self.email.strip
+    self.name = self.name.strip if self.name
+    self.email = self.email.strip if self.email
   end
 
 end
