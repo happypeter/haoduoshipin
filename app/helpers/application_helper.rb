@@ -39,7 +39,7 @@ module ApplicationHelper
 
   def avatar_url(user)
     default_url = "#{root_url}assets/cat.png"
-    gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
+    gravatar_id = Digest::MD5.hexdigest(user.email.try(:downcase).to_s) # some github user has NULL email
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=#{CGI.escape(default_url)}"
   end
 
