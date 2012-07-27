@@ -31,3 +31,4 @@ gem "jquery-rails"
 gem "omniauth"
 gem 'omniauth-github'
 gem 'simple_form'
+gem 'haml'

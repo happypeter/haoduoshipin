@@ -60,6 +60,7 @@ GEM
       multipart-post (~> 1.1)
       rack (~> 1.1)
     ffi (1.0.11)
+    haml (3.1.6)
     hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.0)
@@ -168,6 +169,7 @@ DEPENDENCIES
   cancan!
   coffee-rails (~> 3.1.0)
   execjs
+  haml
   jquery-rails
   mysql2 (= 0.3.6)
   nokogiri (= 1.4.7)
