@@ -22,9 +22,9 @@
                   <% if current_user %>  
                     <% @user= User.find(current_user.id) %>
                     <li><%= link_to current_user.name, user_path(@user) %></li> 
-                    <li><%= link_to "Log out", log_out_path %></li>
+                    <li><%= link_to  t("logout"), log_out_path %></li>
                   <% else %>  
-                    <li><%= link_to "Log in", log_in_path %></li>
+                    <li><%= link_to t("login"), log_in_path %></li>
                   <% end %>  
             </ul>
         </div>

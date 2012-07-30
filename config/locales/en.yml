@@ -3,3 +3,5 @@
 
 en:
   new_ep: "new ep"
+  menu:
+    logout: "Log Out" 

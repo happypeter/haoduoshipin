@@ -1,17 +1,20 @@
 <div class="episode">
-  <div class="screenshot">
-  <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png", :size => "200x125", :alt => episode.name), episode %>
-  </div>
-  <div class="main">
-    <div class="info">
-      <span class="number">第<%= episode.id %>集</span> &ndash;
-      <span class="published_at"><%= episode.published_at.strftime('%b %d, %Y') %></span>
-      <span class="stats">(<%= pluralize (episode.seconds/60).round, "minute" %>, <%= link_to pluralize(episode.comments.size, "comment"), episode_path(episode, :view => "comments") %>)</span>
+    <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png", :class => "episode_snapshot",  :alt => episode.name), episode %>
+  <div class="episode_intro">
+    <div class="episode_intro_title">
+      <% if !episode.seconds.nil? %>
+        <% @mins = (episode.seconds/60).round.to_s + "分钟" %>
+      <% else %>
+        <% @mins = "unknown length" %>
+      <% end %>
+       <%= episode.id %>期
+      <%= episode.published_at.strftime('%b %d, %Y') %>
+      - <%= (episode.comments.size.to_s + "评论") %>
     </div>
     <h2><%= link_to episode.name, episode %></h2>
-    <div class="description">
-      <%= episode.description %>
-    </div>
+    <%= episode.description %> （<%= @mins %>）
   </div>
-  <div class="clear"></div>
+    <div class="episode_watch_btn">
+      <%= link_to t("play"), episode_path(episode, :autoplay => true), :class => "btn btn-info"%>
+    </div>
 </div>

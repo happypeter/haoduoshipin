@@ -14,7 +14,7 @@
     </div>
     <div class="categories">
       <div class="categories_title">
-        Categroies
+        <%= t("cat") %>
       </div>
       <div class="category">
         <%= link_to_unless(params[:tag_id] == nil, "ALL") %>
@@ -25,7 +25,7 @@
       </div>
       <% end %>
     </div>
-    <%= link_to "Recent Comments", comments_path, :class => "recent-comments btn btn-small" %>
+    <%= link_to t("recent_comment"), comments_path, :class => "recent-comments btn btn-small" %>
   </div>
 </div>
 <%= will_paginate @episodes, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>
