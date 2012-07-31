@@ -567,6 +567,13 @@ textarea#episode_notes {
 
 /* login and signup form*/
 
+#signup_form_area {
+  margin: auto; 
+  width: 300px;
+  a {
+    text-decoration: none;
+  }
+}
 #not_match_error {
   display: none;
 }
@@ -598,6 +605,7 @@ textarea#episode_notes {
 
 /*** LOGIN ***/
 #login_form {
+  margin: auto;
   margin-top: 40px;
   width: 300px;
   margin-bottom: 20px;
@@ -621,6 +629,15 @@ textarea#episode_notes {
 #github_login {
   font-weight: bold;
   font-size: 120%;
+}
+div#login_github {
+  text-align: center;
+  #huo {
+    margin: 40px;
+    font-size: 180%;
+    font-weight: 1000;
+    display: block;
+  }
 }
 #rss-tag {
   height:35px;

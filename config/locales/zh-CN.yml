@@ -214,3 +214,5 @@ zh-CN:
   cat: "分类"
   recent_comment: "最新评论"
   please_signup: "还没有账户? 注册一个"
+  login_with_github: "使用 Github 账户登陆"
+  login_with_local_account: "使用 HappyCasts 账户登陆"

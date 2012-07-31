@@ -1,67 +1,66 @@
-<div class="row-fluid">
-  <div class="span6">
-    <div id="login_form"> 
-      <div id="login_form_head">
-        Login   
+  <div id="login_github">
+    <%= link_to t("login_with_github"), "/auth/github", :id => "github_login", :class => "btn btn-large btn-info" %>
+    <div id="huo">或</div>
+    
+  </div>
+<div id="login_form"> 
+  <div id="login_form_head">
+    <%=t("login_with_local_account") %>
+  </div>
+    
+  <div id="login_form_body">
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-error">
+        <%= msg %>
       </div>
-        
-      <div id="login_form_body">
-        <% flash.each do |name, msg| %>
-          <div class="alert alert-error">
-            <%= msg %>
-          </div>
-        <% end %>
-        <div class="error">
-          <div class="alert alert-error">
-            Blank Input!
-          </div>
-        </div>
-        <%= form_tag "/user_login" do %>
-          <div class="input-prepend">
-            <div class="username">Username</div>
-            <%= text_field_tag :name, params[:name] %>
-          </div>
-          <div class="input-prepend">
-            <div class="password">
-              Password <%# link_to "(forget password?)", forget_password_path %>
-            </div>
-            <%= password_field_tag :password,params[:password] %>
-          </div>
-          <div class="login_btn"><%= submit_tag("login", :class => "btn btn-info") %></div>
-        <% end %>
+    <% end %>
+    <div class="error">
+      <div class="alert alert-error">
+        Blank Input!
       </div>
     </div>
-    <%= link_to "Login with your github account.", "/auth/github", :id => "github_login" %>
-  </div>
-
-  <div class="span6">
-    <div id="signup_form">
-      <h1 class="signup"> <%= t("please_signup") %> </h1>  
-        
-      <%= form_for @user do |f| %>  
-        <%= f.error_messages %>
-        <label class="string optional control-label" for="user_name"> User Name</label>
-        <input class="string optional" id="user_name" name="user[name]" size="50" type="text" />
-        <span id="blank_username_error">Username can not be blank</span>
-
-        <label class="password optional control-label" for="user_password"> Password</label>
-        <input class="password optional" id="user_password" name="user[password]" size="50" type="password" />
-        <span id="blank_password_error">Password can not be blank</span>
-
-        <label class="password optional control-label" for="user_password_confirmation"> Type it again</label>
-        <input class="password optional" id="user_password_confirmation" size="50" type="password" />
-        <span id="not_match_error">Does not match</span>
-
-        <label class="optional control-label" for="user_email">Email</label>
-        <input class="optional" id="user_email" name="user[email]" size="50" type="text" />
-
-        <br>
-         <%= submit_tag("Create Account", :class => "btn-info signup_btn") %>
-      <% end %>  
-    </div> 
+    <%= form_tag "/user_login" do %>
+      <div class="input-prepend">
+        <div class="username">Username</div>
+        <%= text_field_tag :name, params[:name] %>
+      </div>
+      <div class="input-prepend">
+        <div class="password">
+          Password <%# link_to "(forget password?)", forget_password_path %>
+        </div>
+        <%= password_field_tag :password,params[:password] %>
+      </div>
+      <div class="login_btn"><%= submit_tag("login", :class => "btn btn-info") %></div>
+    <% end %>
   </div>
 </div>
 
+<div id="signup_form_area">
+  <a id="signup_link_btn"> <%= t("please_signup") %> </a>  
+  <div id="signup_form">
+      
+    <%= form_for @user do |f| %>  
+      <%= f.error_messages %>
+      <label class="string optional control-label" for="user_name"> User Name</label>
+      <input class="string optional" id="user_name" name="user[name]" size="50" type="text" />
+      <span id="blank_username_error">Username can not be blank</span>
+
+      <label class="password optional control-label" for="user_password"> Password</label>
+      <input class="password optional" id="user_password" name="user[password]" size="50" type="password" />
+      <span id="blank_password_error">Password can not be blank</span>
+
+      <label class="password optional control-label" for="user_password_confirmation"> Type it again</label>
+      <input class="password optional" id="user_password_confirmation" size="50" type="password" />
+      <span id="not_match_error">Does not match</span>
+
+      <label class="optional control-label" for="user_email">Email</label>
+      <input class="optional" id="user_email" name="user[email]" size="50" type="text" />
+
+      <br>
+       <%= submit_tag("Create Account", :class => "btn-info signup_btn") %>
+    <% end %>  
+  </div> 
+</div>
 
 <script>
   $(".login_btn").click(function() {
@@ -87,5 +86,11 @@
       $('#not_match_error').show();
       return false;
     }
+  });
+
+  $('#signup_form').hide();
+  $("#signup_link_btn").click(function() {
+    $('#signup_form').toggle();
+    return false
   });
 </script>
