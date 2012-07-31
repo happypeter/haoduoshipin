@@ -8,7 +8,7 @@
         <% @mins = "unknown length" %>
       <% end %>
        <%= episode.id %>期
-      <%= episode.published_at.strftime('%b %d, %Y') %>
+       <%= render_episode_publish_time(episode) %>
       - <%= (episode.comments.size.to_s + "评论") %>
     </div>
     <h2><%= link_to episode.name, episode %></h2>
