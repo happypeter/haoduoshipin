@@ -4,13 +4,13 @@
 <%= form_for @user do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %>
+    <%= f.label t("name") %>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :email %>
+    <%= f.label t("email") %>
     <%= f.text_field :email %>
   </p>
-  <p><%= f.submit "Update Profile" %></p>
+  <p><%= f.submit t("update_profile") %></p>
 <% end %>
 </div>

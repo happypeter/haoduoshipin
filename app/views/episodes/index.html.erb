@@ -25,7 +25,7 @@
       </div>
       <% end %>
     </div>
-    <%= link_to t("recent_comment"), comments_path, :class => "recent-comments btn btn-small" %>
+    <%= link_to t("recent_comments"), comments_path, :class => "recent-comments" %>
   </div>
 </div>
 <%= will_paginate @episodes, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>

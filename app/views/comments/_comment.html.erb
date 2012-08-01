@@ -3,7 +3,7 @@
       <i class="icon-comment"></i> 
       <%= link_to comment.user.name, comment.user%>
         <span class="comment_parent">
-          commented on:
+          <%= t("commented_on") %>
           <% @parent=Episode.find(comment.episode_id) %>
           <%= link_to @parent.name, @parent %>
         </span>
