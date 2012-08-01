@@ -3,10 +3,10 @@ $main_width: 960px;
 $peter-gray: #ececec;
 $github-blue:#839ba9;
 @mixin github-fileheader {
-  background:#ececec;
-  background:-moz-linear-gradient(#ececec, darken($peter-gray, 20%));
-  background:-webkit-linear-gradient(#ececec, darken($peter-gray, 20%));
+  background:-moz-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
+  background: -webkit-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
   -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececec',endColorstr='darken($peter-gray, 20%)')";
+
 }
 @mixin github-hero {
   background:#839ba9;
@@ -312,8 +312,9 @@ div.comment {
   .comment_head {
     padding: 5px;
     font-weight: bold;
-    background-color:  $peter-gray;
+    @include github-fileheader;
     font-size: 80%;
+    color: hsl(0, 0%, 40%);
     margin-bottom: 5px;
     .comment_time {
       float: right;
@@ -355,6 +356,7 @@ div.comment {
     background-color:  $peter-gray;
     font-size: 80%;
     margin-bottom: 5px;
+    color: hsl(0, 0%, 40%);
     .comment_time {
       float: right;
       margin-right: 10px;

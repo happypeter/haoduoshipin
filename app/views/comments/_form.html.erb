@@ -2,9 +2,9 @@
   <div class="comment_head">
     <i class="icon-comment"></i>
     <%= link_to @comment.user.name, @comment.user%>
-      commented
+      说
     <span class="comment_time">
-        <%= time_ago_in_words @comment.created_at  %> ago
+        <%= time_ago_in_words @comment.created_at  %>前
     </span>
   </div> 
 
