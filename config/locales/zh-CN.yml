@@ -216,3 +216,7 @@ zh-CN:
   please_signup: "还没有账户? 注册一个"
   login_with_github: "使用 Github 账户登陆"
   login_with_local_account: "使用 HappyCasts 账户登陆"
+  edit: "编辑"
+  delete: "删除"
+  publish_comment: "发表"
+  update_comment: "再一次发表"

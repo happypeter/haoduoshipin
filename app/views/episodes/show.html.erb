@@ -55,7 +55,7 @@
           <%= t("comment_empty_error") %>
         </div>
         <%= f.text_area :content %>
-        <%= f.submit "Comment", :class=>"btn btn-success", :id => "comment_btn" %>
+        <%= f.submit t("publish_comment"), :class=>"btn btn-success", :id => "comment_btn" %>
       <% end %>
     </div>
   <% else %>

@@ -11,7 +11,7 @@
  <%= form_for @comment, :remote => true do |f| %>
   <%= f.error_messages %>
   <%= f.text_area :content %>
-  <%= f.submit "Update Comment", :class=>"btn", :id => "comment_btn" %>
+  <%= f.submit t("update_comment"), :class=>"btn", :id => "comment_btn" %>
  <% end %>
 <% end %>
 
