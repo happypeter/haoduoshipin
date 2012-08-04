@@ -22,8 +22,8 @@
   <% end %>
   <div class="alternatives">
     <ul>
-      <li><%= button_to t("youku"), @episode.youku %></li>
-      <li><%= button_to t("download"), video_url(@episode) %></li>
+      <li><%= link_to t("youku"), @episode.youku, :class => "btn" %></li>
+      <li><%= link_to t("download"), video_url(@episode), :class => "btn" %></li>
   </ul>
   </div>
 </div>
