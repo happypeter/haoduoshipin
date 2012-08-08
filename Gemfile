@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,8 +9,8 @@ gem 'rails', '3.1.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'sass-rails', "~> 3.2.3"
+  gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier'
   gem 'twitter-bootstrap-rails'
 end
@@ -20,7 +20,7 @@ gem 'therubyracer'
 gem 'will_paginate', '> 3.0'
 
 
-gem 'mysql2', '0.3.6'
+gem 'mysql2', "~> 0.3.10"
 gem 'bcrypt-ruby', :require => 'bcrypt'  
 gem 'ancestry'
 gem 'redcarpet'
