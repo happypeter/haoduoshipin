@@ -1,0 +1,68 @@
+$blue: #049cdb;
+$navbarLinkColor: black; 
+$navbarLinkColorHover: $blue; 
+$navbarBackground: #eee;
+$navbarBackgroundHighlight: #eee;
+
+.navbar {
+  a.brand {
+    color: black;
+    font-weight: bold;
+    font-size: 130%;
+    &:hover {
+      color: $blue;
+    }
+  }
+  .navbar-inner {    
+    .container {
+      width: 960px;
+    }
+  }
+  .nav > li > a {
+    float: none;
+    line-height: 19px;
+    color: $navbarLinkColor;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: bold;
+    margin-right: 0px;
+    padding-right: 0px;
+    &:hover {
+      color: $navbarLinkColorHover;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// make font a bit larger for Chinese Characters
+.btn {
+  font-size: 16px;
+}
+
+.btn-large {
+  font-size: 18px;
+}
+.btn-small {
+  font-size: 14px;
+}
+
+// Core variables and mixins
+@import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/mixins";
+
+// CSS Reset
+@import "bootstrap/reset";
+
+// Grid system and page structure
+@import "bootstrap/scaffolding";
+@import "bootstrap/grid";
+@import "bootstrap/layouts";
+
+@import "bootstrap/buttons";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+
+// Components: Popovers
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";

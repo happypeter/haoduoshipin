@@ -6,7 +6,6 @@ class Comment < ActiveRecord::Base
 
   scope :recent, order("created_at DESC")
 
-  has_ancestry
   def new
     @comment = Comment.new 
   end

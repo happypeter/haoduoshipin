@@ -9,10 +9,15 @@ gem 'rails', '3.2.6'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "~> 3.2.3"
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier'
-  gem 'twitter-bootstrap-rails'
+  gem 'sass-rails', '~> 3.1'
+  gem 'bootstrap-sass', '~> 2.0.4.0'
+end
+
+
+group :development, :test do
+  gem 'capistrano', '2.9.0', :require => false
 end
 # for the "no javascript runtime error" upgrading to 3.1
 gem 'execjs'
@@ -22,7 +27,6 @@ gem 'will_paginate', '> 3.0'
 
 gem 'mysql2', "~> 0.3.10"
 gem 'bcrypt-ruby', :require => 'bcrypt'  
-gem 'ancestry'
 gem 'redcarpet'
 gem "cancan", :git => "git://github.com/ryanb/cancan.git", :branch => "2.0"
 gem 'nokogiri', "1.4.7"
