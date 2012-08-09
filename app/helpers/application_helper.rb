@@ -30,13 +30,6 @@ module ApplicationHelper
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
 
-  def video_tag(path, options = {})
-    xml = Builder::XmlMarkup.new
-    xml.video :width => options[:width], :height => options[:height], :poster => options[:poster],  :preload => "none" do
-      xml.source :src => "#{path}"
-    end.html_safe
-  end
-
   def avatar_url(user)
     default_url = "#{root_url}assets/cat.png"
     gravatar_id = Digest::MD5.hexdigest(user.email.try(:downcase).to_s) # some github user has NULL email
