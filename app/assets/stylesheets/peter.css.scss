@@ -86,6 +86,8 @@ h1 {
 
 h2 {
   font-size: 18px;
+  margin-top: 3px;
+  margin-bottom: 4px;
 }
 
 h3 {
@@ -119,9 +121,12 @@ ul.horizontal li {
 
 /*** EPISODES ***/
 .episode {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  padding-bottom: 19px;
   .episode_snapshot {
     float: left;
+  }
+  img {
     border: solid 1px #BBB;
   }
   .episode_intro {
@@ -134,6 +139,10 @@ ul.horizontal li {
   .episode_watch_btn {
     padding-top: 5px;
     padding-left: 210px;
+  }
+  border-bottom: solid 1px hsl(0, 0%, 90%);
+  .clear {
+    clear: both;
   }
 }
 
@@ -270,6 +279,7 @@ div.nice_comment {
     margin-bottom: 9px;
   }
   label {
+    display: block;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 5px;

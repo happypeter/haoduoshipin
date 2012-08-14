@@ -1,5 +1,7 @@
 <div class="episode">
-    <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png", :class => "episode_snapshot",  :alt => episode.name), episode %>
+  <div class="episode_snapshot"> 
+    <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png",  :alt => episode.name), episode %>
+  </div>
   <div class="episode_intro">
     <div class="episode_intro_title">
       <% if !episode.seconds.nil? %>
@@ -17,4 +19,6 @@
     <div class="episode_watch_btn">
       <%= link_to t("play"), episode_path(episode, :autoplay => true), :class => "btn btn-info"%>
     </div>
+    <div class="clear"></div>
 </div>
+
