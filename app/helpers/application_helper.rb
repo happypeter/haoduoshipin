@@ -36,6 +36,9 @@ module ApplicationHelper
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=#{CGI.escape(default_url)}"
   end
 
+  def render_user_register_time(user)
+    I18n.l(user.created_at.to_date, :format => :long)
+  end
   def render_episode_publish_time(episode)
     I18n.l(episode.published_at.to_date, :format => :long)
   end

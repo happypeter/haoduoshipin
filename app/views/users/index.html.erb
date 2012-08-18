@@ -1,8 +1,12 @@
+<div id="user_no">
+  总共有<%= @users.count %> 个用户
+</div>
+
 <table>
   <tr>
-     <th>name</th>
-     <th>comments</th>
-     <th>member since</th>
+     <th>姓名</th>
+     <th>评论</th>
+     <th>注册日期</th>
   </tr>
 <% if @users != nil %>
   <% @users.each do |user| %>
@@ -18,7 +22,7 @@
         <%= user.comments.count %>
       </td>
       <td>
-        <%= user.created_at %>
+        <%= render_user_register_time(user) %>
       </td>
      </tr>
   </p>
