@@ -23,7 +23,11 @@
           <%= link_to t("edit_profile"), edit_user_path, :class => "btn" %>
         <% end %>
         <% if can? :create, :episodes %>
-          <div class="actions"><%= link_to t('new_ep'), new_episode_path, :class => "btn" %></div>
+          <div class="actions">
+            <%= link_to t('new_ep'), new_episode_path, :class => "btn" %>
+            <br>
+            <%= link_to t('mail_to_all'), "/new_mail", :class => "btn btn-success" %>
+          </div>
         <% end %>
       </div>
     <% end %>

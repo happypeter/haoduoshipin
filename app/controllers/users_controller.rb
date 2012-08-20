@@ -1,7 +1,21 @@
 class UsersController < ApplicationController  
   load_and_authorize_resource
+
   def new  
   end
+
+  def newmail  
+    @user = User.new  
+  end
+
+  def sendmail 
+    @mailbody = params[:mailbody]
+    User.all.each do |u|
+      HappyMailer.mail_to_all(u, @mailbody).deliver
+    end
+    redirect_to root_url, :notice => "Mail sent!"  
+  end  
+
   def edit
     @user = User.find(params[:id])  
   end
