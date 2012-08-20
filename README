@@ -1,9 +1,2 @@
-make the video 1024x768x75% (mid)
-
-# Assets
-
-http://media.happypeter.org/happycasts/episodes/stills/#{episode.id}-#{episode.name}.png
-http://media.happypeter.org/happycasts/episodes/videos/#{episode.id}-#{episode.name}.mov
-
-so when I give episode.name it must be xxx-xxx-xxx style.
-and when it is displayed I will replace the dash with a space, it is just jekyll style.
+http://www.happycasts.net
+Source Code
