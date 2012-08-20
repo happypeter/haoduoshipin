@@ -651,8 +651,14 @@ div#login_github {
     display: block;
   }
 }
-#rss-tag {
-  height:35px;
+#subscribe {
+  margin-bottom: 0.4em;
+  #rss {
+    display: inline-block;
+  }
+  #weibo {
+    display: inline-block;
+  }
 }
 .recent-comments {
   font-weight: bold;
