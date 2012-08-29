@@ -1,11 +1,15 @@
 class UsersController < ApplicationController  
   load_and_authorize_resource
 
-  def new  
+  def newmail  
+    @user = User.new
   end
 
-  def newmail  
-    @user = User.new  
+  def new
+  end
+
+  def signup
+    @user = User.new
   end
 
   def sendmail 
@@ -45,14 +49,14 @@ class UsersController < ApplicationController
     @reason = params[:message]  
   end
 
-  def create # signup a new user account locally
+  def create # create a local account 
     @user = User.new(params[:user])
     @user.encrypt_password
     if @user.save
       cookies.permanent[:token] = @user.token
       redirect_to user_path(@user), :notice => "signed up!"
     else
-      render "new"
+      render "signup"
     end
   end
 
@@ -65,7 +69,6 @@ class UsersController < ApplicationController
       flash.alert = "Invalid name or password"
       redirect_to :action => "new"
     end
-
   end
 
   def logout

@@ -1,25 +1,4 @@
 <% title @episode.name, false %>
-<% content_for :head do %>
-  <script>
-     $(document).ready(function(){
-      $("#jquery_jplayer_1").jPlayer({
-        ready: function () {
-          $(this).jPlayer("setMedia", {
-            m4v: "<%= video_url @episode %>",
-            poster: "http://media.happycasts.net/assets/episodes/stills/load.png"
-          });
-        },
-        swfPath: "/assets/",
-        supplied: "m4v",
-        size: {
-          width: "960px",
-          height: "720px",
-        }
-
-      });
-    });
-  </script>
-<% end %>
 
 <div id="episode">
   <% if params[:autoplay] %>
@@ -78,39 +57,28 @@
       <% end %>
     </div>
   <% else %>
-    <%= link_to t("login"), log_in_path(:return_to => request.url) %> 再评论.
+    <%= link_to t("login"), login_path(:return_to => request.url) %> 再评论.
     <br \>
   <% end %>
 </div>
 
 <%= render "comments/markdown_cheatsheet" %>
-<script>
-  $("#show_note_btn").click(function() {
-    $("#show_comment_btn").removeClass("active");
-    $("#show_note_btn").addClass("active");
-    $('.comment_view').hide();
-    $('.show_notes').show();
-    return false
-  });
-  $("#show_comment_btn").click(function() {
-    $("#show_note_btn").removeClass("active");
-    $("#show_comment_btn").addClass("active");
-    $('.show_notes').hide();
-    $('.comment_view').show();
-    return false
-  });
-
-  $("#comment_btn").click(function() {
-    if ($.trim($('#new_comment textarea').val()) == "") 
-    {
-        $('#new_comment .error').show();
-        return false
-    }
-  });
-  
-$('#markdown_cheatsheet').modal({
-  show: false
-})
-
-</script>
-
+<% content_for :scripts do %>
+  <%= javascript_include_tag "episodes" %>
+  <script>
+    $("#jquery_jplayer_1").jPlayer({
+      ready: function () {
+        $(this).jPlayer("setMedia", {
+          m4v: "<%= video_url @episode %>",
+          poster: "http://media.happycasts.net/assets/episodes/stills/load.png"
+        });
+      },
+      swfPath: "/assets/",
+      supplied: "m4v",
+      size: {
+        width: "960px",
+        height: "720px",
+      }
+    });
+  </script>
+<% end %>

@@ -3,5 +3,4 @@
 //= require vendor/jquery.jplayer.min
 //= require bootstrap
 //= require_self
-//= require_tree .
 

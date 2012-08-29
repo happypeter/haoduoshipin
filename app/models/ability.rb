@@ -7,7 +7,7 @@ class Ability
     end
     can :read, :comments
     can :access, :info # everybody can visit the about page
-    can [:login, :read, :create, :login_with_github], :users
+    can [:signup, :login, :read, :create, :login_with_github], :users
     if user # when sb logged in
       can [:edit, :update], :users, :id => user.id
       can [:create, :update, :destroy], :comments

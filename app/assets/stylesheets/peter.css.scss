@@ -2,6 +2,7 @@ $railscasts_shownotes_link_blue: #1B97F2;
 $main_width: 960px;
 $peter-gray: #ececec;
 $github-blue:#839ba9;
+$error_red: #800000;
 @mixin github-fileheader {
   background:-moz-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
   background: -webkit-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
@@ -42,29 +43,13 @@ $github-blue:#839ba9;
     @include peter-shadow;
   }
 }
+
+/*** SHARED ***/
 body {
   background-color: #FFF;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
   margin: 0;
-}
-
-.categories {
-  border: solid 0.5px darken($peter-gray, 10%);
-  @include peter-shadow;
-}
-
-.categories_title {
-  text-align: center;
-  color: white;
-  padding: 10px;
-  font-size: 120%;
-  @include github-hero;
-}
-.category {
-  border-bottom: solid 0.5px darken($peter-gray, 10%);
-  font-weight: bold;
-  padding: 10px;
 }
 
 a {
@@ -118,6 +103,35 @@ ul.horizontal li {
   padding: 0;
   float: left;
 }
+
+/*** INDEX ***/
+#rss-tag {
+  height:35px;
+}
+
+.recent-comments {
+  font-weight: bold;
+  float: right;
+}
+
+.categories {
+  border: solid 0.5px darken($peter-gray, 10%);
+  @include peter-shadow;
+}
+
+.categories_title {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  font-size: 120%;
+  @include github-hero;
+}
+.category {
+  border-bottom: solid 0.5px darken($peter-gray, 10%);
+  font-weight: bold;
+  padding: 10px;
+}
+
 
 /*** EPISODES ***/
 .episode {
@@ -260,7 +274,7 @@ div.nice_comment {
   position: relative;
   .error {
     padding-left: 10px;
-    color: #800000;
+    color: $error_red;
     font-weight: bold;
     padding-bottom: 5px;
     display: none;
@@ -420,12 +434,6 @@ div.comment {
 
 
 
-/*** LOGIN ***/
-
-#login {
-  margin-right: 300px;
-}
-
 /* shownotes */
 .show_notes {
   position: relative;
@@ -570,24 +578,6 @@ textarea#episode_notes {
   }
 }
 
-/* login and signup form*/
-
-#signup_form_area {
-  margin: auto; 
-  width: 300px;
-  a {
-    text-decoration: none;
-  }
-}
-#not_match_error {
-  display: none;
-}
-#blank_password_error {
-  display: none;
-}
-#blank_username_error {
-  display: none;
-}
 
 /*** PAGINATION ***/
 
@@ -609,40 +599,13 @@ textarea#episode_notes {
 }
 
 /*** LOGIN ***/
-#login_form {
-  margin: auto;
-  margin-top: 40px;
-  width: 300px;
-  margin-bottom: 20px;
-  .error {
-    display: none;
-  }
-}
-#login_form_head {
-  background-color: $github-blue ;
-  color: white;
-  font-size: 120%;
-  font-weight: bold;
-  padding: 10px;
-  @include github-hero;
-}
-#login_form_body {
-  background-color: lighten($github-blue, 30%);
-  padding: 20px;
-  padding-bottom: 1px;
-}
 #github_login {
   font-weight: bold;
   font-size: 120%;
 }
-div#login_github {
+
+#login_github {
   text-align: center;
-  #huo {
-    margin: 40px;
-    font-size: 180%;
-    font-weight: 1000;
-    display: block;
-  }
 }
 #subscribe {
   margin-bottom: 0.4em;
@@ -664,4 +627,78 @@ div#login_github {
   font-size: 140%;
   text-align: center;
   margin: 2em;
+}
+
+#huo {
+  text-align: center;
+  margin: 40px;
+  font-size: 180%;
+  font-weight: 1000;
+  display: block;
+}
+
+#login {
+  width: 31em;
+}
+
+.login_form {
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  .error_box {
+    margin-bottom: 1em;
+    background: hsl(8, 100%, 95%) none repeat scroll 0%;
+    border: 1px solid hsl(13, 86%, 46%);
+    padding: 1em;
+    font-weight: bold;
+  }
+  h1 {
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+    margin: 0;
+    padding: 12px;
+    @include github-hero;
+    a {
+      display: inline-block;
+      margin-left: 2em;
+      font-size: 80%;
+      font-weight: normal;
+      color: hsl(196, 33%, 94%);
+      text-shadow: none;
+    }
+  }
+  .form_body {
+     padding: 2em;
+     background-color: hsl(196, 33%, 94%);
+     overflow: hidden;
+     border-style: solid;
+     border-width: 1px 1px 2px;
+     border-color: hsl(196, 33%, 94%) hsl(204, 15%, 87%) hsl(204, 15%, 87%);
+     border-radius: 0 0 3px 3px;
+     font-size: 110%;
+     input#name,input#password {
+       width: 21em;
+       padding: 5px;
+       margin: .2em 0 1em 0;
+     }
+    #username, #password {
+
+    }
+   }
+
+}
+
+#signup_form_area {
+  width: 31em;
+  margin: auto; 
+  input#user_name, #user_password, #user_password_confirmation, #user_email {
+    width: 21em;
+    padding: 5px;
+    margin: .2em 0 1em 0;
+  }
+  #not_match_error, #blank_password_error, #blank_username_error {
+    display: none;
+    color: $error_red;
+  }
 }
