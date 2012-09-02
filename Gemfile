@@ -36,3 +36,4 @@ gem "omniauth"
 gem 'omniauth-github'
 gem 'simple_form'
 gem 'haml'
+gem 'dynamic_form'
