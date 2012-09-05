@@ -71,7 +71,7 @@
         $(this).jPlayer("setMedia", {
           m4v: "<%= video_url @episode %>",
           poster: "http://media.happycasts.net/assets/episodes/stills/load.png"
-        });
+        }).jPlayer('play');
       },
       swfPath: "/assets/",
       supplied: "m4v",
