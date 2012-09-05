@@ -24,3 +24,13 @@ $("#comment_btn").click(function() {
 $('#markdown_cheatsheet').modal({
   show: false
 })
+
+$('#jquery_jplayer_1').bind('mousedown',function(e){
+  if ($('.jp-play').is(':visible'))
+  {
+    $(this).jPlayer('play');
+  }
+  else {
+    $(this).jPlayer('pause');
+  }
+});
