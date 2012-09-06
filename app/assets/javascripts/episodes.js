@@ -25,12 +25,13 @@ $('#markdown_cheatsheet').modal({
   show: false
 })
 
-$('#jquery_jplayer_1').bind('mousedown',function(e){
-  if ($('.jp-play').is(':visible'))
+$('#jquery_jplayer_1').bind('click', function(e) {
+  if ($('.jp-play').is(':visible')) 
   {
-    $(this).jPlayer('play');
-  }
-  else {
-    $(this).jPlayer('pause');
+    return $(this).jPlayer('play');
+  } 
+  else 
+  {
+    return $(this).jPlayer('pause');
   }
 });
