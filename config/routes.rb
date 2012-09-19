@@ -4,6 +4,7 @@ Happycasts::Application.routes.draw do
   resources :episodes
   resources :comments
 
+  match "/search" => "search#index", :as => :search
   match "/auth/:provider/callback" => "users#login_with_github"
   match "/auth/failure" => "users#login_with_github_failure"
   match "/about" => "info#about", :as => "about"

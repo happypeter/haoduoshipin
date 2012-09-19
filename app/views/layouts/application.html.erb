@@ -24,6 +24,9 @@
         <div class="container">
             <h3><a class="brand" href="/">Happycasts</a></h3>
             <ul class="nav">
+        <form action="/search" class="navbar-search pull-left" method="get">
+          <input type="text" name="q" class="search-query span3" value="<%= params[:q] %>" placeholder="<%= t("search") %>" />
+        </form>
 
             </ul>
             <ul class="nav pull-right">
