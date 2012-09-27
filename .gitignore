@@ -1,4 +1,5 @@
 public/assets/
+config/database.yml
 *.swp
 tags
 .bundle
