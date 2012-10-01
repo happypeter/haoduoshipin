@@ -93,15 +93,7 @@ ul {
 }
 
 ul.horizontal {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul.horizontal li {
-  margin: 0;
-  padding: 0;
-  float: left;
+  @include horizontal-list;
 }
 
 /*** INDEX ***/
@@ -607,15 +599,25 @@ textarea#episode_notes {
 #login_github {
   text-align: center;
 }
+
+/* css image sprites */
+@import "sub/*.png";
+@include all-sub-sprites;
+
 #subscribe {
   margin-bottom: 0.4em;
-  #rss {
-    display: inline-block;
+  li {
+    position: relative;
+    padding-left: 0px;
   }
-  #weibo {
-    display: inline-block;
+  a {
+    display: block;
+    width: 28px;
+    height: 28px;
   }
 }
+/* end */
+
 .recent-comments {
   font-weight: bold;
   float: right;

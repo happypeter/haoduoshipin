@@ -1,5 +1,6 @@
 public/assets/
 config/database.yml
+app/assets/images/sub-*.png
 *.swp
 tags
 .bundle
