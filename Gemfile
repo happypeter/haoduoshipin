@@ -13,6 +13,10 @@ group :assets do
   gem 'uglifier'
   gem 'sass-rails', '~> 3.1'
   gem 'bootstrap-sass', '~> 2.0.4.0'
+
+# css image sprite
+  gem 'compass-rails' 
+  gem 'oily_png'
 end
 
 
