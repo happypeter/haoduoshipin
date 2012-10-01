@@ -9,8 +9,10 @@
   </div>
   <div class="span2">
     <div id="subscribe"> 
-      <%= link_to image_tag("feed-icon-28x28.png"), episodes_url(format: "rss"), :id =>"rss" %>
-      <%= link_to image_tag("weibo.png"), "http://weibo.com/happycasts", :id =>"weibo" %>
+      <ul class="horizontal">
+        <li><a class="sub-feed" href=<% episodes_url(format: "rss") %>></a></li>
+        <li><a class="sub-weibo" href="http://weibo.com/happycasts"></a></li>
+      </ul>
     </div>
     <div class="categories">
       <div class="categories_title">
