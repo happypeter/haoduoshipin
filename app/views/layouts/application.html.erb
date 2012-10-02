@@ -30,13 +30,12 @@
 
             </ul>
             <ul class="nav pull-right">
-                  <% if current_user %>  
-                    <% @user= User.find(current_user.id) %>
-                    <li><%= link_to current_user.name, user_path(@user) %></li> 
+                  <% if current_user %>
+                    <li><%= link_to current_user.name, user_path(current_user) %></li>
                     <li><%= link_to  t("logout"), logout_path %></li>
-                  <% else %>  
+                  <% else %>
                     <li><%= link_to t("login"), login_path %></li>
-                  <% end %>  
+                  <% end %>
             </ul>
         </div>
     </div>
