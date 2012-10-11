@@ -604,8 +604,8 @@ textarea#episode_notes {
 }
 
 /* css image sprites */
-@import "sub/*.png";
-@include all-sub-sprites;
+@import "subcribe/*.png";
+@include all-subcribe-sprites;
 
 #subscribe {
   margin-bottom: 0.4em;
