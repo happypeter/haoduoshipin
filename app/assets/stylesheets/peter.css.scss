@@ -124,7 +124,6 @@ ul.horizontal {
   padding: 10px;
 }
 
-
 /*** EPISODES ***/
 .episode {
   margin-bottom: 25px;
@@ -190,6 +189,7 @@ ul.horizontal {
     margin-bottom: 14px;
   }     
 }
+
 
 /*** PAGINATION ***/
 
@@ -526,16 +526,77 @@ table {
 }
 
 /* for new episode form */
+
+$marginleft: 10px;
+
+@mixin form-base {
+  .input {
+    display: table;
+    margin-bottom: 18px;
+    line-height: 18px;
+  }
+  label {
+    float: left;
+    width: 140px;
+    padding-top: 5px;
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+  }
+  input {
+    display: inline-block;
+    width: 210px;
+    height: 18px;
+    padding: 4px;
+    margin: {
+      bottom: 9px;
+      left: $marginleft;
+    }
+    font-size: 13px;
+    color: #555;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  input.btn {
+    float: right;
+    width: 130px;
+    height: 30px;
+    margin: {
+      bottom: 25px;
+      right: 50px;
+    }
+    color: white;
+    font-size: 16px;
+  }
+}
+
+.edit_user {
+  @include form-base;
+}
+
+#new_episode {
+  @extend .edit_user;
+  abbr, .error { 
+    color: #C00;
+    margin-left: $marginleft;
+}
+  #episode_published_at_1i { margin-left: $marginleft; }
+}
+
 textarea#episode_description {
-    width: 960px;
+    width: 750px;
     height: 48px;
     margin-bottom: 9px;
+    margin-left: 10px;
     @include textarea-style;
 } 
+
 textarea#episode_notes {
-    width: 960px;
-    height: 520px;
+    width: 750px;
+    height: 350px;
     margin-bottom: 9px;
+    margin-left: 10px;
     @include textarea-style;
 } 
 
@@ -604,8 +665,8 @@ textarea#episode_notes {
 }
 
 /* css image sprites */
-@import "subcribe/*.png";
-@include all-subcribe-sprites;
+@import "subscribe/*.png";
+@include all-subscribe-sprites;
 
 #subscribe {
   margin-bottom: 0.4em;
