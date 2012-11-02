@@ -3,7 +3,7 @@
 
       <%= f.input :published_at, 
           :required => false, 
-          :default => Episode.last.published_at + 7.days,
+          :default => @default_time,
           :discard_hour => true
       %>
       <%= f.input :name %>
