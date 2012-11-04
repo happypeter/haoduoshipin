@@ -22,6 +22,7 @@ end
 
 group :development, :test do
   gem 'capistrano', '2.9.0', :require => false
+  gem 'thin'
 end
 # for the "no javascript runtime error" upgrading to 3.1
 gem 'execjs'
