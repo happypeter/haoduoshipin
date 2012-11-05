@@ -571,7 +571,7 @@ $episode-new-margin-left: 10px;
   }
 }
 
-#new_episode {
+#new_episode, .edit_episode {
   @include form-base;
   abbr, .error {
     color: #C00;
