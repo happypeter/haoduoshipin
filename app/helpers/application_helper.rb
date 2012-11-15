@@ -17,6 +17,23 @@ module ApplicationHelper
     end
   end
 
+  def make_mention_links(text)
+    mention_regexp = /@([a-zA-Z0-9_\-\p{han}]+)/u
+    text = text.gsub(mention_regexp) do
+      if $1.present?
+        user = User.find_by_name($1)
+        if user.present?
+          "<a href='/users/#{user.id}'>@#{$1}</a>"
+        else
+          "@#{$1}"
+        end
+      else
+        "@#{$1}"
+      end
+    end
+    text.html_safe
+  end
+
   def markdown(text)
     renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true)
     options = {
@@ -27,7 +44,10 @@ module ApplicationHelper
       strikethrough: true,
       superscript: true
     }
-    Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+    Redcarpet::Markdown.new(renderer, options).render(text)
+  end
+  def output_comment(text)
+    make_mention_links(markdown text)
   end
 
   def avatar_url(user)
