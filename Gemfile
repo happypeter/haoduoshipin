@@ -11,6 +11,7 @@ group :assets do
   gem 'uglifier'
   gem 'sass-rails', '~> 3.1'
   gem 'bootstrap-sass', '~> 2.0.4.0'
+  gem 'font-awesome-sass-rails'
 
 # css image sprite
   gem 'compass-rails' 

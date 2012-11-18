@@ -65,6 +65,9 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.4)
       multipart-post (~> 1.1)
+    font-awesome-sass-rails (2.0.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     fssm (0.2.9)
     haml (3.1.7)
     hashie (1.2.0)
@@ -185,6 +188,7 @@ DEPENDENCIES
   compass-rails
   dynamic_form
   execjs
+  font-awesome-sass-rails
   haml
   jquery-atwho-rails (= 0.1.6)
   jquery-rails
