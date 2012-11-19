@@ -22,7 +22,19 @@
 <div class="navbar">
     <div class="navbar-inner">
         <div class="container">
-            <h3><a class="brand" href="/">Happycasts</a></h3>
+            <div class="brand">
+              <div id="puppy_img">
+                <a href="/">
+                  <%= image_tag "puppy.png" %>
+                </a>
+              </div>
+              <a href="/">
+                <%= image_tag "logo.png", :id => "logo_img" %>
+              </a>
+              <div id="tag_line">
+                <%= link_to t("tag_line"), about_path %>
+              </div>
+            </div>
             <ul class="nav">
         <form action="/search" class="navbar-search pull-left" method="get">
           <input type="text" name="q" class="search-query span3" value="<%= params[:q] %>" placeholder="<%= t("search") %>" />

@@ -13,7 +13,7 @@ $navbarBackgroundHighlight: #eee;
       color: $blue;
     }
   }
-  .navbar-inner {    
+  .navbar-inner {
     .container {
       width: 960px;
     }
@@ -34,12 +34,10 @@ $navbarBackgroundHighlight: #eee;
   }
 }
 
-
 // make font a bit larger for Chinese Characters
 .btn {
   font-size: 16px;
 }
-
 .btn-large {
   font-size: 18px;
 }
