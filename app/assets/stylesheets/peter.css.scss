@@ -404,10 +404,10 @@ div.comment {
 /*** ABOUT ***/
 
 #about {
-  margin-right: 300px;
+  margin: 20px;
 }
 
-#about .ryan {
+#about .peter {
   float: right;
   padding: 7px;
   margin-left: 50px;
@@ -416,7 +416,7 @@ div.comment {
   font-weight: bold;
 }
 
-#about .ryan img {
+#about .peter img {
   display: block;
   padding-bottom: 5px;
 }
@@ -771,10 +771,15 @@ textarea#episode_notes { height: 350px; }
     #tag_line {
       margin-left: 100px;
       font-size: 80%;
+      margin-top: 5px;
       a:hover {
         text-decoration: none;
       }
     }
     padding: 10px 12px 0px;
+  }
+  .nav {
+    margin-top: 30px;
+    font-size: 120%;
   }
 }
