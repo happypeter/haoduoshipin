@@ -1,0 +1,227 @@
+$railscasts_shownotes_link_blue: #1B97F2;
+$episode-new-margin-left: 10px;
+$main_width: 960px;
+$peter-gray: #ececec;
+$github-blue:#839ba9;
+$error_red: #800000;
+@mixin github-fileheader {
+  background:-moz-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
+  background: -webkit-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececec',endColorstr='darken($peter-gray, 20%)')";
+
+}
+@mixin github-hero {
+  background:#839ba9;
+  background:-moz-linear-gradient(#839ba9,#405a6a);
+  background:-webkit-linear-gradient(#839ba9,#405a6a);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#839ba9',endColorstr='#405a6a')";
+}
+@mixin peter-shadow {
+  -webkit-box-shadow: 0 0 6px $peter-gray;
+  -moz-box-shadow: 0 0 6px $peter-gray;
+  box-shadow: 0 0 6px $peter-gray;
+}
+@mixin no-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@mixin rounded-corners($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin textarea-style {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid darken($peter-gray, 20%);
+  font-size: 120%;
+  @include rounded-corners(3px);
+  @include no-shadow;
+  &:focus
+  {
+    border: 1px solid darken($peter-gray, 50%) ;
+    @include peter-shadow;
+  }
+}  
+
+@mixin form-base {
+  .input {
+    display: table;
+    margin-bottom: 18px;
+    line-height: 18px;
+  }
+  label {
+    float: left;
+    width: 140px;
+    padding-top: 5px;
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+  }
+  input {
+    display: inline-block;
+    width: 210px;
+    height: 18px;
+    padding: 4px;
+    margin: {
+      bottom: 9px;
+      left: $episode-new-margin-left;
+    }
+    font-size: 13px;
+    color: #555;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  input.btn {
+    float: right;
+    width: 130px;
+    height: 30px;
+    margin: {
+      bottom: 25px;
+      right: 45px;
+    }
+    color: white;
+    font-size: 16px;
+  }
+}
+
+/*** SHARED ***/
+html, body{
+  background-color: #FFF;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+  margin: 0;
+  border: 0;
+  height: 100%;
+}
+
+a {
+  color: #1B97F2;
+  text-decoration: none;
+  img { border: none; }
+  &:hover { text-decoration: underline; }
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 3px;
+  margin-bottom: 4px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+h4 {
+  font-size: 12px;
+}
+
+.clear {
+  clear: both;
+}
+
+ul {
+  margin: 4px 0;
+  padding-left: 17px;
+}
+ul.horizontal {
+  @include horizontal-list;
+}
+
+#wrapper {
+  min-height:100%;
+  height:auto!important;
+  height:100%;
+  margin-bottom:-160px;
+}
+#container {
+  width:$main_width;
+  text-align:left;
+  margin:0 auto;
+}
+
+.navbar {
+  margin-bottom: 40px;
+  padding: 10px 12px 0px;
+  .brand {
+    #puppy_img {
+      float: left;
+      width: 60px;
+      height: 90px;
+    }
+    #logo_img {
+      width: 180px;
+      height: 40px;
+    }
+    #tag_line {
+      margin-left: 100px;
+      font-size: 80%;
+      a:hover { text-decoration: none; }
+    }
+  }
+}
+
+/* footer */
+#footer-push {
+  height:160px;
+  clear:both;
+}
+.footer {
+  border-top: solid 1px #abc;
+  font-size:80%;
+  min-height:160px;
+  overflow:hidden;
+  border-top:1px solid #E0E0E0;
+  border-bottom:1px solid #E0E0E0;
+  box-shadow:inset 0 -1px 0 white;
+  background-color:#f8f8f8;
+  .container {
+    width: 960px;
+  }
+  ul.footer_nav{
+    position:relative;
+    float:left;width:164px;
+    margin:20px 10px;
+    list-style:none;
+    h4{
+      margin-bottom:5px;
+      padding-bottom:5px;
+      border-bottom:thin solid #e1e1e1;
+    }
+  }
+  a:hover { text-decoration: none; }
+}
+
+/*** PAGINATION ***/
+.pagination {
+  margin: 8px 0;
+  font-size: 12px;
+  .disabled { color: #999; }
+  em { 
+    font-style: normal; 
+    padding: 4px;
+  }
+  a, .previous_page, .next_page { padding: 4px; }
+}
+
+#markdown_cheatsheet {
+  display: none;
+}
+/* markdown example */
+table {
+  margin-left:20px;
+  tr {
+      border-bottom: 1px solid darken($peter-gray, 10%);
+    td {
+      padding-top: 10px;
+      padding-left: 20px;
+    }
+    th { padding-left: 20px; }
+  }
+}

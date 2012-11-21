@@ -1,0 +1,125 @@
+/* comment */
+div.nice_comment {
+  position: relative;
+  .error {
+    padding-left: 10px;
+    color: $error_red;
+    font-weight: bold;
+    padding-bottom: 5px;
+    display: none;
+  }
+  textarea
+  {
+    width: 930px;
+    height: 88px;
+    margin-bottom: 9px;
+    margin-left:10px;
+    margin-right:10px;
+    @include textarea-style;
+  }
+  form {
+    background-color: $peter-gray;
+    margin-bottom: 9px;
+  }
+  label {
+    display: block;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-weight: bold;
+  }
+  a.formatting_tips {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: bold;
+  }
+  #comment_btn {
+    float: right;
+  }
+  margin-bottom: 40px;
+}
+h2.comments {
+  margin-top: 30px;
+}
+i.icon-comment {
+  color: darken($peter-gray, 30%);
+}
+i.icon-file {
+  color: darken($peter-gray, 30%);
+  font-size: 20px;
+}
+div.comment {
+  @include peter-shadow;
+  margin-bottom: 15px;
+  border: solid 1px darken($peter-gray, 20%);
+  &:hover {
+    border: solid 1px darken($peter-gray, 40%);
+  }
+  a {
+    text-decoration:none;
+    &:hover { text-decoration: underline; }
+  }
+  .comment_head {
+    padding: 5px;
+    font-weight: bold;
+    @include github-fileheader;
+    font-size: 80%;
+    color: hsl(0, 0%, 40%);
+    margin-bottom: 5px;
+    .comment_time {
+      float: right;
+      margin-right: 10px;
+    }
+  }
+  .comment_body {
+    position: relative;
+    padding: 10px;
+    ul.actions {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      list-style: none;
+      li {
+        display:inline-block; 
+        vertical-align:top; 
+      } 
+      &:hover a { text-decoration: none; }
+    }
+  }
+}
+
+.edit_comment_form {
+  position:relative;
+  height: 180px;
+  #error {
+    color: red;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  .comment_head {
+    padding: 5px;
+    font-weight: bold;
+    background-color:  $peter-gray;
+    font-size: 80%;
+    margin-bottom: 5px;
+    color: hsl(0, 0%, 40%);
+    .comment_time {
+      float: right;
+      margin-right: 10px;
+    }
+  }
+  textarea {
+    width: 930px; 
+    height: 88px;
+    margin-left:10px;
+    margin-right:10px;
+    @include textarea-style;
+  }
+  #comment_btn {
+    position: absolute;
+    top: 140px;
+    right: 10px;
+  } 
+}
+

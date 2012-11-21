@@ -1,0 +1,144 @@
+/* personal info*/
+#user_show {
+  .profile {
+    .edit_profile_btn {
+      text-align: right;
+    }
+    .main_info {
+      margin-top: 5px;
+    }
+  }
+  #admin_zone {
+    font-size: 160%;
+    margin-top: 10px;
+    margin-bottom: 10px ;
+    float: right;
+    .btn {
+      margin-bottom: 10px ;
+    }
+  }
+  #user_name {
+    font-size: 250%;
+    font-weight: bold;
+    margin-bottom: 12px ;
+  }
+  #user_email {
+    font-size:140%;
+    color: darken($peter-gray, 50%);
+    margin-bottom: 5px;
+  }
+  #user_bio {
+    color: darken($peter-gray, 50%);
+    font-style: italic;
+  }
+}
+
+/*** LOGIN ***/
+#github_login {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+#login_github {
+  text-align: center;
+}
+
+/*** user#index ***/
+#user_no {
+  font-weight: bold;
+  font-size: 140%;
+  text-align: center;
+  margin: 2em;
+}
+
+#huo {
+  text-align: center;
+  margin: 40px;
+  font-size: 180%;
+  font-weight: 1000;
+  display: block;
+}
+
+#login {
+  width: 31em;
+}
+
+.login_form {
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  .error_box {
+    margin-bottom: 1em;
+    background: hsl(8, 100%, 95%) none repeat scroll 0%;
+    border: 1px solid hsl(13, 86%, 46%);
+    padding: 1em;
+    font-weight: bold;
+  }
+  h1 {
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+    margin: 0;
+    padding: 12px;
+    @include github-hero;
+    a {
+      display: inline-block;
+      margin-left: 2em;
+      font-size: 80%;
+      font-weight: normal;
+      color: hsl(196, 33%, 94%);
+      text-shadow: none;
+    }
+  }
+  .form_body {
+     padding: 2em;
+     background-color: hsl(196, 33%, 94%);
+     overflow: hidden;
+     border-style: solid;
+     border-width: 1px 1px 2px;
+     border-color: hsl(196, 33%, 94%) hsl(204, 15%, 87%) hsl(204, 15%, 87%);
+     border-radius: 0 0 3px 3px;
+     font-size: 110%;
+     input#name,input#password {
+       width: 21em;
+       padding: 5px;
+       margin: .2em 0 1em 0;
+     }
+   }
+}
+
+#signup_form_area {
+  width: 31em;
+  margin: auto; 
+  input#user_name, #user_password, #user_password_confirmation, #user_email {
+    width: 21em;
+    padding: 5px;
+    margin: .2em 0 1em 0;
+  }
+  #not_match_error, #blank_password_error, #blank_username_error {
+    display: none;
+    color: $error_red;
+  }
+}
+
+/*** ABOUT ***/
+#about {
+  margin-right: 300px;
+  .ryan {
+    float: right;
+    padding: 7px;
+    margin-left: 50px;
+    border: solid 1px #CCC;
+    text-align: center;
+    font-weight: bold;
+    img {
+      display: block;
+      padding-bottom: 5px;
+    }
+  }
+  h2 {
+    margin-top: 25px;
+    margin-bottom: 8px;
+  }
+  p { margin: 8px 0; }
+}
