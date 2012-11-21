@@ -1,0 +1,193 @@
+/* css image sprites */
+@import "subscribe/*.png";
+@include all-subscribe-sprites;
+#subscribe {
+  margin-bottom: 0.4em;
+  li {
+    position: relative;
+    padding-left: 0px;
+  }
+  a {
+    display: block;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/*** INDEX ***/
+#rss-tag {
+  height:35px;
+}
+.recent-comments {
+  font-weight: bold;
+  float: right;
+}
+.categories {
+  border: solid 0.5px darken($peter-gray, 10%);
+  @include peter-shadow;
+}
+.categories_title {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  font-size: 120%;
+  @include github-hero;
+}
+.category {
+  border-bottom: solid 0.5px darken($peter-gray, 10%);
+  font-weight: bold;
+  padding: 10px;
+}
+
+/*** EPISODES ***/
+.episode {
+  margin-bottom: 25px;
+  padding-bottom: 19px;
+  .episode_snapshot {
+    float: left;
+  }
+  img {
+    border: solid 1px #BBB;
+  }
+  .episode_intro {
+    padding-left: 210px;
+    .episode_intro_title {
+      color: darken($peter-gray, 50%);
+      font-size: 80%;
+    }
+    h2 {
+      margin-bottom: 6px;
+    }
+  }
+  .episode_watch_btn {
+    padding-top: 5px;
+    padding-left: 210px;
+  }
+  border-bottom: solid 1px hsl(0, 0%, 90%);
+  .clear {
+    clear: both;
+  }
+}
+#episode {
+  margin-bottom: 50px;
+  .episode_snapshot {
+    float: left;
+    border: solid 1px #BBB;
+  }
+  .episode_intro {
+    padding-left: 210px;
+    .episode_intro_title {
+      color: darken($peter-gray, 50%);
+      font-size: 80%;
+    }
+  }
+  .episode_watch_btn {
+    padding-top: 5px;
+    padding-left: 210px;
+  }
+  span#episode_no {
+    color: darken($peter-gray, 30%);
+  }
+  .alternatives {
+    float: right;
+    ul {
+      list-style: none;
+      li {
+        float: left;
+        padding-left: 20px;
+      }
+    }
+  }
+  #video_wrapper {
+    border: solid 1px #777;
+    margin-bottom: 14px;
+  }
+}
+#login_buttons {
+  margin: 10px 0 14px 0;
+}
+
+/*** SIDE ***/
+.side {
+  position: absolute;
+  right: 0;
+  top: 0;
+  .banner { margin-top: 15px; }
+}
+.episode_views {
+  padding: 0 20px;
+  margin: 0;
+  font-weight: normal;
+  color: #444;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border: solid 1px #BBB;
+  background-color: #DDD;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
+  background: -moz-linear-gradient(top,  #EEE, #CCC);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
+  margin-bottom: 14px;
+  .view { padding-left: 3px; }
+    img {
+      background-color: #FFF;
+      background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#FFF));
+      background: -moz-linear-gradient(top,  #EEE, #FFF);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#FFF');
+      padding: 7px;
+      vertical-align: middle;
+      border: solid 1px #BBB;
+      border-top: none;
+      border-bottom: none;
+    }
+    a img {
+      background: none;
+      padding: 2px;
+      border: none;
+    }
+}
+
+/* shownotes */
+.show_notes {
+  position: relative;
+  padding: 20px;
+  border: 1px solid $peter-gray;
+  margin-bottom: 20px;
+  @include peter-shadow;
+  .edit_shownotes_btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+.comment_view {
+  display: none;
+}
+.code_block {
+  .code_header {
+    @include github-fileheader;
+    padding: 5px;
+    border: 1px solid darken($peter-gray, 20%);
+  }
+  margin-bottom: 20px;
+}
+
+/* for episode form */
+#new_episode, .edit_episode {
+  @include form-base;
+  abbr, .error {
+    color: #C00;
+    margin-left: $episode-new-margin-left;
+  }
+  #episode_published_at_1i { margin-left: $episode-new-margin-left; }
+}
+textarea#episode_description, textarea#episode_notes {
+  width: 750px;
+  height: 48px;
+  margin-bottom: 9px;
+  margin-left: 10px;
+  @include textarea-style;
+}
+textarea#episode_notes { height: 350px; }

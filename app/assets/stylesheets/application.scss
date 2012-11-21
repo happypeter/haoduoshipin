@@ -3,10 +3,12 @@
 @import "vendor/pygments";
 @import "vendor/bootstrap";
 @import 'font-awesome';
-@import "peter";
+@import "global";
+@import "comments";
+@import "episodes";
+@import "users";
 @import "search";
 @import "vendor/jplayer.blue.monday";
-
 
 .box {
   border: 1px solid darken($peter-gray, 50%);
