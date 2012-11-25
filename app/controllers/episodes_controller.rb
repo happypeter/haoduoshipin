@@ -3,7 +3,7 @@ class EpisodesController < ApplicationController
   def index
     @tag = Tag.find(params[:tag_id]) if params[:tag_id]  
     if params[:search].blank?
-      @episodes = (@tag ? @tag.episodes : Episode).accessible_by(current_ability).recent.page(params[:page]).per_page(5)
+      @episodes = (@tag ? @tag.episodes : Episode).accessible_by(current_ability).recent.page(params[:page]).per_page(20)
     else
       @episodes = Episode.search_published(params[:search], params[:tag_id])
     end
