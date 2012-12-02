@@ -7,9 +7,14 @@
   #admin_zone {
     font-size: 160%;
     margin-top: 10px;
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
     float: right;
-    .btn { margin-bottom: 10px ; }
+    .btn { 
+      width: 120px;
+      float: right;
+      text-align: center;
+      margin-bottom: 10px ;
+    }
   }
   #user_name {
     font-size: 250%;
@@ -24,6 +29,42 @@
   #user_bio {
     color: darken($peter-gray, 50%);
     font-style: italic;
+  }
+}
+
+#new_mail {
+  label {
+    float: left;
+    width: 140px;
+    padding-top: 5px;
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+  }
+  #mailbody {
+    margin-left: 10px;
+    width: 700px;
+    height: 100px;
+  }
+  input.btn {
+    float: right;
+    margin: {
+      right: 100px;
+      top: 25px;
+    }
+  }
+}
+
+.edit_user { 
+  @include form-base;
+  input { width: 280px; }
+  input.btn {
+    float: left;
+    margin: {
+      top: 10px;
+      bottom: 25px;
+      left: 312px;
+    }
   }
 }
 
