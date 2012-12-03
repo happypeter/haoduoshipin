@@ -62,7 +62,7 @@
       或者
       <%= link_to t("signup_for_free"), signup_path(:return_to => request.url) ,:class => "btn btn-success" %>
       也可以
-      <%= link_to t("login_with_github"), signup_path(:return_to => request.url) ,:class => "btn btn-info" %>
+      <%= link_to t("login_with_github"), "/auth/github/?return_to=#{request.url}" ,:class => "btn btn-info" %>
     </div>
     <br \>
   <% end %>
