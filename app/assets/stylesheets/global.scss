@@ -190,7 +190,8 @@ ul.horizontal {
   }
   ul.footer_nav{
     position:relative;
-    float:left;width:164px;
+    float:left;
+    width:164px;
     margin:20px 10px;
     list-style:none;
     h4{
@@ -207,8 +208,8 @@ ul.horizontal {
   margin: 8px 0;
   font-size: 12px;
   .disabled { color: #999; }
-  em { 
-    font-style: normal; 
+  em {
+    font-style: normal;
     padding: 4px;
   }
   a, .previous_page, .next_page { padding: 4px; }

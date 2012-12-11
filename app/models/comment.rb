@@ -5,9 +5,4 @@ class Comment < ActiveRecord::Base
   validates_presence_of :content, :episode_id
 
   scope :recent, order("created_at DESC")
-
-  def new
-    @comment = Comment.new 
-  end
-
 end
