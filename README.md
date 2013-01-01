@@ -8,7 +8,7 @@ cd happycasts
 ###ensure that you've installed mysql2
 ####or check mysql on happycasts
 ####find the `database.examle.yml` and modify it yourself  
-####save as `database,yml`
+####save as `database.yml`
 ```bash
 rake db:create
 rake db:migrate
