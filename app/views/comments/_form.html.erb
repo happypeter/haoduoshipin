@@ -6,12 +6,11 @@
     <span class="comment_time">
         <%= time_ago_in_words @comment.created_at  %>前
     </span>
-  </div> 
+  </div>
 
- <%= form_for @comment, :remote => true do |f| %>
-  <%= f.error_messages %>
-  <%= f.text_area :content %>
-  <%= f.submit t("update_comment"), :class=>"btn", :id => "comment_btn" %>
- <% end %>
+  <%= form_for @comment, :remote => true do |f| %>
+    <%= f.error_messages %>
+    <%= f.text_area :content %>
+    <%= f.submit t("update_comment"), :class=>"btn", :id => "comment_btn" %>
+  <% end %>
 <% end %>
-
