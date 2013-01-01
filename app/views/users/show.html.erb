@@ -13,7 +13,9 @@
       <%= @user.name %>
     </div>
     <div id="user_email">
+      <% if @user.show_email %>
       <%= @user.email %>
+      <% end %>
    </div>
   </div>
   <div class="span3 edit_profile_btn">
