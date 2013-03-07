@@ -4,3 +4,17 @@
       <% end %>
 
 <%= will_paginate @comments, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>
+
+
+<div class="modal" id="markdown_cheatsheet">
+  hhhh
+      <button class="close" data-dismiss="modal">×</button>
+</div>
+
+   <a  class="formatting_tips" data-toggle="modal" href="#markdown_cheatsheet" ><%= t("formatting") %></a>
+
+<script>
+   $('#markdown_cheatsheet').modal({
+     show: false
+     })
+</script>
