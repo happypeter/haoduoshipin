@@ -25,13 +25,3 @@ $('#markdown_cheatsheet').modal({
   show: false
 })
 
-$('#jquery_jplayer_1').bind('click', function(e) {
-  if ($('.jp-play').is(':visible')) 
-  {
-    return $(this).jPlayer('play');
-  } 
-  else 
-  {
-    return $(this).jPlayer('pause');
-  }
-});

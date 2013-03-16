@@ -1,28 +1,6 @@
-<div id="jp_container_1" class="jp-video">
-    <div class="jp-type-single">
-        <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-        <div class="jp-gui">
-            <div class="jp-interface">
-                <div class="jp-progress">
-                    <div class="jp-seek-bar">
-                        <div class="jp-play-bar"></div>
-                    </div>
-                </div>
-                <div class="jp-current-time"></div>
-                <div class="jp-duration"></div>
-                <div class="jp-controls-holder">
-                    <ul class="jp-controls">
-                        <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-                        <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-                    </ul>
-                    <ul class="jp-toggles">
-                        <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
-                        <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<script src="http://vjs.zencdn.net/c/video.js"></script>
+<div id="html5-player">
+  <video id="videojs" class="video-js vjs-default-skin" controls width="920" height="690" autoplay poster="" preload="auto" data-setup="{}">
+  <source src="<%= video_url episode %>" type="video/mp4"/ >
+  </video>
 </div>
-
-

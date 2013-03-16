@@ -44,6 +44,9 @@ $navbarBackgroundHighlight: #eee;
 .btn-small {
   font-size: 14px;
 }
+.container {
+  width: 920px !important;
+}
 
 // Core variables and mixins
 @import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc

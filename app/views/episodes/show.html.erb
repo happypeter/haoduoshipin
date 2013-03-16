@@ -2,7 +2,7 @@
 
 <div id="episode">
   <% if params[:autoplay] %>
-    <%= render "shared/player" %>
+    <%= render "shared/player", :episode => @episode %>
     <h1> <span id="episode_no">#<%= @episode.id %></span> <%= @episode.name %></h1>
   <% else %>
     <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{@episode.asset_name}.png", :class => "episode_snapshot",  :alt => @episode.name), episode_path(@episode, :autoplay => true) %>
@@ -71,20 +71,4 @@
 <%= render "comments/markdown_cheatsheet" %>
 <% content_for :scripts do %>
   <%= javascript_include_tag "episodes" %>
-  <script>
-    $("#jquery_jplayer_1").jPlayer({
-      ready: function () {
-        $(this).jPlayer("setMedia", {
-          m4v: "<%= video_url @episode %>",
-          poster: "http://media.happycasts.net/assets/episodes/stills/load.png"
-        }).jPlayer('play');
-      },
-      swfPath: "/assets/",
-      supplied: "m4v",
-      size: {
-        width: "960px",
-        height: "720px",
-      }
-    });
-  </script>
 <% end %>

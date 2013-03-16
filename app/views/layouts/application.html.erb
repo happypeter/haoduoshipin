@@ -3,6 +3,7 @@
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "HappyCasts" %></title>
   <link href="/assets/play.png" rel="icon" type="image/x-png" />
+  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tag %>
   <script type="text/javascript">
@@ -53,7 +54,7 @@
         </div>
     </div>
 </div>
-<div id="container">
+<div class="container">
       <%= yield %>
  <div id="footer-push"></div><!-- hack for sticky footer -->
 </div>
