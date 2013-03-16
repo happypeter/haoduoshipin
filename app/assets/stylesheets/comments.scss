@@ -1,4 +1,15 @@
 /* comment */
+.write-comment-area {
+  padding: 0 20px;
+  textarea {
+    height: 88px;
+    width: 100%;
+    display: block;
+    margin-left: -5px; // 5px padding in textarea-style
+    margin-bottom: 5px;
+    @include textarea-style;
+  }
+}
 div.nice_comment {
   position: relative;
   .error {
@@ -7,14 +18,6 @@ div.nice_comment {
     font-weight: bold;
     padding-bottom: 5px;
     display: none;
-  }
-  textarea {
-    width: 930px;
-    height: 88px;
-    margin-bottom: 9px;
-    margin-left:10px;
-    margin-right:10px;
-    @include textarea-style;
   }
   form {
     background-color: $peter-gray;
@@ -72,9 +75,9 @@ div.comment {
       right: 4px;
       list-style: none;
       li {
-        display:inline-block; 
-        vertical-align:top; 
-      } 
+        display:inline-block;
+        vertical-align:top;
+      }
       &:hover a { text-decoration: none; }
     }
   }
@@ -99,13 +102,6 @@ div.comment {
       float: right;
       margin-right: 10px;
     }
-  }
-  textarea {
-    width: 930px; 
-    height: 88px;
-    margin-left:10px;
-    margin-right:10px;
-    @include textarea-style;
   }
   #comment_btn {
     position: absolute;

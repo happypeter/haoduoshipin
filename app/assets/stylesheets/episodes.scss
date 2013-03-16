@@ -64,9 +64,6 @@
     padding-left: 210px;
   }
   border-bottom: solid 1px hsl(0, 0%, 90%);
-  .clear {
-    clear: both;
-  }
 }
 #episode {
   margin-bottom: 50px;
@@ -191,3 +188,12 @@ textarea#episode_description, textarea#episode_notes {
   @include textarea-style;
 }
 textarea#episode_notes { height: 350px; }
+
+#html5-player {
+  width: 800px; // same as video player
+  border-left: 50px solid white;
+  border-top: 10px solid darken($peter-gray, 20%);
+  border-bottom: 10px solid darken($peter-gray, 20%);
+  border-right: 50px solid white;
+  margin: 0 auto;
+}

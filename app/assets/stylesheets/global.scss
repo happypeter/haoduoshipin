@@ -121,9 +121,6 @@ h4 {
   font-size: 12px;
 }
 
-.clear {
-  clear: both;
-}
 
 ul {
   margin: 4px 0;
@@ -229,4 +226,7 @@ table {
     }
     th { padding-left: 20px; }
   }
+}
+.clearfix {
+  clear: both;
 }

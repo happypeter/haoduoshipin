@@ -4,36 +4,6 @@ $navbarLinkColorHover: $blue;
 $navbarBackground: #eee;
 $navbarBackgroundHighlight: #eee;
 
-.navbar {
-  a.brand {
-    color: black;
-    font-weight: bold;
-    font-size: 130%;
-    &:hover {
-      color: $blue;
-    }
-  }
-  .navbar-inner {
-    .container {
-      width: 960px;
-    }
-  }
-  .nav > li > a {
-    float: none;
-    line-height: 19px;
-    color: $navbarLinkColor;
-    text-decoration: none;
-    text-shadow: none;
-    font-weight: bold;
-    margin-right: 0px;
-    padding-right: 0px;
-    &:hover {
-      color: $navbarLinkColorHover;
-      text-decoration: none;
-    }
-  }
-}
-
 // make font a bit larger for Chinese Characters
 .btn {
   font-size: 16px;
@@ -45,7 +15,7 @@ $navbarBackgroundHighlight: #eee;
   font-size: 14px;
 }
 .container {
-  width: 920px !important;
+  width: 900px !important;
 }
 
 // Core variables and mixins

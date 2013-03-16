@@ -1,0 +1,53 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.header {
+  text-shadow: 0 1px 0 white;
+  border-bottom: 5px solid #E5E5E5;
+  padding: 10px 0;
+  height: 48px;
+  a {
+    text-decoration: none;
+  }
+  margin-bottom: 30px;
+}
+.header-logo-wordmark {
+  display: block;
+  float: left;
+  height: 48px;
+  width: 200px;
+  #puppy_img {
+    float: left;
+    width: 45px;
+    img {
+      height: 40px;
+    }
+  }
+  #tag_line {
+    padding-left: 60px;
+  }
+  #logo_img {
+    display: block;
+    width: 130px;
+  }
+}
+
+.search-bar {
+  display: block;
+  padding-top: 10px;
+  height: 48px;
+  width: 300px;
+  float: left;
+}
+
+.header-actions {
+  height: 48px;
+  padding-top: 20px;
+  float: right;
+  list-style: none;
+  li {
+    vertical-align: center;
+    float: left;
+    margin-left: 20px;
+  }
+}

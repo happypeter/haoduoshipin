@@ -1,0 +1,9 @@
+@mixin chinese-style {
+  font-family: 'Microsoft YaHei', 微软雅黑, 'SimSun', Arial, Lucida Grande, Tahoma, sans-serif;
+  text-align: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 22px;
+  color: $font-gray;
+  letter-spacing: 2px;
+}

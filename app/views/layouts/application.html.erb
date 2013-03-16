@@ -20,44 +20,11 @@
 </head>
 <body>	
 <div id="wrapper">
-<div class="navbar">
-    <div class="navbar-inner">
-        <div class="container">
-            <div class="brand">
-              <div id="puppy_img">
-                <a href="/">
-                  <%= image_tag "puppy.png" %>
-                </a>
-              </div>
-              <a href="/">
-                <%= image_tag "logo.png", :id => "logo_img" %>
-              </a>
-              <div id="tag_line">
-                <%= link_to t("tag_line"), about_path %>
-              </div>
-            </div>
-            <ul class="nav">
-        <form action="/search" class="navbar-search pull-left" method="get">
-          <input type="text" name="q" class="search-query span3" value="<%= params[:q] %>" placeholder="<%= t("search") %>" />
-        </form>
-
-            </ul>
-            <ul class="nav pull-right">
-                  <% if current_user %>
-                    <li><%= link_to current_user.name, user_path(current_user) %></li>
-                    <li><%= link_to  t("logout"), logout_path %></li>
-                  <% else %>
-                    <li><%= link_to t("login"), login_path(:return_to => request.url) %></li>
-                    <li><%= link_to t("signup"), signup_path(:return_to => request.url) %></li>
-                  <% end %>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="container">
-      <%= yield %>
- <div id="footer-push"></div><!-- hack for sticky footer -->
-</div>
+  <%= render 'shared/header' %>
+  <div class="container">
+    <%= yield %>
+    <div id="footer-push"></div><!-- hack for sticky footer -->
+  </div>
 </div>
 <div class="footer">
   <div class="container">

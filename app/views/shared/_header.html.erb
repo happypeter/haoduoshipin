@@ -1,0 +1,33 @@
+<div class="header">
+  <div class="container clearfix">
+    <div class="header-logo-wordmark">
+      <div id="puppy_img">
+        <a href="/">
+          <%= image_tag "puppy.png" %>
+        </a>
+      </div>
+      <a href="/">
+        <%= image_tag "logo.png", :id => "logo_img" %>
+      </a>
+      <div id="tag_line">
+        <%= link_to t("tag_line"), about_path %>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <form action="/search" class="navbar-search pull-left" method="get">
+        <input type="text" name="q" class="search-query span3" value="<%= params[:q] %>" placeholder="<%= t("search") %>" />
+      </form>
+    </div>
+
+    <div class="header-actions">
+      <% if current_user %>
+        <li><%= link_to current_user.name, user_path(current_user), :class => "button" %></li>
+        <li><%= link_to  t("logout"), logout_path, :class => "button" %></li>
+      <% else %>
+        <li><%= link_to t("login"), login_path(:return_to => request.url), :class => "button" %></li>
+        <li><%= link_to t("signup"), signup_path(:return_to => request.url) %></li>
+      <% end %>
+    </div>
+  </div>
+</div>
