@@ -16,3 +16,11 @@ pre {
   border-radius: 3px;
   margin: 0; /* pre has a margin by default */
 }
+
+blockquote {
+  border-left: 4px solid #DDD;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  color: #777;
+}
