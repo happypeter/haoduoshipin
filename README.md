@@ -16,4 +16,10 @@ rake db:migrate
 rails s
 ```
 
+## install avconv
+```
+sudo apt-get install ffmpeg
+```
+then you get the command `avconv` to calculate the video duration.
+
 ##Start Contributing...
