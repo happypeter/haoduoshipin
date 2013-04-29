@@ -1,6 +1,6 @@
 <%# title "Edit Profile" %>
 
-<div class="content">
+<div class="content edit-user-info-form">
 <%= form_for @user do |f| %>
   <%= f.error_messages %>
   <p>
@@ -12,9 +12,35 @@
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label t("show_email") %>
-    <%= f.check_box(:show_email) %>
+  <%= f.label t("show_email") %>
+  <%= f.check_box(:show_email) %>
   </p>
-  <p><%= f.submit t("update_profile"), :class => "btn btn-success" %></p>
+  <div id="not-match-alert" style="display:none; color: red; font-weigh: bold">
+    Passwords do not match
+  </div>
+  <p><%= t('change_password') %> <%= t('empty_no_change') %><p>
+  <p>
+  <%= f.label t("password") %>
+  <%= f.password_field :password %>
+  </p>
+  <p>
+  <%= f.label t("type_password_again") %>
+  <input id="user_password_confirmation" size="50" type="password" />
+  </p>
+  <p><%= f.submit t("update_profile"), :id => "update-user-info", :class => "btn btn-success" %></p>
 <% end %>
 </div>
+
+<%= content_for :scripts do %>
+  <script>
+    $('#update-user-info').click(function(){
+      $('#blank-alert').hide();
+      $('#not-match-alert').hide();
+      if ($('.edit-user-info-form input#user_password').val() != $('.edit-user-info-form input#user_password_confirmation').val())
+      {
+        $('#not-match-alert').show();
+        return false;
+      }
+    });
+  </script>
+<% end %>

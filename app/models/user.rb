@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   #user may submit "hisname ", so this is nice to have
   before_validation :strip_blanks
 
-  before_create { generate_token(:token) }# will this be called before "user.save!"???
+  before_create { generate_token(:token) }
   has_many :comments
 
   #validate the below two with client-side code
@@ -39,14 +39,14 @@ class User < ActiveRecord::Base
   end
 
 
-  def self.authenticate(name, password)  
-    user = find_by_name(name)  
-    if user && !user.password_salt.blank? && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)  
-      user  
-    else  
-      nil  
-    end  
-  end  
+  def self.authenticate(name, password)
+    user = find_by_name(name)
+    if user && !user.password_salt.blank? && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    else
+      nil
+    end
+  end
   def generate_token(column)
     begin
       self[column] = SecureRandom.urlsafe_base64

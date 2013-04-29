@@ -3,16 +3,16 @@
     <%= t("create_your_account") %>
   </h1>
   <div id="signup_form">
-    <%= form_for @user do |f| %>  
-      <% if @user.errors.any? %>  
-        <div class="error_messages">  
-          <ul>  
-            <% for message in @user.errors.full_messages %>  
-              <li><%= message %></li>  
-            <% end %>  
-          </ul>  
-        </div>  
-      <% end %>  
+    <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+        <div class="error_messages">
+          <ul>
+            <% for message in @user.errors.full_messages %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <label for="user_name">用户名(不允许有空格)</label> <br>
       <input id="user_name" name="user[name]" size="50" type="text" />
 
