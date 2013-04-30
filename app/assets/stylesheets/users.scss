@@ -55,7 +55,7 @@
   }
 }
 
-.edit_user { 
+.edit_user {
   @include form-base;
   input { width: 280px; }
   input.btn {

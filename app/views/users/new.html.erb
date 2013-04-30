@@ -22,7 +22,8 @@
       </div>
       <div class="input-prepend">
         <div id="password">
-          密码<%# link_to "(forget password?)", forget_password_path %>
+          密码
+          <%= link_to "forgotten password?", new_password_reset_path %>
         </div>
         <%= password_field_tag :password,params[:password] %>
       </div>

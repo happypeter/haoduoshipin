@@ -3,6 +3,7 @@ Happycasts::Application.routes.draw do
   resources :users
   resources :episodes
   resources :comments
+  resources :password_resets
 
   match "/search" => "search#index", :as => :search
   match "/auth/:provider/callback" => "users#login_with_github"

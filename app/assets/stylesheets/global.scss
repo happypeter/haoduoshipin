@@ -61,7 +61,6 @@ $error_red: #800000;
   input {
     display: inline-block;
     width: 210px;
-    height: 18px;
     padding: 4px;
     margin: {
       bottom: 9px;
@@ -229,4 +228,11 @@ table {
 }
 .clearfix {
   clear: both;
+}
+
+.notice {
+  color: #3A87AD;
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+  padding: 10px;
 }

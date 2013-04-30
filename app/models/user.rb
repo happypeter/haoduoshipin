@@ -31,6 +31,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  def send_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    HappyMailer.password_reset(self).deliver
+  end
+
   def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt
