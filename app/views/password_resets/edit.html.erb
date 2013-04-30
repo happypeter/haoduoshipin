@@ -9,9 +9,13 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div>
+    reset password for <%= link_to @user.name, @user %>
+    <br>
+    <br>
+    <br>
   </div>
-  <div class="update-password"><%= f.submit "Update Password" %></div>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.submit "Update Password" %>
 <% end %>
