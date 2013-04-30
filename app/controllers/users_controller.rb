@@ -1,6 +1,4 @@
 class UsersController < ApplicationController  
-  load_and_authorize_resource
-
   def newmail
     @user = User.new
   end
@@ -85,7 +83,7 @@ class UsersController < ApplicationController
 
   def show
     if params[:name]
-      @user = User.where(:name => params[:name]).first
+      @user = User.find_by_name(params[:name])
     else
       @user = User.find(params[:id])
     end

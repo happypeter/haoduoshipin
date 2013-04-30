@@ -1,14 +1,13 @@
 class EpisodesController < ApplicationController
-  load_and_authorize_resource
   def index
-    @tag = Tag.find(params[:tag_id]) if params[:tag_id]  
+    @tag = Tag.find(params[:tag_id]) if params[:tag_id]
     if params[:search].blank?
-      @episodes = (@tag ? @tag.episodes : Episode).accessible_by(current_ability).recent.page(params[:page]).per_page(20)
+      @episodes = (@tag ? @tag.episodes : Episode).recent.page(params[:page]).per_page(20)
     else
       @episodes = Episode.search_published(params[:search], params[:tag_id])
     end
     respond_to do |format|
-      format.html 
+      format.html
       format.rss
     end
   end
@@ -34,11 +33,11 @@ class EpisodesController < ApplicationController
   end
 
   def edit
-    @episode = Episode.find(params[:id]) #in auth-love, I do not need this FIXME, but when I check railscasts 192-cancan, I found this in Rbates' controller, I am feeling good now
+    @episode = Episode.find(params[:id]) 
   end
 
   def update
-    @episode = Episode.find(params[:id]) # in auth-love, I do not need this FIXME
+    @episode = Episode.find(params[:id])
     if @episode.update_attributes(params[:episode])
       redirect_to @episode, :notice => "Successfully updated episode."
     else

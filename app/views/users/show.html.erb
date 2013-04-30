@@ -21,10 +21,10 @@
   <div class="span3 edit_profile_btn">
     <% if current_user.try(:name) == @user.name %>
       <div id="admin_zone">
-        <% if can? :edit, :users %>  
+        <% if current_user && current_user = @user %>
           <%= link_to t("edit_profile"), edit_user_path, :class => "btn" %>
         <% end %>
-        <% if can? :create, :episodes %>
+        <% if current_user.admin? %>
           <div class="happy_actions">
             <%= link_to t('new_ep'), new_episode_path, :class => "btn" %>
             <br>

@@ -31,7 +31,6 @@ gem 'will_paginate', '> 3.0'
 gem 'mysql2', "~> 0.3.10"
 gem 'bcrypt-ruby', :require => 'bcrypt'  
 gem 'redcarpet'
-gem "cancan", :git => "git://github.com/ryanb/cancan.git", :branch => "2.0"
 gem 'nokogiri', "1.4.7"
 gem 'pygments.rb'
 gem "jquery-rails"

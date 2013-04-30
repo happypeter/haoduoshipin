@@ -1,5 +1,5 @@
 <div class="show_notes">
-  <% if can? :edit, @episode %>
+  <% if current_user && current_user.admin? %>
     <%= link_to "Edit", edit_episode_path(@episode), :class => "btn edit_shownotes_btn" %>
   <% end %>
   <%= textilize @episode.notes %>

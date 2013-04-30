@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/ryanb/cancan.git
-  revision: f1cebde51a87be149b4970a3287826bb63c0ac0b
-  branch: 2.0
-  specs:
-    cancan (2.0.0.alpha)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -182,7 +175,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   bootstrap-sass (~> 2.0.4.0)
-  cancan!
   capistrano (= 2.9.0)
   coffee-rails (~> 3.2.1)
   compass-rails
