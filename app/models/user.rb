@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     HappyMailer.password_reset(self).deliver
   end
 
+  def signup_local?
+    !self.github_username?
+  end
+
   def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt

@@ -19,32 +19,36 @@
   <%= f.label t("email_subscription") %>
   <%= f.check_box(:email_subscription) %>
   </p>
-  <div id="not-match-alert" style="display:none; color: red; font-weigh: bold">
-    Passwords do not match
-  </div>
-  <p><%= t('change_password') %> <%= t('empty_no_change') %><p>
-  <p>
-  <%= f.label t("password") %>
-  <%= f.password_field :password %>
-  </p>
-  <p>
-  <%= f.label t("type_password_again") %>
-  <input id="user_password_confirmation" size="50" type="password" />
-  </p>
+  <% if @user.signup_local? %>
+    <div id="not-match-alert" style="display:none; color: red; font-weigh: bold">
+      Passwords do not match
+    </div>
+    <p><%= t('change_password') %> <%= t('empty_no_change') %><p>
+    <p>
+    <%= f.label t("password") %>
+    <%= f.password_field :password %>
+    </p>
+    <p>
+    <%= f.label t("type_password_again") %>
+    <input id="user_password_confirmation" size="50" type="password" />
+    </p>
+  <% end %>
   <p><%= f.submit t("update_profile"), :id => "update-user-info", :class => "btn btn-success" %></p>
 <% end %>
 </div>
 
-<%= content_for :scripts do %>
-  <script>
-    $('#update-user-info').click(function(){
-      $('#blank-alert').hide();
-      $('#not-match-alert').hide();
-      if ($('.edit-user-info-form input#user_password').val() != $('.edit-user-info-form input#user_password_confirmation').val())
-      {
-        $('#not-match-alert').show();
-        return false;
-      }
-    });
-  </script>
+<% if @user.signup_local? %>
+  <%= content_for :scripts do %>
+    <script>
+      $('#update-user-info').click(function(){
+        $('#blank-alert').hide();
+        $('#not-match-alert').hide();
+        if ($('.edit-user-info-form input#user_password').val() != $('.edit-user-info-form input#user_password_confirmation').val())
+        {
+          $('#not-match-alert').show();
+          return false;
+        }
+      });
+    </script>
+  <% end %>
 <% end %>
