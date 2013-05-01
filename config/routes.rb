@@ -7,6 +7,7 @@ Happycasts::Application.routes.draw do
 
   match "/search" => "search#index", :as => :search
   match "/auth/:provider/callback" => "users#login_with_github"
+  get "/account" => "users#edit", :as => "account"
   match "/auth/failure" => "users#login_with_github_failure"
   match "/about" => "info#about", :as => "about"
   match "/new_mail" =>"users#newmail"

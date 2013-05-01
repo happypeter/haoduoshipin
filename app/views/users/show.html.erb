@@ -22,7 +22,7 @@
     <% if current_user.try(:name) == @user.name %>
       <div id="admin_zone">
         <% if current_user && current_user = @user %>
-          <%= link_to t("edit_profile"), edit_user_path, :class => "btn" %>
+          <%= link_to t("edit_profile"), account_path, :class => "btn" %>
         <% end %>
         <% if current_user.admin? %>
           <div class="happy_actions">

@@ -18,10 +18,10 @@ class UsersController < ApplicationController
       end
     end
     redirect_to root_url, :notice => "Mail sent!"
-  end  
+  end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by_name(current_user.name)
   end
 
   def update
