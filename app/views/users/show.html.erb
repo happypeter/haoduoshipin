@@ -24,7 +24,7 @@
         <% if current_user && current_user = @user %>
           <%= link_to t("edit_profile"), account_path, :class => "btn" %>
         <% end %>
-        <% if current_user.admin? %>
+        <% if current_user && current_user.admin? %>
           <div class="happy_actions">
             <%= link_to t('new_ep'), new_episode_path, :class => "btn" %>
             <br>
