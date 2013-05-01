@@ -12,6 +12,7 @@ Happycasts::Application.routes.draw do
   match "/about" => "info#about", :as => "about"
   match "/new_mail" =>"users#newmail"
   match "/send_mail" =>"users#sendmail"
+  match "/new_ep_release_mail/:id" => "users#new_ep_release_mail"
   match "signup" => "users#signup", :as => "signup"
   match "login" => "users#new", :as => "login"
   match "user_login" => "users#login"

@@ -10,6 +10,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def new_ep_release_mail
+    @episode = Episode.find(params[:id])
+    User.all.each do |u|
+      if u.email_subscription?
+        HappyMailer.new_ep_release(u, @episode).deliver
+      end
+    end
+    redirect_to root_url, :notice => "Mail sent!"
+  end
   def sendmail
     @mailbody = params[:mailbody]
     User.all.each do |u|
@@ -66,7 +75,7 @@ class UsersController < ApplicationController
       cookies.permanent[:token] = user.token
       redirect_to_target_or_default root_url
     else
-      flash.alert = "Invalid name or password"
+      flash.notice = "Invalid name or password"
       redirect_to :action => "new"
     end
   end

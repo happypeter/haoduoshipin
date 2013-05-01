@@ -5,6 +5,11 @@ class HappyMailer < ActionMailer::Base
     @user = user
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Happycasts")
   end
+  def new_ep_release(user, episode)
+    @episode = episode
+    @user = user
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "Happycasts:#{@episode.name}")
+  end
   def password_reset(user)
     @user = user
     mail :to => user.email, :subject => "Password Reset"
