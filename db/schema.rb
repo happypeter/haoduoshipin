@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430070311) do
+ActiveRecord::Schema.define(:version => 20130501030904) do
 
   create_table "comments", :force => true do |t|
     t.integer  "episode_id"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130430070311) do
     t.boolean  "admin"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.boolean  "email_subscription",     :default => true
   end
 
 end

@@ -240,5 +240,5 @@ zh-CN:
   tag_line: "Web 开发小技巧"
   about_happycasts: "关于"
   offline_meetup: "线下聚会"
-#robin add some
-  show_email: "是否显示邮箱"
+  show_email: "显示邮箱"
+  email_subscription: "订阅邮件列表"

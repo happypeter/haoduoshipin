@@ -13,7 +13,9 @@ class UsersController < ApplicationController
   def sendmail
     @mailbody = params[:mailbody]
     User.all.each do |u|
-      HappyMailer.mail_to_all(u, @mailbody).deliver
+      if u.email_subscription?
+        HappyMailer.mail_to_all(u, @mailbody).deliver
+      end
     end
     redirect_to root_url, :notice => "Mail sent!"
   end  
