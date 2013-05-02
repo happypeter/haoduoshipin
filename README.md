@@ -1,25 +1,9 @@
-http://www.happycasts.net  
-Source Code  
 ## Install
-```bash
-git clone git@github.com:happypeter/happycasts.git
-cd happycasts
-```  
-###ensure that you've installed mysql2
-####or check mysql on happycasts
-####find the `database.examle.yml` and modify it yourself  
-####save as `database.yml`
-```bash
-rake db:create
-rake db:migrate
-#then run it
-rails s
-```
 
-## install avconv
+I will make a video to show how to set happycasts up for local development,
+and how to deploy in a simple way. Will add a link here.
+
+_avconv_ is needed to calculate the video duration.
 ```
 sudo apt-get install ffmpeg
 ```
-then you get the command `avconv` to calculate the video duration.
-
-##Start Contributing...
