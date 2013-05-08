@@ -16,6 +16,10 @@ class EpisodesController < ApplicationController
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
     @comment = Comment.new(:episode => @episode, :user => current_user)
+    respond_to do |f|
+      f.html
+      f.json {render :json => @episode}
+    end
   end
 
   def new
