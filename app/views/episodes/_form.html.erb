@@ -1,15 +1,14 @@
 <div class="content">
   <%= simple_form_for @episode do |f| %>
 
-      <%= f.input :published_at, 
-          :required => false, 
+      <%= f.input :published_at,
+          :required => false,
           :default => @default_time,
           :discard_hour => true
       %>
       <%= f.input :name %>
       <%= f.input :tag_names %>
 
-      <%= f.input :youku %>
       <%= f.input :description %>
       <%= f.input :notes %>
       <%= f.button :submit, :class => "btn-success" %>
