@@ -1,4 +1,6 @@
 //= require jquery.atwho
+//= require mediaelement_rails
+//= require mediaelement_rails/mejs-skins
 @import "compass";
 @import "markdown";
 @import "vendor/bootstrap";
@@ -9,6 +11,7 @@
 @import "users";
 @import "search";
 @import "header";
+
 
 .box {
   border: 1px solid darken($peter-gray, 50%);

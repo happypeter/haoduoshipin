@@ -42,7 +42,7 @@ $error_red: #800000;
     border: 1px solid darken($peter-gray, 50%) ;
     @include peter-shadow;
   }
-}  
+}
 
 @mixin form-base {
   .input {

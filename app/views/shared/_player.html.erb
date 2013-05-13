@@ -1,6 +1,13 @@
-<script src="http://vjs.zencdn.net/c/video.js"></script>
 <div id="html5-player">
-  <video id="videojs" class="video-js vjs-default-skin" controls width="800" height="600" autoplay poster="" preload="auto" data-setup="{}">
-  <source src="<%= video_url episode %>" type="video/mp4"/ >
+  <video preload width="800px" height="600px"
+  src="<%= video_url episode %>"
+  type="video/mp4"
+  controls="controls">
   </video>
 </div>
+
+<% content_for :template_js do %>
+  <script>
+    $('video').mediaelementplayer();
+  </script>
+<% end %>

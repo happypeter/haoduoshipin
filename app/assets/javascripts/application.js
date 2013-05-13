@@ -3,6 +3,7 @@
 //= require bootstrap
 //= require editable_comment
 //= require jquery.atwho
+//= require mediaelement_rails
 //= require_self
 
 var commenter = [];

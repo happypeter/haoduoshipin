@@ -38,7 +38,7 @@
 </div>
 
 <% if @user.signup_local? %>
-  <%= content_for :scripts do %>
+  <%= content_for :template_js do %>
     <script>
       $('#update-user-info').click(function(){
         $('#blank-alert').hide();
