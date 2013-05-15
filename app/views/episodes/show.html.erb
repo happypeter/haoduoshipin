@@ -21,7 +21,7 @@
   <div class="alternatives">
     <ul>
       <% if current_user && current_user.admin? %>
-        <li><%= link_to t("new_ep_release_mail"), "/new_ep_release_mail/#{@episode.id}", :class => "btn" %></li>
+        <li><%= link_to t("new_ep_release_mail"), "/new_ep_release_mail/#{@episode.id}", :class => "btn", :method => :post %></li>
       <% end %>
 
       <li><%= link_to t("download"), video_url(@episode), :class => "btn" %></li>

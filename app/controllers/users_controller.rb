@@ -1,4 +1,10 @@
 class UsersController < ApplicationController  
+  before_filter :check_admin, :only => [:newmail, :new_ep_release_mail, :sendmail]
+  def check_admin
+    unless current_user && current_user.admin?
+      redirect_to :root, :notice => "Only admin can do this."
+    end
+  end
   def newmail
     @user = User.new
   end
