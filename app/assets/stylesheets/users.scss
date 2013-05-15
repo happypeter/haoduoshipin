@@ -153,11 +153,14 @@
 
 /*** ABOUT ***/
 #about {
+  line-height:  25px;
   margin: 20px;
   .peter {
     float: right;
     padding: 7px;
-    margin-left: 50px;
+    margin-left: 40px;
+    margin-right: 10px;
+    margin-top: 35px;
     border: solid 1px #CCC;
     text-align: center;
     font-weight: bold;
