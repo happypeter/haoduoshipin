@@ -59,7 +59,7 @@
           <%= f.text_area :content %>
         </div>
         <div class="clearfix"></div>
-        <%= f.submit t("publish_comment"), :class=>"btn btn-success", :id => "comment_btn" %>
+        <%= f.submit t("publish_comment"), :class=>"btn btn-success", :id => "comment_btn", :disable_with => "sending..." %>
       <% end %>
     </div>
   <% else %>
@@ -77,4 +77,11 @@
 <%= render "comments/markdown_cheatsheet" %>
 <% content_for :template_js do %>
   <%= javascript_include_tag "episodes" %>
+  <script>
+    $("textarea#comment_content").keydown(function(e) {
+      if (e.ctrlKey && e.keyCode == 13) {
+        $("input[type=submit]").click();
+      }
+    });
+  </script>
 <% end %>

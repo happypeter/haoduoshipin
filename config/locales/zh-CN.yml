@@ -221,7 +221,7 @@ zh-CN:
   login_with_local_account: "使用 HappyCasts 账户登录"
   edit: "编辑"
   delete: "删除"
-  publish_comment: "发表"
+  publish_comment: "发表 (Ctrl-Enter)"
   update_comment: "再一次发表"
   password: "密码"
   type_password_again: "再输入一次"
