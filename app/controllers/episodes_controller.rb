@@ -9,6 +9,7 @@ class EpisodesController < ApplicationController
     respond_to do |format|
       format.html
       format.rss
+      format.json {render :json => @episodes}
     end
   end
 
