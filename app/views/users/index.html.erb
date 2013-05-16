@@ -1,5 +1,5 @@
 <div id="user_no">
-  总共有<%= @users.count %> 个用户
+  总共有<%= @users.count %>个用户
 </div>
 
 <table>
@@ -9,7 +9,7 @@
      <th>注册日期</th>
   </tr>
 <% if @users != nil %>
-  <% @users.each do |user| %>
+  <% @users.reverse.each do |user| %>
   <p>
     <tr>
       <td>
