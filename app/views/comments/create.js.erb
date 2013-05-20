@@ -1,2 +1,3 @@
 $(".comments").append("<%= escape_javascript render :partial => "comments/editable_comment", :object => @comment %> ");
 $('#new_comment textarea').val("");
+commentInt(); // need to recall the client side code
