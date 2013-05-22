@@ -48,10 +48,7 @@
   }
   input.btn {
     float: right;
-    margin: {
-      right: 100px;
-      top: 25px;
-    }
+    margin: 30px 40px 25px 0px;
   }
 }
 
@@ -66,6 +63,17 @@
       left: 312px;
     }
   }
+  .alert-info {
+    float: right;
+    margin: 2px 280px 0 0;
+    color: red;
+  }
+}
+
+#user_show_email, #user_email_subscription {
+  width: 30px;
+  height: 16px;
+  margin-top: 8px;
 }
 
 /*** LOGIN ***/
