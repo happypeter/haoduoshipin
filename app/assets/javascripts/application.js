@@ -17,3 +17,9 @@ $('.comment_head a').each(function() {
 });
 $('textarea').atWho('@', {data: commenter});
 
+$.ajax({
+  url: "/latest_comment.json",
+  cache: false
+}).done(function(data) {
+  $('.latest-comment').append("<a href=/episodes/" + data.episode_id + ">" + data.user + ": "+ data.content + "</a>");
+});

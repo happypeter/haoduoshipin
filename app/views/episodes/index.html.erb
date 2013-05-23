@@ -8,7 +8,7 @@
       <% end %>
   </div>
   <div class="span2">
-    <div id="subscribe"> 
+    <div id="subscribe">
       <ul class="horizontal">
         <li><a class="subscribe-feed" href="<%= episodes_url(format: "rss") %>"></a></li>
         <li><a class="subscribe-sina" href="http://weibo.com/happycasts"></a></li>
@@ -22,12 +22,15 @@
         <%= link_to_unless(params[:tag_id] == nil, "ALL") %>
       </div>
       <% for tag in Tag.order("name") %>
-      <div class="category">
-        <%= link_to_unless(params[:tag_id].to_i == tag.id, tag.display_name, params.merge(:tag_id => tag.id, :page => nil)) %>
-      </div>
+        <div class="category">
+          <%= link_to_unless(params[:tag_id].to_i == tag.id, tag.display_name, params.merge(:tag_id => tag.id, :page => nil)) %>
+        </div>
       <% end %>
     </div>
-    <%= link_to t("recent_comments"), comments_path, :class => "recent-comments" %>
+    <div class="recent-comments">
+      <p class="title"><%= link_to t("recent_comments"), comments_path %></p>
+      <span class="latest-comment"></span>
+    </div>
   </div>
 </div>
 <%= will_paginate @episodes, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>
