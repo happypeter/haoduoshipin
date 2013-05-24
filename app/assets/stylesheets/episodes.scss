@@ -93,7 +93,13 @@
   }
   .episode_watch_btn {
     padding-top: 5px;
-    padding-left: 210px;
+    float: right;
+    margin-right: 40px;
+    letter-spacing: 1px;
+    .zh {
+      font-size: 14px;
+    }
+    .btn {padding: 3px 12px 3px;}
   }
   border-bottom: solid 1px hsl(0, 0%, 90%);
 }
