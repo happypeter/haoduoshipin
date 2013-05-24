@@ -2,6 +2,10 @@ class CommentsController < ApplicationController
 
   def index
     @comments = Comment.recent.page(params[:page]).per_page(10)
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   def new
@@ -26,9 +30,6 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find(params[:id])
   end
-  def show
-    @comment = Comment.find(params[:id])
-  end
 
   def update
     @comment = Comment.find(params[:id])
@@ -51,6 +52,19 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to_target_or_default(root_url) }
       format.js
+    end
+  end
+
+  def latest_comment
+    @comment = Comment.recent.first
+    info = {}
+    info[:content] = @comment.content[0..40] << '...'
+    info[:episode_id] = @comment.episode_id
+    info[:episode_name] = Episode.find(@comment.episode_id).name
+    info[:user] = User.find(@comment.user_id).name
+
+    respond_to do |format|
+      format.json {render :json => info}
     end
   end
 end

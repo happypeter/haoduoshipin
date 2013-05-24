@@ -5,6 +5,7 @@ Happycasts::Application.routes.draw do
   resources :comments
   resources :password_resets
 
+  get "/latest_comment" => "comments#latest_comment"
   match "/search" => "search#index", :as => :search
   match "/auth/:provider/callback" => "users#login_with_github"
   get "/account" => "users#edit", :as => "account"
