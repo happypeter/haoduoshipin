@@ -198,7 +198,7 @@
   }
 }
 .comment_view {
-  display: none;
+  display: block;
 }
 .code_block {
   .code_header {
@@ -207,6 +207,14 @@
     border: 1px solid darken($peter-gray, 20%);
   }
   margin-bottom: 20px;
+}
+#ep_notes_label, #ep_comments_label {
+  width: 100px;
+  height: 30px;
+  padding-top: 10px;
+  border: solid 1px gray;
+  border-bottom: transparent;
+  text-align: center;
 }
 
 /* for episode form */

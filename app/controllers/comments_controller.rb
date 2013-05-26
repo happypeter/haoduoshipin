@@ -58,6 +58,7 @@ class CommentsController < ApplicationController
   def latest_comment
     @comment = Comment.recent.first
     info = {}
+    info[:comment_id] = @comment.id
     info[:content] = @comment.content[0..40] << '...'
     info[:episode_id] = @comment.episode_id
     info[:episode_name] = Episode.find(@comment.episode_id).name
