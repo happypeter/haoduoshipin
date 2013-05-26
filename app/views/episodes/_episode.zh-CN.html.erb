@@ -11,7 +11,9 @@
       <% end %>
        <%= episode.id %>期
        <%= render_episode_publish_time(episode) %>
-      - <%= (episode.comments.size.to_s + "评论") %>
+       - <%= link_to episode_path(episode) + "#ep_comments_label" do %>
+           <%= (episode.comments.size.to_s + "评论") %>
+         <% end %>
     </div>
     <h2><%= link_to episode.name, episode %></h2>
     <%= episode.description %> （<%= @mins %>）

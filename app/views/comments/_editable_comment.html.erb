@@ -1,5 +1,5 @@
 <%= div_for editable_comment do %>
-    <div class="comment_head">
+  <div id="ep_comment_<%= editable_comment.id %>" class="comment_head">
       <i class="icon-comment"></i> 
       <%= link_to editable_comment.user.name, editable_comment.user%>
        说

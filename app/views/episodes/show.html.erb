@@ -29,16 +29,17 @@
   </div>
 </div>
 
-<ul class="nav nav-tabs">
-  <li id="show_note_btn" class="active">
-    <%= link_to t("shownotes"), "#" %>
-  </li>
-  <li id="show_comment_btn">
-    <%= link_to "#{@episode.comments.size.to_s + t("comment")}" %>
-  </li>
-</ul>
+<div id="ep_notes_label">
+  <i class="icon-leaf icon-large"></i>
+  <%= t("shownotes") %>
+</div>
 
 <%= render "show_notes" %>
+
+<div id="ep_comments_label">
+  <i class="icon-bullhorn icon-large"></i>
+  <%= "#{@episode.comments.size.to_s + t("comment")}" %>
+</div>
 
 <div class="comment_view">
   <div class="comments">

@@ -21,5 +21,6 @@ $.ajax({
   url: "/latest_comment.json",
   cache: false
 }).done(function(data) {
-  $('.latest-comment').append("<a href=/episodes/" + data.episode_id + ">" + data.user + ": "+ data.content + "</a>");
+  $('.latest-comment').append("<a href=/episodes/" + data.episode_id + "#ep_comment_"
+    + data.comment_id + ">" + data.user + ": "+ data.content + "</a>");
 });
