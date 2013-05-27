@@ -16,5 +16,11 @@ class ApplicationController < ActionController::Base
   def redirect_to_target_or_default(default, *options)
     redirect_to(session[:return_to] || default, *options)
     session[:return_to] = nil
-  end  
+  end
+
+  def check_admin
+    unless current_user && current_user.admin?
+      redirect_to :root, :notice => "Only admin can do this."
+    end
+  end
 end
