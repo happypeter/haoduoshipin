@@ -246,4 +246,8 @@ textarea#episode_notes { height: 350px; }
 
 /* the /all page */
 
-.all_pagination { display: none; }
+#loadingimage {
+  display: none;
+  padding-bottom: 20px;
+  text-align: center;
+}

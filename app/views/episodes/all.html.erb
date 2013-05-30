@@ -6,8 +6,12 @@
   </div>
 </div>
 
-<div class="all_pagination">
+<div style="display: none">
   <%= will_paginate @episodes %>
+</div>
+
+<div id="loadingimage">
+  <img src= <%= asset_path 'loading.gif' %> />
 </div>
 
 <% content_for :template_js do %>
@@ -18,8 +22,8 @@
           var url;
           url = $('.pagination .next_page').attr('href');
           if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-            $('.pagination').text("Fetching more episodes...");
-            $('.all_pagination').css('display', 'block')
+            $('.pagination').text('');
+            $('#loadingimage').css('display', 'block')
             return $.getScript(url);
           }
         });

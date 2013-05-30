@@ -1,8 +1,8 @@
 $('#episodes').append('<%= j render(@episodes) %>');
 <% if @episodes.next_page %>
-  $('.all_pagination').css('display', 'none')
+  $('#loadingimage').css('display', 'none')
   $('.pagination').replaceWith('<%= j will_paginate(@episodes) %>');
 <% else %>
-  $('.pagination').remove();
+  $('.pagination, #loadingimage').remove();
 <% end %>
 <% sleep 1 %>
