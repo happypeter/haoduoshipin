@@ -19,7 +19,7 @@
         <%= t("cat") %>
       </div>
       <div class="category">
-        <%= link_to "ALL", all_path %>
+        <%= link_to_unless(params[:tag_id] == nil, "ALL") %>
       </div>
       <% for tag in Tag.order("name") %>
         <div class="category">
