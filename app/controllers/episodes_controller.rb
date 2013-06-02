@@ -14,6 +14,14 @@ class EpisodesController < ApplicationController
     end
   end
 
+  def all
+    @episodes = Episode.recent.page(params[:page]).per_page(10)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def show
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
@@ -39,7 +47,7 @@ class EpisodesController < ApplicationController
   end
 
   def edit
-    @episode = Episode.find(params[:id]) 
+    @episode = Episode.find(params[:id])
   end
 
   def update

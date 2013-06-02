@@ -1,0 +1,74 @@
+#episodes {
+  .ep_card {
+    position: relative;
+    width: 200px;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  .ep_no {
+    width: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .ep_id {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 32px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    vertical-align: middle;
+    background: #ddd;
+  }
+  .date {
+    margin-top: -15px;
+    background: red;
+    font-size: 9px;
+    line-height: 12px;
+    text-align: center;
+  }
+  .ep_main {
+    float: left;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  .metadata {
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+  }
+  .screenshot img {
+    border-bottom: solid 1px #ddd;
+  }
+  .ep_name {
+    line-height: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    top: 0px;
+    right: 10px;
+  }
+  .comment_no {
+    font-size: 12px;
+    line-height: 30px;
+    float: right;
+  }
+  .content {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 5px;
+  }
+  .ep_watch_btn {
+    margin: 10px;
+    display: block;
+    width: 110px;
+    height: 28px;
+    margin: 0 auto;
+    border: solid 1px lightgray;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+  }
+}

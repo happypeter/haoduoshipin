@@ -1,0 +1,9 @@
+<% for episode in @episodes %>
+  $('#episodes').append('<%= j render('ep_card', :episode => episode) %>');
+<% end %>
+<% if @episodes.next_page %>
+  $('#loadingimage').css('display', 'none')
+  $('.pagination').replaceWith('<%= j will_paginate(@episodes) %>');
+<% else %>
+  $('.pagination, #loadingimage').remove();
+<% end %>

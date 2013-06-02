@@ -9,4 +9,3 @@ $("#comment_btn").click(function() {
 $('#markdown_cheatsheet').modal({
   show: false
 })
-

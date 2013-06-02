@@ -1,0 +1,34 @@
+<div class="row-fluid">
+  <div id="episodes">
+    <% for episode in @episodes %>
+      <%= render 'ep_card', :episode => episode %>
+    <% end %>
+  </div>
+</div>
+
+<div style="display: none">
+  <%= will_paginate @episodes %>
+</div>
+
+<div id="loadingimage">
+  <img src= <%= asset_path 'loading.gif' %> />
+</div>
+
+<% content_for :template_js do %>
+  <script>
+    $(function() {
+      if ($('.pagination').length) {
+        $(window).scroll(function() {
+          var url;
+          url = $('.pagination .next_page').attr('href');
+          if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+            $('.pagination').text('');
+            $('#loadingimage').css('display', 'block')
+            return $.getScript(url);
+          }
+        });
+        return $(window).scroll();
+      }
+    });
+  </script>
+<% end %>
