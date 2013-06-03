@@ -1,6 +1,7 @@
 //= require jquery.atwho
 //= require mediaelement_rails
 //= require mediaelement_rails/mejs-skins
+//= require ep_cards
 @import "compass";
 @import "markdown";
 @import "vendor/bootstrap";
@@ -11,7 +12,6 @@
 @import "users";
 @import "search";
 @import "header";
-@import "ep_cards";
 
 
 .box {
@@ -26,3 +26,4 @@
   -moz-box-shadow: 0 0px 2px rgba(0,0,0,.1);
   box-shadow: 0 0px 2px rgba(0,0,0,.05);
 }
+
