@@ -1,5 +1,5 @@
 class EpisodesController < ApplicationController
-  before_filter :check_admin, :except => [:index, :show]
+  before_filter :check_admin, :except => [:all, :index, :show]
   def index
     @tag = Tag.find(params[:tag_id]) if params[:tag_id]
     if params[:search].blank?
