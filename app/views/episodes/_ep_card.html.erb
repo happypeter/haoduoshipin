@@ -1,30 +1,21 @@
-<div class="ep_card">
-  <% if !episode.seconds.nil? %>
-    <% @mins = (episode.seconds/60).round.to_s + "分钟" %>
-  <% else %>
-    <% @mins = "unknown length" %>
-  <% end %>
-  <div class="ep_no">
-    <div class="ep_id"><%= episode.id %></div>
-    <div class="date"><%= render_episode_publish_time(episode).gsub(/[年月日]/, '-').chop %></div>
+<%= link_to(episode_path(episode, :autoplay => true)) do %>
+  <div class="ep_card">
+    <% if !episode.seconds.nil? %>
+      <% @mins = (episode.seconds/60).round.to_s + "分钟" %>
+    <% else %>
+      <% @mins = "unknown length" %>
+    <% end %>
+    <div class="ep_main">
+      <div class="screenshot">
+        <%= image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png") %>
+      </div>
+      <h2 class="ep_name"><%= episode.name %></h2>
+      <div class="content">(<%= @mins %>) <%= episode.description %> </div>
+      <div class="metadata">
+        第<%= episode.id %>期
+        <span class="date"> | <%= render_episode_publish_time(episode).gsub(/[年月日]/, '-').chop %> | </span>
+        <span class="comments"> <%= (episode.comments.size.to_s + "评论") %> </span>
+      </div>
+    </div>
   </div>
-  <div class="ep_main">
-    <div class="screenshot">
-      <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png",
-                            :alt => episode.name), episode %>
-    </div>
-    <div class="metadata">
-      <%= link_to episode.name, episode, :class => "ep_name" %>
-      <%= link_to episode_path(episode) + "#ep_comments_label", :class => "comment_no" do %>
-        <%= (episode.comments.size.to_s + "评论") %>
-      <% end %>
-    </div>
-    <div class="content"> <%= episode.description %>  (<%= @mins %>) </div>
-    <div class="ep_watch_btn">
-      <%= link_to(episode_path(episode, :autoplay => true)) do %>
-        <i class="icon-play-circle icon-large"> <span class="zh"><%= t("play") %></span></i>
-      <% end %>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-</div>
+<% end %>

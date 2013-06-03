@@ -20,12 +20,14 @@
 <body>	
 <div id="wrapper">
   <%= render 'shared/header' %>
-  <div class="container">
-    <% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %></p>
-    <% end %>
-    <%= yield %>
-    <div id="footer-push"></div><!-- hack for sticky footer -->
+  <div id="main-content">
+    <div class="container">
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <%= yield %>
+      <div id="footer-push"></div><!-- hack for sticky footer -->
+    </div>
   </div>
 </div>
 <div class="footer">
