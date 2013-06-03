@@ -15,7 +15,7 @@ class EpisodesController < ApplicationController
   end
 
   def all
-    @episodes = Episode.recent.page(params[:page]).per_page(10)
+    @episodes = Episode.recent.page(params[:page]).per_page(12)
     respond_to do |format|
       format.html
       format.js
