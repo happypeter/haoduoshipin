@@ -33,3 +33,7 @@
   </p>
 <% end %>
 </table>
+
+<div class="pg_user">
+  <%= will_paginate @users, previous_label: h("<< Previous"), next_label: h("Next >>") %>
+</div>
