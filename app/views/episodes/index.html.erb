@@ -3,9 +3,16 @@
 
 <div class="row-fluid">
   <div class="span10">
+    <% if @episodes.empty? %>
+      <p class="search_nil notice">Sorry, no matching episodes!</p>
+    <% else %>
+      <% if !@count.blank? %>
+       <p class="search_count notice">Found <%= pluralize(@count, 'episode') %></p>
+      <% end %>
       <% for episode in @episodes %>
         <%= render episode %>
       <% end %>
+    <% end %>
   </div>
   <div class="span2">
     <div id="subscribe">
@@ -23,7 +30,8 @@
       </div>
       <% for tag in Tag.order("name") %>
         <div class="category">
-          <%= link_to_unless(params[:tag_id].to_i == tag.id, tag.display_name, params.merge(:tag_id => tag.id, :page => nil)) %>
+          <%= link_to_unless(params[:tag_id].to_i == tag.id, tag.display_name,
+                             params.merge(:tag_id => tag.id, :page => nil, :search => nil)) %>
         </div>
       <% end %>
     </div>
@@ -34,3 +42,22 @@
   </div>
 </div>
 <%= will_paginate @episodes, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>
+
+<% content_for :template_js do %>
+  <script>
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+      return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    param = getParameterByName("search");
+    if (param != "") {
+      str = "<span> </span>".replace(" ", param);
+      $(".episode_intro").each(function() {
+           newtext = $(this).html().replace(param, str);
+           $(this).html(newtext).find("span").css("color", "red");
+      });
+    }
+  </script>
+<% end %>

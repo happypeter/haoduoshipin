@@ -8,7 +8,7 @@ module ApplicationHelper
     def block_code(code, language)
       languages = ["bash","ruby","python","c"]
       if !languages.include?language
-        language = nil 
+        language = nil
       end
       sha = Digest::SHA1.hexdigest(code)
       Rails.cache.fetch ["code", language, sha].join('-') do
