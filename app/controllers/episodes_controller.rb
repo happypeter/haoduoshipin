@@ -5,7 +5,10 @@ class EpisodesController < ApplicationController
     if params[:search].blank?
       @episodes = (@tag ? @tag.episodes : Episode).recent.page(params[:page]).per_page(20)
     else
-      @episodes = Episode.search_published(params[:search], params[:tag_id])
+      @episodes = Episode.search do
+        fulltext params[:search]
+      end.results
+      @count = @episodes.length
     end
     respond_to do |format|
       format.html
@@ -15,7 +18,13 @@ class EpisodesController < ApplicationController
   end
 
   def all
-    @episodes = Episode.recent.page(params[:page]).per_page(12)
+    if params[:search].blank?
+      @episodes = Episode.recent.page(params[:page]).per_page(12)
+    else
+      @episodes = Episode.search do
+        fulltext params[:search]
+      end.results
+    end
     respond_to do |format|
       format.html
       format.js
