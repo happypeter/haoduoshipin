@@ -1,11 +1,13 @@
 public/assets/
 config/database.yml
+config/sunspot.yml
 app/assets/images/subscri*.png
 *.swp
 tags
 .tag*
 .bundle
 db/*.sqlite3
-log/*.log
+log/
 tmp/
+solr/
 .sass-cache/

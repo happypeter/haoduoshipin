@@ -15,9 +15,12 @@
     </div>
 
     <div class="search-bar">
-      <form action="/search" class="navbar-search pull-left" method="get">
-        <input type="text" name="q" class="search-query span3" value="<%= params[:q] %>" placeholder="<%= t("search") %>" />
-      </form>
+      <%= form_tag current_page?(:controller => 'episodes', :action => 'all') ? all_path : root_path, :method => :get do %>
+        <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
     </div>
 
     <div class="header-actions">

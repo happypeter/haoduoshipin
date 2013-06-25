@@ -15,13 +15,16 @@ group :assets do
   gem 'font-awesome-sass-rails', '3.0.2.2'
 
 # css image sprite
-  gem 'compass-rails' 
+  gem 'compass-rails'
   gem 'oily_png'
 end
 
+#for searching text
+gem 'sunspot_rails'
 
 group :development, :test do
   gem 'capistrano', '2.9.0', :require => false
+  gem 'sunspot_solr'
 end
 # for the "no javascript runtime error" upgrading to 3.1
 gem 'execjs'
@@ -30,7 +33,7 @@ gem 'will_paginate', '> 3.0'
 
 
 gem 'mysql2', "~> 0.3.10"
-gem 'bcrypt-ruby', :require => 'bcrypt'  
+gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'redcarpet'
 gem 'nokogiri', "1.4.7"
 gem 'pygments.rb'
