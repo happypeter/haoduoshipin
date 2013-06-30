@@ -18,13 +18,16 @@
 #rss-tag {
   height:35px;
 }
+.check-all {
+  text-align: right;
+}
 .recent-comments {
   a:hover {
     text-decoration: none;
   }
   background-color: white;
   color: #3A87AD;
-  height: 150px;
+  margin-bottom: 20px;
   font-size: 12px;
   letter-spacing: 1px;
   .title {
@@ -33,11 +36,9 @@
     padding: 5px 0px;
     text-align: center;
     margin: 20px 0 0 0;
-    a {
-      color: white;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
   }
   .latest-comment {
     a {
