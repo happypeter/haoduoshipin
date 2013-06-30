@@ -36,8 +36,11 @@
       <% end %>
     </div>
     <div class="recent-comments">
-      <p class="title"><%= link_to t("recent_comments"), comments_path %></p>
+      <p class="title"><%= t("recent_comments") %></p>
       <span class="latest-comment"></span>
+    </div>
+    <div class="check-all">
+      <%= link_to t("all_comments"), comments_path %>
     </div>
   </div>
 </div>
