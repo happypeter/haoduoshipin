@@ -25,6 +25,7 @@
 
     <div class="header-actions">
       <% if current_user %>
+        <li><%= link_to "#{@unread_count}", notifications_path, :class => "notification-indicator #{'unread' if @unread_count != 0} " %></li>
         <li><%= link_to current_user.name, user_path(current_user), :class => "button" %></li>
         <li><%= link_to  t("logout"), logout_path, :class => "button" %></li>
       <% else %>
