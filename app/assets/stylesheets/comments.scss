@@ -10,7 +10,7 @@
     @include textarea-style;
   }
 }
-div.nice_comment {
+.nice_comment {
   position: relative;
   .error {
     padding-left: 10px;
@@ -45,7 +45,7 @@ i.icon-file {
   color: darken($peter-gray, 30%);
   font-size: 20px;
 }
-div.comment {
+.comment {
   @include peter-shadow;
   margin-bottom: 15px;
   border: solid 1px darken($peter-gray, 20%);

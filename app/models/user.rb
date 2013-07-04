@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   before_create { generate_token(:token) }
   has_many :comments
+  has_many :notifications
 
   #validate the below two with client-side code
   #

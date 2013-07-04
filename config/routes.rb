@@ -4,6 +4,7 @@ Happycasts::Application.routes.draw do
   resources :episodes
   resources :comments
   resources :password_resets
+  resources :notifications
 
   get "/latest_comment" => "comments#latest_comment"
   get "/all" => "episodes#all"
