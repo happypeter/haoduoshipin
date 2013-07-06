@@ -1,4 +1,6 @@
-/* comment */
+@import "globals/variables";
+@import "globals/mixins";
+
 .write-comment-area {
   padding: 0 20px;
   textarea {
@@ -20,7 +22,7 @@
     display: none;
   }
   form {
-    background-color: $peter-gray;
+    background-color: $github-gray;
     margin-bottom: 9px;
   }
   label {
@@ -40,16 +42,16 @@
   margin-bottom: 40px;
 }
 h2.comments { margin-top: 30px; }
-i.icon-comment { color: darken($peter-gray, 30%); }
+i.icon-comment { color: darken($github-gray, 30%); }
 i.icon-file {
-  color: darken($peter-gray, 30%);
+  color: darken($github-gray, 30%);
   font-size: 20px;
 }
 .comment {
   @include peter-shadow;
   margin-bottom: 15px;
-  border: solid 1px darken($peter-gray, 20%);
-  &:hover { border: solid 1px darken($peter-gray, 40%); }
+  border: solid 1px darken($github-gray, 20%);
+  &:hover { border: solid 1px darken($github-gray, 40%); }
   a {
     text-decoration:none;
     &:hover { text-decoration: underline; }
@@ -94,7 +96,7 @@ i.icon-file {
   .comment_head {
     padding: 5px;
     font-weight: bold;
-    background-color:  $peter-gray;
+    background-color:  $github-gray;
     font-size: 80%;
     margin-bottom: 5px;
     color: hsl(0, 0%, 40%);

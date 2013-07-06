@@ -1,0 +1,8 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.notifications {
+  .highlight {
+    border-top: 6px solid $notification-green;
+  }
+}

@@ -1,88 +1,17 @@
-$railscasts_shownotes_link_blue: #1B97F2;
-$episode-new-margin-left: 10px;
-$main_width: 960px;
-$peter-gray: #ececec;
-$github-blue:#839ba9;
-$error_red: #800000;
-@mixin github-fileheader {
-  background:-moz-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
-  background: -webkit-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececec',endColorstr='darken($peter-gray, 20%)')";
+@import "globals/variables";
+@import "globals/mixins";
 
-}
-@mixin github-hero {
-  background:#839ba9;
-  background:-moz-linear-gradient(#839ba9,#405a6a);
-  background:-webkit-linear-gradient(#839ba9,#405a6a);
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#839ba9',endColorstr='#405a6a')";
-}
-@mixin peter-shadow {
-  -webkit-box-shadow: 0 0 6px $peter-gray;
-  -moz-box-shadow: 0 0 6px $peter-gray;
-  box-shadow: 0 0 6px $peter-gray;
-}
-@mixin no-shadow {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-@mixin rounded-corners($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-}
-@mixin textarea-style {
-  display: inline-block;
-  padding: 5px;
-  border: 1px solid darken($peter-gray, 20%);
-  font-size: 120%;
-  @include rounded-corners(3px);
-  @include no-shadow;
-  &:focus {
-    border: 1px solid darken($peter-gray, 50%) ;
-    @include peter-shadow;
-  }
-}
-
-@mixin form-base {
-  .input {
-    display: table;
-    margin-bottom: 18px;
-    line-height: 18px;
-  }
-  label {
-    float: left;
-    width: 140px;
-    padding-top: 5px;
-    text-align: right;
-    font-weight: bold;
-    color: #333;
-  }
-  input {
-    display: inline-block;
-    width: 210px;
-    padding: 4px;
-    margin: {
-      bottom: 9px;
-      left: $episode-new-margin-left;
-    }
-    font-size: 13px;
-    color: #555;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-  input.btn {
-    float: right;
-    width: 130px;
-    height: 30px;
-    margin: {
-      bottom: 25px;
-      right: 38px;
-    }
-    color: white;
-    font-size: 16px;
-  }
+.box {
+  border: 1px solid darken($github-gray, 50%);
+  background-color: #fff;
+  padding:10px;
+  margin: 0 0 20px 0; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 6px; 
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 0px 2px rgba(0,0,0,.1);
+  box-shadow: 0 0px 2px rgba(0,0,0,.05);
 }
 
 /*** SHARED ***/
@@ -125,8 +54,17 @@ ul {
   margin: 4px 0;
   padding-left: 17px;
 }
+
 ul.horizontal {
-  @include horizontal-list;
+  padding: 0;
+  min-height: 30px;
+  color: red;
+  list-style: none;
+  li {
+    display: inline-block;
+    width: 40px;
+    float: left;
+  }
 }
 
 #wrapper {
@@ -218,7 +156,7 @@ ul.horizontal {
 table {
   margin-left:20px;
   tr {
-      border-bottom: 1px solid darken($peter-gray, 10%);
+      border-bottom: 1px solid darken($github-gray, 10%);
     td {
       padding-top: 10px;
       padding-left: 20px;

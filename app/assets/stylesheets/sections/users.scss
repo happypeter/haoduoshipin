@@ -1,3 +1,6 @@
+@import "globals/variables";
+@import "globals/mixins";
+
 /* personal info*/
 #user_show {
   .profile {
@@ -23,11 +26,11 @@
   }
   #user_email {
     font-size:140%;
-    color: darken($peter-gray, 50%);
+    color: darken($github-gray, 50%);
     margin-bottom: 5px;
   }
   #user_bio {
-    color: darken($peter-gray, 50%);
+    color: darken($github-gray, 50%);
     font-style: italic;
   }
 }

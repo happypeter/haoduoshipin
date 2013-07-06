@@ -1,6 +1,12 @@
-/* css image sprites */
+@import "globals/variables";
+@import "globals/mixins";
+
+@import 'compass';
 @import "subscribe/*.png";
+/*** for compass ***/
+
 @include all-subscribe-sprites;
+
 #subscribe {
   margin-bottom: 0.4em;
   li {
@@ -14,7 +20,6 @@
   }
 }
 
-/*** INDEX ***/
 #rss-tag {
   height:35px;
 }
@@ -56,7 +61,7 @@
   }
 }
 .categories {
-  border: solid 0.5px darken($peter-gray, 10%);
+  border: solid 0.5px darken($github-gray, 10%);
   @include peter-shadow;
 }
 .categories_title {
@@ -67,7 +72,7 @@
   @include github-hero;
 }
 .category {
-  border-bottom: solid 0.5px darken($peter-gray, 10%);
+  border-bottom: solid 0.5px darken($github-gray, 10%);
   font-weight: bold;
   padding: 10px;
 }
@@ -85,7 +90,7 @@
   .episode_intro {
     padding-left: 210px;
     .episode_intro_title {
-      color: darken($peter-gray, 50%);
+      color: darken($github-gray, 50%);
       font-size: 80%;
     }
     h2 {
@@ -113,7 +118,7 @@
   .episode_intro {
     padding-left: 210px;
     .episode_intro_title {
-      color: darken($peter-gray, 50%);
+      color: darken($github-gray, 50%);
       font-size: 80%;
     }
   }
@@ -122,7 +127,7 @@
     padding-left: 210px;
   }
   span#episode_no {
-    color: darken($peter-gray, 30%);
+    color: darken($github-gray, 30%);
   }
   .alternatives {
     float: right;
@@ -189,7 +194,7 @@
 .show_notes {
   position: relative;
   padding: 20px;
-  border: 1px solid $peter-gray;
+  border: 1px solid $github-gray;
   margin-bottom: 20px;
   @include peter-shadow;
   .edit_shownotes_btn {
@@ -205,7 +210,7 @@
   .code_header {
     @include github-fileheader;
     padding: 5px;
-    border: 1px solid darken($peter-gray, 20%);
+    border: 1px solid darken($github-gray, 20%);
   }
   margin-bottom: 20px;
 }
@@ -239,8 +244,8 @@ textarea#episode_notes { height: 350px; }
 #html5-player {
   width: 800px; // same as video player
   border-left: 50px solid white;
-  border-top: 10px solid darken($peter-gray, 20%);
-  border-bottom: 10px solid darken($peter-gray, 20%);
+  border-top: 10px solid darken($github-gray, 20%);
+  border-bottom: 10px solid darken($github-gray, 20%);
   border-right: 50px solid white;
   margin: 0 auto;
 }
