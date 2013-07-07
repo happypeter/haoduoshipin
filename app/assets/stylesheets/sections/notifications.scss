@@ -1,8 +1,6 @@
 @import "globals/variables";
 @import "globals/mixins";
 
-.notifications {
-  .highlight {
-    border-top: 6px solid $notification-green;
-  }
+.unread-mark {
+  border-top: 6px solid $notification-green;
 }
