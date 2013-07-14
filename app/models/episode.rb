@@ -15,6 +15,16 @@ class Episode < ActiveRecord::Base
     return "avconv error"
   end
 
+  def should_be_publish?
+    if self.published_at < Time.now
+      self.pblished = true
+      self.save
+      return true
+    else
+      return false
+    end
+  end
+
   def set_seconds
     du = get_video_duration
     a = du.split(':')

@@ -1,5 +1,6 @@
 public/assets/
 config/database.yml
+config/settings.yml
 config/sunspot.yml
 app/assets/images/subscri*.png
 *.swp

@@ -1,0 +1,15 @@
+default: &default
+  example: "www.example.com"
+  alipay:
+    pid: '3688012372132975' # replace with your own
+    secret: '23xvu4bas1qk8nlc9vxw91e7kq975wu1'
+
+production:
+  <<: *default
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  default_password: ''
