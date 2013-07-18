@@ -2,7 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require 'yaml'
-APP_CONFIG = YAML.load(File.read(File.expand_path('../app_config.yml', __FILE__)))
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
