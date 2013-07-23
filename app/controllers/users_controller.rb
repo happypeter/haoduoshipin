@@ -90,7 +90,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.page(params[:page]).per_page(20).order('id DESC')
+    @users = User.page(params[:page]).per_page(30).order('id DESC')
     respond_to do |format|
       format.html
     end
