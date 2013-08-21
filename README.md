@@ -12,6 +12,7 @@ and how to deploy in a simple way. Will add a link here.
 * mysql
 * passenger
 * _avconv_ is needed to calculate the video duration.
+
   ```
-  sudo apt-get install ffmpeg
+  sudo apt-get install ffmpeg libav-tools
   ```
