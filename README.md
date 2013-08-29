@@ -1,7 +1,6 @@
 ## Install
 
-I will make a video to show how to set happycasts up for local development,
-and how to deploy in a simple way. Will add a link here.
+video: http://happycasts.net/episodes/78
 
 
 
