@@ -73,9 +73,14 @@
   @include github-hero;
 }
 .category {
-  border-bottom: solid 0.5px darken($github-gray, 10%);
+  border-bottom: solid 1px #e6e6e6;
   font-weight: bold;
   padding: 10px;
+  img {
+    width: 20px;
+    height: 22px;
+    margin-right: 7px;
+  }
 }
 
 /*** EPISODES ***/
