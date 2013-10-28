@@ -25,12 +25,14 @@
       <div class="categories_title">
         <%= t "cat" %>
       </div>
-      <div class="category">
-        <%= link_to_unless params[:tag_id] == nil, raw(image_tag("tag_icons/0.png") + content_tag(:span, "ALL")) %>
+      <% token = params[:tag_id] == nil %>
+      <div class="category <%= "nolink" if token %>">
+        <%= link_to_unless token, raw(image_tag("tag_icons/0.png") + content_tag(:span, "ALL")) %>
       </div>
       <% for tag in Tag.order("name") %>
-        <div class="category">
-          <%= link_to_unless params[:tag_id].to_i == tag.id,
+        <% flag = params[:tag_id].to_i == tag.id %>
+        <div class="category <%= "nolink" if flag %>">
+          <%= link_to_unless flag,
             raw(image_tag("tag_icons/#{tag.id}.png") + content_tag(:span, tag.display_name)),
                              params.merge(:tag_id => tag.id, :page => nil, :search => nil) %>
         </div>
