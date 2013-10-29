@@ -35,6 +35,7 @@ class Episode < ActiveRecord::Base
   def asset_name
     [id.to_s.rjust(3, "0"), name].join("-")
   end
+
   # a virtual attribute
   def tag_names=(names)
     self.tags = Tag.with_names(names.split(/\s+/))
@@ -45,5 +46,14 @@ class Episode < ActiveRecord::Base
 
   searchable do
     text :name, :description
+  end
+
+  def commenters
+    all=[]
+    self.comments.each do |c|
+      all << c.user
+    end
+    all << User.find_by_name('happypeter') # happypeter is the author of all episodes
+    all.uniq
   end
 end
