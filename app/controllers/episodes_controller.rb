@@ -35,7 +35,6 @@ class EpisodesController < ApplicationController
   def show
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
-
     if current_user.present?
       commenters = @episode.commenters
       if commenters.present? && commenters.include?(current_user)
