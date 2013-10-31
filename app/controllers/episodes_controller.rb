@@ -35,15 +35,7 @@ class EpisodesController < ApplicationController
   def show
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
-    if current_user.present?
-      commenters = @episode.commenters
-      if commenters.present? && commenters.include?(current_user)
-        current_user.notifications.each do |n|
-          n.update_attributes!(unread: false) if n.comment.episode_id == @episode.id
-        end
-      end
-    end
-
+    @episode.delay.check_notifications(current_user) if current_user.present?
     @comment = Comment.new(:episode => @episode, :user => current_user)
     respond_to do |f|
       f.html

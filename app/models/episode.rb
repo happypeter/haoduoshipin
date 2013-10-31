@@ -43,9 +43,8 @@ class Episode < ActiveRecord::Base
 
   def commenters
     all = []
-    host = User.find_by_name('happypeter') # happypeter is the author of all episodes
-    all << host if host.present?
-    self.comments.each { |c| all << c.user } if self.comments.present?
+    all = self.comments.collect(&:user_id)
+    all << User.find_by_name('happypeter').id # happypeter is the author of all episodes
     all.uniq
   end
 

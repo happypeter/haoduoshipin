@@ -25,7 +25,7 @@
 
 <div id="ep_comments_label">
   <i class="icon-bullhorn icon-large"></i>
-  <%= "#{@episode.comments.size.to_s + t("comment")}" %>
+  <%= "#{@episode.comments.count.to_s + t("comment")}" %>
 </div>
 
 <div class="comment_view">
