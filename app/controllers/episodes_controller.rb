@@ -35,7 +35,7 @@ class EpisodesController < ApplicationController
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
     if @episode.commenters.include?(current_user)
-      current_user.notifications.each do |n|
+      current_user.notifications.where(unread: true).each do |n|
         if n.comment.episode_id == @episode.id
           n.update_attributes!(unread: false)
         end
