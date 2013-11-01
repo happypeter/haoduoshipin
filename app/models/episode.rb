@@ -49,11 +49,18 @@ class Episode < ActiveRecord::Base
   end
 
   def commenters
-    all=[]
-    self.comments.each do |c|
-      all << c.user
-    end
-    all << User.find_by_name('happypeter') # happypeter is the author of all episodes
+    all = self.comments.collect(&:user_id)
+    all << User.find_by_name('happypeter').id # happypeter is the author of all episodes
     all.uniq
+  end
+
+  def check_notifications(user)
+    if commenters.include?(user.id)
+      user.notifications.where(unread: true).each do |n|
+        if n.comment.episode_id == self.id
+          n.update_attributes!(unread: false)
+        end
+      end
+    end
   end
 end

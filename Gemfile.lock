@@ -52,6 +52,12 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    daemons (1.1.9)
+    delayed_job (4.0.0)
+      activesupport (>= 3.0, < 4.1)
+    delayed_job_active_record (4.0.0)
+      activerecord (>= 3.0, < 4.1)
+      delayed_job (>= 3.0, < 4.1)
     dynamic_form (1.1.4)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -194,6 +200,8 @@ DEPENDENCIES
   capistrano (= 2.9.0)
   coffee-rails (~> 3.2.1)
   compass-rails
+  daemons
+  delayed_job_active_record
   dynamic_form
   execjs
   font-awesome-sass-rails (= 3.0.2.2)
