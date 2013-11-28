@@ -21,11 +21,11 @@ group :assets do
 end
 
 #for searching text
-gem 'sunspot_rails'
+ gem 'sunspot_rails', '2.1.0'
 
 group :development, :test do
   gem 'capistrano', '2.9.0', :require => false
-  gem 'sunspot_solr'
+  gem 'sunspot_solr', '2.1.0'
 end
 # for the "no javascript runtime error" upgrading to 3.1
 gem 'execjs'

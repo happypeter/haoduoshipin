@@ -264,11 +264,7 @@ textarea#episode_description, textarea#episode_notes {
 textarea#episode_notes { height: 350px; }
 
 #html5-player {
-  width: 800px; // same as video player
-  border-left: 50px solid white;
-  border-top: 10px solid darken($github-gray, 20%);
-  border-bottom: 10px solid darken($github-gray, 20%);
-  border-right: 50px solid white;
+  width: 900px; // same as video player
   margin: 0 auto;
 }
 
