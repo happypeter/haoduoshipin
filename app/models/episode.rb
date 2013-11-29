@@ -5,7 +5,7 @@ class Episode < ActiveRecord::Base
   validates_presence_of :name
 
   scope :recent, order('id DESC')
-  after_create :set_seconds
+  after_create :set_seconds_and_ratio
 
   def get_video_duration
     result = `avconv -i http://media.happycasts.net/assets/episodes/videos/#{asset_name}.mov 2>&1`
@@ -23,13 +23,6 @@ class Episode < ActiveRecord::Base
     else
       return false
     end
-  end
-
-  def set_seconds
-    du = get_video_duration
-    a = du.split(':')
-    self.seconds = a[0].to_i*3600 + a[1].to_i*60 + a[2].to_i
-    self.save
   end
 
   def asset_name
@@ -56,4 +49,14 @@ class Episode < ActiveRecord::Base
     all << User.find_by_name('happypeter') # happypeter is the author of all episodes
     all.uniq
   end
+
+  private
+  def set_seconds_and_ratio
+    du = get_video_duration
+    a = du.split(':')
+    self.seconds = a[0].to_i*3600 + a[1].to_i*60 + a[2].to_i
+    self.ratio = 16.0/9.0
+    self.save
+  end
+
 end

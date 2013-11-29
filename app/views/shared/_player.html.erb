@@ -1,8 +1,7 @@
 <div id="html5-player">
-  <video autoplay preload width="800px" height="600px"
-  src="<%= video_url episode %>"
-  type="video/mp4"
-  controls="controls">
+  <video id="html5-player" class="video-js vjs-default-skin" controls preload="auto"
+    width="900" height="<%= (900 / episode.ratio).to_i %>" poster="my_video_poster.png" data-setup="{}">
+    <source src="<%= video_url episode %>" type='video/mp4'>
   </video>
 </div>
 
