@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130702065532) do
+ActiveRecord::Schema.define(:version => 20131129022434) do
 
   create_table "comments", :force => true do |t|
     t.integer  "episode_id"
@@ -20,20 +20,21 @@ ActiveRecord::Schema.define(:version => 20130702065532) do
     t.string   "email"
     t.integer  "user_id"
     t.string   "ancestry"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "episodes", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.text     "notes"
     t.datetime "published_at"
     t.integer  "seconds"
     t.text     "description"
     t.integer  "comments_count", :default => 0, :null => false
     t.string   "youku"
+    t.float    "ratio"
   end
 
   create_table "notifications", :force => true do |t|
@@ -47,19 +48,19 @@ ActiveRecord::Schema.define(:version => 20130702065532) do
   create_table "taggings", :force => true do |t|
     t.integer  "episode_id"
     t.integer  "tag_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tags", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.string   "name"
     t.string   "email"
     t.string   "password_hash"
