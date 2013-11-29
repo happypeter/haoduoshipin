@@ -4,7 +4,6 @@
 //= require editable_comment
 //= require jquery.atwho
 //= require vendor/jquery_hotkeys
-//= require mediaelement_rails
 //= require_self
 
 var commenter = [];
