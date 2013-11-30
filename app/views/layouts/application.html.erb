@@ -19,10 +19,13 @@
     })();
   </script>
 </head>
-<body>	
+<body>
 <div id="wrapper">
   <%= render 'shared/header' %>
   <div id="main-content">
+    <% if params[:autoplay] %>
+      <div class="videojs-bg"></div>
+    <% end %>
     <div class="container">
       <% if flash[:notice] %>
         <p class="notice"><%= flash[:notice] %></p>
