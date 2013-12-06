@@ -9,10 +9,11 @@
   letter-spacing: 2px;
 }
 @mixin github-fileheader {
-  background:-moz-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
-  background: -webkit-linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 88%));
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#ececec',endColorstr='darken($github-gray, 20%)')";
-
+  background-color: #E1E1E1;
+  background-image: -moz-linear-gradient(#f8f8f8, #e1e1e1);
+  background-image: -webkit-linear-gradient(#F8F8F8, #E1E1E1);
+  background-image: linear-gradient(#F8F8F8, #E1E1E1);
+  background-repeat: repeat-x;
 }
 @mixin github-hero {
   background:#839ba9;

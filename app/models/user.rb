@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   #validate the below two with client-side code
   #
   #  validates_confirmation_of :password
-  #  validates_presence_of :password, :on => :create 
+  #  validates_presence_of :password, :on => :create
   #
   #this has two advatages:
   #  1. fast
@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
       user.github_uid = omniauth["uid"]
       user.github_username = omniauth["info"]["name"]
       user.email = omniauth["info"]["email"]
-      user.name = omniauth["info"]["nickname"] 
+      user.name = omniauth["info"]["nickname"]
       user.site_url = omniauth["info"]["urls"]["Blog"] if omniauth["info"]["urls"]
       user.gravatar_token = omniauth["extra"]["raw_info"]["gravatar_id"] if omniauth["extra"] && omniauth["extra"]["raw_info"]
     end
@@ -50,7 +50,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def self.authenticate(name, password)
     user = find_by_name(name)
     if user && !user.password_salt.blank? && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
@@ -59,14 +58,15 @@ class User < ActiveRecord::Base
       nil
     end
   end
+
   def generate_token(column)
     begin
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
+
   def strip_blanks
     self.name = self.name.strip if self.name
     self.email = self.email.strip if self.email
   end
-
 end
