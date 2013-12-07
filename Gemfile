@@ -28,7 +28,8 @@ group :development, :test do
 end
 # for the "no javascript runtime error" upgrading to 3.1
 gem 'execjs'
-gem 'therubyracer'
+# gem 'therubyracer'
+# we now use nodejs for js runtime
 gem 'will_paginate', '> 3.0'
 
 
