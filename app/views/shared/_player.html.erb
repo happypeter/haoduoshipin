@@ -3,7 +3,7 @@
 		<span id="episode_no">#<%= @episode.id %></span>
 		<%= @episode.name %>
 	</div>
-  <video id="html5-player" class="video-js vjs-default-skin" controls preload="auto"
+  <video id="html5-player" class="video-js vjs-default-skin" autoplay controls preload="auto"
     width="860" height="<%= (860 / episode.ratio).to_i %>" poster="my_video_poster.png" data-setup="{}">
     <source src="<%= video_url episode %>" type='video/mp4'>
   </video>
