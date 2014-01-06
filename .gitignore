@@ -12,3 +12,4 @@ log/
 tmp/
 solr/
 .sass-cache/
+*.sublime-workspace

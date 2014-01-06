@@ -1,0 +1,16 @@
+{
+  "folders":
+  [
+    {
+      "path": "./",
+      "folder_exclude_patterns": ["tmp", "doc", "log"],
+      "file_exclude_patterns": ["tags"]
+    }
+  ],
+  "settings":
+  {
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true
+  }
+}
