@@ -1,6 +1,6 @@
-<div class="episode">
+<div class="episode_card">
   <div class="episode_snapshot">
-    <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png",  :alt => episode.name), episode %>
+    <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png",  :alt => episode.name), episode_path(episode, :autoplay => true)%>
   </div>
   <div class="episode_intro">
     <div class="episode_intro_title">
@@ -15,12 +15,21 @@
            <%= (episode.comments.count.to_s + "评论") %>
          <% end %>
     </div>
-    <h2><%= link_to episode.name, episode %></h2>
+    <h2>
+      <%= link_to episode.name, episode %>
+      <% if episode.revision.present? %>
+        <span class="revision-tag">
+          （已作废，改进版:
+          <%= link_to "第" + episode.revision.to_s + "期", episode_path(episode.revision) %>
+          ）
+        </span>
+      <% end %>
+    </h2>
     <%= episode.description %> （<%= @mins %>）
   </div>
   <div class="episode_watch_btn">
     <%= link_to(episode_path(episode, :autoplay => true), :class => "btn btn-info") do %>
-      <i class="icon-play-circle icon-large"> <span class="zh"><%= t("play") %></span></i>
+      <i class="icon-play-circle icon-large"><%= t("play") %></i>
     <% end %>
   </div>
   <div class="clearfix"></div>

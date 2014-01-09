@@ -1,31 +1,19 @@
 <% title @episode.name, false %>
 
-<div id="episode">
-  <% if params[:autoplay] %>
-    <%= render "shared/player", :episode => @episode %>
-  <% else %>
-    <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{@episode.asset_name}.png", :class => "episode_snapshot",  :alt => @episode.name), episode_path(@episode, :autoplay => true) %>
-  <div class="episode_intro">
-    <div class="episode_intro_title">
-      <%= @episode.id %>期
-      <%= render_episode_publish_time(@episode) %>
-    </div>
-    <h2><%= @episode.name %></h2>
-    <%= @episode.description %>
-  </div>
-  <div class="episode_watch_btn">
-    <%= link_to t("play"), episode_path(@episode, :autoplay => true), :class => "btn btn-info"%>
-  </div>
-  <% end %>
-  <div class="alternatives">
-    <ul>
-      <% if current_user && current_user.admin? %>
-        <li><%= link_to t("new_ep_release_mail"), "/new_ep_release_mail/#{@episode.id}", :class => "btn", :method => :post %></li>
-      <% end %>
 
-      <li><%= link_to t("download"), video_url(@episode), :class => "btn" %></li>
+<% if params[:autoplay] %>
+  <%= render "shared/player", :episode => @episode %>
+<% else %>
+  <%= render partial: 'episode_card', locals: {episode: @episode} %>
+<% end %>
+
+<div class="alternatives clearfix">
+  <ul>
+    <% if current_user && current_user.admin? %>
+    <li><%= link_to t("new_ep_release_mail"), "/new_ep_release_mail/#{@episode.id}", :class => "btn", :method => :post %></li>
+    <% end %>
+    <li><%= link_to t("download"), video_url(@episode), :class => "btn" %></li>
   </ul>
-  </div>
 </div>
 
 <div id="ep_notes_label">

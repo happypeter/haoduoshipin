@@ -1,0 +1,28 @@
+
+// in application.html.erb
+.player-bg {
+  background: #00a5ea;
+  background: -webkit-linear-gradient(#1875c6, #00a5ea);
+  background: -moz-linear-gradient(#1875c6, #00a5ea);
+  background: -o-linear-gradient(#1875c6, #00a5ea);
+  background: -ms-linear-gradient(#1875c6, #00a5ea);
+  background: linear-gradient(#1875c6, #00a5ea);
+  width: 100%;
+  height: 360px;
+  margin-top: -30px;
+}
+
+// in _player.html.erb
+.player-wrap {
+  margin-top: -310px;
+  padding: 30px 10px 20px;
+  background-color: #eaeaea;
+  .episode-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 10px 20px;
+  }
+  .video-js {
+    margin: auto;
+  }
+}

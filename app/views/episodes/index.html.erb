@@ -9,7 +9,7 @@
        <p class="search_count notice">Found <%= pluralize(@count, 'episode') %></p>
       <% end %>
       <% for episode in @episodes %>
-        <%= render episode %>
+        <%= render partial: 'episode_card', locals: {episode: episode} %>
       <% end %>
     <% end %>
   </div>
@@ -32,7 +32,7 @@
       <% for tag in Tag.order("name") %>
         <% flag = params[:tag_id].to_i == tag.id %>
         <div class="category <%= "nolink" if flag %>">
-          <%= link_to_unless flag, tag.display_name, 
+          <%= link_to_unless flag, tag.display_name,
           params.merge(:tag_id => tag.id, :page => nil, :search => nil) %>
         </div>
       <% end %>

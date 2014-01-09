@@ -1,0 +1,30 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+.episode_card {
+  position: relative;
+  margin-bottom: 25px;
+  .episode_snapshot {
+    float: left;
+  }
+  img {
+    border: solid 1px #BBB;
+  }
+  .episode_intro {
+    padding-left: 210px;
+    .episode_intro_title {
+      color: darken($github-gray, 50%);
+      font-size: 80%;
+    }
+    h2 {
+      margin-bottom: 6px;
+    }
+  }
+  .episode_watch_btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    .btn {padding: 3px 12px 3px;}
+  }
+  border-bottom: solid 1px hsl(0, 0%, 90%);
+}

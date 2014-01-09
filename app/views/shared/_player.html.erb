@@ -1,9 +1,9 @@
-<div id="videojs-wrap">
+<div class="player-wrap">
 	<div class="episode-title">
 		<span id="episode_no">#<%= @episode.id %></span>
 		<%= @episode.name %>
 	</div>
-  <video id="html5-player" class="video-js vjs-default-skin" autoplay controls preload="auto"
+  <video class="video-js vjs-default-skin" autoplay controls preload="auto"
     width="860" height="<%= (860 / episode.ratio).to_i %>" data-setup="{}">
     <source src="<%= video_url episode %>" type='video/mp4'>
   </video>

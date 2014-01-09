@@ -22,17 +22,15 @@
 <body>
 <div id="wrapper">
   <%= render 'shared/header' %>
-  <div id="main-content">
-    <% if params[:autoplay] %>
-      <div class="videojs-bg"></div>
+  <% if params[:autoplay] %>
+    <div class="player-bg"></div>
+  <% end %>
+  <div class="container">
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
     <% end %>
-    <div class="container">
-      <% if flash[:notice] %>
-        <p class="notice"><%= flash[:notice] %></p>
-      <% end %>
-      <%= yield %>
-      <div id="footer-push"></div><!-- hack for sticky footer -->
-    </div>
+    <%= yield %>
+    <div id="footer-push"></div><!-- hack for sticky footer -->
   </div>
 </div>
 <div class="footer">
