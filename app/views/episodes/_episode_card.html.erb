@@ -28,8 +28,8 @@
     <%= episode.description %> （<%= @mins %>）
   </div>
   <div class="episode_watch_btn">
-    <%= link_to(episode_path(episode, :autoplay => true), :class => "btn btn-info") do %>
-      <i class="icon-play-circle icon-large"><%= t("play") %></i>
+    <%= link_to(episode_path(episode, :autoplay => true), :class => "watch-button") do %>
+      <i class="icon-play-circle icon-large"> <%= t("play") %></i>
     <% end %>
   </div>
   <div class="clearfix"></div>

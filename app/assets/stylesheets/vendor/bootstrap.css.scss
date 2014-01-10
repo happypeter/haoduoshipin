@@ -4,16 +4,6 @@ $navbarLinkColorHover: $blue;
 $navbarBackground: #eee;
 $navbarBackgroundHighlight: #eee;
 
-// make font a bit larger for Chinese Characters
-.btn {
-  font-size: 16px;
-}
-.btn-large {
-  font-size: 18px;
-}
-.btn-small {
-  font-size: 14px;
-}
 .container {
   width: 900px !important;
 }
@@ -30,11 +20,5 @@ $navbarBackgroundHighlight: #eee;
 @import "bootstrap/grid";
 @import "bootstrap/layouts";
 
-@import "bootstrap/buttons";
 @import "bootstrap/navs";
 @import "bootstrap/navbar";
-@import "bootstrap/progress-bars";
-
-// Components: Popovers
-@import "bootstrap/modals";
-@import "bootstrap/tooltip";

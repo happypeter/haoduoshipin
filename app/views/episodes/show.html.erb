@@ -10,9 +10,9 @@
 <div class="alternatives clearfix">
   <ul>
     <% if current_user && current_user.admin? %>
-    <li><%= link_to t("new_ep_release_mail"), "/new_ep_release_mail/#{@episode.id}", :class => "btn", :method => :post %></li>
+    <li><%= link_to t("new_ep_release_mail"), "/new_ep_release_mail/#{@episode.id}", :method => :post %></li>
     <% end %>
-    <li><%= link_to t("download"), video_url(@episode), :class => "btn" %></li>
+    <li><%= link_to t("download"), video_url(@episode) %></li>
   </ul>
 </div>
 
@@ -39,7 +39,7 @@
         <%= f.hidden_field :episode_id %>
         <%= f.hidden_field :user_id  %>
         <%= f.label t("add_comment") %>
-        <a  class="formatting_tips" data-toggle="modal" href="#markdown_cheatsheet" ><%= t("formatting") %></a>
+        <a  class="formatting_tips" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" ><%= t("formatting") %></a>
         <div class="error">
           <%= t("comment_empty_error") %>
         </div>
@@ -47,16 +47,16 @@
           <%= f.text_area :content %>
         </div>
         <div class="clearfix"></div>
-        <%= f.submit t("publish_comment"), :class=>"btn btn-success", :id => "comment_btn", :disable_with => "sending..." %>
+        <%= f.submit t("publish_comment"), :class=>"button", :id => "comment_btn", :disable_with => "sending..." %>
       <% end %>
     </div>
   <% else %>
     <div id="login_buttons">
-      <%= link_to t("login_and_comment"), login_path(:return_to => request.url) ,:class => "btn btn-danger" %>
+      <%= link_to t("login_and_comment"), login_path(:return_to => request.url) %>
       或者
-      <%= link_to t("signup_for_free"), signup_path(:return_to => request.url) ,:class => "btn btn-success" %>
+      <%= link_to t("signup_for_free"), signup_path(:return_to => request.url) %>
       也可以
-      <%= link_to t("login_with_github"), "/auth/github/?return_to=#{request.url}" ,:class => "btn btn-info" %>
+      <%= link_to t("login_with_github"), "/auth/github/?return_to=#{request.url}" %>
     </div>
     <br \>
   <% end %>

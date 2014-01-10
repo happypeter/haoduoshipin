@@ -18,7 +18,7 @@
       <%= form_tag current_page?(:controller => 'episodes', :action => 'all') ? all_path : root_path, :method => :get do %>
         <p>
         <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search", :name => nil %>
+        <%= submit_tag "Search", name: nil , class: "button" %>
         </p>
       <% end %>
     </div>
@@ -26,10 +26,10 @@
     <div class="header-actions">
       <% if current_user %>
         <li><%= link_to "#{@unread_count}", notifications_path, :class => "notification-indicator #{'unread-icon' if @unread_count != 0} " %></li>
-        <li><%= link_to current_user.name, user_path(current_user), :class => "button" %></li>
-        <li><%= link_to  t("logout"), logout_path, :class => "button" %></li>
+        <li><%= link_to current_user.name, user_path(current_user) %></li>
+        <li><%= link_to  t("logout"), logout_path%></li>
       <% else %>
-        <li><%= link_to t("login"), login_path(:return_to => request.url), :class => "button" %></li>
+        <li><%= link_to t("login"), login_path(:return_to => request.url) %></li>
         <li><%= link_to t("signup"), signup_path(:return_to => request.url) %></li>
       <% end %>
     </div>

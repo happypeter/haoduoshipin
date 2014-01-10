@@ -1,10 +1,10 @@
 <div id="login_github">
-  <%= link_to t("login_with_github"), "/auth/github", :id => "github_login", :class => "btn btn-large btn-info" %>
+  <%= link_to t("login_with_github"), "/auth/github", :id => "github_login" %>
 </div>
 
 <div id="huo">或</div>
 
-<div id="login" class="login_form"> 
+<div id="login" class="login_form">
   <h1>
     <%=t("login_with_local_account") %>
     <%= link_to t("please_signup"), signup_path %>
@@ -27,7 +27,7 @@
         </div>
         <%= password_field_tag :password,params[:password] %>
       </div>
-      <div class="login_btn"><%= submit_tag(t("login"), :class => "btn btn-info") %></div>
+      <div class="login_btn"><%= submit_tag(t("login"), :class => "button") %></div>
     <% end %>
   </div>
 </div>

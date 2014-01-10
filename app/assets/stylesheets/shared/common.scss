@@ -6,7 +6,7 @@
   background-color: #fff;
   padding:10px;
   margin: 0 0 20px 0; /* negative indent the amount of the padding to maintain the grid system */
-  -webkit-border-radius: 6px; 
+  -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
   -webkit-box-shadow: 0 0px 2px rgba(0,0,0,.05);
@@ -29,7 +29,7 @@ a {
   color: #1B97F2;
   text-decoration: none;
   img { border: none; }
-  &:hover { text-decoration: underline; }
+  &:hover { text-decoration: none; }
 }
 
 h1 {

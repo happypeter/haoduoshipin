@@ -1,0 +1,21 @@
+$sky-blue: #3198B6;
+.watch-button {
+  background: $sky-blue;
+  color: white;
+  padding: 10px;
+}
+.watch-button:hover {
+  background: darken($sky-blue, 5%);
+  color: white;
+  text-decoration: none;
+}
+.button {
+  color: white;
+  background: #5DADE2;
+  padding: 10px;
+  border: none;
+  outline: 0;
+  &:hover {
+    background: darken(#5DADE2, 5%);
+  }
+}

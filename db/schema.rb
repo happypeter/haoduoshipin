@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140109124805) do
+ActiveRecord::Schema.define(:version => 20140110024747) do
 
   create_table "comments", :force => true do |t|
     t.integer  "episode_id"

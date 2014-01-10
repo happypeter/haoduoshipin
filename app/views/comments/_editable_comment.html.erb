@@ -1,6 +1,6 @@
 <%= div_for editable_comment do %>
   <div id="ep_comment_<%= editable_comment.id %>" class="comment_head">
-      <i class="icon-comment"></i> 
+      <i class="icon-comment"></i>
       <%= link_to editable_comment.user.name, editable_comment.user%>
        说
       <span class="comment_time">
@@ -10,8 +10,8 @@
     <div class="comment_body">
       <% if current_user.try(:id) == editable_comment.user.id %>
         <ul class="actions">
-          <li><%= link_to t("edit"), edit_comment_path(editable_comment), :remote => true, :class => "btn btn-small" %></li>
-          <li><%= link_to t("delete"), editable_comment, :confirm => "Are you sure you want to delete this comment?", :remote => true, :method => :delete, :class => "btn btn-small" %></li>
+          <li><%= link_to t("edit"), edit_comment_path(editable_comment), :remote => true%></li>
+          <li><%= link_to t("delete"), editable_comment, :confirm => "Are you sure you want to delete this comment?", :remote => true, :method => :delete%></li>
         </ul>
       <% end %>
       <%= output_comment(editable_comment.content) %>

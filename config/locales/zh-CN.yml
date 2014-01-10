@@ -1,4 +1,5 @@
 zh-CN:
+  haoqicat_course: "好奇猫视频课程"
   new_ep: "创建新视频"
   logout: "退出"
   play: "播放"
@@ -42,3 +43,4 @@ zh-CN:
   offline_meetup: "线下聚会"
   show_email: "显示邮箱"
   email_subscription: "订阅邮件列表"
+  new_ep_release_mail: "视频通知邮件"
