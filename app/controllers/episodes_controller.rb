@@ -1,5 +1,6 @@
 class EpisodesController < ApplicationController
   before_filter :check_admin, :except => [:all, :index, :show]
+
   def index
     @tag = Tag.find(params[:tag_id]) if params[:tag_id]
     if params[:search].blank?
@@ -34,13 +35,16 @@ class EpisodesController < ApplicationController
   def show
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
-    if @episode.commenters.include?(current_user)
-      current_user.notifications.each do |n|
-        if n.comment.episode_id == @episode.id
-          n.update_attributes!(unread: false)
+
+    if current_user.present?
+      commenters = @episode.commenters
+      if commenters.present? && commenters.include?(current_user)
+        current_user.notifications.each do |n|
+          n.update_attributes!(unread: false) if n.comment.episode_id == @episode.id
         end
       end
     end
+
     @comment = Comment.new(:episode => @episode, :user => current_user)
     respond_to do |f|
       f.html

@@ -11,8 +11,11 @@ class Comment < ActiveRecord::Base
   private
 
   def send_notifications
-    self.episode.commenters.each do |u|
-      Notification.create(user_id: u.id, comment_id: self.id) unless u.id == self.user_id
+    commenters = self.episode.commenters
+    if commenters.present?
+      commenters.each do |u|
+        Notification.create(user_id: u.id, comment_id: self.id) unless u.id == self.user_id
+      end
     end
   end
 

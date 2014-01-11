@@ -42,11 +42,10 @@ class Episode < ActiveRecord::Base
   end
 
   def commenters
-    all=[]
-    self.comments.each do |c|
-      all << c.user
-    end
-    all << User.find_by_name('happypeter') # happypeter is the author of all episodes
+    all = []
+    host = User.find_by_name('happypeter') # happypeter is the author of all episodes
+    all << host if host.present?
+    self.comments.each { |c| all << c.user } if self.comments.present?
     all.uniq
   end
 
@@ -58,5 +57,4 @@ class Episode < ActiveRecord::Base
     self.ratio = 16.0/9.0
     self.save
   end
-
 end
