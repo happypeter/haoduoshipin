@@ -53,10 +53,6 @@
   <% else %>
     <div id="login_buttons">
       <%= link_to t("login_and_comment"), login_path(:return_to => request.url) %>
-      或者
-      <%= link_to t("signup_for_free"), signup_path(:return_to => request.url) %>
-      也可以
-      <%= link_to t("login_with_github"), "/auth/github/?return_to=#{request.url}" %>
     </div>
     <br \>
   <% end %>
