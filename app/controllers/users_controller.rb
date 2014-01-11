@@ -1,5 +1,6 @@
-class UsersController < ApplicationController  
+class UsersController < ApplicationController
   before_filter :check_admin, :only => [:newmail, :new_ep_release_mail, :sendmail]
+
   def newmail
     @user = User.new
   end
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
     end
     redirect_to root_url, :notice => "Mail sent!"
   end
+
   def sendmail
     @mailbody = params[:mailbody]
     User.all.each do |u|
@@ -58,6 +60,7 @@ class UsersController < ApplicationController
     cookies.permanent[:token] = @user.token
     redirect_to_target_or_default root_url, :notice => "Signed in successfully"
   end
+
   def login_with_github_failure
     @reason = params[:message]
   end
@@ -112,4 +115,3 @@ class UsersController < ApplicationController
     end
   end
 end
-

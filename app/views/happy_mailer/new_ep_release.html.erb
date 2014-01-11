@@ -1,23 +1,46 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset='utf-8'>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Happycasts Email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-  <body>
-    <center>
-      <table>
-        <tbody>
-          <tr>
-            <%= link_to "#{@episode.id}期 #{@episode.name}", episode_url(@episode) %>
-          </tr>
-          <tr>
-            <%= @episode.description %>
-          </tr>
-          <tr>
-            If you don't want to receive email notification in the future go to: <a href="http://www.happycasts.net/account"> Your Account page</a>
-            and uncheck the <b>Subscription</b> setting.
-          </tr>
-
-        </tbody>
-      </table>
+  <body style="margin: 0; padding: 0;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td>
+          <table align="center" border="1" cellpadding="0" cellspacing="0"
+            width="600" style="border-collapse: collapse; border: 1px solid #cccccc;">
+            <tr>
+              <td bgcolor="#70bbd9" align="center" style="padding: 40px 0 30px 0;">
+                <b style="font-size: 30px; letter-spacing: 1px;">HAPPYCASTS</b>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td style="line-height: 20px;">
+                      <b><%= link_to "#{@episode.id}期 #{@episode.name}", episode_url(@episode),
+                      :style => "color: #0088cc; font-size: 20px;" %></b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 20px 0 30px 0; font-size: 16px;">
+                      <%= @episode.description %>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#ee4c50" style="padding: 30px 30px 30px 30px; color: white;">
+                如果您不想收到来自 Happycasts 的视频更新邮件提醒，请到<a href="http://www.happycasts.net/account" style="color: #0088cc; text-decoration: none;">信息编辑页面</a>取消订阅服务.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
