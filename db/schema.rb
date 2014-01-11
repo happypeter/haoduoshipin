@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(:version => 20140110024747) do
     t.string   "email"
     t.integer  "user_id"
     t.string   "ancestry"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(:version => 20140110024747) do
 
   create_table "episodes", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "notes"
     t.datetime "published_at"
     t.integer  "seconds"
@@ -65,19 +65,19 @@ ActiveRecord::Schema.define(:version => 20140110024747) do
   create_table "taggings", :force => true do |t|
     t.integer  "episode_id"
     t.integer  "tag_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tags", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "name"
     t.string   "email"
     t.string   "password_hash"
