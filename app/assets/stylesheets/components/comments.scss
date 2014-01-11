@@ -69,6 +69,8 @@ i.icon-file {
     }
   }
   .comment_body {
+    overflow: auto;
+    word-wrap: break-word;
     position: relative;
     padding: 10px;
     ul.actions {
