@@ -48,6 +48,7 @@ class Episode < ActiveRecord::Base
     all.uniq
   end
 
+
   private
   def set_seconds_and_ratio
     du = get_video_duration

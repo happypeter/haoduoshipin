@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.6'
 gem "jquery-atwho-rails", "0.1.6"
 gem 'settingslogic'
-gem "delayed_job_web"
 
 
 # Gems used only for assets and not required
@@ -46,5 +45,3 @@ gem 'simple_form'
 gem 'haml'
 gem 'dynamic_form'
 gem 'rails-i18n'
-gem 'delayed_job_active_record'
-gem 'daemons'
