@@ -1,3 +1,4 @@
+*.rdb
 public/assets/
 config/database.yml
 config/settings.yml
