@@ -35,7 +35,7 @@ class EpisodesController < ApplicationController
   def show
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
-    @episode.delay.check_notifications(current_user) if current_user.present?
+    Resque.enqueue(NotificationUpdater, @episode.id, current_user.id) if current_user
     @comment = Comment.new(:episode => @episode, :user => current_user)
     respond_to do |f|
       f.html
