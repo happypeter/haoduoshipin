@@ -46,3 +46,4 @@ gem 'haml'
 gem 'dynamic_form'
 gem 'rails-i18n'
 gem 'resque', :require => "resque/server"
+gem 'resque_mailer'
