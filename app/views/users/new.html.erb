@@ -1,6 +1,14 @@
 <ul class="third_party_login">
-  <li><%= link_to t("login_with_github"), "/auth/github", :id => "github_login" %></li>
-  <li><%= link_to t("login_with_google"), "/auth/google", :id => "google_login" %></li>
+  <li>
+    <%= link_to "/auth/github", :class => "github button" do %>
+      <i class="fa fa-github-square fa-lg"> <%= t("login_with_github") %></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "/auth/google", :class => "google button" do %>
+      <i class="fa fa-google-plus-square fa-lg"> <%= t("login_with_google") %></i>
+    <% end %>
+  </li>
 </ul>
 
 <div id="huo">或</div>
