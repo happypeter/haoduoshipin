@@ -1,12 +1,13 @@
-<div id="login_github">
-  <%= link_to t("login_with_github"), "/auth/github", :id => "github_login" %>
-</div>
+<ul class="third_party_login">
+  <li><%= link_to t("login_with_github"), "/auth/github", :id => "github_login" %></li>
+  <li><%= link_to t("login_with_google"), "/auth/google", :id => "google_login" %></li>
+</ul>
 
 <div id="huo">或</div>
 
 <div id="login" class="login_form">
   <h1>
-    <%=t("login_with_local_account") %>
+    <%= t("login_with_local_account") %>
     <%= link_to t("please_signup"), signup_path %>
   </h1>
   <div class="form_body">

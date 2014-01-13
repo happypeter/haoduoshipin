@@ -19,6 +19,7 @@ zh-CN:
   please_signup: "注册账户"
   signup: "注册"
   login_with_github: "使用 Github 账户登录"
+  login_with_google: "使用 Google 账户登录"
   login_with_local_account: "使用 HappyCasts 账户登录"
   edit: "编辑"
   delete: "删除"
