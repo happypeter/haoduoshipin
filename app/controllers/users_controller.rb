@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def login_with_github #this will create a new user acount on local db, if this is the first time login
+  def login_with_providers #this will create a new user acount on local db, if this is the first time login
     omniauth = request.env["omniauth.auth"]
     # if find_by_github_uid return ture, create_from_omniauth won't be
     # executed. that's the nature of ||
