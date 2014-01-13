@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name, :case_sensitive => false
 
-
   def self.create_from_omniauth(omniauth)
     create! do |user|
       user.github_uid = omniauth["uid"]

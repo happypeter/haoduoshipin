@@ -41,6 +41,7 @@ gem 'pygments.rb'
 gem "jquery-rails"
 gem "omniauth"
 gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 gem 'simple_form'
 gem 'haml'
 gem 'dynamic_form'
