@@ -15,3 +15,5 @@ video: http://happycasts.net/episodes/78
   ```
   sudo apt-get install ffmpeg libav-tools
   ```
+* start sunspot: http://happycasts.net/episodes/72
+* start resque&redis: http://happycasts.net/episodes/89
