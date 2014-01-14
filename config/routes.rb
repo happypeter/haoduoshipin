@@ -1,3 +1,4 @@
+require "resque_web"
 Happycasts::Application.routes.draw do
 
   resources :users
@@ -5,7 +6,8 @@ Happycasts::Application.routes.draw do
   resources :comments
   resources :password_resets
   resources :notifications
-
+  ResqueWeb::Engine.eager_load!
+  mount ResqueWeb::Engine => "/resque_web"
   get "/latest_comment" => "comments#latest_comment"
   get "/all" => "episodes#all"
   match "/auth/:provider/callback" => "users#login_with_providers"
