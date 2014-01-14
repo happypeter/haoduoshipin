@@ -216,3 +216,17 @@ textarea#episode_notes { height: 350px; }
   text-align: center;
 }
 
+// bottom signup section
+
+.ep_login {
+  margin: 30px 0;
+  border-top: 1px solid #ddd;
+  .note {
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px auto;
+    background-color: #E6F4F9;
+    color: #4D8796;
+  }
+}

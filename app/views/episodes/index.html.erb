@@ -47,6 +47,26 @@
   </div>
 </div>
 <%= will_paginate @episodes, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>
+<% if current_user.blank? %>
+  <div class="ep_login">
+    <div class="note">
+      各位看官，<%= link_to "注册 Happycasts 帐号", signup_path, :class => ""%>，
+      可以收到视频更新邮件提醒哦！
+    </div>
+    <ul class="third_party_login">
+      <li>
+        <%= link_to "/auth/github", :class => "github button" do %>
+          <i class="fa fa-github-square fa-lg"> <%= t "login_with_github" %></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/auth/google", :class => "google button" do %>
+          <i class="fa fa-google-plus-square fa-lg"> <%= t "login_with_google" %></i>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+<% end %>
 
 <% content_for :template_js do %>
   <script>

@@ -156,12 +156,32 @@
 }
 
 #signup_form_area {
-  width: 31em;
-  margin: auto;
-  input#user_name, #user_password, #user_password_confirmation, #user_email {
-    width: 21em;
-    padding: 5px;
-    margin: .2em 0 1em 0;
+  width: 500px;
+  margin: 0 auto;
+  line-height: 30px;
+  h2 {
+    margin-left: 100px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: normal;
+  }
+  .create_account_btn {
+    margin-top: 10px;
+    margin-left: 160px;
+    padding: 5px 15px;
+  }
+  .form {
+    margin-bottom: 20px;
+    label {
+      width: 60px;
+      display: inline-block;
+      text-align: right;
+    }
+    input {
+      margin-left: 10px;
+      padding: 5px;
+      width: 230px;
+    }
   }
   #not_match_error, #blank_password_error, #blank_username_error {
     display: none;
