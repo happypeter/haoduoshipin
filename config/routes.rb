@@ -8,7 +8,7 @@ Happycasts::Application.routes.draw do
 
   get "/latest_comment" => "comments#latest_comment"
   get "/all" => "episodes#all"
-  match "/auth/:provider/callback" => "users#login_with_github"
+  match "/auth/:provider/callback" => "users#login_with_providers"
   get "/account" => "users#edit", :as => "account"
   match "/auth/failure" => "users#login_with_github_failure"
   match "/about" => "info#about", :as => "about"

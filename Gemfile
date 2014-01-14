@@ -12,7 +12,7 @@ group :assets do
   gem 'uglifier'
   gem 'sass-rails', '~> 3.1'
   gem 'bootstrap-sass', '~> 2.0.4.0'
-  gem 'font-awesome-sass-rails', '3.0.2.2'
+  gem 'font-awesome-rails', '4.0.3.1'
 
 # css image sprite
   gem 'compass-rails'
@@ -41,6 +41,7 @@ gem 'pygments.rb'
 gem "jquery-rails"
 gem "omniauth"
 gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 gem 'simple_form'
 gem 'haml'
 gem 'dynamic_form'

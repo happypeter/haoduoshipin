@@ -46,19 +46,25 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(text)
   end
+
   def output_comment(text)
     make_mention_links(markdown text)
   end
 
   def avatar_url(user)
-    default_url = "#{root_url}assets/cat.png"
-    gravatar_id = Digest::MD5.hexdigest(user.email.try(:downcase).to_s) # some github user has NULL email
-    "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=#{CGI.escape(default_url)}"
+    if user.profile_url.blank?
+      default_url = "#{root_url}assets/cat.png"
+      gravatar_id = Digest::MD5.hexdigest(user.email.try(:downcase).to_s) # some github user has NULL email
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=#{CGI.escape(default_url)}"
+    else
+      user.profile_url
+    end
   end
 
   def render_user_register_time(user)
     I18n.l(user.created_at.to_date, :format => :long)
   end
+
   def render_episode_publish_time(episode)
     I18n.l(episode.published_at.to_date, :format => :long)
   end

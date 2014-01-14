@@ -8,30 +8,20 @@
      <th>评论</th>
      <th>注册日期</th>
   </tr>
-<% if @users != nil %>
-  <% @users.each do |user| %>
-  <p>
-    <tr>
-      <td>
-          <a href="http://gravatar.com">
-            <%= image_tag avatar_url(user),:alt => "Your Image", :size => "23x23"%>
-          </a>
+  <% if @users.present? %>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= image_tag avatar_url(user), :alt => "Your Image", :size => "23x23"%>
           <%= link_to user.name, user %>
-      </td>
-      <td>
-        <%= user.comments.count %>
-      </td>
-      <td>
-        <%= render_user_register_time(user) %>
-      </td>
-     </tr>
-  </p>
+        </td>
+        <td><%= user.comments.count %></td>
+        <td><%= render_user_register_time(user) %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <p>No user found</p>
   <% end %>
-<% else %>
-  <p>
-  No user found
-  </p>
-<% end %>
 </table>
 
 <div class="pg_user">

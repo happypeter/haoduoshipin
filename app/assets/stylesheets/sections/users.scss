@@ -12,7 +12,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     float: right;
-    .btn { 
+    .btn {
       width: 120px;
       float: right;
       text-align: center;
@@ -80,11 +80,20 @@
 }
 
 /*** LOGIN ***/
-#github_login {
-  font-weight: bold;
-  font-size: 120%;
+.third_party_login {
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+  height: 35px;
+  margin-top: 20px;
+  li {
+    display: inline-block;
+    line-height: 35px;
+  }
+  .github {
+    margin-right: 10px;
+  }
 }
-#login_github { text-align: center; }
 
 /*** user#index ***/
 #user_no {
@@ -105,9 +114,7 @@
 #login { width: 31em; }
 
 .login_form {
-  margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin: 40px auto;
   .error_box {
     margin-bottom: 1em;
     background: hsl(8, 100%, 95%) none repeat scroll 0%;
@@ -150,7 +157,7 @@
 
 #signup_form_area {
   width: 31em;
-  margin: auto; 
+  margin: auto;
   input#user_name, #user_password, #user_password_confirmation, #user_email {
     width: 21em;
     padding: 5px;

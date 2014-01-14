@@ -20,15 +20,24 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name, :case_sensitive => false
 
-
-  def self.create_from_omniauth(omniauth)
-    create! do |user|
-      user.github_uid = omniauth["uid"]
-      user.github_username = omniauth["info"]["name"]
-      user.email = omniauth["info"]["email"]
-      user.name = omniauth["info"]["nickname"]
-      user.site_url = omniauth["info"]["urls"]["Blog"] if omniauth["info"]["urls"]
-      user.gravatar_token = omniauth["extra"]["raw_info"]["gravatar_id"] if omniauth["extra"] && omniauth["extra"]["raw_info"]
+  def self.create_from_omniauth(omniauth, provider)
+    if provider == "github"
+      create! do |user|
+        user.github_uid = omniauth["uid"]
+        user.github_username = omniauth["info"]["name"]
+        user.email = omniauth["info"]["email"]
+        user.name = omniauth["info"]["nickname"]
+        user.site_url = omniauth["info"]["urls"]["Blog"] if omniauth["info"]["urls"]
+        user.gravatar_token = omniauth["extra"]["raw_info"]["gravatar_id"] if omniauth["extra"] && omniauth["extra"]["raw_info"]
+      end
+    else
+      create! do |user|
+        user.google_uid = omniauth["uid"]
+        user.google_username = omniauth["info"]["name"]
+        user.email = omniauth["info"]["email"]
+        user.profile_url = omniauth["info"]["image"]
+        user.name = omniauth["info"]["first_name"]
+      end
     end
   end
 
