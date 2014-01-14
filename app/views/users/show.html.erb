@@ -1,39 +1,31 @@
 <% title "#{@user.name}'s Profile" %>
 
 <div id="user_show">
-  <div class="row-fluid profile">
-  <div class="span2">
-    <a href="http://gravatar.com">
-      <%= image_tag avatar_url(@user),:alt => "Your Image", :size => "120x120"%>
-    </a>
-  </div>
-
-  <div class="span7 main_info">
-    <div id="user_name">
-      <%= @user.name %>
+  <div class="profile clearfix">
+    <div class="avatar">
+      <a href="http://gravatar.com">
+        <%= image_tag avatar_url(@user),:alt => "Your Image", :size => "120x120"%>
+      </a>
     </div>
-    <div id="user_email">
-      <% if @user.show_email %>
-      <%= @user.email %>
-      <% end %>
-   </div>
-  </div>
-  <div class="span3 edit_profile_btn">
-    <% if current_user.try(:name) == @user.name %>
-      <div id="admin_zone">
-        <% if current_user && current_user = @user %>
-          <%= link_to t("edit_profile"), account_path, :class => "btn" %>
-        <% end %>
-        <% if current_user && current_user.admin? %>
-          <div class="happy_actions">
-            <%= link_to t('new_ep'), new_episode_path, :class => "btn" %>
-            <br>
-            <%= link_to t('mail_to_all'), "/new_mail", :class => "btn btn-success" %>
-          </div>
-        <% end %>
+    <div class="name-email">
+      <div id="user-name">
+        <%= @user.name %>
       </div>
-    <% end %>
-  </div>
+      <div id="user-email">
+        <% if @user.show_email %>
+        <%= @user.email %>
+        <% end %>
+     </div>
+    </div>
+    <div class="admin-actions">
+      <% if current_user && current_user = @user %>
+        <%= link_to t("edit_profile"), account_path%>
+      <% end %>
+      <% if current_user && current_user.admin? %>
+        <%= link_to t('new_ep'), new_episode_path%>
+        <%= link_to t('mail_to_all'), "/new_mail"%>
+      <% end %>
+    </div>
   </div>
 
   <h2 class="comments"><%= t("recent_comments") %></h2>

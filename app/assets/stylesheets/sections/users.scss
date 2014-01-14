@@ -4,34 +4,39 @@
 /* personal info*/
 #user_show {
   .profile {
-    .edit_profile_btn { text-align: right; }
-    .main_info { margin-top: 5px; }
-  }
-  #admin_zone {
-    font-size: 160%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    float: right;
-    .btn {
+    position: relative;
+    margin-bottom: 20px;
+    .avatar {
       width: 120px;
-      float: right;
-      text-align: center;
-      margin-bottom: 10px ;
+      float: left;
+    }
+    .name-email {
+      margin-top: 5px;
+      margin-left: 10px;
+      width: 400px;
+      float: left;
+      #user-name {
+        font-size: 250%;
+        font-weight: bold;
+        margin-bottom: 12px ;
+
+      }
+      #user-email {
+        font-size:140%;
+        color: darken($github-gray, 50%);
+        margin-bottom: 5px;
+      }
+    }
+    .admin-actions {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
     }
   }
-  #user_name {
-    font-size: 250%;
-    font-weight: bold;
-    margin-bottom: 12px ;
-  }
-  #user_email {
-    font-size:140%;
-    color: darken($github-gray, 50%);
-    margin-bottom: 5px;
-  }
-  #user_bio {
-    color: darken($github-gray, 50%);
-    font-style: italic;
+  .admin-actions {
+    a {
+      margin-left: 30px;
+    }
   }
 }
 
@@ -139,20 +144,20 @@
     }
   }
   .form_body {
-     padding: 2em;
-     background-color: hsl(196, 33%, 94%);
-     overflow: hidden;
-     border-style: solid;
-     border-width: 1px 1px 2px;
-     border-color: hsl(196, 33%, 94%) hsl(204, 15%, 87%) hsl(204, 15%, 87%);
-     border-radius: 0 0 3px 3px;
-     font-size: 110%;
-     input#name,input#password {
-       width: 21em;
-       padding: 5px;
-       margin: .2em 0 1em 0;
-     }
+   padding: 2em;
+   background-color: hsl(196, 33%, 94%);
+   overflow: hidden;
+   border-style: solid;
+   border-width: 1px 1px 2px;
+   border-color: hsl(196, 33%, 94%) hsl(204, 15%, 87%) hsl(204, 15%, 87%);
+   border-radius: 0 0 3px 3px;
+   font-size: 110%;
+   input#name,input#password {
+     width: 21em;
+     padding: 5px;
+     margin: .2em 0 1em 0;
    }
+ }
 }
 
 #signup_form_area {
