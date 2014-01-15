@@ -1,12 +1,6 @@
 @import "globals/variables";
 @import "globals/mixins";
 
-@import 'compass';
-@import "subscribe/*.png";
-/*** for compass ***/
-
-@include all-subscribe-sprites;
-
 .main {
   width: 100%;
   .content {
@@ -21,21 +15,33 @@
 }
 
 #subscribe {
-  margin-bottom: 0.4em;
+  margin-bottom: 10px;
+  ul.horizontal {
+    padding: 0;
+    list-style: none;
+  }
   li {
-    position: relative;
+    display: inline-block;
+    float: left;
     padding-left: 0px;
+    margin-right: 10px;
+    text-align: center;
   }
   a {
     display: block;
-    width: 28px;
-    height: 28px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #5DADE2;
+    color: white;
+    &:hover {
+      background-color: #47a2de;
+    }
   }
 }
 
-#rss-tag {
-  height:35px;
-}
 .check-all {
   text-align: right;
 }
@@ -74,6 +80,7 @@
     overflow-x: hidden;
   }
 }
+
 .categories {
   border: solid 0.5px darken($github-gray, 10%);
   @include peter-shadow;

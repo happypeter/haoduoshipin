@@ -15,9 +15,17 @@
   </div>
   <div class="sidebar">
     <div id="subscribe">
-      <ul class="horizontal">
-        <li><a class="subscribe-feed" href="<%= episodes_url(format: "rss") %>"></a></li>
-        <li><a class="subscribe-sina" href="http://weibo.com/happycasts"></a></li>
+      <ul class="horizontal clearfix">
+        <li>
+          <%= link_to episodes_url(:format => "rss") do %>
+            <i class="fa fa-rss fa-lg"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "//weibo.com/happycasts" do %>
+            <i class="fa fa-weibo fa-lg"></i>
+          <% end %>
+        </li>
       </ul>
     </div>
     <div class="categories">

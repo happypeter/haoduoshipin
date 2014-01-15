@@ -62,24 +62,13 @@ ul {
   padding-left: 17px;
 }
 
-ul.horizontal {
-  padding: 0;
-  min-height: 30px;
-  color: red;
-  list-style: none;
-  li {
-    display: inline-block;
-    width: 40px;
-    float: left;
-  }
-}
-
 #wrapper {
   min-height:100%;
   height:auto!important;
   height:100%;
   margin-bottom:-160px;
 }
+
 #container {
   width:$main_width;
   text-align:left;

@@ -12,10 +12,6 @@ group :assets do
   gem 'uglifier'
   gem 'sass-rails', '~> 3.1'
   gem 'font-awesome-rails', '4.0.3.1'
-
-# css image sprite
-  gem 'compass-rails'
-  gem 'oily_png'
 end
 
 #for searching text
