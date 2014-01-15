@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
 //= require editable_comment
 //= require jquery.atwho
 //= require vendor/jquery_hotkeys

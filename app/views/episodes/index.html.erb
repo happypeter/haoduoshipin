@@ -1,7 +1,7 @@
 <% content_for :head, auto_discovery_link_tag(:rss, episodes_url(format: "rss")) %>
 
-<div class="row-fluid">
-  <div class="span10">
+<div class="main clearfix">
+  <div class="content">
     <% if @episodes.empty? %>
       <p class="search_nil notice">Sorry, no matching episodes!</p>
     <% else %>
@@ -13,14 +13,13 @@
       <% end %>
     <% end %>
   </div>
-  <div class="span2">
+  <div class="sidebar">
     <div id="subscribe">
       <ul class="horizontal">
         <li><a class="subscribe-feed" href="<%= episodes_url(format: "rss") %>"></a></li>
         <li><a class="subscribe-sina" href="http://weibo.com/happycasts"></a></li>
       </ul>
     </div>
-    <div class="clearfix"> </div>
     <div class="categories">
       <div class="categories_title">
         <%= t "cat" %>
@@ -46,11 +45,13 @@
     </div>
   </div>
 </div>
+
 <%= will_paginate @episodes, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>
+
 <% if current_user.blank? %>
   <div class="ep_login">
     <div class="note">
-      各位看官，<%= link_to "注册 Happycasts 帐号", signup_path, :class => ""%>，
+      各位看官，<%= link_to "注册 Happycasts 帐号", signup_path %>，
       可以收到视频更新邮件提醒哦！
     </div>
     <ul class="third_party_login">

@@ -15,14 +15,21 @@
 }
 
 /*** SHARED ***/
-html, body{
-  background-color: #FFF;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
-  min-width: 920px;
+html, body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #fff;
+  line-height: 18px;
+  color: #333;
+  font-size: 13px;
   margin: 0;
   border: 0;
+  min-width: 900px;
   height: 100%;
+}
+
+.container {
+  width: 900px !important;
+  margin: 0 auto;
 }
 
 a {
@@ -49,7 +56,6 @@ h3 {
 h4 {
   font-size: 12px;
 }
-
 
 ul {
   margin: 4px 0;
@@ -78,32 +84,6 @@ ul.horizontal {
   width:$main_width;
   text-align:left;
   margin:0 auto;
-}
-
-.navbar {
-  margin-bottom: 40px;
-  .brand {
-    #puppy_img {
-      float: left;
-      width: 60px;
-      height: 90px;
-    }
-    #logo_img {
-      width: 180px;
-      height: 40px;
-    }
-    #tag_line {
-      margin-left: 100px;
-      font-size: 80%;
-      margin-top: 5px;
-      a:hover { text-decoration: none; }
-    }
-    padding: 10px 12px 0px;
-  }
-  .nav {
-    margin-top: 30px;
-    font-size: 120%;
-  }
 }
 
 /* footer */

@@ -7,6 +7,19 @@
 
 @include all-subscribe-sprites;
 
+.main {
+  width: 100%;
+  .content {
+    width: 746px;
+    float: left;
+  }
+  .sidebar {
+    width: 134px;
+    float: right;
+    margin-left: 18px;
+  }
+}
+
 #subscribe {
   margin-bottom: 0.4em;
   li {
