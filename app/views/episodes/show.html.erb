@@ -1,6 +1,5 @@
 <% title @episode.name, false %>
 
-
 <% if params[:autoplay] %>
   <%= render "shared/player", :episode => @episode %>
 <% else %>
@@ -10,7 +9,9 @@
 <div class="alternatives clearfix">
   <ul>
     <% if current_user && current_user.admin? %>
-    <li><%= link_to t("new_ep_release_mail"), "/new_ep_release_mail/#{@episode.id}", :method => :post %></li>
+    <li>
+      <%= link_to t("new_ep_release_mail"), "/new_ep_release_mail/#{@episode.id}", :method => :post %>
+    </li>
     <% end %>
     <li><%= link_to t("download"), video_url(@episode) %></li>
   </ul>
@@ -39,14 +40,15 @@
         <%= f.hidden_field :episode_id %>
         <%= f.hidden_field :user_id  %>
         <%= f.label t("add_comment") %>
-        <a  class="formatting_tips" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" ><%= t("formatting") %></a>
+        <a class="formatting_tips" href="//github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">
+          <%= t("formatting") %>
+        </a>
         <div class="error">
           <%= t("comment_empty_error") %>
         </div>
         <div class="write-comment-area">
           <%= f.text_area :content %>
         </div>
-        <div class="clearfix"></div>
         <%= f.submit t("publish_comment"), :class=>"button", :id => "comment_btn", :disable_with => "sending..." %>
       <% end %>
     </div>
@@ -54,7 +56,7 @@
     <div id="login_buttons">
       <%= link_to t("login_and_comment"), login_path(:return_to => request.url) %>
     </div>
-    <br \>
+    <br>
   <% end %>
 </div>
 

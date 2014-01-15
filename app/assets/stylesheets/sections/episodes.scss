@@ -10,7 +10,6 @@
   .sidebar {
     width: 134px;
     float: right;
-    margin-left: 18px;
   }
 }
 
@@ -130,40 +129,6 @@
   top: 0;
   .banner { margin-top: 15px; }
 }
-.episode_views {
-  padding: 0 20px;
-  margin: 0;
-  font-weight: normal;
-  color: #444;
-  font-size: 12px;
-  text-align: center;
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border: solid 1px #BBB;
-  background-color: #DDD;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
-  background: -moz-linear-gradient(top,  #EEE, #CCC);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
-  margin-bottom: 14px;
-  .view { padding-left: 3px; }
-    img {
-      background-color: #FFF;
-      background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#FFF));
-      background: -moz-linear-gradient(top,  #EEE, #FFF);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#FFF');
-      padding: 7px;
-      vertical-align: middle;
-      border: solid 1px #BBB;
-      border-top: none;
-      border-bottom: none;
-    }
-    a img {
-      background: none;
-      padding: 2px;
-      border: none;
-    }
-}
 
 .alternatives {
   float: right;
@@ -225,8 +190,6 @@ textarea#episode_description, textarea#episode_notes {
   @include textarea-style;
 }
 textarea#episode_notes { height: 350px; }
-
-
 
 /* the /all page */
 
