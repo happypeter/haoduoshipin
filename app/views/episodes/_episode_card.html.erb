@@ -1,4 +1,4 @@
-<div class="episode_card">
+<div class="episode_card clearfix">
   <div class="episode_snapshot">
     <%= link_to image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png", :alt => episode.name), episode_path(episode, :autoplay => true)%>
   </div>
@@ -32,6 +32,5 @@
       <i class="fa fa-play-circle fa-lg"> <%= t("play") %></i>
     <% end %>
   </div>
-  <div class="clearfix"></div>
 </div>
 

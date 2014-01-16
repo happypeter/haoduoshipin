@@ -58,6 +58,7 @@ class CommentsController < ApplicationController
   def latest_comment
     @comment = Comment.recent.first
     info = {}
+    info[:timestamp] = @comment.created_at.getutc.iso8601
     info[:comment_id] = @comment.id
     info[:content] = @comment.content[0..40] << '...'
     info[:episode_id] = @comment.episode_id

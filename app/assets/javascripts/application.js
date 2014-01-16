@@ -3,6 +3,8 @@
 //= require editable_comment
 //= require jquery.atwho
 //= require vendor/jquery_hotkeys
+//= require vendor/jquery.timeago
+//= require vendor/jquery.timeago.zh-CN
 //= require_self
 
 var commenter = [];
@@ -19,6 +21,11 @@ $.ajax({
   url: "/latest_comment.json",
   cache: false
 }).done(function(data) {
+  var time = data.timestamp;
+  $("abbr.timeago").attr("title", time);
+  $("abbr.timeago").append(time);
+  $("abbr.timeago").timeago();
+
   $('.latest-comment').append("<a href=/episodes/" + data.episode_id + "#ep_comment_"
     + data.comment_id + ">" + data.user + ": "+ data.content + "</a>");
 });
