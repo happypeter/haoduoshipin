@@ -134,6 +134,7 @@
   float: right;
   ul {
     list-style: none;
+    margin-top: 10px;
     li {
       float: left;
       padding-left: 10px;
@@ -171,6 +172,7 @@
   border: solid 1px gray;
   border-bottom: transparent;
   text-align: center;
+  margin-top: 30px;
 }
 
 /* for episode form */
@@ -180,7 +182,9 @@
     color: #C00;
     margin-left: $episode-new-margin-left;
   }
-  #episode_published_at_1i { margin-left: $episode-new-margin-left; }
+  #episode_published_at_1i {
+    margin-left: $episode-new-margin-left;
+  }
 }
 textarea#episode_description, textarea#episode_notes {
   width: 700px;
@@ -192,7 +196,6 @@ textarea#episode_description, textarea#episode_notes {
 textarea#episode_notes { height: 350px; }
 
 /* the /all page */
-
 #loadingimage {
   display: none;
   padding-bottom: 20px;
@@ -200,7 +203,6 @@ textarea#episode_notes { height: 350px; }
 }
 
 // bottom signup section
-
 .ep_login {
   margin: 30px 0;
   border-top: 1px solid #ddd;
