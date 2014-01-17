@@ -212,7 +212,7 @@ textarea#episode_notes { height: 350px; }
 }
 
 // bottom signup section
-.ep_login {
+.ep-login {
   margin: 30px 0;
   border-top: 1px solid #ddd;
   .note {
@@ -220,7 +220,14 @@ textarea#episode_notes { height: 350px; }
     padding: 10px;
     text-align: center;
     margin: 10px auto;
-    background-color: #E6F4F9;
-    color: #4D8796;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+    .note-link {
+      color: #245269
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 }
