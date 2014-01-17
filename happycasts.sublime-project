@@ -4,7 +4,7 @@
     {
       "path": "./",
       "folder_exclude_patterns": ["tmp", "doc", "log"],
-      "file_exclude_patterns": ["tags"]
+      "file_exclude_patterns": ["tags", "*.sublime-workspace"]
     }
   ],
   "settings":

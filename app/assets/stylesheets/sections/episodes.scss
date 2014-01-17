@@ -1,6 +1,7 @@
 @import "globals/variables";
 @import "globals/mixins";
 
+/* home page */
 .main {
   width: 100%;
   .content {
@@ -12,7 +13,7 @@
     float: right;
   }
 }
-
+// home page sidebar
 #subscribe {
   margin-bottom: 10px;
   ul.horizontal {
@@ -119,16 +120,31 @@
   }
 }
 
-#login_buttons {
-  margin: 10px 0 14px 0;
+// bottom signup section
+.ep-login {
+  margin: 30px 0;
+  border-top: 1px solid #ddd;
+  .note {
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px auto;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+    .note-link {
+      color: #245269
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 }
+/* end */
 
-/*** SIDE ***/
-.side {
-  position: absolute;
-  right: 0;
-  top: 0;
-  .banner { margin-top: 15px; }
+/* episode show page*/
+#login-to-comment {
+  margin: 10px 0 14px 0;
 }
 
 .alternatives {
@@ -144,7 +160,7 @@
 }
 
 /* shownotes */
-.show_notes {
+.show-notes {
   position: relative;
   padding: 20px;
   border: 1px solid $github-gray;
@@ -176,6 +192,7 @@
   text-align: center;
   margin-top: 30px;
 }
+/* end */
 
 /* for episode form */
 #new_episode, .edit_episode {
@@ -204,23 +221,3 @@ textarea#episode_notes { height: 350px; }
   text-align: center;
 }
 
-// bottom signup section
-.ep-login {
-  margin: 30px 0;
-  border-top: 1px solid #ddd;
-  .note {
-    width: 500px;
-    padding: 10px;
-    text-align: center;
-    margin: 10px auto;
-    background-color: #d9edf7;
-    border-color: #bce8f1;
-    color: #31708f;
-    .note-link {
-      color: #245269
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  }
-}
