@@ -16,7 +16,10 @@
   <% end %>
   <div class="container">
     <% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %></p>
+      <p class="notice">
+        <span><%= flash[:notice] %></span>
+        <span class="close"><i class="fa fa-times-circle-o"></i></span>
+      </p>
     <% end %>
     <%= yield %>
     <div id="footer-push"></div><!-- hack for sticky footer -->
@@ -59,6 +62,11 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+</script>
+<script>
+  $(".notice .close").click(function(){
+    $(".notice").fadeOut("slow");
+  });
 </script>
 </body>
 </html>

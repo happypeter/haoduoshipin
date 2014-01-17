@@ -26,9 +26,9 @@ $.ajax({
   $("abbr.timeago").append(time);
   $("abbr.timeago").timeago();
 
-  $(".recent-comment .profile").append("<a href=/users/" + data.user_id + "><img src=" +
-    data.profile_url + "></a>");
+  $(".recent-comment .profile").append("<a href=/users/" + data.user_id +
+   "><img src=" + data.profile_url + "></a>");
 
-  $(".latest-comment").append("<a href=/episodes/" + data.episode_id + "#ep_comment_"
-    + data.comment_id + ">" + data.content + "</a>");
+  $(".latest-comment").append("<a href=/episodes/" + data.episode_id +
+    "#ep_comment_"+ data.comment_id + ">" + data.content + "</a>");
 });

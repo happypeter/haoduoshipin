@@ -141,6 +141,10 @@ table {
   background-color: #D9EDF7;
   border-color: #BCE8F1;
   padding: 10px;
+  .close {
+    float: right;
+    cursor: pointer;
+  }
 }
 
 .clearfix:before,
