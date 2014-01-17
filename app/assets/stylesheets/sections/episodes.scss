@@ -92,39 +92,31 @@
 .categories {
   border: solid 0.5px darken($github-gray, 10%);
   @include peter-shadow;
-}
-.categories_title {
-  text-align: center;
-  color: white;
-  padding: 10px;
-  font-size: 120%;
-  @include github-hero;
-}
-.category {
-  border-bottom: solid 1px #e6e6e6;
-  font-weight: bold;
-  a {
+  .categories_title {
+    text-align: center;
+    color: white;
     padding: 10px;
-    display: block;
-    &:hover {
-      background: #f3f3f3;
-      border-right: 3px solid #0088cc;
-      text-decoration: none;
-      span {
-        color: #666;
+    font-size: 120%;
+    @include github-hero;
+  }
+  .category {
+    border-bottom: solid 1px #e6e6e6;
+    font-weight: bold;
+    a {
+      padding: 10px;
+      display: block;
+      &:hover {
+        background: #f3f3f3;
+        border-right: 3px solid #0088cc;
+        text-decoration: none;
       }
     }
   }
-  img {
-    width: 20px;
-    height: 22px;
-    margin-right: 7px;
+  .category.nolink {
+    background: #f3f3f3;
+    border-right: 3px solid #0088cc;
+    padding: 10px;
   }
-}
-.category.nolink {
-  background: #f3f3f3;
-  border-right: 3px solid #0088cc;
-  padding: 10px;
 }
 
 #login_buttons {
@@ -150,6 +142,7 @@
     }
   }
 }
+
 /* shownotes */
 .show_notes {
   position: relative;
