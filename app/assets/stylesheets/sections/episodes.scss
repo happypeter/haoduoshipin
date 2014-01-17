@@ -42,9 +42,6 @@
 }
 
 .recent-comment {
-  a:hover {
-    text-decoration: none;
-  }
   background-color: white;
   color: #3A87AD;
   margin-bottom: 20px;
@@ -61,8 +58,9 @@
     font-weight: bold;
   }
   .details {
-    background-color: #e6f4f9;
     padding: 5px;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
   }
   .profile img {
     width: 25px;
@@ -70,21 +68,24 @@
     -webkit-border-radius: 50%;
     border-radius: 50%;
     display: block;
-    margin-right: 10px;
-    margin: 0 auto;
+    margin: 5px auto;
   }
   .latest-comment a {
     display: block;
     margin: 0px;
     padding-top: 10px;
-    color: #666;
-    letter-spacing: 2px;
+    color: #245269;
     word-wrap: break-word;
   }
   .check-all {
     text-align: center;
-    margin-top: 5px;
     margin-bottom: 0;
+    a {
+      color: #245269;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
