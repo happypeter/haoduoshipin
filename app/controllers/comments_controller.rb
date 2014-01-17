@@ -60,10 +60,12 @@ class CommentsController < ApplicationController
     info = {}
     info[:timestamp] = @comment.created_at.getutc.iso8601
     info[:comment_id] = @comment.id
-    info[:content] = @comment.content[0..40] << '...'
+    info[:content] = @comment.content[0..100] << '...'
     info[:episode_id] = @comment.episode_id
     info[:episode_name] = Episode.find(@comment.episode_id).name
-    info[:user] = User.find(@comment.user_id).name
+    user = User.find(@comment.user_id)
+    info[:profile_url] = avatar_url(user)
+    info[:user_id] = user.id
 
     respond_to do |format|
       format.json {render :json => info}

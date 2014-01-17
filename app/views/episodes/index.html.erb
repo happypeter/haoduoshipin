@@ -44,15 +44,16 @@
         </div>
       <% end %>
     </div>
-    <div class="recent-comments">
-      <p class="title">
+    <div class="recent-comment">
+      <div class="title">
         <i class="fa fa-comment"></i>
         <abbr class="timeago"></abbr>
-      </p>
-      <span class="latest-comment"></span>
-    </div>
-    <div class="check-all">
-      <%= link_to t("all_comments"), comments_path %>
+      </div>
+      <div class="details">
+        <span class="latest-comment"></span>
+        <span class="profile"></span>
+        <p class="check-all"><%= link_to t("all_comments"), comments_path %></p>
+      </div>
     </div>
   </div>
 </div>

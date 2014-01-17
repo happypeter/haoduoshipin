@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user
+  helper_method :current_user, :avatar_url
+
   before_filter :init
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -34,6 +36,16 @@ class ApplicationController < ActionController::Base
   def check_admin
     unless current_user && current_user.admin?
       redirect_to :root, :notice => "Only admin can do this."
+    end
+  end
+
+  def avatar_url(user)
+    if user.profile_url.blank?
+      default_url = "#{root_url}assets/cat.png"
+      gravatar_id = Digest::MD5.hexdigest(user.email.try(:downcase).to_s) # some github user has NULL email
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=#{CGI.escape(default_url)}"
+    else
+      user.profile_url
     end
   end
 end
