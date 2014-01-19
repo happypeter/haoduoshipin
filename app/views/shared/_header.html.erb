@@ -16,12 +16,12 @@
 
     <div class="search-bar">
       <%= form_tag current_page?(:controller => 'episodes', :action => 'all') ? all_path : root_path, :method => :get do %>
-        <p>
+        <div>
           <%= text_field_tag :search, params[:search] %>
           <%= button_tag type: "submit", class: "button" do %>
             <i class="fa fa-search fa-lg"></i>
           <% end %>
-        </p>
+        </div>
       <% end %>
     </div>
 
