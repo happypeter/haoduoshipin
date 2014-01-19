@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessor :password
+  attr_accessor :password, :password_confirmation
 
   #user may submit "hisname ", so this is nice to have
   before_validation :strip_blanks

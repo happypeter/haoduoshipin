@@ -1,7 +1,8 @@
 <div id="signup_form_area">
-  <h2>
+  <div class="form-heading">
+    <%= image_tag "puppy.png"  %>
     <%= t("create_your_account") %>
-  </h2>
+  </div>
   <div id="signup_form">
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
@@ -13,24 +14,29 @@
           </ul>
         </div>
       <% end %>
-      <p class="form">
-        <%= f.label :name, "用户名" %>
-        <%= f.text_field :name %>
-        <span>(不能包含空格)</span>
-      </p>
-      <p class="form">
-        <%= f.label :email, "邮箱" %>
-        <%= f.text_field :email %>
-      </p>
-      <p class="form">
-        <%= f.label :password, "密码" %>
-        <%= f.password_field :password %>
-      </p>
-      <p class="form">
-        <%= f.label :password_confirmation, "确认密码" %>
-        <%= f.password_field :password_confirmation %>
-      </p>
-      <%= submit_tag t("create_account"), :class => "create_account_btn" %>
+
+      <div class="form-body">
+        <div class="form">
+          <%= f.label :name, "用户名" %>
+          <%= f.text_field :name, :placeholder => "不包含空格"%>
+        </div>
+        <div class="form">
+          <%= f.label :email, "邮箱" %>
+          <%= f.text_field :email %>
+        </div>
+        <div class="form">
+          <%= f.label :password, "密码" %>
+          <%= f.password_field :password %>
+        </div>
+        <div class="form">
+          <%= f.label :password_confirmation, "确认密码" %>
+          <%= f.password_field :password_confirmation %>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <%= submit_tag t("create_account"), :class => "create_account_btn button" %>
+      </div>
     <% end %>
   </div>
 </div>
