@@ -74,6 +74,10 @@ ul {
   text-align:left;
   margin:0 auto;
 }
+/* remove the "underline" from abbr and acronym elements in FF*/
+abbr[title], acronym[title] {
+  border-bottom-width: 0;
+}
 
 /* footer */
 #footer-push {
