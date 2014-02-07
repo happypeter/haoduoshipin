@@ -5,7 +5,7 @@
   text-shadow: 0 1px 0 white;
   border-bottom: 5px solid #E5E5E5;
   padding: 10px 0;
-  height: 48px;
+  height: 50px;
   a {
     text-decoration: none;
   }
@@ -34,10 +34,10 @@
 
 .search-bar {
   display: block;
-  height: 48px;
+  height: 50px;
   width: 460px;
   margin-left: 30px;
-  margin-top: 13px;
+  padding: 9px;
   float: left;
   input#search {
     width: 270px;
@@ -62,14 +62,22 @@
 }
 
 .header-actions {
-  height: 48px;
-  padding-top: 20px;
   float: right;
   list-style: none;
   li {
-    vertical-align: center;
     float: left;
-    margin-left: 20px;
+    margin-left: 10px;
+    line-height: 50px;
+  }
+  .primary-action {
+    background: $sky-blue;
+    padding: 0 10px;
+    a {
+      color: white;
+    }
+    &:hover {
+      background: darken($sky-blue, 5%);
+    }
   }
 }
 

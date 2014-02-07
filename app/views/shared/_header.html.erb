@@ -31,7 +31,9 @@
         <li><%= link_to current_user.name, user_path(current_user) %></li>
         <li><%= link_to  t("logout"), logout_path%></li>
       <% else %>
-        <li><%= link_to t("login"), login_path(:return_to => request.url) %></li>
+        <li class="primary-action">
+          <%= link_to t("login"), login_path(:return_to => request.url) %>
+        </li>
         <li><%= link_to t("signup"), signup_path(:return_to => request.url) %></li>
       <% end %>
     </div>

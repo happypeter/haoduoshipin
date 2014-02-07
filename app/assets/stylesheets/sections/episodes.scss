@@ -34,10 +34,10 @@
     height: 30px;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    background-color: #5DADE2;
+    background-color: $sky-blue;
     color: white;
     &:hover {
-      background-color: #47a2de;
+      background-color: darken($sky-blue, 5%);
     }
   }
 }

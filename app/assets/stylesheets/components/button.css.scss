@@ -1,4 +1,6 @@
-$sky-blue: #3198B6;
+@import "globals/variables";
+@import "globals/mixins";
+
 .watch-button {
   background: $sky-blue;
   color: white;
@@ -11,11 +13,11 @@ $sky-blue: #3198B6;
 }
 .button {
   color: white;
-  background: #5DADE2;
+  background: $sky-blue;
   padding: 10px;
   border: none;
   outline: 0;
   &:hover {
-    background: darken(#5DADE2, 5%);
+    background: darken($sky-blue, 5%);
   }
 }
