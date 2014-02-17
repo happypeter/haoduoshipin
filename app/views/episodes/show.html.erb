@@ -31,7 +31,9 @@
 
 <div class="comment_view">
   <div class="comments">
-    <%= render :partial => "comments/editable_comment", :collection => @episode.comments %>
+    <% @episode.comments.each do |comment| %>
+      <%= render :partial => "comments/editable_comment", :locals => {comment: comment} %>
+    <% end %>
   </div>
 
   <% if current_user %>

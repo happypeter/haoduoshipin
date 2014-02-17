@@ -1,10 +1,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require editable_comment
-//= require jquery.atwho
 //= require vendor/jquery_hotkeys
 //= require vendor/jquery.timeago
 //= require vendor/jquery.timeago.zh-CN
+//= require jquery.atwho
 //= require_self
 
 var commenter = [];

@@ -7,14 +7,21 @@ class HappyMailer < ActionMailer::Base
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Happycasts")
   end
 
-  def new_ep_release(user_id, episode_id)
+  def new_ep_release(user, episode_id)
     @episode = Episode.find(episode_id)
-    user = User.find(user_id)
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Happycasts:#{@episode.name}")
   end
 
   def password_reset(user)
     @user = user
     mail :to => user.email, :subject => "Password Reset"
+  end
+
+  class Preview < MailView
+    def new_ep_release
+      user = Struct.new(:email, :name).new("to_test@gmail.com", "Tom")
+      episode = Episode.last
+      HappyMailer.new_ep_release(user, episode.id)
+    end
   end
 end

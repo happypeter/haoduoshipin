@@ -1,19 +1,19 @@
-<%= div_for editable_comment do %>
-  <div id="ep_comment_<%= editable_comment.id %>" class="comment_head">
+<%= div_for comment do %>
+  <div id="ep_comment_<%= comment.id %>" class="comment_head">
       <i class="fa fa-comment"></i>
-      <%= link_to editable_comment.user.name, editable_comment.user%>
+      <%# link_to comment.user.name, comment.user%>
        说
       <span class="comment_time">
-          <%= time_ago_in_words editable_comment.created_at  %>前
+          <%= time_ago_in_words comment.created_at  %>前
       </span>
     </div> <%# class="comment_head" %>
     <div class="comment_body">
-      <% if current_user.try(:id) == editable_comment.user.id %>
+      <% if current_user && current_user.id == comment.user.id %>
         <ul class="actions">
-          <li><%= link_to t("edit"), edit_comment_path(editable_comment), :remote => true%></li>
-          <li><%= link_to t("delete"), editable_comment, :confirm => "Are you sure you want to delete this comment?", :remote => true, :method => :delete%></li>
+          <li><%= link_to t("edit"), edit_comment_path(comment), :remote => true %></li>
+          <li><%= link_to t("delete"), comment, :confirm => "Are you sure you want to delete this comment?", :remote => true, :method => :delete %></li>
         </ul>
       <% end %>
-      <%= output_comment(editable_comment.content) %>
+      <%= output_comment(comment.content) %>
     </div>
 <% end %>

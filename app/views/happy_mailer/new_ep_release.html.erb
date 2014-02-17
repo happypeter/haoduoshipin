@@ -8,35 +8,52 @@
   <body style="margin: 0; padding: 0;">
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr>
-        <td>
-          <table align="center" border="1" cellpadding="0" cellspacing="0"
-            width="600" style="border-collapse: collapse; border: 1px solid #cccccc;">
+        <td bgcolor="#ececec" align="center">
+          <table align="center" border="0" cellpadding="0" cellspacing="0"
+            width="600" style="margin: 0 auto;">
             <tr>
-              <td bgcolor="#70bbd9" align="center" style="padding: 40px 0 30px 0;">
-                <b style="font-size: 30px; letter-spacing: 1px;">HAPPYCASTS</b>
+              <td width="600" height="20"></td>
+            </tr>
+            <tr>
+              <td bgcolor="#4B4044" height="30">
+                <strong style="color: #72A6A6; font-size: 13px; padding-left: 30px;">第<%= @episode.id %>期</strong>
               </td>
             </tr>
             <tr>
-              <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+              <td bgcolor="#D5E9E7" align="center" style="padding: 30px 0 30px 0;">
+                <%= link_to "HAPPYCASTS", root_url, :style => "font-size: 36px; color: #72A6A6; font-weight: bold; text-decoration: none;" %>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#ffffff" style="padding: 30px 30px 30px 30px;">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
-                    <td style="line-height: 20px;">
-                      <b><%= link_to "#{@episode.id}期 #{@episode.name}", episode_url(@episode),
-                      :style => "color: #0088cc; font-size: 20px;" %></b>
+                    <td>
+                      <p style="font-size: 18px; font-weight: bold; line-height: 24px; margin-top: 0; margin-bottom: 18px;">
+                        <%= link_to @episode.name, episode_url(@episode), :style => "color: #D9653B; text-decoration: none;" %>
+                      </p>
                     </td>
                   </tr>
                   <tr>
-                    <td style="padding: 20px 0 30px 0; font-size: 16px;">
+                    <td style="padding-bottom: 18px; font-size: 13px; line-height: 18px; color: #444444;">
                       <%= @episode.description %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right" style="font-size: 13px; color: #444444;">
+                      <%= I18n.l(@episode.published_at.to_date, :format => :long) %>
                     </td>
                   </tr>
                 </table>
               </td>
             </tr>
             <tr>
-              <td bgcolor="#ee4c50" style="padding: 30px 30px 30px 30px; color: white;">
-                如果您不想收到来自 Happycasts 的视频更新邮件提醒，请到<a href="http://www.happycasts.net/account" style="color: #0088cc; text-decoration: none;">信息编辑页面</a>取消订阅服务.
+              <td bgcolor="#4B4C44" style="padding: 10px 30px 10px 30px; color: #72A6A6; text-align: center; font-size: 12px;">
+                如果您不想收到此类邮件，请随时 <a href="http://www.happycasts.net/account" style="color: #D5E9E7; text-decoration: none; font-size: 12px;">取消订阅</a>.
               </td>
+            </tr>
+            <tr>
+              <td width="600" height="20"></td>
             </tr>
           </table>
         </td>

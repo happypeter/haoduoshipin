@@ -71,6 +71,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mail_view (1.0.3)
+      tilt
     mime-types (1.19)
     mono_logger (1.1.0)
     multi_json (1.8.4)
@@ -214,6 +216,7 @@ DEPENDENCIES
   haml
   jquery-atwho-rails (= 0.1.6)
   jquery-rails
+  mail_view (~> 1.0.3)
   mysql2 (~> 0.3.10)
   nokogiri (= 1.4.7)
   omniauth

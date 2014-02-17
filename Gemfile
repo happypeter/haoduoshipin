@@ -18,6 +18,7 @@ end
 gem 'sunspot_rails'
 
 group :development, :test do
+  gem "mail_view", "~> 1.0.3"
   gem 'capistrano', '2.9.0', :require => false
   gem 'sunspot_solr'
 end
