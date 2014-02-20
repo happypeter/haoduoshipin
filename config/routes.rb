@@ -27,5 +27,4 @@ Happycasts::Application.routes.draw do
   end
 
   root :to => "episodes#index"
-
 end
