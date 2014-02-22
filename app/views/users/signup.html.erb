@@ -1,46 +1,55 @@
 <div id="signup-form-area">
   <div class="form-heading">
-    <%= image_tag "puppy.png"  %>
-    <%= t("create_your_account") %>
+    <ul class="third-party-login">
+      <li>
+        <%= link_to "/auth/github", :class => "github button" do %>
+        <i class="fa fa-github-alt fa-2x"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/auth/google", :class => "google button" do %>
+        <i class="fa fa-google-plus fa-2x"></i>
+        <% end %>
+      </li>
+    </ul>
+
+    <div class="division">
+      <div class="huo">或</div>
+    </div>
   </div>
+
   <div id="signup_form">
     <%= form_for @user do |f| %>
-      <% if @user.errors.any? %>
-        <div class="error_messages">
-          <ul>
-            <% for message in @user.errors.full_messages %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <div class="form-body">
-        <div class="form">
-          <%= f.label :name, "用户名" %>
-          <%= f.text_field :name, :placeholder => "不包含空格"%>
-        </div>
-        <div class="form">
-          <%= f.label :email, "邮箱" %>
-          <%= f.text_field :email %>
-        </div>
-        <div class="form">
-          <%= f.label :password, "密码" %>
-          <%= f.password_field :password %>
-        </div>
-        <div class="form">
-          <%= f.label :password_confirmation, "确认密码" %>
-          <%= f.password_field :password_confirmation %>
-        </div>
+    <div class="form-body">
+      <div class="form">
+        <%= f.label :name, "用户名" %>
+        <%= f.text_field :name, :placeholder => "不包含空格"%>
       </div>
-
-      <div class="form-footer">
-        <%= submit_tag t("create_account"), :class => "create-account-btn button" %>
+      <div class="form">
+        <%= f.label :email, "邮箱" %>
+        <%= f.text_field :email %>
       </div>
+      <div class="form">
+        <%= f.label :password, "密码" %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="form">
+        <%= f.label :password_confirmation, "确认密码" %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div class="tip">
+        <span><%= t("login_with_local_account") %></span>
+        <%= link_to t("login"), login_path, :class => "action" %>
+      </div>
+    </div>
+
+    <div class="form-footer">
+      <%= submit_tag t("create_account"), :class => "create-account-btn button" %>
+    </div>
     <% end %>
   </div>
 </div>
 
 <%= content_for :template_js do %>
-  <%= javascript_include_tag "signup" %>
+<%= javascript_include_tag "signup" %>
 <% end %>

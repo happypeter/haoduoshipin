@@ -1,10 +1,10 @@
-$("#create_account_btn").click(function() {
-  if ($.trim($('#signup_form input#user_name').val()) == "")
+$(".create-account-btn").click(function() {
+  if ($.trim($('#signup_form input#user_name').val()) === "")
   {
     alert("Username is empty");
     return false;
   }
-  if ($.trim($('#signup_form input#user_password').val()) == "")
+  if ($.trim($('#signup_form input#user_password').val()) === "")
   {
     alert("Password is empty");
     return false;

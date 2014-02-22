@@ -83,95 +83,32 @@
   margin-top: 8px;
 }
 
-/*** LOGIN ***/
-#login-form-area {
+/* user#signup, user#login */
+#login-form-area, #signup-form-area {
   @include form-area;
-  .third-party-login {
-    padding: 0;
+  @include form-head;
+  .tip {
+    width: 200px;
+    margin: 0 auto;
+    font-size: 11px;
     text-align: center;
-    list-style-type: none;
-    margin-top: 40px;
-    li {
-      display: inline-block;
-      margin: 0 15px;
-      a {
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        display: block;
-        width: 26px;
-        line-height: 0;
-      }
+    .action {
+      border-left: 1px solid #dfdfdf;
+      padding-left: 10px;
+      margin-left: 5px;
     }
-  }
-  .division {
-    position: relative;
-    margin: 0 20px;
-    height: 30px;
-    border-bottom: 1px solid #dfdfdf;
-    text-align: center;
-  }
-  .huo {
-    position: absolute;
-    width: 60px;
-    height: 30px;
-    background-color: #ffffff;
-    bottom: -15px;
-    left: 50%;
-    margin-left: -30px;
-    font-size: 14px;
   }
   .form-body {
     padding: 25px;
     @include signup-login-form-style;
   }
-  .tip {
-    width: 120px;
-    margin: 0 auto;
-    .signup-text {
-      border-left: 1px solid #dfdfdf;
-      padding-left: 10px;
-      margin-left: 5px;
-      text-align: center;
-    }
-  }
   .form-footer {
     text-align: center;
     margin-bottom: 30px;
   }
-  .login-button {
-    padding: 5px 20px;
+  .login-btn, .create-account-btn {
+    padding: 6px 20px;
   }
-}
-
-/* user#signup */
-#signup-form-area {
-  @include form-area;
-  .form-heading {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 16px;
-    color: #555;
-    img {
-      height: 40px;
-      display: block;
-      margin: 0 auto 5px;
-    }
-  }
-  .form-body {
-    padding: 25px;
-  }
-  .form-footer {
-    background-color: #f5f5f5;
-    padding: 30px;
-    text-align: center;
-  }
-  .create-account-btn {
-    padding: 5px 15px;
-  }
-  @include signup-login-form-style;
   #not_match_error, #blank_password_error, #blank_username_error {
     display: none;
     color: $error_red;

@@ -1,19 +1,21 @@
 <div id="login-form-area">
-  <ul class="third-party-login">
-    <li>
-      <%= link_to "/auth/github", :class => "github button" do %>
-        <i class="fa fa-github-alt fa-2x"></i>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to "/auth/google", :class => "google button" do %>
-        <i class="fa fa-google-plus fa-2x"></i>
-      <% end %>
-    </li>
-  </ul>
+  <div class="form-heading">
+    <ul class="third-party-login">
+      <li>
+        <%= link_to "/auth/github", :class => "github button" do %>
+          <i class="fa fa-github-alt fa-2x"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/auth/google", :class => "google button" do %>
+          <i class="fa fa-google-plus fa-2x"></i>
+        <% end %>
+      </li>
+    </ul>
 
-  <div class="division">
-    <div class="huo">或</div>
+    <div class="division">
+      <div class="huo">或</div>
+    </div>
   </div>
 
   <div class="login_form">
@@ -30,12 +32,12 @@
       </div>
       <div class="tip">
         <%= link_to "忘记密码？", new_password_reset_path %>
-        <%= link_to t("signup"), signup_path, :class => "signup-text" %>
+        <%= link_to t("signup"), signup_path, :class => "action" %>
       </div>
     </div>
 
     <div class="form-footer">
-      <%= submit_tag(t("login"), :class => "login-button button") %>
+      <%= submit_tag(t("login"), :class => "login-btn button") %>
     </div>
     <% end %>
   </div>

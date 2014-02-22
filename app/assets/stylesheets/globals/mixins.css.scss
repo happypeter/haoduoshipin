@@ -90,6 +90,44 @@
   }
 }
 
+@mixin form-head {
+  .third-party-login {
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+    margin-top: 40px;
+    li {
+      display: inline-block;
+      margin: 0 15px;
+      a {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        display: block;
+        width: 26px;
+        line-height: 0;
+      }
+    }
+  }
+  .division {
+    position: relative;
+    margin: 0 20px;
+    height: 30px;
+    border-bottom: 1px solid #dfdfdf;
+    text-align: center;
+  }
+  .huo {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    background-color: #ffffff;
+    bottom: -15px;
+    left: 50%;
+    margin-left: -30px;
+    font-size: 14px;
+  }
+}
+
 @mixin form-shadow {
   -webkit-box-shadow: 0 0 7px 0 #d6d6d6;
   -moz-box-shadow: 0 0 7px 0 #d6d6d6;
