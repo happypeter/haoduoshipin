@@ -84,7 +84,7 @@
 }
 
 /* user#signup, user#login */
-#login-form-area, #signup-form-area {
+.form-section {
   @include form-area;
   @include form-head;
   .tip {
@@ -106,9 +106,14 @@
     text-align: center;
     margin-bottom: 30px;
   }
-  .login-btn, .create-account-btn {
+  .submit-btn {
     padding: 6px 20px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
   }
+}
+#signup-form-section {
   #not_match_error, #blank_password_error, #blank_username_error {
     display: none;
     color: $error_red;

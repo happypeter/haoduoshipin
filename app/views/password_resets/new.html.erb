@@ -1,7 +1,13 @@
-<%= form_tag password_resets_path, :method => :post do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
+<div id="password-reset-form-section" class="form-section">
+  <%= form_tag password_resets_path, :method => :post do %>
+  <div class="form-body">
+    <div class="form">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, params[:email] %>
+    </div>
   </div>
-  <div class="reset-password"><%= submit_tag "Reset Password" %></div>
-<% end %>
+  <div class="form-footer">
+    <%= submit_tag "重置密码", :class => "submit-btn button" %>
+  </div>
+  <% end %>
+</div>
