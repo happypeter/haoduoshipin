@@ -75,6 +75,7 @@
     padding: 0 10px;
     a {
       color: white;
+      text-shadow: none;
     }
     &:hover {
       background: darken($sky-blue, 5%);

@@ -23,7 +23,7 @@ Happycasts::Application.routes.draw do
   match "logout" => "users#logout", :as => "logout"
 
   if Rails.env.development?
-    mount HappyMailer::Preview => 'mail_view'
+    mount MailPreview => 'mail_view'
   end
 
   root :to => "episodes#index"
