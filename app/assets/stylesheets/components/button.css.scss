@@ -5,6 +5,9 @@
   background: $sky-blue;
   color: white;
   padding: 10px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
 }
 .watch-button:hover {
   background: darken($sky-blue, 5%);

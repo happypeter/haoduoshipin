@@ -90,3 +90,45 @@
   }
 }
 
+@mixin form-shadow {
+  -webkit-box-shadow: 0 0 7px 0 #d6d6d6;
+  -moz-box-shadow: 0 0 7px 0 #d6d6d6;
+  box-shadow: 0 0 7px 0 #d6d6d6;
+}
+
+@mixin form-area {
+  width: 400px;
+  margin: 50px auto;
+  line-height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 7px 0 #d6d6d6;
+}
+
+@mixin signup-login-form-style {
+  .form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    label {
+      width: 60px;
+      display: inline-block;
+      text-align: right;
+    }
+    input {
+      margin-left: 10px;
+      width: 230px;
+      color: #555;
+      font-size: 14px;
+      padding: 6px 12px;
+      line-height: 1.5;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+      &:focus {
+        border-color: #66afe9;
+        outline: 0;
+      }
+    }
+  }
+}

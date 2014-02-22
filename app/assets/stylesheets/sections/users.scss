@@ -84,89 +84,69 @@
 }
 
 /*** LOGIN ***/
-.third_party_login {
-  padding: 0;
-  text-align: center;
-  list-style-type: none;
-  height: 35px;
-  margin-top: 20px;
-  li {
-    display: inline-block;
-    line-height: 35px;
-  }
-  .github {
-    margin-right: 10px;
-  }
-}
-
-/*** user#index ***/
-#user_no {
-  font-weight: bold;
-  font-size: 140%;
-  text-align: center;
-  margin: 2em;
-}
-
-#huo {
-  text-align: center;
-  margin: 40px;
-  font-size: 180%;
-  font-weight: 1000;
-  display: block;
-}
-
-#login { width: 31em; }
-
-.login_form {
-  margin: 40px auto;
-  .error_box {
-    margin-bottom: 1em;
-    background: hsl(8, 100%, 95%) none repeat scroll 0%;
-    border: 1px solid hsl(13, 86%, 46%);
-    padding: 1em;
-    font-weight: bold;
-  }
-  h1 {
-    color: white;
-    font-size: 120%;
-    font-weight: bold;
-    margin: 0;
-    padding: 12px;
-    @include github-hero;
-    a {
+#login-form-area {
+  @include form-area;
+  .third-party-login {
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+    margin-top: 40px;
+    li {
       display: inline-block;
-      margin-left: 2em;
-      font-size: 80%;
-      font-weight: normal;
-      color: hsl(196, 33%, 94%);
-      text-shadow: none;
+      margin: 0 15px;
+      a {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        display: block;
+        width: 26px;
+        line-height: 0;
+      }
     }
   }
-  .form_body {
-   padding: 2em;
-   background-color: hsl(196, 33%, 94%);
-   overflow: hidden;
-   border-style: solid;
-   border-width: 1px 1px 2px;
-   border-color: hsl(196, 33%, 94%) hsl(204, 15%, 87%) hsl(204, 15%, 87%);
-   border-radius: 0 0 3px 3px;
-   font-size: 110%;
-   input#name,input#password {
-     width: 21em;
-     padding: 5px;
-     margin: .2em 0 1em 0;
-   }
- }
+  .division {
+    position: relative;
+    margin: 0 20px;
+    height: 30px;
+    border-bottom: 1px solid #dfdfdf;
+    text-align: center;
+  }
+  .huo {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    background-color: #ffffff;
+    bottom: -15px;
+    left: 50%;
+    margin-left: -30px;
+    font-size: 14px;
+  }
+  .form-body {
+    padding: 25px;
+    @include signup-login-form-style;
+  }
+  .tip {
+    width: 120px;
+    margin: 0 auto;
+    .signup-text {
+      border-left: 1px solid #dfdfdf;
+      padding-left: 10px;
+      margin-left: 5px;
+      text-align: center;
+    }
+  }
+  .form-footer {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .login-button {
+    padding: 5px 20px;
+  }
 }
 
-#signup_form_area {
-  width: 400px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  line-height: 30px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 0 7px 0 #d6d6d6;
+/* user#signup */
+#signup-form-area {
+  @include form-area;
   .form-heading {
     background-color: #f5f5f5;
     padding: 20px;
@@ -188,34 +168,10 @@
     padding: 30px;
     text-align: center;
   }
-  .create_account_btn {
+  .create-account-btn {
     padding: 5px 15px;
   }
-  .form {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    label {
-      width: 60px;
-      display: inline-block;
-      text-align: right;
-    }
-    input {
-      margin-left: 10px;
-      width: 230px;
-      color: #555;
-      font-size: 14px;
-      padding: 6px 12px;
-      line-height: 1.5;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-      box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-      &:focus {
-        border-color: #66afe9;
-        outline: 0;
-      }
-    }
-  }
+  @include signup-login-form-style;
   #not_match_error, #blank_password_error, #blank_username_error {
     display: none;
     color: $error_red;
@@ -251,6 +207,13 @@
 }
 
 /* Users */
+#user_no {
+  font-weight: bold;
+  font-size: 140%;
+  text-align: center;
+  margin: 2em;
+}
+
 .pg_user {
   padding-left: 39px;
   margin: 30px 0px 20px;

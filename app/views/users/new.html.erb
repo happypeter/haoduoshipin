@@ -1,42 +1,42 @@
-<ul class="third_party_login">
-  <li>
-    <%= link_to "/auth/github", :class => "github button" do %>
-      <i class="fa fa-github-square fa-lg"> <%= t("login_with_github") %></i>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to "/auth/google", :class => "google button" do %>
-      <i class="fa fa-google-plus-square fa-lg"> <%= t("login_with_google") %></i>
-    <% end %>
-  </li>
-</ul>
+<div id="login-form-area">
+  <ul class="third-party-login">
+    <li>
+      <%= link_to "/auth/github", :class => "github button" do %>
+        <i class="fa fa-github-alt fa-2x"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "/auth/google", :class => "google button" do %>
+        <i class="fa fa-google-plus fa-2x"></i>
+      <% end %>
+    </li>
+  </ul>
 
-<div id="huo">或</div>
+  <div class="division">
+    <div class="huo">或</div>
+  </div>
 
-<div id="login" class="login_form">
-  <h1>
-    <%= t("login_with_local_account") %>
-    <%= link_to t("please_signup"), signup_path %>
-  </h1>
-  <div class="form_body">
-    <% flash.each do |name, msg| %>
-      <div class="error_box">
-        <%= msg %>
-      </div>
-    <% end %>
+  <div class="login_form">
     <%= form_tag "/user_login" do %>
-      <div class="input-prepend">
-        <div id="username">用户名</div>
+
+    <div class="form-body">
+      <div class="form">
+        <label id="username">用户名</label>
         <%= text_field_tag :name, params[:name] %>
       </div>
-      <div class="input-prepend">
-        <div id="password">
-          密码
-          <%= link_to "forgotten password?", new_password_reset_path %>
-        </div>
-        <%= password_field_tag :password,params[:password] %>
+      <div class="form">
+        <label id="password">密码</label>
+        <%= password_field_tag :password, params[:password] %>
       </div>
-      <div class="login_btn"><%= submit_tag(t("login"), :class => "button") %></div>
+      <div class="tip">
+        <%= link_to "忘记密码？", new_password_reset_path %>
+        <%= link_to t("signup"), signup_path, :class => "signup-text" %>
+      </div>
+    </div>
+
+    <div class="form-footer">
+      <%= submit_tag(t("login"), :class => "login-button button") %>
+    </div>
     <% end %>
   </div>
 </div>
