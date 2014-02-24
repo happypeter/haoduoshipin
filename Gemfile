@@ -18,7 +18,6 @@ end
 gem 'sunspot_rails'
 
 group :development, :test do
-  gem "mail_view", "~> 1.0.3"
   gem 'capistrano', '2.9.0', :require => false
   gem 'sunspot_solr'
 end
@@ -27,7 +26,6 @@ gem 'execjs'
 # gem 'therubyracer'
 # we now use nodejs for js runtime
 gem 'will_paginate', '> 3.0'
-
 
 gem 'mysql2', "~> 0.3.10"
 gem 'bcrypt-ruby', :require => 'bcrypt'
@@ -45,3 +43,6 @@ gem 'rails-i18n'
 gem 'resque', :require => "resque/server"
 gem 'resque_mailer'
 gem 'resque-web', require: 'resque_web'
+
+gem "mail_view", "~> 1.0.3"
+
