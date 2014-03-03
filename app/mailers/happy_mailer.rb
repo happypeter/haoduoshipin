@@ -7,8 +7,9 @@ class HappyMailer < ActionMailer::Base
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Happycasts")
   end
 
-  def new_ep_release(user, episode_id)
+  def new_ep_release(user_id, episode_id)
     @episode = Episode.find(episode_id)
+    user = User.find(user_id)
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Happycasts:#{@episode.name}")
   end
 

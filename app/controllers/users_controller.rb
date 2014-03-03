@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     User.all.each do |u|
       if u.email_subscription?
         # should not pass user&episode object here, hi, we are using resque
-        HappyMailer.new_ep_release(u, params[:id]).deliver
+        HappyMailer.new_ep_release(u.id, params[:id]).deliver
       end
     end
     redirect_to root_url, :notice => "Mail sent!"
