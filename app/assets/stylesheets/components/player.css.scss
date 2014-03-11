@@ -14,7 +14,6 @@
 
 // in _player.html.erb
 .player-wrap {
-  margin-top: -310px;
   padding: 30px 10px 20px;
   background-color: #eaeaea;
   .episode-title {
@@ -24,5 +23,12 @@
   }
   .video-js {
     margin: auto;
+  }
+}
+
+.autoplay-wrap {
+  margin-top: -310px;
+  .notice {
+    margin-top: 0;
   }
 }

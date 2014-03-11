@@ -15,13 +15,15 @@
     <div class="player-bg"></div>
   <% end %>
   <div class="container">
-    <% if flash[:notice] %>
-      <p class="notice">
-        <span><%= flash[:notice] %></span>
-        <span class="close"><i class="fa fa-times-circle-o"></i></span>
-      </p>
-    <% end %>
-    <%= yield %>
+    <div class="<%= "autoplay-wrap" if params[:autoplay] %>">
+      <% if flash[:notice] %>
+        <p class="notice">
+          <span><%= flash[:notice] %></span>
+          <span class="close"><i class="fa fa-times-circle-o"></i></span>
+        </p>
+      <% end %>
+      <%= yield %>
+    </div>
     <div id="footer-push"></div><!-- hack for sticky footer -->
   </div>
 </div>
