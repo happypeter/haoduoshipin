@@ -9,6 +9,7 @@ Happycasts::Application.routes.draw do
   # ResqueWeb::Engine.eager_load!
   # mount ResqueWeb::Engine => "/resque_web"
   mount Resque::Server, :at => "/resque"
+  get "/donate" => "users#donate"
   get "/latest_comment" => "comments#latest_comment"
   get "/all" => "episodes#all"
   match "/auth/:provider/callback" => "users#login_with_providers"

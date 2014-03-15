@@ -164,3 +164,26 @@
 table.user-list tr th {
   text-align: left;
 }
+
+/* donate */
+.donate-headline {
+  color: $sky-blue;
+  text-align: center;
+}
+.donate-option {
+  border: 1px solid black;
+  margin-top: 40px;
+  padding: 20px;
+  img {
+    float: left;
+    margin-right: 20px;
+    width: 200px;
+    height: 100px;
+  }
+  .option-content {
+    font-family: monospace;
+    font-size: 20px;
+    line-height: 100px;
+    text-align: center;
+  }
+}
