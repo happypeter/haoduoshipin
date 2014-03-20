@@ -1,7 +1,7 @@
 class MailPreview < MailView
   def new_ep_release
-    user = Struct.new(:email, :name).new("tom@gmail.com", "Tom")
+    user = User.first
     episode = Episode.last
-    HappyMailer.new_ep_release(user, episode.id)
+    HappyMailer.new_ep_release(user.id, episode.id)
   end
 end
