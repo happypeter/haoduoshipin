@@ -45,3 +45,6 @@ zh-CN:
   show_email: "显示邮箱"
   email_subscription: "订阅邮件列表"
   new_ep_release_mail: "视频通知邮件"
+  social_share_button:
+    share_to: "分享到%{name}"
+    weibo: "新浪微博"

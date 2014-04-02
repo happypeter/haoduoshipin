@@ -13,6 +13,9 @@
       <%= link_to t("new_ep_release_mail"), "/new_ep_release_mail/#{@episode.id}", :method => :post %>
     </li>
     <% end %>
+    <% image_url = "http://media.happycasts.net/assets/episodes/stills/#{@episode.asset_name}.png" %>
+    <% allowed_sites = ["weibo"] %>
+    <li><%= social_share_button_tag @episode.name, { :image => image_url }, allowed_sites %></li>
     <li><%= link_to t("download"), video_url(@episode), :class => "download" %></li>
   </ul>
 </div>
