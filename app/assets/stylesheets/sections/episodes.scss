@@ -233,3 +233,10 @@ textarea#episode_notes { height: 350px; }
   padding-bottom: 20px;
   text-align: center;
 }
+
+//social share button
+.social-share-button-weibo {
+  &:hover {
+    text-decoration: underline;
+  }
+}
