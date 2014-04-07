@@ -53,22 +53,28 @@
     width: 700px;
     height: 100px;
   }
-  input.btn {
+  input.button {
     float: right;
     margin: 30px 40px 25px 0px;
+    color: #fff;
+    font-size: 16px;
   }
 }
 
-.edit_user {
+.edit-user-info-form {
   @include form-base;
   input { width: 280px; }
-  input.btn {
+  input.button {
     float: left;
     margin: {
       top: 10px;
       bottom: 25px;
-      left: 312px;
+      left: 200px;
     }
+    color: white;
+    width: 150px;
+    line-height: 25px;
+    font-size: 16px;
   }
   .alert-info {
     float: right;
