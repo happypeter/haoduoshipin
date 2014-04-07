@@ -9,7 +9,9 @@
        <p class="search_count notice">Found <%= pluralize(@count, 'episode') %></p>
       <% end %>
       <% for episode in @episodes %>
-        <%= render partial: 'episode_card', locals: {episode: episode} %>
+        <% if episode.published || episode.should_be_published? %>
+          <%= render partial: 'episode_card', locals: {episode: episode} %>
+        <% end %>
       <% end %>
     <% end %>
   </div>

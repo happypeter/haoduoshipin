@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140113122015) do
+ActiveRecord::Schema.define(:version => 20140407012045) do
 
   create_table "comments", :force => true do |t|
     t.integer  "episode_id"
@@ -32,10 +32,11 @@ ActiveRecord::Schema.define(:version => 20140113122015) do
     t.datetime "published_at"
     t.integer  "seconds"
     t.text     "description"
-    t.integer  "comments_count", :default => 0, :null => false
+    t.integer  "comments_count", :default => 0,     :null => false
     t.string   "youku"
     t.float    "ratio"
     t.integer  "revision"
+    t.boolean  "published",      :default => false
   end
 
   create_table "notifications", :force => true do |t|

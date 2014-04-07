@@ -15,13 +15,13 @@ class Episode < ActiveRecord::Base
     return "avconv error"
   end
 
-  def should_be_publish?
+  def should_be_published?
     if self.published_at < Time.now
-      self.pblished = true
+      self.published = true
       self.save
-      return true
+      true
     else
-      return false
+      false
     end
   end
 
@@ -48,8 +48,8 @@ class Episode < ActiveRecord::Base
     all.uniq
   end
 
-
   private
+
   def set_seconds_and_ratio
     du = get_video_duration
     a = du.split(':')
