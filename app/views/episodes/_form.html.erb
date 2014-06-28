@@ -1,6 +1,5 @@
 <div class="content">
   <%= simple_form_for @episode do |f| %>
-
       <%= f.input :published_at,
           :required => false,
           :default => @default_time,
@@ -12,6 +11,6 @@
 
       <%= f.input :description %>
       <%= f.input :notes %>
-      <%= f.button :submit, :value => "Add an Episode", :class => "button" %>
+      <%= f.button :submit, :class => "button" %>
   <% end %>
 </div>
