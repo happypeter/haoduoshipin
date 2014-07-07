@@ -54,7 +54,8 @@ class Episode < ActiveRecord::Base
     du = get_video_duration
     a = du.split(':')
     self.seconds = a[0].to_i*3600 + a[1].to_i*60 + a[2].to_i
-    self.ratio = 16.0/9.0
+    # self.ratio = 16.0/9.0 # for imac
+    self.ratio = 1.6 # for macbook pro
     self.save
   end
 end
