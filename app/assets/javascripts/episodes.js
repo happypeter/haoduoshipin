@@ -5,7 +5,3 @@ $("#comment_btn").click(function() {
       return false
   }
 });
-
-$('#markdown_cheatsheet').modal({
-  show: false
-})
