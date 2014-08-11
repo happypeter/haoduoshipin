@@ -1,0 +1,38 @@
+
+/*** ABOUT ***/
+#about {
+  line-height:  25px;
+  margin: 20px;
+  .peter {
+    float: right;
+    padding: 7px;
+    margin-left: 40px;
+    margin-right: 10px;
+    margin-top: 35px;
+    border: solid 1px #CCC;
+    text-align: center;
+    font-weight: bold;
+    img {
+      display: block;
+      padding-bottom: 5px;
+    }
+  }
+  h2 {
+    margin-top: 25px;
+    margin-bottom: 8px;
+  }
+  p { margin: 8px 0; }
+  h3 {
+    margin-bottom: 0px;
+  }
+}
+
+.zsimg {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+.zs-info {
+  padding: 20px 0;
+}
