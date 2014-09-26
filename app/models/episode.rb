@@ -40,10 +40,6 @@ class Episode < ActiveRecord::Base
     tags.map(&:name).join(' ')
   end
 
-  searchable do
-    text :name, :description
-  end
-
   def commenters
     all = []
     all = self.comments.collect(&:user_id)

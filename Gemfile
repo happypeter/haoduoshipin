@@ -14,12 +14,9 @@ group :assets do
   gem 'font-awesome-rails', '4.0.3.1'
 end
 
-#for searching text
-gem 'sunspot_rails'
 
 group :development, :test do
   gem 'capistrano', '2.9.0', :require => false
-  gem 'sunspot_solr'
 end
 # for the "no javascript runtime error" upgrading to 3.1
 gem 'execjs'

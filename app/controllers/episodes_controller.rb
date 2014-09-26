@@ -25,17 +25,7 @@ class EpisodesController < ApplicationController
   end
 
   def all
-    if params[:search].blank?
-      @episodes = Episode.recent.page(params[:page]).per_page(12)
-    else
-      @episodes = Episode.search do
-        fulltext params[:search]
-      end.results
-    end
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @episodes = Episode.recent.page(params[:page]).per_page(12)
   end
 
   def show
