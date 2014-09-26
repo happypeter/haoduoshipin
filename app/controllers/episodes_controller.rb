@@ -6,10 +6,16 @@ class EpisodesController < ApplicationController
     if params[:search].blank?
       @episodes = (@tag ? @tag.episodes : Episode).recent.page(params[:page]).per_page(20)
     else
-      @episodes = Episode.search do
-        fulltext params[:search]
-      end.results
+      @episodes = Episode.search(
+        query: {
+          multi_match: {
+            query: params[:search].to_s,
+            fields: ['name', 'description']
+          }
+        }
+      ).records
       @count = @episodes.length
+      @paged_episodes = @episodes.page(params[:page]).per_page(20)
     end
     respond_to do |format|
       format.html

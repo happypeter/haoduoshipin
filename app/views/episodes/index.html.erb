@@ -62,7 +62,7 @@
   </div>
 </div>
 
-<%= will_paginate @episodes, previous_label: h("< Previous Page"), next_label: h("Next Page >") %>
+<%= will_paginate @paged_episodes %>
 
 <% if current_user.blank? %>
   <div class="ep-login">

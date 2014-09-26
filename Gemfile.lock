@@ -1,3 +1,26 @@
+GIT
+  remote: git://github.com/elasticsearch/elasticsearch-rails.git
+  revision: e0f726e07fa5023b3c19426873d886aa55ad6ae2
+  specs:
+    elasticsearch-model (0.1.5)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.5)
+
+GIT
+  remote: git://github.com/elasticsearch/elasticsearch-ruby.git
+  revision: ae08dc5b6b33dfa1d590d7e81e6e919c7f92dd15
+  specs:
+    elasticsearch (1.0.5)
+      elasticsearch-api (= 1.0.5)
+      elasticsearch-transport (= 1.0.5)
+    elasticsearch-api (1.0.5)
+      multi_json
+    elasticsearch-transport (1.0.5)
+      faraday
+      multi_json
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -200,7 +223,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     vegas (0.1.11)
       rack (>= 1.0.0)
-    will_paginate (3.0.3)
+    will_paginate (3.0.7)
     yajl-ruby (1.1.0)
 
 PLATFORMS
@@ -211,6 +234,9 @@ DEPENDENCIES
   capistrano (= 2.9.0)
   coffee-rails (~> 3.2.1)
   dynamic_form
+  elasticsearch!
+  elasticsearch-model!
+  elasticsearch-rails!
   execjs
   font-awesome-rails (= 4.0.3.1)
   haml

@@ -46,3 +46,6 @@ gem 'resque-web', require: 'resque_web'
 
 gem "mail_view", "~> 1.0.3"
 
+gem "elasticsearch", :git => "git://github.com/elasticsearch/elasticsearch-ruby.git"
+gem "elasticsearch-model", :git => "git://github.com/elasticsearch/elasticsearch-rails.git"
+gem "elasticsearch-rails", :git => "git://github.com/elasticsearch/elasticsearch-rails.git"
