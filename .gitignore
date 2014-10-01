@@ -12,3 +12,4 @@ log/
 tmp/
 .sass-cache/
 *.sublime-workspace
+*.sublime-project

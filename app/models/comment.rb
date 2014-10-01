@@ -15,5 +15,4 @@ class Comment < ActiveRecord::Base
       Notification.create(user_id: id, comment_id: self.id) unless id == self.user_id
     end
   end
-
 end
