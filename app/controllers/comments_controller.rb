@@ -51,7 +51,7 @@ class CommentsController < ApplicationController
   end
 
   def latest_comment
-    comment = Comment.recent.first
+    comment = Comment.last
     user = User.find(comment.user_id)
     content = comment.content[0..100]
     info = {}
