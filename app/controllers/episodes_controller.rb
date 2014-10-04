@@ -19,7 +19,7 @@ class EpisodesController < ApplicationController
           }
         }
       ).records
-      @count = @episodes.length
+      @count = @episodes.size
       @paged_episodes = @episodes.page(params[:page]).per_page(20)
     end
     respond_to do |format|
