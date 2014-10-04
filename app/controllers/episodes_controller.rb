@@ -10,7 +10,12 @@ class EpisodesController < ApplicationController
         query: {
           multi_match: {
             query: params[:search].to_s,
-            fields: ['name', 'description']
+            fields: ["name", "description"]
+          }
+        },
+        filter: {
+          missing: {
+            field: "revision"
           }
         }
       ).records
