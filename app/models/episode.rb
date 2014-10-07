@@ -7,7 +7,8 @@ class Episode < ActiveRecord::Base
   has_many :tags, :through => :taggings
   validates_presence_of :name
 
-  scope :recent, order('id DESC')
+  scope :recent, -> { order(id: :desc) }
+
   after_create :set_seconds_and_ratio
 
   def get_video_duration
@@ -44,7 +45,7 @@ class Episode < ActiveRecord::Base
   def commenters
     all = []
     all = self.comments.collect(&:user_id)
-    all << User.find_by_name('happypeter').id # happypeter is the author of all episodes
+    all << User.find_by(name: 'happypeter').id # happypeter is the author of all episodes
     all.uniq
   end
 

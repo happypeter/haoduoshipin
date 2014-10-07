@@ -5,7 +5,7 @@ class Comment < ActiveRecord::Base
 
   validates_presence_of :content, :episode_id
 
-  scope :recent, order("created_at DESC")
+  scope :recent, -> { order(created_at: :desc) }
   after_create :send_notifications
 
   private
