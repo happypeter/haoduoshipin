@@ -20,18 +20,3 @@ $(function() {
   $('textarea').atwho({ at: "@", 'data': commenter });
 });
 
-$.ajax({
-  url: "/latest_comment.json",
-  cache: false
-}).done(function(data) {
-  var time = data.timestamp;
-  $("abbr.timeago").attr("title", time);
-  $("abbr.timeago").append(time);
-  $("abbr.timeago").timeago();
-
-  $(".recent-comment .profile").append("<a href=/users/" + data.user_id +
-   "><img src=" + data.profile_url + "></a>");
-
-  $(".latest-comment").append("<a href=/episodes/" + data.episode_id +
-    "#ep_comment_"+ data.comment_id + ">" + data.content + "</a>");
-});
