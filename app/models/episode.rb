@@ -10,6 +10,7 @@ class Episode < ActiveRecord::Base
   scope :recent, -> { order(id: :desc) }
 
   after_create :set_seconds_and_ratio
+  attr_accessible :name, :notes, :published_at, :revision, :published, :description, :ratio, :seconds, :tag_names
 
   def get_video_duration
     result = `avconv -i http://media.happycasts.net/assets/episodes/videos/#{asset_name}.mov 2>&1`

@@ -30,6 +30,7 @@ gem 'resque-web', :require => 'resque_web'
 
 gem 'mail_view', '~> 2.0.4'
 
+# TODO
 gem 'protected_attributes'
 
 gem 'elasticsearch', :git => 'git://github.com/elasticsearch/elasticsearch-ruby.git'

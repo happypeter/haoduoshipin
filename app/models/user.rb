@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :show_email, :email_subscription
 
   #user may submit "hisname ", so this is nice to have
   before_validation :strip_blanks
@@ -45,7 +46,7 @@ class User < ActiveRecord::Base
     generate_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now
     save!
-    HappyMailer.password_reset(self).deliver
+    HappyMailer.password_reset(self.id).deliver
   end
 
   def signup_local?

@@ -7,6 +7,7 @@ class Comment < ActiveRecord::Base
 
   scope :recent, -> { order(created_at: :desc) }
   after_create :send_notifications
+  attr_accessible :content, :episode_id, :user_id
 
   private
 
