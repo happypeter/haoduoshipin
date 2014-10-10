@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def make_mention_links(text)
-    mention_regexp = /@([a-zA-Z0-9_\-\p{han}]+)/u
+    mention_regexp = /@([a-zA-Z0-9_\-\p{Han}]+)/u
     text = text.gsub(mention_regexp) do
       if $1.present?
         user = User.find_by_name($1)
