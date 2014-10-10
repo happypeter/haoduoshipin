@@ -9,11 +9,11 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141003072715) do
+ActiveRecord::Schema.define(version: 20141003072715) do
 
-  create_table "comments", :force => true do |t|
+  create_table "comments", force: true do |t|
     t.integer  "episode_id"
     t.text     "content"
     t.integer  "user_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20141003072715) do
     t.datetime "updated_at"
   end
 
-  create_table "episodes", :force => true do |t|
+  create_table "episodes", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,35 +29,35 @@ ActiveRecord::Schema.define(:version => 20141003072715) do
     t.datetime "published_at"
     t.integer  "seconds"
     t.text     "description"
-    t.integer  "comments_count", :default => 0,     :null => false
+    t.integer  "comments_count",            default: 0,     null: false
     t.string   "youku"
-    t.float    "ratio"
+    t.float    "ratio",          limit: 24
     t.integer  "revision"
-    t.boolean  "published",      :default => false
+    t.boolean  "published",                 default: false
   end
 
-  create_table "notifications", :force => true do |t|
+  create_table "notifications", force: true do |t|
     t.integer  "user_id"
     t.integer  "comment_id"
-    t.boolean  "unread",     :default => true
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.boolean  "unread",     default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
-  create_table "taggings", :force => true do |t|
+  create_table "taggings", force: true do |t|
     t.integer  "episode_id"
     t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tags", :force => true do |t|
+  create_table "tags", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
@@ -69,11 +69,11 @@ ActiveRecord::Schema.define(:version => 20141003072715) do
     t.string   "site_url"
     t.string   "gravatar_token"
     t.string   "github_uid"
-    t.boolean  "show_email",             :default => true
+    t.boolean  "show_email",             default: true
     t.boolean  "admin"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
-    t.boolean  "email_subscription",     :default => true
+    t.boolean  "email_subscription",     default: true
     t.string   "google_uid"
     t.string   "google_username"
     t.string   "profile_url"

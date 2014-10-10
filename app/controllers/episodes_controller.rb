@@ -37,7 +37,6 @@ class EpisodesController < ApplicationController
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
     Resque.enqueue(NotificationUpdater, @episode.id, current_user.id) if current_user
-    @comment = Comment.new(:episode_id => @episode.id, :user_id => current_user.id)
     respond_to do |f|
       f.html
       f.json {render :json => @episode}
