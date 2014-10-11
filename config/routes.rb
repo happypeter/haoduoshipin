@@ -12,7 +12,7 @@ Happycasts::Application.routes.draw do
   get "/donate" => "users#donate"
   get "/latest_comment" => "comments#latest_comment"
   get "/all" => "episodes#all"
-  post "/auth/:provider/callback" => "users#login_with_providers"
+  get "/auth/:provider/callback" => "users#login_with_providers"
   get "/account" => "users#edit", :as => "account"
   get "/auth/failure" => "users#login_with_github_failure"
   get "/about" => "info#about", :as => "about"
