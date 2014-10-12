@@ -6,14 +6,7 @@ module ApplicationHelper
 
   class HTMLwithPygments < Redcarpet::Render::HTML
     def block_code(code, language)
-      languages = ["bash","ruby","python","c"]
-      if !languages.include?language
-        language = nil
-      end
-      sha = Digest::SHA1.hexdigest(code)
-      Rails.cache.fetch ["code", language, sha].join('-') do
-        Pygments.highlight(code, lexer: language)
-      end
+      Pygments.highlight(code, lexer: language)
     end
   end
 
@@ -35,8 +28,7 @@ module ApplicationHelper
   end
 
   def markdown(text)
-    #renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true)
-    renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
+    renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true)
     options = {
       autolink: true,
       no_intra_emphasis: true,
