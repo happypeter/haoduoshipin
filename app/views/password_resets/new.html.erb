@@ -2,7 +2,7 @@
   <%= form_tag password_resets_path, :method => :post do %>
   <div class="form-body">
     <div class="form">
-      <%= label_tag :email %>
+      <%= label_tag :email, "密码" %>
       <%= text_field_tag :email, params[:email] %>
     </div>
   </div>

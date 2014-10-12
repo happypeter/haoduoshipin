@@ -9,15 +9,14 @@
         </ul>
       </div>
     <% end %>
-    <div>Reset password for <%= link_to @user.name, @user %></div>
     <div class="form-body">
       <div class="form">
-        <%= f.label :password %>
+        <%= f.label :password, "新密码" %>
         <%= f.password_field :password %>
       </div>
     </div>
     <div class="form-footer">
-      <%= f.submit "Update Password" %>
+      <%= f.submit "更新密码", class: "submit-btn button"%>
     </div>
   <% end %>
 </div>
