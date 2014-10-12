@@ -1,4 +1,3 @@
-require "resque_web"
 Happycasts::Application.routes.draw do
 
   resources :users
@@ -6,8 +5,6 @@ Happycasts::Application.routes.draw do
   resources :comments
   resources :password_resets
   resources :notifications
-
-  mount ResqueWeb::Engine => "/resque_web"
 
   get "/donate" => "users#donate"
   get "/latest_comment" => "comments#latest_comment"
@@ -27,6 +24,8 @@ Happycasts::Application.routes.draw do
   if Rails.env.development?
     mount MailPreview => 'mail_view'
   end
+
+  mount Resque::Server, :at => "/resque"
 
   root :to => "episodes#index"
 end
