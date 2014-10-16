@@ -1,6 +1,7 @@
 *.rdb
 public/assets/
 config/database.yml
+.vagrant/
 config/settings.yml
 app/assets/images/subscri*.png
 *.swp

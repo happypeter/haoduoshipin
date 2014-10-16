@@ -35,6 +35,24 @@ sudo apt-get install -y apache2 apache2-prefork-dev libcurl4-openssl-dev libapru
 gem install passenger
 rbenv rehash
 passenger-install-apache2-module
+
+cat >/etc/apache2/httpd.conf <<FILE
+LoadModule passenger_module /home/vagrant/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/passenger-4.0.53/buildout/apache2/mod_passenger.so
+<IfModule mod_passenger.c>
+  PassengerRoot /home/vagrant/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/passenger-4.0.53
+  PassengerDefaultRuby /home/vagrant/.rbenv/versions/2.1.2/bin/ruby
+</IfModule>
+<VirtualHost *:80>
+   ServerName example.com
+   DocumentRoot /vagrant/public/
+   RailsEnv development
+   <Directory /vagrant/public/ >
+      AllowOverride all
+      Options -MultiViews
+   </Directory>
+</VirtualHost>
+FILE
+
 SCRIPT
 
 VAGRANTFILE_API_VERSION = "2"
