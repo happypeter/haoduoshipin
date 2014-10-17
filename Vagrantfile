@@ -1,3 +1,6 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 $script = <<SCRIPT
 sudo apt-get update
 sudo apt-get install -y git-core curl zlib1g-dev build-essential \
@@ -75,7 +78,12 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.provision "shell", inline: $script, privileged: false
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # https://laracasts.com/lessons/get-off-mamp-now MUCH better than
+  # forwarded_port
+  config.vm.network :private_network, ip: "192.168.33.21"
+
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
   end
