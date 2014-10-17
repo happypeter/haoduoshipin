@@ -41,8 +41,8 @@ passenger-install-apache2-module
 # otherwise you get apache2: no permission to visit the server / error
 # think this: sudo sed -i -e 's/Require\ all\ denied/Require\ all\ granted/' /etc/apache2/apache2.conf
 
-rm -rf /var/www
-ln -fs /vagrant /var/www
+sudo rm -rf /var/www
+sudo ln -fs /vagrant /var/www
 
 sudo rm /etc/apache2/sites-enabled/000-default.conf
 
