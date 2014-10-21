@@ -25,7 +25,5 @@ Happycasts::Application.routes.draw do
     mount MailPreview => 'mail_view'
   end
 
-  mount Resque::Server, :at => "/resque"
-
   root :to => "episodes#index"
 end

@@ -24,8 +24,6 @@ gem 'omniauth-google-oauth2'
 gem 'simple_form'
 gem 'dynamic_form'
 gem 'rails-i18n'
-gem 'resque', :require => 'resque/server'
-gem 'resque_mailer'
 
 gem 'mail_view', '~> 2.0.4'
 

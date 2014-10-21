@@ -1,6 +1,6 @@
 class HappyMailer < ActionMailer::Base
   default from: "no-reply@happycasts.net"
-  include Resque::Mailer
+
   def mail_to_all(uid, mailbody)
     @mailbody = mailbody
     @user = User.find(uid)
