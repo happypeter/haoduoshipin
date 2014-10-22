@@ -21,8 +21,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 
-gem 'simple_form'
-gem 'dynamic_form'
+gem 'simple_form', '3.0.2'
 gem 'rails-i18n'
 
 gem 'mail_view', '~> 2.0.4'
