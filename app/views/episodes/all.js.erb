@@ -1,5 +1,5 @@
 <% for episode in @episodes %>
-  $('#episodes').append('<%= j render('ep_card', :episode => episode) %>');
+  $('#episodes').append('<%= j render('all_episode_card', :episode => episode) %>');
 <% end %>
 <% if @episodes.next_page %>
   $('#loadingimage').css('display', 'none')
