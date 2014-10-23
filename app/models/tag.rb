@@ -13,4 +13,11 @@ class Tag < ActiveRecord::Base
     #name.titleize.gsub("E ", "e")
     name
   end
+
+  def self.home_page_tags
+    pair = {}
+    Tag.all.map{ |t| { t.name => t.episodes.count } }.each{ |h| pair.merge! h }
+
+    pair.sort_by{ |k, v| v }.reverse.take(6)
+  end
 end

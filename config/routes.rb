@@ -1,5 +1,4 @@
 Happycasts::Application.routes.draw do
-
   resources :users
   resources :episodes
   resources :comments
@@ -25,5 +24,5 @@ Happycasts::Application.routes.draw do
     mount MailPreview => 'mail_view'
   end
 
-  root :to => "episodes#index"
+  root :to => "home#index"
 end
