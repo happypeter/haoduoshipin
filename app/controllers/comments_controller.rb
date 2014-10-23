@@ -49,22 +49,4 @@ class CommentsController < ApplicationController
       format.js
     end
   end
-
-  def latest_comment
-    comment = Comment.last
-    user = User.find(comment.user_id)
-    content = comment.content[0..100]
-    info = {}
-    info[:timestamp] = comment.created_at.getutc.iso8601
-    info[:comment_id] = comment.id
-    info[:content] = comment.content.length <= 100 ? content : content << '...'
-    info[:episode_id] = comment.episode_id
-    info[:episode_name] = Episode.find(comment.episode_id).name
-    info[:profile_url] = avatar_url(user)
-    info[:user_id] = user.id
-
-    respond_to do |format|
-      format.json {render :json => info}
-    end
-  end
 end

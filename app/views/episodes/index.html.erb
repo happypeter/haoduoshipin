@@ -46,19 +46,6 @@
         </div>
       <% end %>
     </div>
-    <div class="recent-comment">
-      <div class="title">
-        <i class="fa fa-comment"></i>
-        <abbr class="timeago"></abbr>
-      </div>
-      <div class="details">
-        <span class="latest-comment"></span>
-        <span class="profile"></span>
-        <div class="check-all">
-          <%= link_to t("all_comments"), comments_path %>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -101,21 +88,5 @@
            $(this).html(newtext).find("span").css("color", "red");
       });
     }
-
-    $.ajax({
-      url: "/latest_comment.json",
-      cache: false
-    }).done(function(data) {
-      var time = data.timestamp;
-      $("abbr.timeago").attr("title", time);
-      $("abbr.timeago").append(time);
-      $("abbr.timeago").timeago();
-
-      $(".recent-comment .profile").append("<a href=/users/" + data.user_id +
-       "><img src=" + data.profile_url + "></a>");
-
-      $(".latest-comment").append("<a href=/episodes/" + data.episode_id +
-        "#ep_comment_"+ data.comment_id + ">" + data.content + "</a>");
-    });
   </script>
 <% end %>
