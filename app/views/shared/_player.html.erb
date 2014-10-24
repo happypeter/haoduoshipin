@@ -2,11 +2,11 @@
   <div class="container">
     <div class="ep-meta clearfix">
       <ul>
-        <% title = @episode.id.to_s + '期 ' + @episode.name + ' ' + @episode.description %>
-        <% image_url = "http://media.happycasts.net/assets/episodes/stills/#{@episode.asset_name}.png" %>
+        <% title = episode.id.to_s + '期 ' + episode.name + ' ' + episode.description %>
+        <% image_url = "http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png" %>
         <% allowed_sites = ["weibo"] %>
         <li><%= social_share_button_tag title, { :image => image_url }, allowed_sites %></li>
-        <li><%= link_to t("download"), video_url(@episode), :class => "download" %></li>
+        <li><%= link_to t("download"), video_url(episode), :class => "download" %></li>
       </ul>
     </div>
 
@@ -17,8 +17,15 @@
 
     <div class="ep-info">
       <div class="container">
-        <span id="episode-no">#<%= @episode.id %></span>
-          <%= @episode.name %>
+        <h1 class="name">
+          <%= episode.name %>
+        </h1>
+        <p><%= episode.description %></p>
+        <ul class="ep-tags">
+          <% episode.tags.each do |t| %>
+            <li><%= t.name %></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
