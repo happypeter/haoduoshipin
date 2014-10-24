@@ -7,8 +7,8 @@ Happycasts::Application.routes.draw do
 
   get "/donate" => "users#donate"
   get "/latest_comment" => "comments#latest_comment"
-  get "index" => "episodes#index"
-  get "index/:tag" => "episodes#tag", :as => "tag"
+  get "tags" => "episodes#tags"
+  get "tag/:tag" => "episodes#tag", :as => "tag"
   get "/all" => "episodes#all"
   get "/auth/:provider/callback" => "users#login_with_providers"
   get "/account" => "users#edit", :as => "account"
