@@ -9,7 +9,7 @@
   <script src="http://vjs.zencdn.net/4.3/video.js"></script>
 </head>
 <body>
-<div id="wrapper" class="<%= controller.action_name %>">
+<div class="<%= controller.action_name %>">
   <%= render 'shared/header' %>
     <% if flash[:notice] %>
       <p class="notice">
@@ -18,7 +18,6 @@
       </p>
     <% end %>
     <%= yield %>
-  <div id="footer-push"></div><!-- hack for sticky footer -->
 </div>
 <div class="footer">
   <div class="container">
