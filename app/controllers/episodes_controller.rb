@@ -1,5 +1,5 @@
 class EpisodesController < ApplicationController
-  before_filter :check_admin, :except => [:all, :index, :show, :tag]
+  before_filter :check_admin, :except => [:all, :index, :show, :tag, :tags]
 
   def index
     @tag = Tag.find(params[:tag_id]) if params[:tag_id]
@@ -33,6 +33,9 @@ class EpisodesController < ApplicationController
     @episodes = Episode.recent.page(params[:page]).per_page(12)
   end
 
+  def tags
+    @tags = Tag.all
+  end
   def tag
     @episodes = Tag.find_by_name(params[:tag]).episodes
   end

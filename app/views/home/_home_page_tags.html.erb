@@ -1,24 +1,27 @@
-<%= link_to "git", tag_path("git") %>
 
-<div class="tag-list">
-  <div class="tag-card">
-    <i class="fa fa-github"></i>
-    <div class="name">git</div>
-  </div>
-  <div class="tag-card">
-    <i class="fa fa-undo"></i>
-    <div class="name">editor</div>
-  </div>
-  <div class="tag-card">
+<div class="tag-list clearfix container">
+  <%= link_to "/tag/linux" do %>
     <i class="fa fa-linux"></i>
-    <div class="name">Linux</div>
-  </div>
-  <div class="tag-card">
+    <p>Linux</p>
+  <% end %>
+  <%= link_to "/tag/html5" do %>
     <i class="fa fa-html5"></i>
-    <div class="name">HTML5</div>
-  </div>
-  <div class="tag-card">
-    <i class="fa fa-paint-brush"></i>
-    <div class="name">Rails</div>
-  </div>
+    <p>HTML5</p>
+  <% end %>
+  <%= link_to "/tags" do %>
+    <i class="fa fa-line-chart"></i>
+    <p>ALL</p>
+  <% end %>
+  <%= link_to "/tag/linux" do %>
+    <i class="fa fa-linux"></i>
+    <p>Linux</p>
+  <% end %>
+  <%= link_to "/tag/html5" do %>
+    <i class="fa fa-html5"></i>
+    <p>HTML5</p>
+  <% end %>
+  <%= link_to "/tags" do %>
+    <i class="fa fa-line-chart"></i>
+    <p>ALL</p>
+  <% end %>
 </div>
