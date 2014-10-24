@@ -6,7 +6,7 @@
         <% image_url = "http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png" %>
         <% allowed_sites = ["weibo"] %>
         <li><%= social_share_button_tag title, { :image => image_url }, allowed_sites %></li>
-        <li><%= link_to t("download"), video_url(episode), :class => "download" %></li>
+        <li><%= link_to "下载", video_url(episode), :class => "download" %></li>
       </ul>
     </div>
 
