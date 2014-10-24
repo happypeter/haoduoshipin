@@ -1,14 +1,12 @@
 <%= link_to episode do %>
 <div class="ep_card">
-  <div class="main">
-    <div class="screenshot">
-      <%= image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png") %>
-    </div>
-    <h2 class="name"><%= episode.name %></h2>
-    <div class="metadata">
-      第<%= episode.id %>期
-      <span class="date"> | <%= render_episode_publish_time(episode).chop %> </span>
-    </div>
+  <div class="screenshot">
+    <%= image_tag("http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png") %>
+  </div>
+  <h2 class="name"><%= episode.name %></h2>
+  <div class="metadata">
+    第<%= episode.id %>期
+    <span class="date"> | <%= render_episode_publish_time(episode).chop %> </span>
   </div>
 </div>
 <% end %>
