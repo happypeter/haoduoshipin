@@ -107,8 +107,6 @@ class UsersController < ApplicationController
   def show
     if params[:name]
       @user = User.find_by_name(params[:name])
-    else
-      @user = User.find(params[:id])
     end
 
     if @user == nil

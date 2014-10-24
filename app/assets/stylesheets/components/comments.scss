@@ -1,83 +1,56 @@
 @import "globals/variables";
 @import "globals/mixins";
 
-.write-comment-area {
-  padding: 0 20px;
-  textarea {
-    height: 88px;
-    width: 100%;
-    display: block;
-    margin-left: -5px; // 5px padding in textarea-style
-    margin-bottom: 5px;
-  }
-}
-.comment-form {
-  #comment_btn { float: right; }
-  margin-bottom: 40px;
-}
-
 .comment {
-  margin-bottom: 15px;
-  border: solid 1px darken($github-gray, 20%);
-  &:hover { border: solid 1px darken($github-gray, 40%); }
-  a {
-    text-decoration:none;
-    &:hover { text-decoration: underline; }
-  }
-  .comment_head {
-    padding: 5px;
-    font-weight: bold;
-    font-size: 80%;
-    color: hsl(0, 0%, 40%);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  width: 91%;
+  .heading {
     margin-bottom: 5px;
-    .comment_time {
-      float: right;
-      margin-right: 10px;
+    .name {
+      font-size: 18px;
+      display: inline;
+      font-weight: normal;
+    }
+    .datetime {
+      color: #999;
+      font-size: 0.9em;
     }
   }
-  .comment_body {
-    overflow: auto;
-    word-wrap: break-word;
+  .body {
+    padding: 15px;
+    border-radius: 5px;
     position: relative;
-    padding: 10px;
-    ul.actions {
+    overflow: visible;
+    float: left;
+    width: 87%;
+    border: 1px solid #ddd;
+    line-height: 26px;
+    &::before {
+      content: "";
+      display: block;
       position: absolute;
-      top: 0px;
-      right: 14px;
-      list-style: none;
-      li {
-        display:inline-block;
-        vertical-align:top;
-      }
-      &:hover a { text-decoration: none; }
+      top: 21px;
+      left: -6px;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-left: 1px solid #cad5e0;
+      border-top: 1px solid #cad5e0;
+      -moz-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+  }
+  .avatar {
+    float: left;
+    margin-right: 29px;
+    position: relative;
+    overflow: visible;
+    text-align: center;
+    .image-circle {
+      width: 75px;
+      border-radius: 50%;
     }
   }
 }
-
-.edit_comment_form {
-  position:relative;
-  height: 180px;
-  #error {
-    color: red;
-    font-weight: bold;
-    padding-left: 10px;
-  }
-  .comment_head {
-    padding: 5px;
-    font-weight: bold;
-    background-color:  $github-gray;
-    font-size: 80%;
-    margin-bottom: 5px;
-    color: hsl(0, 0%, 40%);
-    .comment_time {
-      float: right;
-      margin-right: 10px;
-    }
-  }
-  #comment_btn {
-    position: absolute;
-    top: 140px;
-    right: 10px;
-  }
-}
-

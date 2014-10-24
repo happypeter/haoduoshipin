@@ -60,6 +60,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def avatar
+    gravatar_id = Digest::MD5.hexdigest(self.email.downcase) if self.email
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=retro"
+  end
+
   def self.authenticate(name, password)
     user = find_by_name(name)
     if user && !user.password_salt.blank? && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)

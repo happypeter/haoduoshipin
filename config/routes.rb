@@ -21,6 +21,7 @@ Happycasts::Application.routes.draw do
   get "login" => "users#new", :as => "login"
   post "user_login" => "users#login"
   get "logout" => "users#logout", :as => "logout"
+  get "/:username" => "users#show", :as => "profile"
 
   if Rails.env.development?
     mount MailPreview => 'mail_view'
