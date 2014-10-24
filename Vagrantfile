@@ -26,12 +26,12 @@ rbenv rehash
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password 111111'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 111111'
 
-sudo apt-get install -y  mysql-server
+sudo apt-get install -y  mysql-server   mysql-client  libmysqlclient-dev
 
 # js runtime
 sudo apt-get install -y nodejs
 
-apache
+# apache
 sudo apt-get install -y apache2 apache2-prefork-dev libcurl4-openssl-dev libaprutil1-dev
 gem install passenger
 rbenv rehash
