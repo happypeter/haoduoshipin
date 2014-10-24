@@ -13,16 +13,9 @@
 
   <% if current_user %>
     <div class="nice_comment">
-      <%= form_for(Comment.new(:episode_id => @episode.id, :user_id => current_user.id), :remote => true) do |f| %>
+      <%= form_for(Comment.new(:episode_id => @episode.id, :user_id => current_user.id)) do |f| %>
         <%= f.hidden_field :episode_id %>
         <%= f.hidden_field :user_id  %>
-        <%= f.label t("add_comment") %>
-        <a class="formatting_tips" href="//github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">
-          <%= t("formatting") %>
-        </a>
-        <div class="error">
-          <%= t("comment_empty_error") %>
-        </div>
         <div class="write-comment-area">
           <%= f.text_area :content %>
         </div>
@@ -38,7 +31,6 @@
 
 
 <% content_for :template_js do %>
-  <%= javascript_include_tag "episodes" %>
   <script>
     $("textarea#comment_content").keydown(function(e) {
       if (e.ctrlKey && e.keyCode == 13) {

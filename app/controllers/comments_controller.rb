@@ -15,10 +15,9 @@ class CommentsController < ApplicationController
         if @comment.errors.present?
           render :new
         else
-          redirect_to(episode_path(@comment.episode, :view => "comments"))
+          redirect_to_target_or_default :root
         end
       end
-      format.js
     end
   end
 
