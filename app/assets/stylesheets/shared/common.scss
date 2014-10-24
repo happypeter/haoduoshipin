@@ -46,7 +46,10 @@ ul {
 }
 
 
-
+::selection {
+  background: #c0865e;
+  color: #fff;
+}
 
 /*** PAGINATION ***/
 .pagination {

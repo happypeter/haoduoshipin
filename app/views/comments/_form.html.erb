@@ -1,10 +1,15 @@
-<div class="comment-form">
-  <%= form_for(Comment.new(:episode_id => @episode.id, :user_id => current_user.id)) do |f| %>
-    <%= f.hidden_field :episode_id %>
-    <%= f.hidden_field :user_id  %>
-    <div class="write-comment-area">
+<article class="comment clearfix">
+  <div class="avatar">
+    <%= link_to profile_path(current_user.name) do %>
+      <img src=<%= current_user.avatar %> alt="" class="image-circle">
+    <% end %>
+  </div>
+  <div class="body">
+    <%= form_for(Comment.new(:episode_id => @episode.id, :user_id => current_user.id)) do |f| %>
+      <%= f.hidden_field :episode_id %>
+      <%= f.hidden_field :user_id  %>
       <%= f.text_area :content %>
-    </div>
-    <%= f.submit "发表", :class=>"button", :id => "comment_btn", :disable_with => "稍等..." %>
-  <% end %>
-</div>
+      <%= f.submit '提交', class: 'btn btn-primary btn-submit' %>
+    <% end %>
+  </div>
+</article>

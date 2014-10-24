@@ -18,6 +18,14 @@
       font-size: 0.9em;
     }
   }
+    textarea {
+      width: 100%;
+      height: 120px;
+      font-size: 14px;
+    }
+    input.btn-submit {
+      width: 100%;
+    }
   .body {
     padding: 15px;
     border-radius: 5px;
