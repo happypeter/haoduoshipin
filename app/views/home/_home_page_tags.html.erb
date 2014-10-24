@@ -1,7 +1,24 @@
+<%= link_to "git", tag_path("git") %>
+
 <div class="tag-list">
-  <% Tag.home_page_tags.each do |t| %>
-
-   <div><% t.first %> </div>
-<% end -%>
-
+  <div class="tag-card">
+    <i class="fa fa-github"></i>
+    <div class="name">git</div>
+  </div>
+  <div class="tag-card">
+    <i class="fa fa-undo"></i>
+    <div class="name">editor</div>
+  </div>
+  <div class="tag-card">
+    <i class="fa fa-linux"></i>
+    <div class="name">Linux</div>
+  </div>
+  <div class="tag-card">
+    <i class="fa fa-html5"></i>
+    <div class="name">HTML5</div>
+  </div>
+  <div class="tag-card">
+    <i class="fa fa-paint-brush"></i>
+    <div class="name">Rails</div>
+  </div>
 </div>
