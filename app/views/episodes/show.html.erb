@@ -4,7 +4,6 @@
 
 <%= render partial: "shownote", locals: {episode: @episode} %>
 
-
 <div class="comments container">
   <% @episode.comments.each do |comment| %>
     <%= render :partial => "comments/comment", :locals => {comment: comment} %>
@@ -12,8 +11,6 @@
   <% if current_user %>
     <%= render partial: "comments/form", locals: {episode: @episode} %>
   <% else %>
-    <div class="login-to-comment">
       <%= link_to t("login_and_comment"), login_path(:return_to => request.url) %>
-    </div>
   <% end %>
 </div>
