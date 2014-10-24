@@ -3,6 +3,7 @@
     <%= link_to "Happycasts", root_path, class: "brand" %>
 
     <div class="header-actions">
+      <li><%= link_to "最近", "/latest" %></li>
       <% if current_user %>
         <li><%= link_to current_user.name, user_path(current_user) %></li>
         <li><%= link_to  t("logout"), logout_path%></li>

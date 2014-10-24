@@ -1,5 +1,5 @@
 class EpisodesController < ApplicationController
-  before_filter :check_admin, :except => [:all, :index, :show, :tag, :tags]
+  before_filter :check_admin, :except => [:all, :index, :show, :tag, :tags, :latest]
 
   def index
     @tag = Tag.find(params[:tag_id]) if params[:tag_id]
@@ -27,6 +27,9 @@ class EpisodesController < ApplicationController
       format.rss
       format.json {render :json => @episodes}
     end
+  end
+
+  def latest
   end
 
   def tags
