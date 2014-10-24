@@ -3,7 +3,6 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   has_many :notifications, :dependent => :destroy
 
-  validates_presence_of :content, :episode_id
 
   scope :recent, -> { order(created_at: :desc) }
   after_create :send_notifications
