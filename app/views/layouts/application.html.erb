@@ -14,21 +14,18 @@
   <% if params[:autoplay] %>
     <div class="player-bg"></div>
   <% end %>
-  <% if controller.action_name == 'welcome' %>
-    <%= yield %>
-  <% else%>
-    <div class="container">
-      <div class="<%= "autoplay-wrap" if params[:autoplay] %>">
-        <% if flash[:notice] %>
-          <p class="notice">
-            <span><%= flash[:notice] %></span>
-            <span class="close"><i class="fa fa-times-circle-o"></i></span>
-          </p>
-        <% end %>
-        <%= yield %>
-      </div>
-      <div id="footer-push"></div><!-- hack for sticky footer -->
+  <div class="container">
+    <div class="<%= "autoplay-wrap" if params[:autoplay] %>">
+      <% if flash[:notice] %>
+        <p class="notice">
+          <span><%= flash[:notice] %></span>
+          <span class="close"><i class="fa fa-times-circle-o"></i></span>
+        </p>
+      <% end %>
+      <%= yield %>
     </div>
+    <div id="footer-push"></div><!-- hack for sticky footer -->
+  </div>
   <% end %>
 </div>
 <div class="footer">
