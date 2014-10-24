@@ -3,41 +3,29 @@
 .player-wrap {
   padding: 30px 10px 20px;
   background-color: #444444;
-  .episode-title {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 0 10px 20px;
-  }
   .video-js {
     margin: auto;
   }
 
-  .ep-meta {
-    ul {
-      float: right;
-      margin-bottom: 26px;
-      li {
-        display: inline-block;
-        margin-left: 10px;
-        color: white;
-        a {
-          display: block;
-          padding: 8px 16px;
-          background: darken(teal, 7%);
-          color: white;
-          &:hover {
-            color: black;
-            background-color: #fff;
-          }
-        }
-      }
-    }
-  }
 }
 
-.autoplay-wrap {
-  margin-top: -310px;
-  .notice {
-    margin-top: 0;
+.ep-meta {
+  ul li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  ul {
+    float: right;
+    margin-bottom: 26px;
+    a {
+      display: inline-block;
+      padding: 8px 16px;
+      background: darken(teal, 7%);
+      color: white;
+      &:hover {
+        color: black;
+        background-color: #fff;
+      }
+    }
   }
 }
