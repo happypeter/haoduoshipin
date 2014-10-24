@@ -2,20 +2,21 @@
 @import "globals/mixins";
 
 
-#ep_notes_label, #ep_comments_label {
-  width: 100px;
-  height: 30px;
-  padding-top: 10px;
-  border: solid 1px gray;
-  border-bottom: transparent;
-  text-align: center;
-  margin-top: 30px;
+.shownote {
+  min-height: 100px;
+  background: lighten(teal, 8%);
+  a {
+    line-height: 100px;
+    color: white;
+  }
 }
-/* end */
+
+.comments {
+  padding-top: 40px;
+}
 
 /* for episode form */
 #new_episode, .edit_episode {
-  @include form-base;
   abbr, .error {
     color: #C00;
     margin-left: $episode-new-margin-left;
@@ -29,6 +30,5 @@ textarea#episode_description, textarea#episode_notes {
   height: 48px;
   margin-bottom: 9px;
   margin-left: 10px;
-  @include textarea-style;
 }
 textarea#episode_notes { height: 350px; }

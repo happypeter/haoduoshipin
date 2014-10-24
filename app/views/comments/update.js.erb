@@ -1,5 +1,0 @@
-<% if @comment.errors.present? %>
-  $("#<%= dom_id(@comment) %>").find("form").prepend("<div id=\"error\">Error!</div>");
-<% else %>
-  $("#<%= dom_id(@comment) %>").replaceWith("<%= j render :partial => "comments/editable_comment", locals: {comment: @comment}  %> ");
-<% end %> 

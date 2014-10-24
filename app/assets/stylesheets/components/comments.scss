@@ -9,7 +9,6 @@
     display: block;
     margin-left: -5px; // 5px padding in textarea-style
     margin-bottom: 5px;
-    @include textarea-style;
   }
 }
 .nice_comment {
@@ -48,7 +47,6 @@ i.icon-file {
   font-size: 20px;
 }
 .comment {
-  @include peter-shadow;
   margin-bottom: 15px;
   border: solid 1px darken($github-gray, 20%);
   &:hover { border: solid 1px darken($github-gray, 40%); }
@@ -59,7 +57,6 @@ i.icon-file {
   .comment_head {
     padding: 5px;
     font-weight: bold;
-    @include github-fileheader;
     font-size: 80%;
     color: hsl(0, 0%, 40%);
     margin-bottom: 5px;

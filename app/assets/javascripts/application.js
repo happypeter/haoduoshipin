@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require social-share-button
-//= require editable_comment
 //= require vendor/jquery_hotkeys
 //= require vendor/jquery.timeago
 //= require vendor/jquery.timeago.zh-CN

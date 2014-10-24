@@ -40,10 +40,6 @@ module ApplicationHelper
     Redcarpet::Markdown.new(renderer, options).render(text)
   end
 
-  def output_comment(text)
-    make_mention_links(markdown text)
-  end
-
   def render_user_register_time(user)
     I18n.l(user.created_at.to_date, :format => :long)
   end

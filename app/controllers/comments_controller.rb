@@ -37,7 +37,6 @@ class CommentsController < ApplicationController
           redirect_to_target_or_default root_url
         end
       end
-      format.js
     end
   end
 

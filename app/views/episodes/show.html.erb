@@ -2,23 +2,14 @@
 
 <%= render "shared/player", :episode => @episode %>
 
-<div id="ep_notes_label">
-  <i class="fa fa-leaf fa-lg"></i>
-  <%= t("shownotes") %>
+<%= render partial: "shownote", locals: {episode: @episode} %>
+
+
+<div class="comments container">
+  <% @episode.comments.each do |comment| %>
+    <%= render :partial => "comments/comment", :locals => {comment: comment} %>
+  <% end %>
 </div>
-
-
-<div id="ep_comments_label">
-  <i class="fa fa-bullhorn fa-lg"></i>
-  <%= "#{@episode.comments.count.to_s + t("comment")}" %>
-</div>
-
-<div class="comment_view">
-  <div class="comments">
-    <% @episode.comments.each do |comment| %>
-      <%= render :partial => "comments/editable_comment", :locals => {comment: comment} %>
-    <% end %>
-  </div>
 
   <% if current_user %>
     <div class="nice_comment">
@@ -44,7 +35,7 @@
     </div>
     <br>
   <% end %>
-</div>
+
 
 <% content_for :template_js do %>
   <%= javascript_include_tag "episodes" %>
