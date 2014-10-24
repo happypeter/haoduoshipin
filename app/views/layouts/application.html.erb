@@ -9,7 +9,7 @@
   <script src="http://vjs.zencdn.net/4.3/video.js"></script>
 </head>
 <body>
-<div id="wrapper" class="<%= 'welcome' if controller.action_name == 'welcome' %>">
+<div id="wrapper" class="<%= controller.action_name %>">
   <%= render 'shared/header' %>
   <% if params[:autoplay] %>
     <div class="player-bg"></div>
