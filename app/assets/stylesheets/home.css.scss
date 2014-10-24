@@ -1,11 +1,9 @@
 .welcome .header {
-  background: rgba(0, 0, 0, 0);
+  background: teal;
 }
 .home-banner {
   background-color: #008080 !important;
   .banner-inner {
     height: 600px;
-    position: relative;
-    margin-top: -120px;
   }
 }
