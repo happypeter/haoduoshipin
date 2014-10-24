@@ -8,46 +8,6 @@
   color: $font-gray;
   letter-spacing: 2px;
 }
-@mixin github-fileheader {
-  background-color: #E1E1E1;
-  background-image: -moz-linear-gradient(#f8f8f8, #e1e1e1);
-  background-image: -webkit-linear-gradient(#F8F8F8, #E1E1E1);
-  background-image: linear-gradient(#F8F8F8, #E1E1E1);
-  background-repeat: repeat-x;
-}
-@mixin github-hero {
-  background:#839ba9;
-  background:-moz-linear-gradient(#839ba9,#405a6a);
-  background:-webkit-linear-gradient(#839ba9,#405a6a);
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#839ba9',endColorstr='#405a6a')";
-}
-@mixin peter-shadow {
-  -webkit-box-shadow: 0 0 6px $github-gray;
-  -moz-box-shadow: 0 0 6px $github-gray;
-  box-shadow: 0 0 6px $github-gray;
-}
-@mixin no-shadow {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-@mixin rounded-corners($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-}
-@mixin textarea-style {
-  display: inline-block;
-  padding: 5px;
-  border: 1px solid darken($github-gray, 20%);
-  font-size: 120%;
-  @include rounded-corners(3px);
-  @include no-shadow;
-  &:focus {
-    border: 1px solid darken($github-gray, 50%) ;
-    @include peter-shadow;
-  }
-}
 
 @mixin form-base {
   .input {
