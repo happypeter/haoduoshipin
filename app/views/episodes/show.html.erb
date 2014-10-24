@@ -9,33 +9,11 @@
   <% @episode.comments.each do |comment| %>
     <%= render :partial => "comments/comment", :locals => {comment: comment} %>
   <% end %>
-</div>
-
   <% if current_user %>
-    <div class="nice_comment">
-      <%= form_for(Comment.new(:episode_id => @episode.id, :user_id => current_user.id)) do |f| %>
-        <%= f.hidden_field :episode_id %>
-        <%= f.hidden_field :user_id  %>
-        <div class="write-comment-area">
-          <%= f.text_area :content %>
-        </div>
-        <%= f.submit t("publish_comment"), :class=>"button", :id => "comment_btn", :disable_with => "sending..." %>
-      <% end %>
-    </div>
+    <%= render partial: "comments/form", locals: {episode: @episode} %>
   <% else %>
-    <div id="login-to-comment">
+    <div class="login-to-comment">
       <%= link_to t("login_and_comment"), login_path(:return_to => request.url) %>
     </div>
-    <br>
   <% end %>
-
-
-<% content_for :template_js do %>
-  <script>
-    $("textarea#comment_content").keydown(function(e) {
-      if (e.ctrlKey && e.keyCode == 13) {
-        $("#new_comment input[type=submit]").click();
-      }
-    });
-  </script>
-<% end %>
+</div>

@@ -1,18 +1,10 @@
-<%= div_for @comment, :class => "edit_comment_form" do %>
-  <div class="comment_head">
-    <i class="fa fa-comment"></i>
-    <%= link_to @comment.user.name, @comment.user%>
-      说
-    <span class="comment_time">
-        <%= time_ago_in_words @comment.created_at  %>前
-    </span>
-  </div>
-
-  <%= form_for @comment, :remote => true do |f| %>
-    <%= f.error_messages %>
+<div class="comment-form">
+  <%= form_for(Comment.new(:episode_id => @episode.id, :user_id => current_user.id)) do |f| %>
+    <%= f.hidden_field :episode_id %>
+    <%= f.hidden_field :user_id  %>
     <div class="write-comment-area">
       <%= f.text_area :content %>
     </div>
-    <%= f.submit t("update_comment"), :class=>"btn", :id => "comment_btn" %>
+    <%= f.submit t("publish_comment"), :class=>"button", :id => "comment_btn", :disable_with => "sending..." %>
   <% end %>
-<% end %>
+</div>

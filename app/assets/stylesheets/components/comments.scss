@@ -11,41 +11,13 @@
     margin-bottom: 5px;
   }
 }
-.nice_comment {
-  position: relative;
-  .error {
-    padding-left: 10px;
-    color: $error_red;
-    font-weight: bold;
-    padding-bottom: 5px;
-    display: none;
-  }
-  form {
-    background-color: $github-gray;
-    margin-bottom: 9px;
-  }
-  label {
-    display: block;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    font-weight: bold;
-  }
-  a.formatting_tips {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-weight: bold;
-  }
+.comment-form {
   #comment_btn { float: right; }
   margin-bottom: 40px;
 }
-h2.comments { margin-top: 30px; }
-i.icon-comment { color: darken($github-gray, 30%); }
-i.icon-file {
-  color: darken($github-gray, 30%);
-  font-size: 20px;
-}
+
+
+
 .comment {
   margin-bottom: 15px;
   border: solid 1px darken($github-gray, 20%);
