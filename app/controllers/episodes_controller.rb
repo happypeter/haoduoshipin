@@ -29,16 +29,13 @@ class EpisodesController < ApplicationController
     end
   end
 
-  def all
-    @episodes = Episode.recent.page(params[:page]).per_page(12)
-  end
-
   def tags
     @tags = Tag.all
   end
   def tag
     @episodes = Tag.find_by_name(params[:tag]).episodes
   end
+
   def show
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
