@@ -24,5 +24,5 @@ Happycasts::Application.routes.draw do
     mount MailPreview => 'mail_view'
   end
 
-  root :to => "home#index"
+  root :to => "home#welcome"
 end

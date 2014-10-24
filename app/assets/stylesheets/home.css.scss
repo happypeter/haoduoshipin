@@ -1,3 +1,11 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.welcome .header {
+  background: rgba(0, 0, 0, 0);
+}
+.home-banner {
+  background-color: #008080 !important;
+  .banner-inner {
+    height: 600px;
+    position: relative;
+    margin-top: -120px;
+  }
+}

@@ -9,12 +9,14 @@
   <script src="http://vjs.zencdn.net/4.3/video.js"></script>
 </head>
 <body>
-<div id="wrapper">
+<div id="wrapper" class="<%= 'welcome' if controller.action_name == 'welcome' %>">
   <%= render 'shared/header' %>
   <% if params[:autoplay] %>
     <div class="player-bg"></div>
   <% end %>
-  <div id="main-content">
+  <% if controller.action_name == 'welcome' %>
+    <%= yield %>
+  <% else%>
     <div class="container">
       <div class="<%= "autoplay-wrap" if params[:autoplay] %>">
         <% if flash[:notice] %>
@@ -27,7 +29,7 @@
       </div>
       <div id="footer-push"></div><!-- hack for sticky footer -->
     </div>
-  </div>
+  <% end %>
 </div>
 <div class="footer">
   <div class="container">

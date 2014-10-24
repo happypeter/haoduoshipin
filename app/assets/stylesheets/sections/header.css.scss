@@ -1,103 +1,26 @@
 @import "globals/variables";
 @import "globals/mixins";
 
-.header {
-  text-shadow: 0 1px 0 white;
-  border-bottom: 5px solid #E5E5E5;
-  padding: 10px 0;
-  height: 50px;
-  a {
-    text-decoration: none;
-  }
-  margin-bottom: 30px;
-}
-.header-logo-wordmark {
-  display: block;
-  float: left;
-  height: 48px;
-  width: 200px;
-  #puppy_img {
-    float: left;
-    width: 45px;
-    img {
-      height: 40px;
-    }
-  }
-  #tag_line {
-    padding-left: 60px;
-  }
-  #logo_img {
-    display: block;
-    width: 130px;
-  }
-}
 
-.search-bar {
-  display: block;
-  height: 50px;
-  width: 460px;
-  margin-left: 30px;
-  padding: 9px;
-  float: left;
-  input#search {
-    width: 270px;
-    height: 32px;
-    padding: 0 12px;
-    border: 1px solid #ccc;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
-    &:focus {
-      border-color: #66afe9;
-      outline: 0;
-    }
-  }
-  button[type="submit"] {
-    height: 34px;
-    width: 30px;
-    padding: 0;
-    margin-left: -6px;
-  }
+
+.brand {
+  line-height: 70px;
+  color: white;
+  font-size: 27px;
 }
 
 .header-actions {
   float: right;
-  list-style: none;
   li {
-    float: left;
-    margin-left: 10px;
-    margin-top: 10px;
-    line-height: 40px;
-  }
-  .primary-action {
-    background: $sky-blue;
+    display: inline-block;
     padding: 0 10px;
     a {
-      color: white;
-      text-shadow: none;
-    }
-    &:hover {
-      background: darken($sky-blue, 5%);
+      line-height: 70px;
+      opacity: .8;
+      color: #fff;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
-}
-
-.notification-indicator {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  padding: 0px 10px;
-  font-size: 12.025px;
-  font-weight: bold;
-  white-space: nowrap;
-  color: #ffffff;
-  background-color: #999999;
-  &:hover {
-    color: white;
-  }
-}
-
-.unread-icon {
-  background-color: $notification-green;
 }

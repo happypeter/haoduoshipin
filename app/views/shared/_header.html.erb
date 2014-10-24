@@ -1,37 +1,13 @@
 <div class="header">
-  <div class="container clearfix">
-    <div class="header-logo-wordmark">
-      <div id="puppy_img">
-        <a href="/">
-          <%= image_tag "puppy.png" %>
-        </a>
-      </div>
-      <a href="/">
-        <%= image_tag "logo.png", :id => "logo_img" %>
-      </a>
-      <div id="tag_line">
-        <%= link_to t("tag_line"), about_path %>
-      </div>
-    </div>
-
-    <div class="search-bar">
-      <%= form_tag current_page?(:controller => 'episodes', :action => 'all') ? all_path : root_path, :method => :get do %>
-        <div>
-          <%= text_field_tag :search, params[:search] %>
-          <%= button_tag type: "submit", class: "button" do %>
-            <i class="fa fa-search fa-lg"></i>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+  <div class="container">
+    <%= link_to "Happycasts", root_path, class: "brand" %>
 
     <div class="header-actions">
       <% if current_user %>
-        <li><%= link_to "#{@unread_count}", notifications_path, :class => "notification-indicator #{'unread-icon' if @unread_count != 0} " %></li>
         <li><%= link_to current_user.name, user_path(current_user) %></li>
         <li><%= link_to  t("logout"), logout_path%></li>
       <% else %>
-        <li class="primary-action">
+        <li>
           <%= link_to t("login"), login_path(:return_to => request.url) %>
         </li>
         <li><%= link_to t("signup"), signup_path(:return_to => request.url) %></li>
@@ -39,3 +15,4 @@
     </div>
   </div>
 </div>
+
