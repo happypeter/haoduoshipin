@@ -1,0 +1,57 @@
+@import "globals/variables";
+@import "globals/mixins";
+
+/* shownotes */
+.show-notes {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #d6d6d6;
+  margin-bottom: 20px;
+  @include form-shadow;
+  .edit_shownotes_btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+.comment_view {
+  display: block;
+}
+.code_block {
+  .code_header {
+    @include github-fileheader;
+    padding: 5px;
+    border: 1px solid darken($github-gray, 20%);
+  }
+  margin-bottom: 20px;
+}
+#ep_notes_label, #ep_comments_label {
+  width: 100px;
+  height: 30px;
+  padding-top: 10px;
+  border: solid 1px gray;
+  border-bottom: transparent;
+  text-align: center;
+  margin-top: 30px;
+}
+/* end */
+
+/* for episode form */
+#new_episode, .edit_episode {
+  @include form-base;
+  abbr, .error {
+    color: #C00;
+    margin-left: $episode-new-margin-left;
+  }
+  #episode_published_at_1i {
+    margin-left: $episode-new-margin-left;
+  }
+}
+textarea#episode_description, textarea#episode_notes {
+  width: 700px;
+  height: 48px;
+  margin-bottom: 9px;
+  margin-left: 10px;
+  @include textarea-style;
+}
+textarea#episode_notes { height: 350px; }

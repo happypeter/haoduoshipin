@@ -5,7 +5,7 @@
 </div>
 <div class="body container">
   <% @episodes.each do |e| %>
-    <%= e.name %>
+    <%= render partial: "ep_card", locals: { episode: e }%>
   <% end %>
 </div>
 
