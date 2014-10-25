@@ -12,7 +12,11 @@
   min-height: 169px;
   width: 485px;
   .name {
-    font-size: 26px;
+    font-size: 28px;
+    i {
+      font-size: 14px;
+      padding-left: 10px;
+    }
   }
   &:before {
     content: "";
