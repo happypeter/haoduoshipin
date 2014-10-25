@@ -14,16 +14,6 @@
   color: white;
   text-decoration: none;
 }
-.button {
-  color: white;
-  background: $sky-blue;
-  padding: 10px;
-  border: none;
-  outline: 0;
-  &:hover {
-    background: darken($sky-blue, 5%);
-  }
-}
 
 .btn-primary {
   color: white;

@@ -1,55 +1,53 @@
-<div id="signup-form-section" class="form-section">
-  <div class="form-heading">
+<div class="single-form-container clearfix">
+  <h3>使用第三方账号登陆：
     <ul class="third-party-login">
       <li>
-        <%= link_to "/auth/github", :class => "github button" do %>
+        <%= link_to "/auth/github", :class => "github" do %>
         <i class="fa fa-github-alt fa-2x"></i>
         <% end %>
       </li>
       <li>
-        <%= link_to "/auth/google", :class => "google button" do %>
+        <%= link_to "/auth/google", :class => "google" do %>
         <i class="fa fa-google-plus fa-2x"></i>
         <% end %>
       </li>
     </ul>
+  </h3>
 
-    <div class="division">
-      <div class="huo">或</div>
-    </div>
-  </div>
-
-  <div id="signup_form">
+  <div class="signup-form">
     <%= form_for @user do |f| %>
-    <div class="form-body">
-      <div class="form">
-        <%= f.label :name, "用户名" %>
-        <%= f.text_field :name, :placeholder => "不包含空格"%>
-      </div>
-      <div class="form">
-        <%= f.label :email, "邮箱" %>
-        <%= f.text_field :email %>
-      </div>
-      <div class="form">
-        <%= f.label :password, "密码" %>
-        <%= f.password_field :password %>
-      </div>
-      <div class="form">
-        <%= f.label :password_confirmation, "确认密码" %>
-        <%= f.password_field :password_confirmation %>
-      </div>
-      <div class="tip">
-        <span><%= t("login_with_local_account") %></span>
-        <%= link_to t("login"), login_path, :class => "action" %>
-      </div>
-    </div>
-
-    <div class="form-footer">
-      <%= submit_tag t("create_account"), :class => "submit-btn create-account-btn button" %>
-    </div>
+        <% if @user.errors.any? %>
+          <div class="form-errorred">
+            填写的信息有误
+          </div>
+        <% end %>
+        <dl class="form">
+          <dt><%= f.label :name, "用户名" %></dt>
+          <dd><%= f.text_field :name %></dd>
+          <% if @user.errors[:name].any? %>
+            <dd class="error"><%= @user.errors[:name][0] %></dd>
+          <% end %>
+        </dl>
+        <dl class="form">
+          <dt><%= f.label :email, "邮箱" %></dt>
+          <dd> <%= f.text_field :email %> </dd>
+          <% if @user.errors[:email].any? %>
+            <dd class="error"><%= @user.errors[:email][0] %></dd>
+          <% end %>
+        </dl>
+        <dl class="form">
+          <dt> <%= f.label :password, "密码" %> </dt>
+          <dd> <%= f.password_field :password %> </dd>
+          <% if @user.errors[:password].any? %>
+            <dd class="error"><%= @user.errors[:password][0] %></dd>
+          <% end %>
+        </dl>
+        <dl class="form">
+          <dt> <%= f.label :password_confirmation, "请再输入一次" %> </dt>
+          <dd> <%= f.password_field :password_confirmation %> </dd>
+        </dl>
+        <p><%= f.submit "提交", :class => "profile-edit-button btn btn-primary" %></p>
     <% end %>
   </div>
 </div>
 
-<%= content_for :template_js do %>
-<%= javascript_include_tag "signup" %>
-<% end %>
