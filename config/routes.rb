@@ -5,6 +5,7 @@ Happycasts::Application.routes.draw do
   resources :password_resets
   resources :notifications
 
+  get "/stats" => "page#stats"
   get "/donate" => "users#donate"
   get "/latest" => "episodes#latest"
   get "/latest_comment" => "comments#latest_comment"
@@ -25,5 +26,5 @@ Happycasts::Application.routes.draw do
     mount MailPreview => 'mail_view'
   end
 
-  root :to => "home#welcome"
+  root :to => "page#welcome"
 end

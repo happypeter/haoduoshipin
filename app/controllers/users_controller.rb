@@ -81,13 +81,6 @@ class UsersController < ApplicationController
     redirect_to root_url, :notice => "You have been logged out."
   end
 
-  def index
-    @users = User.page(params[:page]).per_page(30).order('id DESC')
-    respond_to do |format|
-      format.html
-    end
-  end
-
   def show
     session[:return_to] = request.url
     if params[:username]
