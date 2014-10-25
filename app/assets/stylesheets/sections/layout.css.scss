@@ -25,13 +25,15 @@
   }
   li {
     display: inline-block;
-    padding: 0 10px;
     a {
       line-height: 70px;
-      opacity: .8;
+      padding: 10px 20px;
+      opacity: .9;
       color: #fff;
       &:hover {
         opacity: 1;
+        background: white;
+        color: #333;
       }
     }
   }
