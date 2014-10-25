@@ -1,92 +1,31 @@
 @import "globals/variables";
 @import "globals/mixins";
 
-/* personal info*/
-#user_show {
-  .profile {
-    position: relative;
-    margin-bottom: 20px;
-    .avatar {
-      width: 120px;
-      float: left;
-    }
-    .name-email {
-      margin-top: 5px;
-      margin-left: 10px;
-      width: 400px;
-      float: left;
-      #user-name {
-        font-size: 250%;
-        font-weight: bold;
-        margin-bottom: 12px;
-      }
-      #user-email {
-        font-size:140%;
-        color: darken($github-gray, 50%);
-        margin-bottom: 5px;
-      }
-    }
-    .admin-actions {
-      position: absolute;
-      bottom: 0px;
-      right: 0px;
-    }
-  }
-  .admin-actions {
-    a {
-      margin-left: 30px;
-    }
-  }
-}
-
-#new_mail {
-  label {
+.banner-profile {
+  min-height: 200px;
+  padding-top: 30px;
+  background: lighten(teal, 8%);
+  color: white;
+  font-size: 50px;
+  .avatar {
     float: left;
-    width: 140px;
-    padding-top: 5px;
-    text-align: right;
-    font-weight: bold;
-    color: #333;
-  }
-  #mailbody {
-    margin-left: 10px;
-    width: 700px;
-    height: 100px;
-  }
-  input.button {
-    float: right;
-    margin: 30px 40px 25px 0px;
-    color: #fff;
-    font-size: 16px;
   }
 }
 
-.edit-user-info-form {
-  @include form-base;
-  input { width: 280px; }
-  input.button {
-    float: left;
-    margin: {
-      top: 10px;
-      bottom: 25px;
-      left: 200px;
-    }
-    color: white;
-    width: 150px;
-    line-height: 25px;
-    font-size: 16px;
+.banner-links {
+  color: #fff;
+  li {
+    font-size: 15px;
+    line-height: 2.2;
   }
-  .alert-info {
-    float: right;
-    margin: 2px 280px 0 0;
-    color: red;
-  }
+  padding-left: 0;
+  float: right;
+  text-align: right;
 }
-
-#user_show_email, #user_email_subscription {
-  width: 30px;
-  height: 16px;
-  margin-top: 8px;
+.user-stats {
+  background: #333;
+  border-bottom: 1px solid #555;
+  color: white;
 }
 
 /* user#signup, user#login */

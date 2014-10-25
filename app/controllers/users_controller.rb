@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_filter :check_admin, :only => [:newmail, :new_ep_release_mail, :sendmail]
 
-  def newmail
-    @user = User.new
-  end
-
   def new
   end
 
@@ -18,16 +14,6 @@ class UsersController < ApplicationController
       if u.email_subscription?
         # should not pass user&episode object here, hi, we are using resque
         HappyMailer.new_ep_release(u.id, params[:id]).deliver
-      end
-    end
-    redirect_to root_url, :notice => "Mail sent!"
-  end
-
-  def sendmail
-    @mailbody = params[:mailbody]
-    User.all.each do |u|
-      if u.email_subscription?
-        HappyMailer.mail_to_all(u.id, @mailbody).deliver
       end
     end
     redirect_to root_url, :notice => "Mail sent!"

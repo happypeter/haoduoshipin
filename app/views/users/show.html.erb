@@ -1,38 +1,42 @@
 <% title "#{@user.name}'s Profile" %>
 
-<div id="user_show">
-  <div class="profile clearfix">
-    <div class="avatar">
-      <a href="http://gravatar.com">
-        <%= image_tag avatar_url(@user),:alt => "Your Image", :size => "120x120"%>
-      </a>
-    </div>
-    <div class="name-email">
-      <div id="user-name">
-        <%= @user.name %>
+  <div class="banner-profile clearfix">
+    <div class="container clearfix">
+      <div class="avatar">
+        <a href="http://gravatar.com">
+          <%= image_tag avatar_url(@user),:alt => "Your Image", :size => "120x120"%>
+        </a>
       </div>
-      <div id="user-email">
-        <% if @user.show_email %>
-        <%= @user.email %>
+      <ul class="banner-links">
+        <% if @user.email && @user.show_email %>
+          <li><%= @user.email %></li>
         <% end %>
-     </div>
+        <li>China</li>
+      </ul>
     </div>
+  </div>
+
+  <div class="user-stats">
+    <div class="container clearfix">
+      <h2 class="name">
+        <%= @user.name %>
+      </h2>
+    </div>
+  </div>
+
     <div class="admin-actions">
       <% if current_user && current_user = @user %>
         <%= link_to t("edit_profile"), account_path%>
       <% end %>
       <% if current_user && current_user.admin? %>
         <%= link_to t('new_ep'), new_episode_path%>
-        <%= link_to t('mail_to_all'), "/new_mail"%>
       <% end %>
     </div>
-  </div>
 
-  <h2 class="comments"><%= t("recent_comments") %></h2>
   <% if @user.comments.blank? %>
-    <%= t("no_comments_yet") %>
+    "暂无评论"
   <% else %>
     <%= render @user.comments.reverse %>
   <% end %>
-</div><!-- user_show -->
+
 
