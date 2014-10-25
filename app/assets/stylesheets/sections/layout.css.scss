@@ -58,4 +58,14 @@
       margin-bottom: 0.7em;
     }
   }
+  .container {
+    position: relative;
+    img {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 100px;
+    }
+  }
+
 }
