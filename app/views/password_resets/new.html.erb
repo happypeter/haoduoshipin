@@ -1,13 +1,7 @@
-<div class="form-section">
+<div class="single-form-container clearfix">
   <%= form_tag password_resets_path, :method => :post do %>
-  <div class="form-body">
-    <div class="form">
-      <%= label_tag :email, "密码" %>
-      <%= text_field_tag :email, params[:email] %>
-    </div>
-  </div>
-  <div class="form-footer">
-    <%= submit_tag "重置密码", :class => "submit-btn button" %>
-  </div>
+    <dt><%= label_tag :email, "输入邮箱" %></dt>
+    <dd><%= text_field_tag :email, params[:email] %></dd>
+    <p><%= submit_tag "发送重置密码邮件", :class => "reset-password-btn btn btn-primary" %></p>
   <% end %>
 </div>
