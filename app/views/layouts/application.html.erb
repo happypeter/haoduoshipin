@@ -8,17 +8,17 @@
   <link href="http://vjs.zencdn.net/4.3/video-js.css" rel="stylesheet">
   <script src="http://vjs.zencdn.net/4.3/video.js"></script>
 </head>
-<body>
-<div class="<%= controller.action_name %>">
-  <%= render 'shared/header' %>
-    <% if flash[:notice] %>
-      <p class="notice">
-        <span><%= flash[:notice] %></span>
-        <span class="close"><i class="fa fa-times-circle-o"></i></span>
-      </p>
-    <% end %>
-    <%= yield %>
-</div>
+<body class="<%= params[:controller] + '-' + controller.action_name %>">
+
+<%= render 'shared/header' %>
+<% if flash[:notice] %>
+  <p class="notice">
+    <span><%= flash[:notice] %></span>
+    <span class="close"><i class="fa fa-times-circle-o"></i></span>
+  </p>
+<% end %>
+<%= yield %>
+
 <%= render partial: "shared/footer" %>
 <%= javascript_include_tag "application"%>
 <%= yield :template_js %>

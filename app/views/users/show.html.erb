@@ -16,27 +16,31 @@
     </div>
   </div>
 
-  <div class="user-stats">
+  <div class="profile-stats">
     <div class="container clearfix">
       <h2 class="name">
         <%= @user.name %>
+        <% if current_user && current_user = @user %>
+          <%= link_to t("edit_profile"), account_path, class: "btn btn-primary" %>
+        <% end %>
+        <% if current_user && current_user.admin? %>
+          <%= link_to t('new_ep'), new_episode_path, class: "btn btn-primary" %>
+        <% end %>
       </h2>
     </div>
   </div>
 
-    <div class="admin-actions">
-      <% if current_user && current_user = @user %>
-        <%= link_to t("edit_profile"), account_path%>
-      <% end %>
-      <% if current_user && current_user.admin? %>
-        <%= link_to t('new_ep'), new_episode_path%>
-      <% end %>
-    </div>
 
-  <% if @user.comments.blank? %>
-    "暂无评论"
-  <% else %>
-    <%= render @user.comments.reverse %>
-  <% end %>
+<div class="profile-comments">
+  <div class="container">
+    <% if @user.comments.blank? %>
+      "暂无评论"
+    <% else %>
+      <%= render @user.comments.reverse %>
+    <% end %>
+  </div>
+</div>
+
+
 
 

@@ -3,7 +3,7 @@
     <%= params[:tag] %>
   </div>
 </div>
-<div class="body container">
+<div class="body container clearfix">
   <% @episodes.each do |e| %>
     <%= render partial: "ep_card", locals: { episode: e }%>
   <% end %>

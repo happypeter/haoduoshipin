@@ -2,7 +2,9 @@
 @import "globals/mixins";
 
 
-
+.home-welcome>.header {
+  background: teal;
+}
 .header {
   background-color: black;
 }
