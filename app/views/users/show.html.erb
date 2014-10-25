@@ -1,35 +1,34 @@
 <% title "#{@user.name}'s Profile" %>
 
-  <div class="banner-profile clearfix">
-    <div class="container clearfix">
-      <div class="avatar">
-        <a href="http://gravatar.com">
-          <%= image_tag avatar_url(@user),:alt => "Your Image", :size => "120x120"%>
-        </a>
-      </div>
-      <ul class="banner-links">
-        <% if @user.email && @user.show_email %>
-          <li><%= @user.email %></li>
-        <% end %>
-        <li>China</li>
-      </ul>
+<div class="banner-profile clearfix">
+  <div class="container clearfix">
+    <div class="avatar">
+      <a href="http://gravatar.com">
+        <%= image_tag avatar_url(@user),:alt => "Your Image", :size => "120x120"%>
+      </a>
     </div>
+    <ul class="banner-links">
+      <% if @user.email && @user.show_email %>
+        <li><%= @user.email %></li>
+      <% end %>
+      <li>China</li>
+    </ul>
   </div>
+</div>
 
-  <div class="profile-stats">
-    <div class="container clearfix">
-      <h2 class="name">
-        <%= @user.name %>
-        <% if current_user && current_user = @user %>
-          <%= link_to t("edit_profile"), account_path, class: "btn btn-primary" %>
-        <% end %>
-        <% if current_user && current_user.admin? %>
-          <%= link_to t('new_ep'), new_episode_path, class: "btn btn-primary" %>
-        <% end %>
-      </h2>
-    </div>
+<div class="profile-stats">
+  <div class="container clearfix">
+    <h2 class="name">
+      <%= @user.name %>
+      <% if current_user && current_user == @user %>
+        <%= link_to "编辑", account_path, class: "btn btn-primary" %>
+      <% end %>
+      <% if current_user && current_user.admin? && current_user == @user %>
+        <%= link_to "创建视频", new_episode_path, class: "btn btn-primary" %>
+      <% end %>
+    </h2>
   </div>
-
+</div>
 
 <div class="profile-comments">
   <div class="container">
