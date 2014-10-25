@@ -1,18 +1,19 @@
 .home-banner {
   background-color: #008080 !important;
   .banner-inner {
-    padding: 70px 180px;
+    padding: 70px 150px;
     height: 400px;
     .banner-text {
+      width: 300px;
+      float: right;
       color: white;
       h1 {
         font-weight: normal;
         font-size: 25px;
       }
     }
-    .mini-player-container {
-      width: 200px;
-      height: 120px;
+    .video-js {
+      float: left;
     }
   }
 }
