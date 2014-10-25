@@ -11,10 +11,18 @@
   line-height: 70px;
   color: white;
   font-size: 27px;
+  float: left;
 }
 
+
 .header-actions {
-  float: right;
+  .left {
+    float: left;
+    padding-left: 45px;
+  }
+  .right {
+    float: right;
+  }
   li {
     display: inline-block;
     padding: 0 10px;

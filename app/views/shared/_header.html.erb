@@ -1,18 +1,21 @@
 <div class="header">
-  <div class="container">
+  <div class="container clearfix">
     <%= link_to "Happycasts", root_path, class: "brand" %>
-
     <div class="header-actions">
-      <li><%= link_to "最近", "/latest" %></li>
-      <% if current_user %>
-        <li><%= link_to current_user.name, profile_path(current_user.name) %></li>
-        <li><%= link_to  "退出", logout_path%></li>
-      <% else %>
-        <li>
-          <%= link_to "登录", login_path(:return_to => request.url) %>
-        </li>
-        <li><%= link_to "注册", signup_path(:return_to => request.url) %></li>
-      <% end %>
+      <div class="left">
+        <li><%= link_to "最新视频", "/latest" %></li>
+      </div>
+      <div class="right">
+        <% if current_user %>
+          <li><%= link_to current_user.name, profile_path(current_user.name) %></li>
+          <li><%= link_to  "退出", logout_path%></li>
+        <% else %>
+          <li>
+            <%= link_to "登录", login_path(:return_to => request.url) %>
+          </li>
+          <li><%= link_to "注册", signup_path(:return_to => request.url) %></li>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
