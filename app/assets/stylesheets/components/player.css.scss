@@ -1,8 +1,10 @@
+@import "variables";
+
 
 // in _player.html.erb
 .player-wrap {
   padding: 40px 0;
-  background-color: lighten(#444444, 10%);
+  background-color: lighten($gray, 10%);
   .video-js {
     margin: auto;
   }

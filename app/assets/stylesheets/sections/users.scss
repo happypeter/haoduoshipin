@@ -1,5 +1,4 @@
-@import "globals/variables";
-@import "globals/mixins";
+@import "variables";
 
 .banner-profile {
   min-height: 200px;
@@ -14,8 +13,6 @@
     }
   }
 }
-
-
 
 .banner-links {
   color: #fff;

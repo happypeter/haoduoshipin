@@ -1,24 +1,36 @@
+@import "variables";
+
 .tag-list {
   padding: 30px 0;
   a {
+    background: lighten($yellow, 30%);
     display: block;
     margin: 40px 15px;
     width: 300px;
     text-align: center;
-    height: 180px;
     float: left;
     border: 3px solid #ddd;
-    padding: 40px;
     &:hover {
-      box-shadow: 0 1px 0 black;
+      i.fa {
+        color: darken($yellow, 17%);
+      }
+      p {
+        background: darken($gray, 7%);
+      }
     }
     i.fa {
-      font-size: 60px;
-      color: teal;
+      font-size: 70px;
+      color: darken($yellow, 9%);
+      display: block;
+      margin: 35px auto;
     }
     p {
-      color: red;
-      font-size: 21px;
+      display: block;
+      background: $gray;
+      margin: 0;
+      color: white;
+      font-size: 14px;
+      line-height: 30px;
     }
   }
 }

@@ -8,7 +8,6 @@ body>.heading {
 }
 
 
-
 /*** SHARED ***/
 html, body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -49,7 +48,7 @@ ul {
 
 
 ::selection {
-  background: #c0865e;
+  background: $yellow;
   color: #fff;
 }
 
@@ -65,33 +64,6 @@ ul {
   a, .previous_page, .next_page { padding: 4px; }
 }
 
-#markdown_cheatsheet {
-  display: none;
-}
-/* markdown example */
-table {
-  margin-left:20px;
-  tr {
-    border-bottom: 1px solid darken($github-gray, 10%);
-    td {
-      padding-top: 10px;
-      padding-left: 20px;
-    }
-    th { padding-left: 20px; }
-  }
-}
-
-.notice {
-  margin-top: -20px;
-  color: #3A87AD;
-  background-color: #D9EDF7;
-  border-color: #BCE8F1;
-  padding: 10px;
-  .close {
-    float: right;
-    cursor: pointer;
-  }
-}
 
 .clearfix:before,
 .clearfix:after {
