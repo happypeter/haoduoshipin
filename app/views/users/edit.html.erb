@@ -1,54 +1,40 @@
-<%# title "Edit Profile" %>
-
-<div class="content edit-user-info-form">
-<%= form_for @user do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label t("name") %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label t("email") %>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-  <%= f.label t("show_email") %>
-  <%= f.check_box(:show_email) %>
-  </p>
-  <p>
-  <%= f.label t("email_subscription") %>
-  <%= f.check_box(:email_subscription) %>
-  </p>
-  <% if @user.signup_local? %>
-    <div id="not-match-alert" style="display:none; color: red; font-weigh: bold">
-      Passwords do not match
-    </div>
-    <p class="alert-info"><%= t('change_password') %> <%= t('empty_no_change') %><p>
-    <p>
-    <%= f.label t("password") %>
-    <%= f.password_field :password %>
-    </p>
-    <p>
-    <%= f.label t("type_password_again") %>
-    <input id="user_password_confirmation" size="50" type="password" />
-    </p>
-  <% end %>
-  <p><%= f.submit t("update_profile"), :id => "update-user-info", :class => "button" %></p>
-<% end %>
+<div class="signup-form-container clearfix">
+  <div class="signup-form">
+    <%= form_for @user do |f| %>
+        <% if @user.errors.any? %>
+          <div class="form-errorred">
+            填写的信息有误
+          </div>
+        <% end %>
+        <dl class="form">
+          <dt><%= f.label :name, "用户名" %></dt>
+          <dd><%= f.text_field :name %></dd>
+          <% if @user.errors[:name].any? %>
+            <dd class="error"><%= @user.errors[:name][0] %></dd>
+          <% end %>
+        </dl>
+          <%= f.check_box(:show_email) %>
+            <%= f.check_box(:email_subscription) %>
+        <dl class="form">
+          <dt> <%= f.label :email %></dt>
+          <dd> <%= f.text_field :email %> </dd>
+          <% if @user.errors[:email].any? %>
+            <dd class="error"><%= @user.errors[:email][0] %></dd>
+          <% end %>
+        </dl>
+        <dl class="form">
+          <dt> <%= f.label :password, "密码" %> </dt>
+          <dd> <%= f.password_field :password %> </dd>
+          <% if @user.errors[:password].any? %>
+            <dd class="error"><%= @user.errors[:password][0] %></dd>
+          <% end %>
+        </dl>
+        <dl class="form">
+          <dt> <%= f.label :password_confirmation, "请再输入一次" %> </dt>
+          <dd> <%= f.password_field :password_confirmation %> </dd>
+        </dl>
+        <p><%= f.submit "注册", :class => "signup-button btn btn-primary" %></p>
+    <% end %>
+  </div>
 </div>
 
-<% if @user.signup_local? %>
-  <%= content_for :template_js do %>
-    <script>
-      $('#update-user-info').click(function(){
-        $('#blank-alert').hide();
-        $('#not-match-alert').hide();
-        if ($('.edit-user-info-form input#user_password').val() != $('.edit-user-info-form input#user_password_confirmation').val())
-        {
-          $('#not-match-alert').show();
-          return false;
-        }
-      });
-    </script>
-  <% end %>
-<% end %>

@@ -28,14 +28,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        @user.encrypt_password
-        @user.save!
-        format.html { redirect_to(@user, :notice => 'Profile was successfully updated.') }
-      else
-        format.html { render :action => "edit" }
-      end
+    if @user.update_attributes(params[:user])
+      @user.encrypt_password
+      @user.save!
+      redirect_to_target_or_default :root
+    else
+      render :action => "edit"
     end
   end
 
@@ -91,6 +89,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    session[:return_to] = request.url
     if params[:username]
       @user = User.find_by_name(params[:username])
     end
