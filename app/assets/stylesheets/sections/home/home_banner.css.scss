@@ -10,19 +10,9 @@
         font-size: 25px;
       }
     }
-    .banner-img {
-      width: 290px;
-      float: left;
-      img {
-        width: 210px;
-        display: block;
-        border: 5px solid white;
-        -webkit-transform: rotate(10deg);
-        -moz-transform: rotate(10deg);
-        -o-transform: rotate(10deg);
-        -ms-transform: rotate(10deg);
-        transform: rotate(10deg);
-      }
+    .mini-player-container {
+      width: 200px;
+      height: 120px;
     }
   }
 }

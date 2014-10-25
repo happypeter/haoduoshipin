@@ -5,11 +5,10 @@
   <link href="/favicon.png" rel="icon" type="image/x-png" />
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tag %>
-  <link href="http://vjs.zencdn.net/4.3/video-js.css" rel="stylesheet">
-  <script src="http://vjs.zencdn.net/4.3/video.js"></script>
+  <script src="http://vjs.zencdn.net/4.8/video.js"></script>
+
 </head>
 <body class="<%= params[:controller] + '-' + controller.action_name %>">
-
 <%= render 'shared/header' %>
 <% if flash[:notice] %>
   <p class="notice">
