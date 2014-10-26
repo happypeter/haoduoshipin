@@ -17,5 +17,3 @@ $(function() {
   });
   $('textarea').atwho({ at: "@", 'data': commenter });
 });
-
-

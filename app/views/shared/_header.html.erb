@@ -11,9 +11,9 @@
           <li><%= link_to  "退出", logout_path%></li>
         <% else %>
           <li>
-            <%= link_to "登录", login_path(:return_to => request.url) %>
+            <%= link_to "登录", login_path %>
           </li>
-          <li><%= link_to "注册", signup_path(:return_to => request.url) %></li>
+          <li><%= link_to "注册", signup_path %></li>
         <% end %>
       </div>
     </div>
