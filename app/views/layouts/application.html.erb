@@ -13,9 +13,9 @@
 <% if flash[:notice] %>
   <p class="notice">
     <span><%= flash[:notice] %></span>
-    <span class="close"><i class="fa fa-times-circle-o"></i></span>
   </p>
 <% end %>
+<p class="notice">nice</p>
 <%= yield %>
 
 <%= render partial: "shared/footer" %>
@@ -33,9 +33,10 @@
   })();
 </script>
 <script>
-  $(".notice .close").click(function(){
-    $(".notice").fadeOut("slow");
-  });
+  var hideNotice = function(){
+      $(".notice").fadeOut("slow");
+  }
+  setTimeout(hideNotice, 3000);
 </script>
 </body>
 </html>

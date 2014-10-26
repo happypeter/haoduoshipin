@@ -3,10 +3,10 @@
 <div class="main clearfix">
   <div class="content">
     <% if @episodes.empty? %>
-      <p class="search_nil notice">Sorry, no matching episodes!</p>
+      <p class="search_nil">Sorry, no matching episodes!</p>
     <% else %>
       <% if !@count.blank? %>
-       <p class="search_count notice">Found <%= pluralize(@count, 'episode') %></p>
+       <p class="search_count">Found <%= pluralize(@count, 'episode') %></p>
       <% end %>
       <% for episode in @episodes %>
         <% if episode.published || episode.should_be_published? %>
