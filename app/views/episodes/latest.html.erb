@@ -1,3 +1,14 @@
-<div class="container">
-  the latest 5 videos here
+<div class="heading">
+  <div class="container">
+    最新视频
+  </div>
+</div>
+<div class="body container clearfix">
+<% if @episodes.blank? %>
+  No episodes found.
+<% else %>
+  <% @episodes.each do |e| %>
+    <%= render partial: "ep_card", locals: { episode: e }%>
+  <% end %>
+<% end %>
 </div>

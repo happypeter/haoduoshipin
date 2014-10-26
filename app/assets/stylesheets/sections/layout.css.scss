@@ -12,6 +12,9 @@
   color: white;
   font-size: 23px;
   float: left;
+  &:hover {
+    color: $yellow;
+  }
 }
 
 

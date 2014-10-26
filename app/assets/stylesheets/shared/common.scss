@@ -1,10 +1,13 @@
 @import "variables";
 
 body>.heading {
-  min-height: 100px;
+  padding: 40px 0;
   background: lighten(teal, 8%);
   color: white;
-  font-size: 50px;
+  font-size: 20px;
+}
+body>.body {
+  padding-top: 20px;
 }
 
 

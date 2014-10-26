@@ -30,6 +30,7 @@ class EpisodesController < ApplicationController
   end
 
   def latest
+    @episodes = Episode.recent.page(1).per_page(6)
   end
 
   def tags
