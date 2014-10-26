@@ -1,7 +1,10 @@
 <div class="shownote">
   <div class="container">
     <%= link_to "文字稿", "http://happycasts.github.io/#{episode.asset_name}.html" %>
-    <%= link_to "Edit", edit_episode_path(episode) %>
+
+    <% if current_user && current_user.admin?%>
+      <%= link_to "Edit", edit_episode_path(episode), class: "edit-ep-btn btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 

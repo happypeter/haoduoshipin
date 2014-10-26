@@ -1,11 +1,15 @@
 @import "variables";
 
 .shownote {
-  min-height: 100px;
+  height: 100px;
+  padding: 35px;
   background: lighten(teal, 8%);
   a {
-    line-height: 100px;
+    line-height: 30px;
     color: white;
+  }
+  .edit-ep-btn {
+    margin-left: 10px;
   }
 }
 .comments {
