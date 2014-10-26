@@ -6,7 +6,7 @@ Happycasts::Application.routes.draw do
   resources :notifications
 
   get "/stats" => "page#stats"
-  get "/donate" => "users#donate"
+  get "/donate" => "page#donate"
   get "/latest" => "episodes#latest"
   get "/latest_comment" => "comments#latest_comment"
   get "tags" => "episodes#tags"
