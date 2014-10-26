@@ -1,16 +1,25 @@
-<div class="content">
   <%= simple_form_for @episode do |f| %>
-      <%= f.input :published_at,
-          :required => false,
-          :default => @default_time,
-          :discard_hour => true
-      %>
-      <%= f.input :name %>
       <%= f.input :revision %>
       <%= f.input :tag_names %>
-
-      <%= f.input :description %>
-      <%= f.input :notes %>
-      <%= f.button :submit, :class => "button" %>
   <% end %>
+
+<div class="single-form-container clearfix">
+  <div class="signup-form">
+    <%= form_for @episode do |f| %>
+       <dl class="form">
+          <dt><%= f.label :published_at, "发布日期" %></dt>
+          <dd><%= f.datetime_select :published_at, :required => false,  :default => @default_time,  :discard_hour => true %></dd>
+        </dl>
+        <dl class="form">
+          <dt><%= f.label :name, "标题" %></dt>
+          <dd><%= f.text_field :name %></dd>
+        </dl>
+        <dl class="form">
+          <dt><%= f.label :description, "概要" %></dt>
+          <dd> <%= f.text_area :description %> </dd>
+        </dl>
+        <p><%= f.submit "提交", :class => "episode-edit-button btn btn-primary" %></p>
+    <% end %>
+  </div>
 </div>
+
