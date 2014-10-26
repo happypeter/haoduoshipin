@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024055556) do
+ActiveRecord::Schema.define(version: 20141026082747) do
 
   create_table "comments", force: true do |t|
     t.integer  "episode_id"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20141024055556) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "notes"
     t.datetime "published_at"
     t.integer  "seconds"
     t.text     "description"
@@ -40,8 +39,8 @@ ActiveRecord::Schema.define(version: 20141024055556) do
     t.integer  "user_id"
     t.integer  "comment_id"
     t.boolean  "unread",     default: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "taggings", force: true do |t|
