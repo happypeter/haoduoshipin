@@ -37,7 +37,7 @@ module ApplicationHelper
       strikethrough: true,
       superscript: true
     }
-    Redcarpet::Markdown.new(renderer, options).render(text)
+    Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
 
   def render_user_register_time(user)
