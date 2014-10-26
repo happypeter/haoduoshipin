@@ -36,7 +36,9 @@ class EpisodesController < ApplicationController
     @tags = Tag.all
   end
   def tag
-    @episodes = Tag.find_by_name(params[:tag]).episodes
+    if Tag.find_by_name(params[:tag])
+      @episodes = Tag.find_by_name(params[:tag]).episodes
+    end
   end
 
   def show

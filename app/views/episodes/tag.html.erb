@@ -4,8 +4,12 @@
   </div>
 </div>
 <div class="body container clearfix">
+<% if @episodes.blank? %>
+  No episodes found.
+<% else %>
   <% @episodes.each do |e| %>
     <%= render partial: "ep_card", locals: { episode: e }%>
   <% end %>
+<% end %>
 </div>
 
