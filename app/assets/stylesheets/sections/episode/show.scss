@@ -11,20 +11,3 @@
 .comments {
   padding-top: 40px;
 }
-/* for episode form */
-#new_episode, .edit_episode {
-  abbr, .error {
-    color: #C00;
-    margin-left: $episode-new-margin-left;
-  }
-  #episode_published_at_1i {
-    margin-left: $episode-new-margin-left;
-  }
-}
-textarea#episode_description, textarea#episode_notes {
-  width: 700px;
-  height: 48px;
-  margin-bottom: 9px;
-  margin-left: 10px;
-}
-textarea#episode_notes { height: 350px; }
