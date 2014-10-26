@@ -1,0 +1,21 @@
+/* donate */
+.donate-headline {
+  color: teal;
+  text-align: center;
+  font-weight: normal;
+}
+.donate-option {
+  border: 1px solid black;
+  margin-top: 40px;
+  padding: 20px;
+  img {
+    display: block;
+    width: 100px;
+    margin: 5px auto;
+  }
+  .option-content {
+    font-family: monospace;
+    font-size: 20px;
+    text-align: center;
+  }
+}
