@@ -2,13 +2,15 @@
   <div class="container">ALL</div>
 </div>
 <div class="body container">
-
-TODO: this will sth like
-
-<h1>https://laracasts.com/index</h1>
-
- <% @tags.each do |t| %>
-    <%= t.name %>
-  <% end -%>
+  <ul class="list-group tags">
+    <% @tags.each do |t| %>
+    <li class="list-group-item">
+      <%= link_to t.name.downcase, tag_path(t.name) %>
+      <span class="badge">
+        <%= link_to (pluralize t.ep_count, 'episode'), tag_path(t.name) %>
+      </span>
+    </li>
+    <% end %>
+  </ul>
 </div>
 

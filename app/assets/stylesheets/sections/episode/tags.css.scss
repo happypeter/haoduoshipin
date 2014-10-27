@@ -1,2 +1,44 @@
-.tags {
+@import "variables";
+
+.list-group {
+  margin-bottom: 20px;
+}
+.tags .list-group-item {
+  list-style: none;
+  font-size: 16px;
+  a {
+      color: $yellow;
+    }
+}
+.list-group-item:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  .badge {
+    float: right;
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFF;
+    line-height: 1;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #999;
+    border-radius: 10px;
+    a {
+      color: #FFF;
+    }
+  }
 }

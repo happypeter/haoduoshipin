@@ -34,7 +34,7 @@ class EpisodesController < ApplicationController
   end
 
   def tags
-    @tags = Tag.all
+    @tags = Tag.all.sort_by{ |t| t.name.downcase }
   end
   def tag
     if Tag.find_by_name(params[:tag])

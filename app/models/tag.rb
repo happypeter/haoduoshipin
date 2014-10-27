@@ -1,7 +1,7 @@
 class Tag < ActiveRecord::Base
   has_many :taggings, :dependent => :destroy
   has_many :episodes, :through => :taggings
-  attr_accessible :name
+  attr_accessible :name, :ep_count
 
   def self.with_names(names)
     names.map do |name|
