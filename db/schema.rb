@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026082747) do
+ActiveRecord::Schema.define(version: 20141027064125) do
 
   create_table "comments", force: true do |t|
     t.integer  "episode_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20141026082747) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "episodes"
+    t.integer  "ep_count"
   end
 
   create_table "users", force: true do |t|
