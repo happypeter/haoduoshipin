@@ -34,35 +34,51 @@ sudo apt-get install -y  mysql-server   mysql-client  libmysqlclient-dev
 # js runtime
 sudo apt-get install -y nodejs
 
-# apache & passenger ---byebye for mem allocate failure
-# sudo apt-get install -y apache2 apache2-prefork-dev libcurl4-openssl-dev libaprutil1-dev
-# gem install passenger
-# rbenv rehash
-# passenger-install-apache2-module
+# nginx & passenger
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
+
+sudo apt-get install apt-transport-https ca-certificates
+
+sudo add-apt-repository 'deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main'
+
+sudo apt-get update
+
+sudo apt-get install nginx-extras passenger
+
+
+# sudo vim /etc/nginx/nginx.conf
+#    passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
+#    passenger_ruby /home/peter/.rbenv/shims/ruby;
+
+# echo "export RAILS_ENV=production" >> ~/.bashrc
+# source ~/.bashrc
+
+# bundle exec rake assets:precompile
+
 
 # now need to change apache2.conf to allow visit to dir other than /var/www
 # otherwise you get apache2: no permission to visit the server / error
 # think this: sudo sed -i -e 's/Require\ all\ denied/Require\ all\ granted/' /etc/apache2/apache2.conf
-sudo rm -rf /var/www
-sudo ln -fs /vagrant /var/www
+# sudo rm -rf /var/www
+# sudo ln -fs /vagrant /var/www
 
-sudo rm /etc/apache2/sites-enabled/000-default.conf
 
-sudo tee -a  /etc/apache2/sites-enabled/happycasts.conf <<FILE
-LoadModule passenger_module /home/vagrant/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/passenger-4.0.53/buildout/apache2/mod_passenger.so
-<IfModule mod_passenger.c>
-  PassengerRoot /home/vagrant/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/passenger-4.0.53
-  PassengerDefaultRuby /home/vagrant/.rbenv/versions/2.1.3/bin/ruby
-</IfModule>
-<VirtualHost *:80>
-   ServerName example.com
-   DocumentRoot /var/www/public/
-   RailsEnv development
-   <Directory /var/www/public/ >
-      AllowOverride all
-      Options -MultiViews
-   </Directory>
-</VirtualHost>
+# sudo tee -a  /etc/apache2/sites-enabled/happycasts.conf <<FILE
+# LoadModule passenger_module /home/vagrant/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/passenger-4.0.53/buildout/apache2/mod_passenger.so
+# <IfModule mod_passenger.c>
+#   PassengerRoot /home/vagrant/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/passenger-4.0.53
+#   PassengerDefaultRuby /home/vagrant/.rbenv/versions/2.1.3/bin/ruby
+# </IfModule>
+# <VirtualHost *:80>
+#    ServerName example.com
+#    DocumentRoot /var/www/public/
+#    RailsEnv development
+#    <Directory /var/www/public/ >
+#       AllowOverride all
+#       Options -MultiViews
+#    </Directory>
+# </VirtualHost>
 FILE
 
 cd /vagrant/
