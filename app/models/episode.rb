@@ -5,7 +5,7 @@ class Episode < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
-  validates_presence_of :name
+  validates_presence_of :name, :tag_names
 
   scope :recent, -> { order(id: :desc) }
 
@@ -36,7 +36,9 @@ class Episode < ActiveRecord::Base
 
   # a virtual attribute
   def tag_names=(names)
-    self.tags = Tag.with_names(names.split(/\s+/))
+    # tag_names as a token for checking update action or create action
+    names = 'all' if names.empty? && !tag_names.empty?
+    self.tags = Tag.with_names(names.split(/\s+/), tag_names)
   end
 
   def tag_names
