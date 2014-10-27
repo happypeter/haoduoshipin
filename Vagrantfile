@@ -34,11 +34,11 @@ sudo apt-get install -y  mysql-server   mysql-client  libmysqlclient-dev
 # js runtime
 sudo apt-get install -y nodejs
 
-# apache
-sudo apt-get install -y apache2 apache2-prefork-dev libcurl4-openssl-dev libaprutil1-dev
-gem install passenger
-rbenv rehash
-passenger-install-apache2-module
+# apache & passenger ---byebye for mem allocate failure
+# sudo apt-get install -y apache2 apache2-prefork-dev libcurl4-openssl-dev libaprutil1-dev
+# gem install passenger
+# rbenv rehash
+# passenger-install-apache2-module
 
 # now need to change apache2.conf to allow visit to dir other than /var/www
 # otherwise you get apache2: no permission to visit the server / error
