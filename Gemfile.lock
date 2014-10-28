@@ -88,6 +88,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     mysql2 (0.3.16)
+    newrelic_rpm (3.9.6.257)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     oauth2 (1.0.0)
@@ -183,6 +184,7 @@ DEPENDENCIES
   jquery-rails
   mail_view (~> 2.0.4)
   mysql2 (~> 0.3.10)
+  newrelic_rpm
   nokogiri (~> 1.6.0)
   omniauth
   omniauth-github
