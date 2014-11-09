@@ -5,4 +5,12 @@
   font-weight: normal;
   color: darken($yellow, 40%);
   margin-bottom: 0;
+  position: relative;
+  .puppy {
+    width: 40px;
+    position: absolute;
+  }
+  span {
+    padding-left: 65px;
+  }
 }
