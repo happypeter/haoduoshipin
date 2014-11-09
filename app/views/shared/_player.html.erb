@@ -19,6 +19,7 @@
       <div class="container">
         <h1 class="name">
           <%= episode.name %>
+          <span class="date"><%= render_episode_publish_time(episode) %></span>
         </h1>
         <p><%= episode.description %></p>
         <ul class="ep-tags">
