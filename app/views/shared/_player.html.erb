@@ -23,7 +23,7 @@
         <p><%= episode.description %></p>
         <ul class="ep-tags">
           <% episode.tags.each do |t| %>
-            <li><%= t.name %></li>
+            <li><%= link_to t.name, tag_path(t.name) %></li>
           <% end %>
         </ul>
       </div>
