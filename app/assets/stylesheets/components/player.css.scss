@@ -1,6 +1,5 @@
 @import "variables";
 
-
 // in _player.html.erb
 .player-wrap {
   padding: 40px 0;
@@ -40,7 +39,7 @@
   }
   .date {
     border-radius: 4px;
-    background: #C0865E;
+    background: $yellow;
     padding: 3px 7px;
     font-size: 12px;
     margin-left: 15px;
