@@ -28,3 +28,10 @@
   -o-user-select: none;
   user-select: none;
 }
+.back-btn {
+  padding-right: 5px;
+  &:hover {
+    text-decoration: underline;
+    color: #0c6868;
+  }
+}
