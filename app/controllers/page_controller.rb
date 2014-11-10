@@ -4,6 +4,8 @@ class PageController < ApplicationController
   end
 
   def stats
-    @usercount = User.all.count
+    @user_count = User.all.count
+    @episode_count = Episode.all.count
+    @comment_count = Comment.all.count
   end
 end
