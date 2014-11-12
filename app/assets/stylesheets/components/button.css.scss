@@ -35,3 +35,19 @@
     color: #0c6868;
   }
 }
+.search-btn {
+  font-size: 1.3em;
+  border: none;
+  background: #FFF;
+  border-radius: 40px;
+  color: #222;
+  margin-left: 0.5em;
+  &:hover {
+    background: $yellow;
+    color: #FFF;
+    cursor: pointer;
+  }
+  &:active {
+    outline: none;
+  }
+}

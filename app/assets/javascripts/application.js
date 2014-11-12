@@ -16,4 +16,8 @@ $(function() {
     }
   });
   $('textarea').atwho({ at: "@", 'data': commenter });
+  $(".search-btn").click(function() {
+    $(".search-form").slideToggle();
+    $(".search-form input").focus();
+  });
 });

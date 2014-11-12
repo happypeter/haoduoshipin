@@ -1,3 +1,10 @@
+<div class="search-form">
+  <div class="container">
+    <form action="/search" autocomplete="off">
+    <input type='text' id='ts-search-input' name="q" placeholder="Search for a episode...">
+    </form>
+  </div>
+</div>
 <div class="header">
   <div class="container clearfix">
     <%= link_to root_path, class: "brand" do %>
@@ -17,6 +24,11 @@
           </li>
           <li><%= link_to "注册", signup_path %></li>
         <% end %>
+        <li>
+          <button class="search-btn">
+            <i class="fa fa-search"></i>
+          </button>
+        </li>
       </div>
     </div>
   </div>

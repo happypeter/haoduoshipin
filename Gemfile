@@ -34,3 +34,6 @@ gem 'elasticsearch-model', :git => 'git://github.com/elasticsearch/elasticsearch
 gem 'elasticsearch-rails', :git => 'git://github.com/elasticsearch/elasticsearch-rails.git'
 
 gem 'newrelic_rpm'
+
+# tinysou
+gem 'tinysou'
