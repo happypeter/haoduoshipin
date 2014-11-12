@@ -9,15 +9,6 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :notifications
 
-  #validate the below two with client-side code
-  #
-  #  validates_confirmation_of :password
-  #  validates_presence_of :password, :on => :create
-  #
-  #this has two advatages:
-  #  1. fast
-  #  2. when login with github, there is no password
-
   validates_presence_of :name
   validates_uniqueness_of :name, :case_sensitive => false
 

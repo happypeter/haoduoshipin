@@ -18,21 +18,18 @@
             在个人页面显示邮件？ <%= f.check_box(:show_email) %>
             订阅 happycasts 邮件？ <%= f.check_box(:email_subscription) %>
           </dt>
-          <dd> <%= f.text_field :email %> </dd>
+          <dt><%= f.label :email, "邮箱" %></dt>
+          <dd><%= f.text_field :email %></dd>
           <% if @user.errors[:email].any? %>
             <dd class="error"><%= @user.errors[:email][0] %></dd>
           <% end %>
         </dl>
         <dl class="form">
-          <dt> <%= f.label :password, "密码" %> </dt>
-          <dd> <%= f.password_field :password %> </dd>
+          <dt><%= f.label :password, "密码" %></dt>
+          <dd><%= f.password_field :password %></dd>
           <% if @user.errors[:password].any? %>
             <dd class="error"><%= @user.errors[:password][0] %></dd>
           <% end %>
-        </dl>
-        <dl class="form">
-          <dt> <%= f.label :password_confirmation, "请再输入一次" %> </dt>
-          <dd> <%= f.password_field :password_confirmation %> </dd>
         </dl>
         <p><%= f.submit "提交", :class => "profile-edit-button btn btn-primary" %></p>
     <% end %>
