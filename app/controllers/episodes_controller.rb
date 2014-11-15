@@ -36,9 +36,10 @@ class EpisodesController < ApplicationController
   def tags
     @tags = Tag.all.sort_by{ |t| t.name.downcase }
   end
+
   def tag
     if Tag.find_by_name(params[:tag])
-      @episodes = Tag.find_by_name(params[:tag]).episodes
+      @episodes = Tag.find_by(name: params[:tag]).episodes.sort_by{ |e| e.published_at }.reverse
     end
   end
 
