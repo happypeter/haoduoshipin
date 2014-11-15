@@ -3,6 +3,7 @@ namespace :tinysou do
   desc "export data from the episodes table to tinysou"
   task :episodes => :environment do
     client = Tinysou::Client.new ENV["TOKEN"]
+    client.destroy_engine "happycasts"
     if client.engines.empty?
       client.create_engine name: "happycasts", display_name: "happycasts.net"
       client.create_collection "happycasts", name: "episodes", field_types: {
