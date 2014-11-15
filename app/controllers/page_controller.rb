@@ -15,7 +15,7 @@ class PageController < ApplicationController
       results = client.search "happycasts", {
         q: params[:q], c: "episodes",
         sort: {
-          field: "created_at",
+          field: "published_at",
           order: "desc",
           mode: "avg"
         }

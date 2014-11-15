@@ -12,6 +12,8 @@ default: &default
   resque:
     user: 'you'
     secret: 'secret'
+  tinysou:
+    token: 'your auth token'
 
 production:
   <<: *default
