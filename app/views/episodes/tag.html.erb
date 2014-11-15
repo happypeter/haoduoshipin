@@ -8,8 +8,12 @@
 <% if @episodes.blank? %>
   No episodes found.
 <% else %>
-  <% @episodes.each do |e| %>
-    <%= render partial: "ep_card", locals: { episode: e }%>
+  <% @episodes.each_slice(3).to_a.each do |g| %>
+  <div class="ep-row clearfix">
+    <% g.each do |e| %>
+      <%= render partial: "ep_card", locals: { episode: e } %>
+    <% end %>
+  </div>
   <% end %>
 <% end %>
 </div>
