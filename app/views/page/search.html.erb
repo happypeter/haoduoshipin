@@ -7,19 +7,23 @@
 <% if @episodes.blank? %>
   No episodes found.
 <% else %>
-  <% @episodes.each do |e| %>
-    <%= link_to "/episodes/#{e[:document][:eid]}" do %>
-    <div class="ep_card">
-      <div class="screenshot">
-        <%= image_tag("http://media.happycasts.net/assets/episodes/stills/#{e[:document][:asset_name]}.png") %>
-      </div>
-      <h2 class="name"><%= e[:document][:name] %></h2>
-      <div class="metadata">
-        第<%= e[:document][:eid] %>期
-        <span class="date"> | <%= I18n.l(e[:document][:published_at].to_date, :format => :long).chop %> </span>
-      </div>
-    </div>
+  <% @episodes.each_slice(3).to_a.each do |g| %>
+  <div class="ep-row clearfix">
+    <% g.each do |e| %>
+      <%= link_to "/episodes/#{e[:document][:eid]}" do %>
+        <div class="ep_card">
+          <div class="screenshot">
+            <%= image_tag("http://media.happycasts.net/assets/episodes/stills/#{e[:document][:asset_name]}.png") %>
+          </div>
+          <h2 class="name"><%= e[:document][:name] %></h2>
+          <div class="metadata">
+            第<%= e[:document][:eid] %>期
+            <span class="date"> | <%= I18n.l(e[:document][:published_at].to_date, :format => :long).chop %> </span>
+          </div>
+        </div>
+      <% end %>
     <% end %>
+  </div>
   <% end %>
 <% end %>
 </div>
