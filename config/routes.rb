@@ -5,6 +5,7 @@ Happycasts::Application.routes.draw do
   resources :password_resets
   resources :notifications
 
+  get "/testimonials" => "page#testimonials"
   get "/search" => "page#search"
   get "/stats" => "page#stats"
   get "/donate" => "page#donate"

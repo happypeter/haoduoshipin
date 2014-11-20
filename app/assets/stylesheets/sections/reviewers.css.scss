@@ -1,0 +1,32 @@
+.reviewers {
+  .name-card {
+    margin-bottom: 3em;
+    background: #FFF;
+    padding: 2em;
+    border-right: 30px solid #FFF;
+    min-height: 147px;
+    width: 320px;
+    img {
+      width: 60px;
+      display: table-cell;
+      float: left;
+      border-radius: 50%;
+    }
+    .text {
+      display: table-cell;
+      font-size: 11px;
+      .name {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .job-title {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .center {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+

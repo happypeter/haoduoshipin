@@ -24,4 +24,7 @@ class PageController < ApplicationController
       @params = params[:q]
     end
   end
+
+  def testimonials
+  end
 end
