@@ -11,13 +11,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(params[:comment])
     @comment.save
     respond_to do |format|
-      format.html do
-        if @comment.errors.present?
-          render :new
-        else
-          redirect_to_target_or_default :root
-        end
-      end
+      format.js
     end
   end
 

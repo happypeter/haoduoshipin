@@ -39,6 +39,9 @@
     }
     input.btn-submit {
       width: 100%;
+      &:focus {
+        outline: none;
+      }
     }
   .body {
     padding: 15px;
