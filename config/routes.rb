@@ -6,6 +6,7 @@ Happycasts::Application.routes.draw do
   resources :notifications
 
   get "/testimonials" => "page#testimonials"
+  get "comments" => "comments#index"
   get "/search" => "page#search"
   get "/stats" => "page#stats"
   get "/donate" => "page#donate"

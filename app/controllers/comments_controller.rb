@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.recent.page(params[:page]).per_page(10)
+    @comments = Comment.recent.page(params[:page]).per_page(30)
   end
 
   def new
