@@ -30,4 +30,14 @@ $(function() {
       block.find("b").text(result.episode_hearts);
     });
   });
+
+  $(".profile-stats .label").click(function() {
+    var title = $(this).data("title");
+    $(".profile-" + title).css("display", "block");
+    if(title == "episodes") {
+      $(".profile-comments").css("display", "none");
+    }else{
+      $(".profile-episodes").css("display", "none");
+    }
+  });
 });
