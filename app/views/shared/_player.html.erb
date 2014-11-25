@@ -18,12 +18,12 @@
     <div class="ep-info">
       <div class="container">
         <% if current_user.blank? || episode.hearts.include?(current_user) %>
-          <%= link_to "javascript:;", class: "ep-hearts" do %>
+          <%= link_to "javascript:;", class: "ep-hearts btn btn-primary" do %>
             <i class="fa fa-heart-o"></i>
             <b><%= episode.hearts.count %></b> 人赞
           <% end %>
         <% else %>
-          <%= link_to "javascript:;", class: "ep-hearts heart-btn", :data => { url: add_episode_heart_path } do %>
+          <%= link_to "javascript:;", class: "ep-hearts heart-btn btn btn-primary", :data => { url: add_episode_heart_path } do %>
             <i class="fa fa-heart-o"></i>
             <b><%= episode.hearts.count %></b> 人赞
           <% end %>

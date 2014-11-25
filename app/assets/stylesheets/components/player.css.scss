@@ -34,14 +34,8 @@
   .ep-hearts {
     float: right;
     margin-top: 20px;
-    color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 0 8px;
-    border-radius: 3px;
-    &:hover {
-      color: #FFF;
-      border: 1px solid #FFF;
-    }
+    padding: 2px 10px;
+    border-radius: 4px;
   }
   .name {
     font-size: 30px;
