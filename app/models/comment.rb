@@ -3,7 +3,6 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   has_many :notifications, :dependent => :destroy
 
-
   scope :recent, -> { order(created_at: :desc) }
   after_create :send_notifications
   attr_accessible :content, :episode_id, :user_id

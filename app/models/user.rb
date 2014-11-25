@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   before_validation :strip_blanks
 
   before_create { generate_token(:token) }
-  has_many :comments
+  has_many :comments, :dependent => :destroy
   has_many :notifications
 
   validates_presence_of :name
