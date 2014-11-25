@@ -78,4 +78,11 @@ class EpisodesController < ApplicationController
       render :edit
     end
   end
+
+  def add_heart
+    @episode = Episode.find(params[:id])
+    @episode.hearts << current_user unless @episode.hearts.include? current_user
+
+    render json: { episode_hearts: @episode.hearts.count }
+  end
 end

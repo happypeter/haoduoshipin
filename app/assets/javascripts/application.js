@@ -15,9 +15,19 @@ $(function() {
       commenter_exist.push($(this).text());
     }
   });
+
   $('textarea').atwho({ at: "@", 'data': commenter });
   $(".search-btn").click(function() {
     $(".search-form").slideToggle();
     $(".search-form input").focus();
+  });
+
+  $(".heart-btn").click(function() {
+    var block = $(this);
+    var url = $(this).data("url");
+
+    $.post(url, function(result) {
+      block.find("b").text(result.episode_hearts);
+    });
   });
 });

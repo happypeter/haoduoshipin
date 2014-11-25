@@ -5,8 +5,11 @@ class Episode < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :taggings, :dependent => :destroy
   has_many :tags, :through => :taggings
-  validates_presence_of :name, :tag_names
 
+  has_many :heartings, :foreign_key => "hearted_episode_id", :dependent => :destroy
+  has_many :hearts, :through => :heartings
+
+  validates_presence_of :name, :tag_names
   scope :recent, -> { order(id: :desc) }
 
   after_create :set_seconds_and_ratio

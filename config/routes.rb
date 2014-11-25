@@ -24,6 +24,7 @@ Happycasts::Application.routes.draw do
   post "user_login" => "users#login"
   get "logout" => "users#logout", :as => "logout"
   get "/:username" => "users#show", :as => "profile"
+  post "/add_episode_heart/:id" => "episodes#add_heart", :as => "add_episode_heart"
 
   if Rails.env.development?
     mount MailPreview => 'mail_view'

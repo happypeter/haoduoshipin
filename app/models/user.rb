@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :notifications
 
+  has_many :heartings, :foreign_key => "heart_id", :dependent => :destroy
+  has_many :hearted_episodes, :through => :heartings
+
   validates_presence_of :name
   validates_uniqueness_of :name, :case_sensitive => false
 

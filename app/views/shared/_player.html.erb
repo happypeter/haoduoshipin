@@ -17,6 +17,17 @@
 
     <div class="ep-info">
       <div class="container">
+        <% if current_user.blank? || episode.hearts.include?(current_user) %>
+          <%= link_to "javascript:;", class: "ep-hearts" do %>
+            <i class="fa fa-heart-o"></i>
+            <b><%= episode.hearts.count %></b> 人赞
+          <% end %>
+        <% else %>
+          <%= link_to "javascript:;", class: "ep-hearts heart-btn", :data => { url: add_episode_heart_path } do %>
+            <i class="fa fa-heart-o"></i>
+            <b><%= episode.hearts.count %></b> 人赞
+          <% end %>
+        <% end %>
         <h1 class="name">
           <%= episode.name %>
           <span class="date"><%= render_episode_publish_time(episode) %></span>

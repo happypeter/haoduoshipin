@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027064125) do
+ActiveRecord::Schema.define(version: 20141125055231) do
 
   create_table "comments", force: true do |t|
     t.integer  "episode_id"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20141027064125) do
     t.float    "ratio",          limit: 24
     t.integer  "revision"
     t.boolean  "published",                 default: false
+  end
+
+  create_table "heartings", force: true do |t|
+    t.integer  "hearted_episode_id"
+    t.integer  "heart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "notifications", force: true do |t|
