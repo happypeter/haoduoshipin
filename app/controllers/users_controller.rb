@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :check_admin, :only => [:newmail, :new_ep_release_mail, :sendmail]
+   before_action :check_admin, :only => [:newmail, :new_ep_release_mail, :sendmail]
 
   def new
   end

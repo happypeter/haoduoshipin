@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :avatar_url
 
-  before_filter :init
+   before_action :init
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
