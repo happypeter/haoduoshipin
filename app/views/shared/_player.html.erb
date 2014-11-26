@@ -17,15 +17,20 @@
 
     <div class="ep-info">
       <div class="container">
-        <% if current_user.blank? || episode.hearts.include?(current_user) %>
-          <%= link_to "javascript:;", class: "ep-hearts btn btn-primary" do %>
-            <i class="fa fa-heart-o"></i>
-            <b><%= episode.hearts.count %></b> 人赞
+        <% if current_user.blank? %>
+          <%= link_to "javascript:;", class: "tooltip ep-hearts", title: "喜欢且收藏" do %>
+            <i class="fa fa-star"></i>
+            <b><%= episode.hearts.count %></b>
+          <% end %>
+        <% elsif episode.hearts.include?(current_user) %>
+          <%= link_to "javascript:;", class: "tooltip ep-hearts", title: "喜欢且收藏" do %>
+            <i class="fa fa-star yellow"></i>
+            <b><%= episode.hearts.count %></b>
           <% end %>
         <% else %>
-          <%= link_to "javascript:;", class: "ep-hearts heart-btn btn btn-primary", :data => { url: add_episode_heart_path } do %>
-            <i class="fa fa-heart-o"></i>
-            <b><%= episode.hearts.count %></b> 人赞
+          <%= link_to "javascript:;", class: "tooltip ep-hearts heart-btn", title: "喜欢且收藏", :data => { url: add_episode_heart_path } do %>
+            <i class="fa fa-star"></i>
+            <b><%= episode.hearts.count %></b>
           <% end %>
         <% end %>
         <h1 class="name">

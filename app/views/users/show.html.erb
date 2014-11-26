@@ -23,7 +23,7 @@
       <% if current_user && current_user == @user %>
         <%= link_to "编辑", account_path, class: "btn btn-primary" %>
         <%= link_to "我的评论", "javascript:;", class: "btn btn-primary label", :data => { title: "comments" } %>
-        <%= link_to "喜欢的视频", "javascript:;", class: "btn btn-primary label", :data => { title: "episodes" } %>
+        <%= link_to "Your stars", "javascript:;", class: "btn btn-primary label", :data => { title: "episodes" } %>
       <% end %>
       <% if current_user && current_user.admin? && current_user == @user %>
         <%= link_to "创建视频", new_episode_path, class: "btn btn-primary" %>

@@ -3,6 +3,7 @@
 //= require social-share-button
 //= require vendor/jquery.timeago
 //= require vendor/jquery.timeago.zh-CN
+//= require jquery.tooltipster.min.js
 //= require jquery.atwho
 //= require_self
 
@@ -28,6 +29,7 @@ $(function() {
 
     $.post(url, function(result) {
       block.find("b").text(result.episode_hearts);
+      block.find("i").addClass("yellow");
     });
   });
 
@@ -40,4 +42,6 @@ $(function() {
       $(".profile-episodes").css("display", "none");
     }
   });
+
+  $('.tooltip').tooltipster();
 });

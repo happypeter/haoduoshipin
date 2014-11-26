@@ -9,6 +9,7 @@ gem 'sass-rails', '~> 5.0.0.beta1'
 gem 'font-awesome-rails', '4.2.0.0'
 gem "jquery-rails"
 gem 'jquery-atwho-rails'
+gem 'tooltipster-rails'
 
 gem 'will_paginate', '> 3.0'
 gem 'mysql2', "~> 0.3.10"

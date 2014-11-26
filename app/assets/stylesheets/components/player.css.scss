@@ -32,8 +32,19 @@
 
 .ep-info {
   .ep-hearts {
+    color: #FFF;
     float: right;
     margin-top: 20px;
+    .fa-star {
+      font-size: 17px;
+    }
+    .yellow {
+      color: #FF0;
+    }
+    b {
+      font-size: 15px;
+      padding-left: 3px;
+    }
   }
   .name {
     font-size: 30px;
