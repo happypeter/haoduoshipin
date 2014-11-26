@@ -5,6 +5,9 @@
         <% title = episode.id.to_s + '期 ' + episode.name + ' ' + episode.description %>
         <% image_url = "http://media.happycasts.net/assets/episodes/stills/#{episode.asset_name}.png" %>
         <% allowed_sites = ["weibo"] %>
+        <% if current_user && current_user.admin? %>
+        <li><%= link_to "视频通知邮件", "/new_ep_release_mail/#{episode.id}", :method => :post %></li>
+        <% end %>
         <li><%= social_share_button_tag title, { :image => image_url }, allowed_sites %></li>
         <li><%= link_to "下载", video_url(episode), :class => "download" %></li>
       </ul>

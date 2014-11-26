@@ -28,8 +28,16 @@ Happycasts::Application.configure do
   config.assets.debug = true
 
   # mailer local test
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.default_url_options = { :host => "hc.dev:3000" }
 
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => Settings.mailgun.domain,
+    :user_name => Settings.mailgun.username,
+    :password => Settings.mailgun.password
+  }
 end
 
