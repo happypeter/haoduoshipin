@@ -59,5 +59,13 @@ Happycasts::Application.configure do
   config.assets.precompile += %w(episodes.js signup.js)
   # Generate digests for assets URLs
   config.assets.digest = true
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => Settings.mailgun.domain,
+    :user_name => Settings.mailgun.username,
+    :password => Settings.mailgun.password
+  }
 end
