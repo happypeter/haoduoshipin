@@ -2,11 +2,11 @@
 <html>
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "HappyCasts" %></title>
+  <%= auto_discovery_link_tag(:rss, episodes_url(format: "rss")) %>
   <link href="/favicon.png" rel="icon" type="image/x-png" />
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tag %>
   <script src="http://vjs.zencdn.net/4.8/video.js"></script>
-
 </head>
 <body class="<%= params[:controller] + '-' + controller.action_name %>">
 <%= render 'shared/header' %>

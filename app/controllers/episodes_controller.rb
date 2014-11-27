@@ -3,29 +3,10 @@ class EpisodesController < ApplicationController
 
   def index
     @tag = Tag.find(params[:tag_id]) if params[:tag_id]
-    if params[:search].blank?
-      @episodes = (@tag ? @tag.episodes : Episode).recent.page(params[:page]).per_page(20)
-    else
-      @episodes = Episode.search(
-        query: {
-          multi_match: {
-            query: params[:search].to_s,
-            fields: ["name", "description"]
-          }
-        },
-        filter: {
-          missing: {
-            field: "revision"
-          }
-        }
-      ).records
-      @count = @episodes.size
-      @paged_episodes = @episodes.page(params[:page]).per_page(20)
-    end
+    @episodes = (@tag ? @tag.episodes : Episode).recent.page(params[:page]).per_page(20)
     respond_to do |format|
-      format.html
+      format.html { redirect_to root_path }
       format.rss
-      format.json {render :json => @episodes}
     end
   end
 
