@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user, :avatar_url
+  helper_method :current_user, :avatar_url, :search_options
 
    before_action :init
 
@@ -47,5 +47,9 @@ class ApplicationController < ActionController::Base
     else
       user.profile_url
     end
+  end
+
+  def search_options
+    Episode.all.map(&:name).sort.uniq
   end
 end

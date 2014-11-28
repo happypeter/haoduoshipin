@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'sass-rails', '~> 5.0.0.beta1'
 gem 'font-awesome-rails', '4.2.0.0'
 gem "jquery-rails"
+gem 'jquery-ui-rails'
 gem 'jquery-atwho-rails'
 gem 'tooltipster-rails'
 
