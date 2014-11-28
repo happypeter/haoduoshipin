@@ -46,6 +46,8 @@ $(function() {
 
   $(".profile-stats .label").click(function() {
     var title = $(this).data("title");
+    $(".profile-stats .label").removeClass("active");
+    $(this).addClass("active");
     $(".profile-" + title).css("display", "block");
     if(title == "episodes") {
       $(".profile-comments").css("display", "none");
