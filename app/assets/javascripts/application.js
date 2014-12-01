@@ -65,6 +65,6 @@ $(function() {
     $(this).val("提交中...");
     $('.new_comment').submit();
     $(this).prop("disabled", true);
-    return false;
+    return false; // prevented from submitting the form twice on IE
   });
 });
