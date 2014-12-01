@@ -12,7 +12,8 @@ namespace :tinysou do
         desc: "text",
         tags: "string",
         published_at: "date",
-        asset_name: "string"
+        asset_name: "string",
+        revision: "integer"
       }
     end
 
@@ -23,7 +24,8 @@ namespace :tinysou do
         desc: e.description,
         tags: e.tag_names,
         published_at: e.created_at,
-        asset_name: e.asset_name
+        asset_name: e.asset_name,
+        revision: e.revision
       }
     end
   end
