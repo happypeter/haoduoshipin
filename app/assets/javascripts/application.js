@@ -9,8 +9,14 @@
 //= require_self
 
 $(function() {
-  var commenter = [];
   var commenter_exist = [];
+  $('.comment .heading a').each(function() {
+    if($.inArray($(this).text(), commenter_exist) < 0) {
+      commenter_exist.push($(this).text());
+    }
+  });
+  $('textarea').atwho({ at: "@", 'data': commenter_exist });
+
   var search_values = [];
   var options = $(".search-options option");
   for ( var i = 0; i < options.length; i++) {
@@ -20,14 +26,6 @@ $(function() {
     source: search_values
   });
   $(".search-options").remove();
-  $('.comment_head a').each(function() {
-    if($.inArray($(this).text(), commenter_exist) < 0) {
-      commenter.push($(this).text());
-      commenter_exist.push($(this).text());
-    }
-  });
-
-  $('textarea').atwho({ at: "@", 'data': commenter });
   $(".search-btn").click(function() {
     $(".search-form").slideToggle();
     $("#ts-search-input").focus();
@@ -37,7 +35,6 @@ $(function() {
   $(".heart-btn").click(function() {
     var block = $(this);
     var url = $(this).data("url");
-
     $.post(url, function(result) {
       block.find("b").text(result.episode_hearts);
       block.find("i").addClass("yellow");
