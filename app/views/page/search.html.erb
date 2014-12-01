@@ -18,7 +18,7 @@
           <h2 class="name">
             <%= e[:document][:name] %>
             <% if e[:document][:revision].present? %>
-              <span class="label">e[:document][:revision]</span>
+              <span class="label"><%= e[:document][:revision] %></span>
             <% end %>
           </h2>
           <div class="metadata">
