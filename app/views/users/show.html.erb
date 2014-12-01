@@ -39,7 +39,7 @@
     <% else %>
       <% @user.comments.reverse.each do |comment| %>
         <div class="comment-wraper">
-          <%= render comment %>
+          <%= render "comments/comment", comment: comment %>
           <div class="comment-ep-number">
             <%= link_to comment.episode_id, episode_path(comment.episode_id) %>
           </div>
