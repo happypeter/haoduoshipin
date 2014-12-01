@@ -1,3 +1,4 @@
+@import "variables";
 .ep-row {
   margin-left: -15px;
   margin-right: -15px;
@@ -23,6 +24,13 @@
   .name {
     font-size: 18px;
     margin: 20px 10px;
+    .label {
+      color: #FFF;
+      background: $yellow;
+      border: 1px solid $yellow-border;
+      padding: 3px 6px;
+      font-size: 12px;
+    }
   }
   .screenshot img {
     border: solid 5px #ddd;
