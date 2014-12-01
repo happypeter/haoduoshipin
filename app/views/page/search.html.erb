@@ -15,7 +15,12 @@
           <div class="screenshot">
             <%= image_tag("http://media.happycasts.net/assets/episodes/stills/#{e[:document][:asset_name]}.png") %>
           </div>
-          <h2 class="name"><%= e[:document][:name] %></h2>
+          <h2 class="name">
+            <%= e[:document][:name] %>
+            <% if e[:document][:revision].present? %>
+              <span class="label">e[:document][:revision]</span>
+            <% end %>
+          </h2>
           <div class="metadata">
             第<%= e[:document][:eid] %>期
             <span class="date"> | <%= I18n.l(e[:document][:published_at].to_date, :format => :long).chop %> </span>

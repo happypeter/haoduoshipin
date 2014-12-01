@@ -6,7 +6,7 @@
   <h2 class="name">
     <%= episode.name %>
     <% if episode.revision.present? %>
-      <span class="label">过期</span>
+      <span class="label"><%= episode.revision %></span>
     <% end %>
   </h2>
   <div class="metadata">

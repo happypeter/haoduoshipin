@@ -40,7 +40,7 @@
           <%= episode.name %>
           <span class="date"><%= render_episode_publish_time(episode) %></span>
           <% if episode.revision.present? %>
-            <%= link_to "过期，改进版第#{episode.revision}期", episode_path(episode.revision) %>
+            <%= link_to "改进版第#{episode.revision}期", episode_path(episode.revision) %>
           <% end %>
         </h1>
         <p><%= episode.description %></p>
