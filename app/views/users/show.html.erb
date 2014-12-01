@@ -37,7 +37,14 @@
     <% if @user.comments.blank? %>
       "暂无评论"
     <% else %>
-      <%= render @user.comments.reverse %>
+      <% @user.comments.reverse.each do |comment| %>
+        <div class="comment-wraper">
+          <%= render comment %>
+          <div class="comment-ep-number">
+            <%= link_to comment.episode_id, episode_path(comment.episode_id) %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
