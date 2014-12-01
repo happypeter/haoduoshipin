@@ -9,6 +9,7 @@
 //= require_self
 
 $(function() {
+  // @commenter
   var commenter_exist = [];
   $('.comment .heading a').each(function() {
     if($.inArray($(this).text(), commenter_exist) < 0) {
@@ -17,6 +18,7 @@ $(function() {
   });
   $('textarea').atwho({ at: "@", 'data': commenter_exist });
 
+  // autocomplete episodes titles
   var search_values = [];
   var options = $(".search-options option");
   for ( var i = 0; i < options.length; i++) {
@@ -32,6 +34,7 @@ $(function() {
     $("#ts-search-input").val('');
   });
 
+  // star episodes
   $(".heart-btn").click(function() {
     var block = $(this);
     var url = $(this).data("url");
@@ -41,6 +44,7 @@ $(function() {
     });
   });
 
+  // switch between comments and stared episodes
   $(".profile-stats .label").click(function() {
     var title = $(this).data("title");
     $(".profile-stats .label").removeClass("active");
@@ -53,5 +57,13 @@ $(function() {
     }
   });
 
+  // tooltip
   $('.tooltip').tooltipster();
+
+  // disable the comment submit button
+  $('.new_comment .btn-submit').click(function() {
+    $(this).val("提交中...");
+    $('.new_comment').submit();
+    $(this).prop("disabled", true);
+  });
 });
