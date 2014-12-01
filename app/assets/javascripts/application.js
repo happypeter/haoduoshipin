@@ -65,5 +65,6 @@ $(function() {
     $(this).val("提交中...");
     $('.new_comment').submit();
     $(this).prop("disabled", true);
+    return false;
   });
 });
