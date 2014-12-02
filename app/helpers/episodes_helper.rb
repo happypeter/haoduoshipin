@@ -9,7 +9,6 @@ module EpisodesHelper
     html << "<div class='social-share-button' data-title='#{h title}' data-img='#{opts[:image]}' data-url='#{opts[:url]}'>"
 
     allowed_sites.each do |name|
-
       link_title = t "social_share_button.share_to", :name => t("social_share_button.#{name.downcase}")
       html << link_to(h(link_title), "#", {:rel => ["nofollow", rel],
         "data-site" => name,
