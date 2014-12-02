@@ -16,7 +16,7 @@ class Episode < ActiveRecord::Base
   attr_accessible :name, :notes, :published_at, :revision, :published, :description, :ratio, :seconds, :tag_names
 
   def get_video_duration
-    result = `avconv -i http://media.happycasts.net/assets/episodes/videos/#{asset_name}.mov 2>&1`
+    result = `avconv -i http://media.happycasts.net/assets/episodes/videos/#{asset_name}.mp4 2>&1`
     if result =~ /Duration: ([\d][\d]:[\d][\d]:[\d][\d].[\d]+)/
       return $1.to_s
     end
