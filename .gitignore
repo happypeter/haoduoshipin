@@ -15,4 +15,3 @@ tmp/
 *.sublime-workspace
 *.sublime-project
 config/newrelic.yml
-config/secrets.yml
