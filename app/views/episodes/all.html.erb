@@ -1,0 +1,21 @@
+<div class="heading">
+  <div class="container">
+    视频列表
+  </div>
+</div>
+<div class="body container clearfix">
+<% if @episodes.blank? %>
+  No episodes found.
+<% else %>
+  <ul class="list-group tags">
+    <% @episodes.each do |e| %>
+    <li class="list-group-item clearfix">
+      <%= link_to "##{e.id} " + e.name, episode_path(e.id) %>
+      <span class="badge">
+        <%= render_episode_publish_time(e).chop %>
+      </span>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
