@@ -36,9 +36,9 @@
     }
   }
   form {
-    display: inline-block;
-    margin-left: 50px;
     display: none;
+    position: absolute;
+    right: 700px;
   }
   #eid {
     width: 150px;
@@ -58,7 +58,7 @@
     display: inline-block;
     position: absolute;
     top: 40px;
-    left: 650px;
+    right: 650px;
   }
   .mail-btn {
     font-size: 1.2em;
