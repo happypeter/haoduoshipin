@@ -27,6 +27,14 @@
       <% end %>
       <% if current_user && current_user.admin? && current_user == @user %>
         <%= link_to "创建视频", new_episode_path, class: "btn btn-primary" %>
+        <div class="mail-btn-wrapper">
+          <button class="mail-btn">
+            <i class="fa fa-envelope-o"></i>
+          </button>
+        </div>
+        <%= form_tag("/new_ep_release_mail", class: "eid-form") do %>
+          <%= text_field_tag :eid, "", placeholder: "视频序号", autocomplete: "off" %>
+        <% end %>
       <% end %>
     </h2>
   </div>

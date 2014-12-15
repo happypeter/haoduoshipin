@@ -25,6 +25,7 @@
   text-align: right;
 }
 .profile-stats {
+  position: relative;
   background: #333;
   padding: 20px;
   border-bottom: 1px solid #555;
@@ -32,6 +33,37 @@
   h2 {
     a {
       margin-left: 10px;
+    }
+  }
+  form {
+    display: inline-block;
+    margin-left: 50px;
+    display: none;
+  }
+  #eid {
+    width: 150px;
+    margin-left: 10px;
+    background: #555;
+    color: #8C8C8C;
+    border: 1px solid #8C8C8C;
+    padding: 6px 12px;
+    line-height: 1.428571429;
+    font-size: 14px;
+    &:focus {
+      background: #555;
+      outline: none;
+    }
+  }
+  .mail-btn-wrapper {
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    left: 650px;
+  }
+  .mail-btn {
+    font-size: 1.2em;
+    &:focus {
+      outline: none;
     }
   }
   .label {

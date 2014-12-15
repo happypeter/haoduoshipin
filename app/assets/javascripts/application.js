@@ -67,4 +67,16 @@ $(function() {
     $(this).prop("disabled", true);
     return false; // prevented from submitting the form twice on IE
   });
+
+  // send mails
+  $(".mail-btn").click(function() {
+    if($('.eid-form').is(':visible')) {
+      $('.eid-form').css("display", "none");
+      $('#eid').val('');
+    } else {
+      $('.eid-form').css("display", "inline-block");
+      $('#eid').focus();
+    }
+  });
+
 });

@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   end
 
   def new_ep_release_mail
-    @episode = Episode.find(params[:id])
+    @episode = Episode.find(params[:eid])
     User.all.each do |u|
       if u.email_subscription?
-        HappyMailer.new_ep_release(u.id, params[:id]).deliver
+        HappyMailer.new_ep_release(u.id, params[:eid]).deliver
       end
     end
     redirect_to root_url, :notice => "Mail sent!"
