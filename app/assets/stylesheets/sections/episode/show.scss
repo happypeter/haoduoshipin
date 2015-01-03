@@ -4,9 +4,13 @@
   height: 100px;
   padding: 35px;
   background: lighten(teal, 8%);
+  font-size: 18px;
   a {
     line-height: 30px;
     color: white;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .edit-ep-btn {
     margin-left: 10px;
