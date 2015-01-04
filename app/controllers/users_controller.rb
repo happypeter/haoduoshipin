@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
    before_action :check_admin, :only => [:newmail, :new_ep_release_mail, :sendmail]
 
-  def new
+  def login
   end
 
   def signup
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def login  #login with a local account
+  def create_login_session  #login with a local account
     user = User.authenticate(params[:name], params[:password])
     if user
       cookies.permanent[:token] = user.token
