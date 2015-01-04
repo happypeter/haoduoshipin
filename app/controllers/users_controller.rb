@@ -82,16 +82,10 @@ class UsersController < ApplicationController
 
   def show
     session[:return_to] = request.url
-    if params[:username]
-      @user = User.find_by_name(params[:username])
-    end
-
+    @user = User.find_by_name(params[:username]) if params[:username]
     if @user == nil
       redirect_to root_url, :notice => "no such user!"
-    else
-      respond_to do |format|
-        format.html # show.html.erb
-      end
+      return
     end
   end
 end
