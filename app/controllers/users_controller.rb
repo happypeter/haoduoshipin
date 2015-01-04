@@ -71,7 +71,7 @@ class UsersController < ApplicationController
       redirect_to_target_or_default root_url :notice => "logged in"
     else
       flash.notice = "Invalid name or password"
-      redirect_to :action => "new"
+      redirect_to :login
     end
   end
 
