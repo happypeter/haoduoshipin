@@ -1,30 +1,8 @@
-require 'builder'
 module ApplicationHelper
-  def textilize(text)
-    CodeFormatter.new(text).to_html.html_safe unless text.blank?
-  end
-
   class HTMLwithPygments < Redcarpet::Render::HTML
     def block_code(code, language)
       Pygments.highlight(code, lexer: language)
     end
-  end
-
-  def make_mention_links(text)
-    mention_regexp = /@([a-zA-Z0-9_\-\p{Han}]+)/u
-    text = text.gsub(mention_regexp) do
-      if $1.present?
-        user = User.find_by_name($1)
-        if user.present?
-          "<a href='/users/#{user.id}'>@#{$1}</a>"
-        else
-          "@#{$1}"
-        end
-      else
-        "@#{$1}"
-      end
-    end
-    text.html_safe
   end
 
   def markdown(text)
@@ -38,10 +16,6 @@ module ApplicationHelper
       superscript: true
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
-  end
-
-  def render_user_register_time(user)
-    I18n.l(user.created_at.to_date, :format => :long)
   end
 
   def render_episode_publish_time(episode)
