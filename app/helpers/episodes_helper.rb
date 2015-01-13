@@ -1,6 +1,6 @@
 module EpisodesHelper
   def video_url(ep)
-    "http://media.happycasts.net/assets/episodes/videos/#{ep.asset_name}.mp4"
+    "http://happycasts.qiniudn.com/#{ep.asset_name}.mp4"
   end
 
   def social_share_button_tag(title = "", opts = {}, allowed_sites = [])
