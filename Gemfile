@@ -14,7 +14,7 @@ gem 'tooltipster-rails'
 
 gem 'will_paginate', '> 3.0'
 gem 'mysql2', "~> 0.3.10"
-gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'bcrypt'
 gem 'redcarpet'
 gem 'nokogiri', '~> 1.6.0'
 gem 'pygments.rb'
