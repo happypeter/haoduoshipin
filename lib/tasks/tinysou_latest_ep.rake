@@ -2,7 +2,7 @@
 namespace :tinysou do
   desc "export the latest published episode to tinysou"
   task :latest => :environment do
-    client = Tinysou::Client.new ENV["TOKEN"]
+    client = Tinysou::Client.new ENV["TINYSOU_AUTH_TOKEN"]
 
     e = Episode.where(published: true).last
     client.create_document "happycasts", "episodes", {
