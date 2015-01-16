@@ -2,7 +2,7 @@
 namespace :tinysou do
   desc "export data from the episodes table to tinysou"
   task :episodes => :environment do
-    client = Tinysou::Client.new ENV["TOKEN"]
+    client = Tinysou::Client.new ENV["TINYSOU_AUTH_TOKEN"]
     client.destroy_engine "happycasts"
     if client.engines.empty?
       client.create_engine name: "happycasts", display_name: "happycasts.net"
