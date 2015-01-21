@@ -11,18 +11,7 @@ class PageController < ApplicationController
 
   def search
     if params[:q]
-      client = Tinysou::Client.new Settings.tinysou.token
-      results = client.search "happycasts", {
-        c: "episodes",
-        q: '"' + params[:q] + '"',
-        search_fields: ["name", "desc", "tags"],
-        sort: {
-          field: "published_at",
-          order: "desc",
-          mode: "avg"
-        }
-      }
-      @episodes = results[:records]
+      @episodes = nil
       @params = params[:q]
     end
   end
