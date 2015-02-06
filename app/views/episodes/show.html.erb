@@ -11,6 +11,6 @@
   <% if current_user %>
     <%= render partial: "comments/form", locals: {episode: @episode} %>
   <% else %>
-      <%= link_to "登录", login_path(:return_to => request.url) %>
+    <%= link_to "登录", login_path(:return_to => request.url) %>
   <% end %>
 </div>

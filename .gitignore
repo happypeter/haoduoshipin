@@ -14,4 +14,4 @@ tmp/
 .sass-cache/
 *.sublime-workspace
 *.sublime-project
-config/newrelic.yml
+
