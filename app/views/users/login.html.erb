@@ -15,7 +15,7 @@
   </h3>
 
   <div class="login-form">
-    <%= form_tag "/user_login" do %>
+    <%= form_tag create_login_session_path do %>
       <dl class="form">
         <dt>用户名</dt>
         <dd><%= text_field_tag :name, params[:name] %></dd>
