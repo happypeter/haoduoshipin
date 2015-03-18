@@ -18,4 +18,7 @@ class PageController < ApplicationController
 
   def testimonials
   end
+
+  def courses
+  end
 end

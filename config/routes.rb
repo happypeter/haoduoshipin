@@ -5,6 +5,7 @@ Happycasts::Application.routes.draw do
   resources :password_resets
   resources :notifications
 
+  get "/courses" => "page#courses"
   get "/books" => "page#books"
   get "/testimonials" => "page#testimonials"
   get "comments" => "comments#index"
