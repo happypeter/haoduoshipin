@@ -10,13 +10,13 @@
 }
 
 .ep-meta {
-  ul li {
-    display: inline-block;
-    margin-left: 20px;
-  }
   ul {
     float: right;
     margin-bottom: 26px;
+    li {
+      float: left;
+      margin-left: 20px;
+    }
     a {
       display: inline-block;
       padding: 8px 16px;
