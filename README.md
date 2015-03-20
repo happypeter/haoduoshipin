@@ -1,4 +1,9 @@
 
+
+### 改名了，改名了！
+
+原来叫 happycasts.net 太咬嘴了，现在叫 <http://haoduoshipin.com> 了。
+
 ### ruby
 
     rbenv install 2.1.3
