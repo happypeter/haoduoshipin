@@ -2,10 +2,11 @@
   background-color: #008080 !important;
   .banner-inner {
     padding: 70px 30px;
-    min-height: 400px;
+    min-height: 300px;
     .banner-text {
       width: 370px;
-      float: right;
+      margin: 0 auto;
+      text-align: center;
       color: white;
       h1 {
         font-weight: normal;
