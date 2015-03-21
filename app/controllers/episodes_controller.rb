@@ -20,7 +20,8 @@ class EpisodesController < ApplicationController
 
   def tag
     if Tag.find_by_name(params[:tag])
-      @episodes = Tag.find_by(name: params[:tag]).episodes.sort_by{ |e| e.published_at }.reverse
+      @episodes = Tag.find_by(name: params[:tag]).episodes
+                  .where(revision: nil).sort_by{ |e| e.published_at }.reverse
     end
   end
 
