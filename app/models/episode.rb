@@ -12,16 +12,8 @@ class Episode < ActiveRecord::Base
   validates_presence_of :name, :tag_names
   scope :recent, -> { order(id: :desc) }
 
-  after_create :set_seconds_and_ratio
+  after_create :set_ratio
   attr_accessible :name, :notes, :published_at, :revision, :published, :description, :ratio, :seconds, :tag_names
-
-  def get_video_duration
-    result = `avconv -i http://happycasts.qiniudn.com/#{asset_name}.mp4 2>&1`
-    if result =~ /Duration: ([\d][\d]:[\d][\d]:[\d][\d].[\d]+)/
-      return $1.to_s
-    end
-    return "avconv error"
-  end
 
   def should_be_published?
     if self.published_at < Time.now
@@ -57,11 +49,9 @@ class Episode < ActiveRecord::Base
 
   private
 
-  def set_seconds_and_ratio
-    du = get_video_duration
-    a = du.split(':')
-    self.seconds = a[0].to_i*3600 + a[1].to_i*60 + a[2].to_i
+  def set_ratio
     # self.ratio = 16.0/9.0 # for imac
+    # 以前是视频长宽比是最早 4:3 后来 16：9，现在时 16：10 了，未来如果变了，直接改这里就行
     self.ratio = 1.6 # for macbook pro
     self.save
   end
