@@ -1,17 +1,8 @@
 @import "variables";
-.slogan {
+.cat-title {
   text-align: center;
   font-size: 30px;
   font-weight: normal;
   color: darken($yellow, 40%);
   margin-bottom: 0;
-  position: relative;
-  .puppy {
-    display: inline;
-    width: 40px;
-    position: absolute;
-  }
-  span {
-    padding-left: 65px;
-  }
 }
