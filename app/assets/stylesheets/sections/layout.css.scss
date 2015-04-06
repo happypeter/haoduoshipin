@@ -79,13 +79,24 @@
       margin-bottom: 0.7em;
     }
   }
-  .container {
-    position: relative;
-    img {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 100px;
+  ul.social {
+    float: right;
+    li {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      margin-left: 15px;
+      text-align: center;
+      background-color: #d0d6d9;
+      &:hover {
+        background-color: #99a1a6;
+      }
+    }
+    i {
+      line-height: 40px;
+      color: #fff;
     }
   }
 }
