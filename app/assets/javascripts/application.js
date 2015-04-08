@@ -6,6 +6,7 @@
 //= require jquery.tooltipster.min.js
 //= require jquery.atwho
 //= require jquery-ui/autocomplete
+//= require qrcode
 //= require_self
 
 $(function() {
@@ -77,15 +78,6 @@ $(function() {
       $('.eid-form').css("display", "inline-block");
       $('#eid').focus();
     }
-  });
-
-  $('.weixin').tooltipster({
-    content: $('<div class="js-qrcode"><img src="/assets/weixin.jpg" /></div>')
-  });
-
-  $('.zhifubao').tooltipster({
-    theme: 'tooltipster-shadow',
-    content: $('<div class="js-qrcode"><img src="/assets/alipay.png" /></div>')
   });
 
 });
