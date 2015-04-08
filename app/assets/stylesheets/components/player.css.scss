@@ -2,6 +2,7 @@
 
 // in _player.html.erb
 .player-wrap {
+  min-width: 1100px;
   padding: 40px 0;
   background-color: lighten($gray, 10%);
   .video-js {
