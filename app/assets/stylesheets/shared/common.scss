@@ -20,11 +20,13 @@ html, body {
   margin: 0;
   border: 0;
   height: 100%;
+  min-width: 990px;
 }
 
 .container {
   width: 990px; // 330x3
   margin: 0 auto;
+  overflow: hidden;
 }
 
 a {
