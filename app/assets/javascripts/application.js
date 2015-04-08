@@ -79,4 +79,13 @@ $(function() {
     }
   });
 
+  $('.weixin').tooltipster({
+    content: $('<div class="js-qrcode"><img src="/assets/weixin.jpg" /></div>')
+  });
+
+  $('.zhifubao').tooltipster({
+    theme: 'tooltipster-shadow',
+    content: $('<div class="js-qrcode"><img src="/assets/alipay.png" /></div>')
+  });
+
 });

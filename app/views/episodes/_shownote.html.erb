@@ -7,15 +7,11 @@
     <% if current_user && current_user.admin?%>
       <%= link_to "Edit", edit_episode_path(episode), class: "edit-ep-btn btn btn-primary" %>
     <% end %>
-    <div class="qrcode-wrap">
+    <div class="qrcode-wrap zhifubao">
       <%= link_to "javascript:;", class: "donate" do %>
         <i class="fa fa-coffee"></i>
         请喝杯咖啡
       <% end %>
-      <div class="qrcode-dropdown">
-        <%= image_tag "alipay.png", class: "qrcode" %>
-        <span class="tip">支付宝账号</span>
-      </div>
     </div>
   </div>
 </div>

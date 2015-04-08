@@ -1,7 +1,6 @@
 .qrcode-wrap {
   position: relative;
   float: right;
-  margin-right: 15px;
   &:hover {
     text-decoration: underline;
     cursor: pointer;
@@ -9,6 +8,9 @@
       visibility: visible;
       opacity: 1;
     }
+  }
+  a {
+    display: block;
   }
 }
 .qrcode-dropdown {
@@ -74,4 +76,10 @@
     padding: 5px;
     display: block;
   }
+}
+
+.js-qrcode img {
+  width: 150px;
+  height: 150px;
+  display: block;
 }
