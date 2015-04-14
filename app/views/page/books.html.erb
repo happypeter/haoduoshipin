@@ -6,8 +6,16 @@
 <div class="container books">
   <div class="row clearfix">
     <div class="book">
+      <%= link_to "http://gitbeijing.com/" do %>
+        <%= image_tag "book/github.jpg" %>
+      <% end %>
+      <div class="name">
+        <%= link_to "搬进 Github", "http://gitbeijing.com/" %>
+      </div>
+    </div>
+    <div class="book">
       <%= link_to "http://happypeter.github.io/tealeaf-http/" do %>
-        <%= image_tag "tealeaf-http.jpg" %>
+        <%= image_tag "book/tealeaf-http.jpg" %>
       <% end %>
       <div class="name">
         <%= link_to "HTTP 下午茶", "http://happypeter.github.io/tealeaf-http/" %>
@@ -15,7 +23,7 @@
     </div>
     <div class="book">
       <%= link_to "http://billie66.github.io/TLCL/" do %>
-        <%= image_tag "tlcl.jpg" %>
+        <%= image_tag "book/tlcl.jpg" %>
       <% end %>
       <div class="name">
         <%= link_to "快乐的 Linux 命令行", "http://billie66.github.io/TLCL/" %>
