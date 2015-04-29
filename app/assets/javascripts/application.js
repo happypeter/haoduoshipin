@@ -63,6 +63,10 @@ $(function() {
 
   // disable the comment submit button
   $('.new_comment .btn-submit').click(function() {
+    if($("#comment_content").val().trim().length == 0) {
+      alert("评论不能为空！");
+      return false;
+    }
     $(this).val("提交中...");
     $('.new_comment').submit();
     $(this).prop("disabled", true);
