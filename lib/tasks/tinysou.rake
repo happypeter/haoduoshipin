@@ -18,7 +18,7 @@ namespace :tinysou do
     end
 
     Episode.where(published: true).each do |e|
-      client.create_document "happycasts", "episodes", {
+      client.create_document "haoduoshipin", "episodes", {
         eid: e.id,
         name: e.name,
         desc: e.description,
