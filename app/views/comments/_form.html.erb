@@ -5,8 +5,9 @@
     <% end %>
   </div>
   <div class="body">
-    <%= form_for(Comment.new(:episode_id => episode.id, :user_id => current_user.id), remote: true) do |f| %>
-      <%= f.hidden_field :episode_id %>
+    <%= form_for(Comment.new(:commentable_id => commentable.id, :commentable_type => "#{commentable.class.name}", :user_id => current_user.id), remote: true) do |f| %>
+      <%= f.hidden_field :commentable_id %>
+      <%= f.hidden_field :commentable_type %>
       <%= f.hidden_field :user_id  %>
       <%= f.text_area :content %>
       <%= f.submit '提交', class: 'btn btn-primary btn-submit' %>

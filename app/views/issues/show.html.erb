@@ -1,0 +1,15 @@
+<div class="heading">
+  <div class="container">
+    <a href="/q"><i class="fa fa-arrow-left"></i></a>
+    #<%= @issue.id %> <%= @issue.title %>
+  </div>
+</div>
+
+<div class="issue-show container">
+  <%= render :partial => "issue_content", :locals => {issue: @issue} %>
+  <% @issue.comments.each do |c| %>
+    <%= render :partial => "comments/comment", :locals => {comment: c} %>
+  <% end %>
+  <%= render :partial => "comments/form", :locals => {commentable: @issue} %>
+</div>
+

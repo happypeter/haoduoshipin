@@ -1,1 +1,16 @@
-<%= Pygments.css(style: 'igor') %>
+<%= Pygments.css(:style => "monokai") %>
+
+.highlight pre {
+  color: #c5c8c6;
+}
+
+.highlight {
+  margin-top: 15px;
+  background: #2D3037;
+  padding: 5px 40px;
+  margin-left: -15px;
+  margin-right: -15px;
+  pre {
+    margin-top: 9px;
+  }
+}

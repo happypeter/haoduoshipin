@@ -8,7 +8,7 @@
     <%= render :partial => "comments/comment", :locals => {comment: comment} %>
   <% end %>
   <% if current_user %>
-    <%= render partial: "comments/form", locals: {episode: @episode} %>
+    <%= render partial: "comments/form", locals: {commentable: @episode} %>
   <% else %>
     <%= link_to "登录", login_path(:return_to => request.url) %>
   <% end %>

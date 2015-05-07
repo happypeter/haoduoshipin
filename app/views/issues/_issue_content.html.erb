@@ -1,0 +1,16 @@
+<div class="comment clearfix">
+   <div class="avatar">
+     <%= link_to profile_path(issue.user.name) do %>
+       <img src=<%= issue.user.avatar %> alt="" class="image-circle">
+     <% end %>
+   </div>
+   <div class="body">
+     <div class="heading">
+        <h5 class="name"><%= link_to issue.user.name, profile_path(issue.user.name) %></h5>
+        <span class="datetime">
+          <%= time_ago_in_words issue.created_at %>前
+        </span>
+     </div>
+     <%= markdown issue.content %>
+   </div>
+</div>

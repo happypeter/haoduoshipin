@@ -8,9 +8,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = current_user.comments.build(params[:comment])
+    @comment = Comment.new(params[:comment])
     @comment.save
     respond_to do |format|
+      format.html { redirect_to @comment.commentable }
       format.js
     end
   end

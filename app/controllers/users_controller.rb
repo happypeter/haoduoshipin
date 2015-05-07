@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   def login
   end
 
+  def index
+    @users = User.all
+  end
+
   def signup
     @user = User.new
   end

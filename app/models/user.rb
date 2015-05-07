@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   before_create { generate_token(:token) }
   has_many :comments, :dependent => :destroy
   has_many :notifications
+  has_many :issues
 
   has_many :heartings, :foreign_key => "heart_id", :dependent => :destroy
   has_many :hearted_episodes, :through => :heartings

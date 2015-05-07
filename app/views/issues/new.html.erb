@@ -1,0 +1,17 @@
+
+<div class="single-form-container clearfix">
+  <div class="signup-form">
+    <%= form_for @issue do |f| %>
+        <dl class="form">
+          <dt><%= f.label :title, "标题" %></dt>
+          <dd><%= f.text_field :title %></dd>
+        </dl>
+        <dl class="form">
+          <dt><%= f.label :content, "概要" %></dt>
+          <dd> <%= f.text_area :content %> </dd>
+        </dl>
+        <p><%= f.submit "提交", :class => "episode-edit-button btn btn-primary" %></p>
+    <% end %>
+  </div>
+</div>
+

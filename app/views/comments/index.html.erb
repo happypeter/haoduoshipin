@@ -8,7 +8,12 @@
     <div class="comment-wraper">
       <%= render comment %>
       <div class="comment-ep-number">
-        <%= link_to comment.episode_id, episode_path(comment.episode_id) %>
+        <% if  comment.commentable.class.name == "Episode" %>
+          视频
+        <% else %>
+          讨论
+        <% end %>
+        <%= link_to comment.commentable_id, comment.commentable %>
       </div>
     </div>
   <% end %>

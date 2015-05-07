@@ -1,9 +1,16 @@
 Happycasts::Application.routes.draw do
+
   resources :users
-  resources :episodes
+  resources :episodes, :path => 'v'
   resources :comments
   resources :password_resets
   resources :notifications
+
+
+  # issues
+  resources :issues,  :path => "q"
+  # 有了上面这一行，link_to @issue 或者 link_to @comment.commentable 就可以指向 q/3 这样的链接了
+
 
   get "/courses" => "page#courses"
   get "/books" => "page#books"
@@ -24,7 +31,8 @@ Happycasts::Application.routes.draw do
   get "/login" => "users#login", :as => "login"
   post "create_login_session" => "users#create_login_session"
   get "logout" => "users#logout", :as => "logout"
-  get "/:username" => "users#show", :as => "profile"
+  get "/u/:username" => "users#show", :as => "profile"
+  get "/u" => "users#index"
   post "/add_episode_heart/:id" => "episodes#add_heart", :as => "add_episode_heart"
 
   if Rails.env.development?

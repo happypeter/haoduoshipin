@@ -36,6 +36,11 @@ module Happycasts
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.default_locale = "zh-CN"
 
+    config.generators do |g|
+        g.assets false
+        g.helper false
+        g.test_framework false
+    end
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
@@ -54,6 +59,6 @@ module Happycasts
     config.generators do |g|
       g.assets false
       g.helper false
-    end
   end
+end
 end
