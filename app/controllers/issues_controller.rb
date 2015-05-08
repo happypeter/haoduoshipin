@@ -13,9 +13,13 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(params[:issue])
-    @issue.user_id = current_user.id
+    if current_user
+      @issue.user_id = current_user.id
+    else
+      @issue.user_id = 0 # 允许匿名发帖
+    end
     if @issue.save
-      redirect_to @issue, :notice => "Successfully created question."
+      redirect_to @issue
     else
       render :new
     end
