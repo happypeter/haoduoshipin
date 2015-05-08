@@ -1,9 +1,11 @@
 class IssuesController < ApplicationController
   def index
+    session[:return_to] = request.url
     @issues = Issue.all
   end
 
   def show
+    session[:return_to] = request.url
     @issue = Issue.find(params[:id])
   end
 
@@ -13,11 +15,7 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(params[:issue])
-    if current_user
-      @issue.user_id = current_user.id
-    else
-      @issue.user_id = 0 # 允许匿名发帖
-    end
+    @issue.user_id = current_user.id
     if @issue.save
       redirect_to @issue
     else

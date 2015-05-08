@@ -8,9 +8,15 @@
     <a class="check-cards" href="http://card.happyec.org">先看卡片</a>
      <i class="fa fa-arrow-right"></i>
     后提问
-    <a href="q/new" class="new-q-btn">
-      <i class="fa fa-pencil"></i>
-    </a>
+    <% if current_user %>
+      <a href="q/new" class="new-q-btn">
+        <i class="fa fa-pencil"></i>
+      </a>
+    <% else %>
+      <a href="/login" class="new-q-btn">
+        <i class="fa fa-pencil"></i>
+      </a>
+    <% end %>
   </div>
   <% @issues.each do |i| %>
     <article class="issue clearfix">
