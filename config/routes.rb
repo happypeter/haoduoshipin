@@ -1,7 +1,11 @@
 Happycasts::Application.routes.draw do
 
   resources :users
+
+  # use v/12 as video link, but keep the old one works
   resources :episodes, :path => 'v'
+  get '/episodes/:id', to: redirect('/v/%{id}')
+
   resources :comments
   resources :password_resets
   resources :notifications
