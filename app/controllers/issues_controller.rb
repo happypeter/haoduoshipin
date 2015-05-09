@@ -1,7 +1,7 @@
 class IssuesController < ApplicationController
   def index
     session[:return_to] = request.url
-    @issues = Issue.all
+    @issues = Issue.all.reverse
   end
 
   def show
