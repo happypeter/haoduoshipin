@@ -13,7 +13,7 @@ class Episode < ActiveRecord::Base
   scope :recent, -> { order(id: :desc) }
 
   after_create :set_ratio
-  attr_accessible :name, :notes, :published_at, :revision, :published, :description, :ratio, :seconds, :tag_names
+  attr_accessible :name, :notes, :published_at, :revision, :published, :description, :ratio, :seconds, :tag_names, :baidu
 
   def should_be_published?
     if self.published_at < Time.now

@@ -40,6 +40,7 @@ class EpisodesController < ApplicationController
   end
 
   def create
+    # raise params[:episode]
     @episode = Episode.new(params[:episode])
     if @episode.save
       redirect_to @episode, :notice => "Successfully created episode."
