@@ -1,17 +1,17 @@
 <div class="shownote">
   <div class="container">
-    <%= link_to "http://happycasts.github.io/#{episode.asset_name}.html" do %>
-      <i class="fa fa-external-link-square"></i>
-      文字稿和源码
-    <% end %>
+      文字稿
     <% if current_user && current_user.admin?%>
       <%= link_to "Edit", edit_episode_path(episode), class: "edit-ep-btn btn btn-primary" %>
     <% end %>
     <div class="qrcode-wrap zhifubao">
       <%= link_to "javascript:;", class: "donate" do %>
         <i class="fa fa-coffee"></i>
-        请喝杯咖啡
+        支付宝捐助
       <% end %>
     </div>
+  </div>
+  <div class="text">
+    <%= markdown episode.note %>
   </div>
 </div>

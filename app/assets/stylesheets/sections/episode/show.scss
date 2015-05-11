@@ -1,16 +1,13 @@
 @import "variables";
 
 .shownote {
-  height: 100px;
   padding: 35px;
   background: lighten(teal, 8%);
   font-size: 18px;
+  line-height: 30px;
+  color: white;
   a {
-    line-height: 30px;
-    color: white;
-    &:hover {
-      text-decoration: underline;
-    }
+    color: #fff;
   }
   .edit-ep-btn {
     margin-left: 10px;
@@ -18,6 +15,16 @@
 }
 .comments {
   padding-top: 40px;
+}
+
+.shownote .text {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff;
+  color: #000;
+  box-shadow: 0 3px 7px 0 rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.19);
 }
 
 // big_card.css
@@ -33,7 +40,7 @@
   padding-bottom: 30px;
   text-align: center;
   background: #fff;
-  font-size: 13px;
+  font-size: 14px;
   box-shadow: 0 3px 7px 0 rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.19);
   position: relative;
   top: -60px;

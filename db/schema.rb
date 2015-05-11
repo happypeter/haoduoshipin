@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511022030) do
+ActiveRecord::Schema.define(version: 20150511095948) do
 
   create_table "comments", force: true do |t|
     t.integer  "commentable_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150511022030) do
     t.integer  "revision"
     t.boolean  "published",                 default: false
     t.string   "baidu"
+    t.text     "note"
   end
 
   create_table "heartings", force: true do |t|
