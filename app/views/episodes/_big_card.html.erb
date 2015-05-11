@@ -1,0 +1,17 @@
+<div class="show-header"></div>
+
+<div class="big-card-wrapper">
+  <div class="big-card">
+    <h3 class="title">
+      <%= episode.name %>
+    </h3>
+    <%= image_tag("http://7u2jok.com1.z0.glb.clouddn.com/#{episode.asset_name}.png", :class => "poster") %>
+    <div class="description"><%= episode.description %></div>
+
+    <% if @episode.baidu.blank? %>
+      <%= link_to "播放", "?autoplay=true" , :class => "play-btn" %>
+    <% else %>
+      <%= link_to "到百度云盘下载", "http://pan.baidu.com/s/1c0k11tQ", target: "_blank", class: "play-btn btn" %>
+    <% end %>
+  </div>
+</div>

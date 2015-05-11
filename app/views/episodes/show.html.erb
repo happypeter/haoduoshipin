@@ -1,5 +1,11 @@
 <% title @episode.name, false %>
-<%= render "shared/player", :episode => @episode %>
+
+<% if @episode.baidu.blank? && params[:autoplay] == 'true' %>
+  <%= render "shared/player", :episode => @episode %>
+<% else %>
+  <%= render "big_card", :episode => @episode %>
+<% end %>
+
 
 <%= render partial: "shownote", locals: {episode: @episode} %>
 
@@ -13,4 +19,3 @@
     <%= link_to "登录", login_path(:return_to => request.url) %>
   <% end %>
 </div>
-<h1><%= @episode.baidu %></h1>
