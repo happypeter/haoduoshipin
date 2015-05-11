@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508011329) do
+ActiveRecord::Schema.define(version: 20150511022030) do
 
   create_table "comments", force: true do |t|
+    t.integer  "commentable_id"
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
+    t.string   "commentable_type", default: "Episode"
   end
 
   create_table "episodes", force: true do |t|
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150508011329) do
     t.float    "ratio",          limit: 24
     t.integer  "revision"
     t.boolean  "published",                 default: false
+    t.string   "baidu"
   end
 
   create_table "heartings", force: true do |t|
@@ -55,8 +56,8 @@ ActiveRecord::Schema.define(version: 20150508011329) do
     t.integer  "user_id"
     t.integer  "comment_id"
     t.boolean  "unread",     default: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "taggings", force: true do |t|
