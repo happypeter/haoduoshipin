@@ -1,6 +1,10 @@
 .courses, .books {
   padding-top: 50px;
 }
+
+.courses .course {
+  height: 270px;
+}
 .course, .book {
   width: 300px;
   float: left;
