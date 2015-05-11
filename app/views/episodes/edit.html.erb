@@ -25,6 +25,10 @@
           <dt><%= f.label :description, "概要" %></dt>
           <dd> <%= f.text_area :description %> </dd>
         </dl>
+        <dl class="form">
+          <dt><%= f.label :note, "笔记" %></dt>
+          <dd> <%= f.text_area :note %> </dd>
+        </dl>
         <p><%= f.submit "提交", :class => "episode-edit-button btn btn-primary" %></p>
     <% end %>
   </div>

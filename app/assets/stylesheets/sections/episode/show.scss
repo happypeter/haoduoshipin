@@ -21,11 +21,22 @@
   width: 960px;
   margin: 0 auto;
   margin-top: 40px;
-  padding: 20px;
+  padding: 15px;
+  font-size: 15px;
+  line-height: 1.8;
   background: #fff;
   color: #000;
   box-shadow: 0 3px 7px 0 rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.19);
+  a {
+    color: teal;
+  }
+  img {
+    max-width: 910px;
+    display: block;
+    margin: 10px auto;
+  }
 }
+
 
 // big_card.css
 
