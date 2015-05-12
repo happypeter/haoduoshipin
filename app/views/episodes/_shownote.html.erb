@@ -12,6 +12,10 @@
     </div>
   </div>
   <div class="text">
-    <%= markdown episode.note %>
+    <% if episode.note.blank? %>
+      Coming soon...
+    <% else %>
+      <%= markdown episode.note %>
+    <% end %>
   </div>
 </div>
