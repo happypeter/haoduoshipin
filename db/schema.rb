@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20150511095948) do
 
   create_table "comments", force: true do |t|
-    t.integer  "commentable_id"
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "commentable_type", default: "Episode"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
   end
 
   create_table "episodes", force: true do |t|
