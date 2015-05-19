@@ -35,7 +35,5 @@ gem 'elasticsearch', :git => 'git://github.com/elasticsearch/elasticsearch-ruby.
 gem 'elasticsearch-model', :git => 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', :git => 'git://github.com/elasticsearch/elasticsearch-rails.git'
 
-gem 'newrelic_rpm'
-
-# tinysou
-gem 'tinysou'
+# swiftype
+gem 'swiftype', '~> 1.2.0'
