@@ -48,8 +48,4 @@ class ApplicationController < ActionController::Base
       user.profile_url
     end
   end
-
-  def search_options
-    Episode.all.map(&:name).sort.uniq
-  end
 end

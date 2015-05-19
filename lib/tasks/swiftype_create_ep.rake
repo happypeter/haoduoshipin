@@ -6,6 +6,7 @@ namespace :swiftype do
 
     Episode.find_in_batches(:batch_size => 120) do |episodes|
       documents = episodes.map do |e|
+        url = "http://haoduoshipin.com/v/#{e.id}"
         {:external_id => e.id,
          :fields =>[{
             :name => 'title',
@@ -27,6 +28,10 @@ namespace :swiftype do
             :name => 'note',
             :value => e.note,
             :type => 'text'
+          }, {
+            :name => 'url',
+            :value => url,
+            :type => 'enum'
           }, {
             :name => 'revision',
             :value => e.revision,

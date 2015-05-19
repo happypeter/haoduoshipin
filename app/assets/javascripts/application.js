@@ -5,7 +5,6 @@
 //= require vendor/jquery.timeago.zh-CN
 //= require jquery.tooltipster.min.js
 //= require jquery.atwho
-//= require jquery-ui/autocomplete
 //= require qrcode
 //= require_self
 
@@ -19,21 +18,6 @@ $(function() {
   });
   $('textarea').atwho({ at: "@", 'data': commenter_exist });
 
-  // autocomplete episodes titles
-  var search_values = [];
-  var options = $(".search-options option");
-  for ( var i = 0; i < options.length; i++) {
-    search_values.push(options[i].value);
-  }
-  $( "#ts-search-input" ).autocomplete({
-    source: search_values
-  });
-  $(".search-options").remove();
-  $(".search-btn").click(function() {
-    $(".search-form").slideToggle();
-    $("#ts-search-input").focus();
-    $("#ts-search-input").val('');
-  });
 
   // star episodes
   $(".heart-btn").click(function() {
@@ -84,4 +68,11 @@ $(function() {
     }
   });
 
+  // autocomplete episodes titles
+  $(".search-btn").click(function() {
+    $(".search-form").slideToggle();
+    // $(".swiftype-widget").slideToggle();
+    $("#st-search-input").focus();
+    $("#st-search-input").val('');
+  });
 });

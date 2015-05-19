@@ -11,8 +11,12 @@ class PageController < ApplicationController
 
   def search
     if params[:q]
-      @episodes = nil
-      @params = params[:q]
+      client = Swiftype::Client.new
+      @results = client.search_document_type('hdsp', 'episodes', params[:q], {
+        :search_fields => { 'episodes' => ['title^3', 'description', 'note'] }
+      })
+
+      @ep_results = @results['episodes']
     end
   end
 
