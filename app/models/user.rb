@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
 
   def avatar
     gravatar_id = Digest::MD5.hexdigest(self.email.downcase) if self.email
-    "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=retro"
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=512&d=monsterid"
   end
 
   def self.authenticate(name, password)
