@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511095948) do
+ActiveRecord::Schema.define(version: 20150526004350) do
 
   create_table "comments", force: true do |t|
+    t.integer  "commentable_id"
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
+    t.string   "commentable_type", default: "Episode"
   end
 
   create_table "episodes", force: true do |t|
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150511095948) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "closed",     default: false
   end
 
   create_table "notifications", force: true do |t|
