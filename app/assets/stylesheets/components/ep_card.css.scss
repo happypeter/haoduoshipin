@@ -1,0 +1,43 @@
+@import "variables";
+.ep-row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.ep_card {
+  width: 30.33333333333333%;
+  float: left;
+  margin: 20px 15px 20px 15px;
+  padding: 25px 15px 15px 15px;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  font-size: 13px;
+  &:hover {
+    border: 1px solid #d9d9d9;
+    -webkit-box-shadow: 0 1px 9px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0 1px 9px rgba(0,0,0,0.45);
+    box-shadow: 0 1px 9px rgba(0,0,0,0.45);
+    -webkit-transition: all 0.35s linear;
+    -moz-transition: all 0.35s linear;
+    -o-transition: all 0.35s linear;
+    transition: all 0.35s linear;
+  }
+  .name {
+    font-size: 18px;
+    margin: 20px 10px;
+    .label {
+      color: #FFF;
+      background: $yellow;
+      border: 1px solid $yellow-border;
+      padding: 0 3px;
+      font-size: 12px;
+    }
+  }
+  .screenshot img {
+    border: solid 5px #ddd;
+  }
+  .metadata {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+  }
+}
