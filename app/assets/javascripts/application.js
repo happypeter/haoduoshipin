@@ -75,4 +75,10 @@ $(function() {
     $("#st-search-input").focus();
     $("#st-search-input").val('');
   });
+
+  // issues state
+  $(".issue-state a").click(function() {
+    $(".issue-state a").removeClass("active");
+    $(this).addClass("active");
+  });
 });

@@ -12,7 +12,8 @@ Happycasts::Application.routes.draw do
 
 
   # issues
-  resources :issues,  :path => "q"
+  get "/close/:id" => "issues#close", :as => "close_issue"
+  resources :issues, :path => "q"
   # 有了上面这一行，link_to @issue 或者 link_to @comment.commentable 就可以指向 q/3 这样的链接了
 
 

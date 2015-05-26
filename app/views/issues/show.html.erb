@@ -1,8 +1,24 @@
-<div class="heading">
+<div class="heading clearfix">
   <div class="container">
     <a href="/q"><i class="fa fa-arrow-left"></i></a>
     #<%= @issue.id %> <%= @issue.title %>
   </div>
+</div>
+
+<div class="issue-close-action container">
+  <% if current_user.admin? %>
+    <div class="md-btn md-btn-danger md-btn-raised">
+      <% if @issue.closed? %>
+        <%= link_to "javascript:;" do %>
+         Close issue
+        <% end %>
+      <% else %>
+        <%= link_to close_issue_path do %>
+         Close issue
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <div class="issue-show container">

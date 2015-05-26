@@ -1,7 +1,15 @@
 class IssuesController < ApplicationController
+  before_action :check_admin, :only => [:close]
+
   def index
     session[:return_to] = request.url
-    @issues = Issue.all.reverse
+    if params[:state] == nil || params[:state] == "open"
+      @issues = Issue.open.reverse
+    else
+      @issues = Issue.closed.reverse
+    end
+    @open_count = Issue.open.count
+    @closed_count = Issue.closed.count
   end
 
   def show
@@ -20,6 +28,16 @@ class IssuesController < ApplicationController
       redirect_to @issue
     else
       render :new
+    end
+  end
+
+  def close
+    @issue = Issue.find(params[:id])
+    @issue.closed = true
+    if @issue.save
+      redirect_to issues_path
+    else
+      render @issue
     end
   end
 end

@@ -36,6 +36,14 @@
       color: white;
     }
   }
+  .issue-state {
+    padding: 24px 20px 8px;
+    border-bottom: 1px solid #ccc;
+    text-align: right;
+    a.active {
+      color: #FFF;
+    }
+  }
   .title a {
     font-size: 22px;
     color: #555;
@@ -77,8 +85,13 @@
 
 // issues#show 页面
 
+.issue-close-action {
+  text-align: right;
+  a {
+    color: rgba(255, 255, 255, 0.84);
+  }
+}
+
 .issue-show {
   padding-top: 30px;
 }
-
-

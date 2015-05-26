@@ -1,9 +1,10 @@
 class Issue < ActiveRecord::Base
-  attr_accessible :title, :content, :user_id
+  attr_accessible :title, :content, :user_id, :closed
   has_many :comments, :as => :commentable, :dependent => :destroy
   belongs_to :user
 
-
+  scope :open, -> { where(closed: false) }
+  scope :closed, -> { where(closed: true) }
 
   def commenters
     all = []
