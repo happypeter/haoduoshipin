@@ -6,6 +6,7 @@
 //= require jquery.tooltipster.min.js
 //= require jquery.atwho
 //= require qrcode
+//= require material-design-button
 //= require_self
 
 $(function() {
