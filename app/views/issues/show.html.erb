@@ -6,7 +6,7 @@
 </div>
 
 <div class="issue-close-action container">
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <div class="md-btn md-btn-danger md-btn-raised">
       <% if @issue.closed? %>
         <%= link_to "javascript:;" do %>
