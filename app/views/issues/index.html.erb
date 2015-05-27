@@ -20,17 +20,19 @@
   </div>
 
   <div class="issue-state">
-      <%= link_to issues_path(:state => "open"), class: "md-btn md-btn-primary md-btn-raised #{'active' if params[:state] == nil || params[:state] == 'open'}" do %>
+      <%= link_to issues_path(:state => "open"), class: "md-btn md-btn-primary md-btn-raised
+        #{'active' if params[:state] == nil || params[:state] == 'open'}" do %>
         <i class="fa fa-circle"> <%= @open_count %> Open</i>
       <% end %>
-      <%= link_to issues_path(:state => "closed"), class: "md-btn md-btn-danger md-btn-raised #{'active' if params[:state] == 'closed'}" do %>
+      <%= link_to issues_path(:state => "closed"), class: "md-btn md-btn-danger md-btn-raised
+        #{'active' if params[:state] == 'closed'}" do %>
         <i class="fa fa-check"> <%= @closed_count %> Closed</i>
       <% end %>
   </div>
 
   <% @issues.each do |i| %>
     <article class="issue clearfix">
-      <div class="state-light"></div>
+      <div class="state-light <%= 'red' if i.closed? %>"></div>
       <div class="body">
         <div class="title">
           <%= link_to i.title, "q/#{i.id}" %>
