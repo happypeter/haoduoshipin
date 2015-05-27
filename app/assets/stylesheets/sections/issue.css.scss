@@ -40,8 +40,9 @@
     padding: 24px 20px 8px;
     border-bottom: 1px solid #ccc;
     text-align: right;
-    a.active {
+    a.active .fa {
       color: #FFF;
+      font-weight: bold;
     }
   }
   .title a {
