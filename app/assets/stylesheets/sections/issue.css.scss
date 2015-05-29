@@ -40,7 +40,26 @@
     padding: 24px 20px 8px;
     border-bottom: 1px solid #ccc;
     text-align: right;
-    a.active .fa {
+    .open, .closed {
+      display: inline-block;
+    }
+    .open:after, .closed:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+      margin-top: -20px;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+    }
+    .open.active:after {
+      border-top: 20px solid #0F9D58;
+    }
+    .closed.active:after {
+      border-top: 20px solid #e53935;
+    }
+    .active .fa {
       color: #FFF;
       font-weight: bold;
     }

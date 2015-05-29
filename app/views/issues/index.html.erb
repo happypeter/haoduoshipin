@@ -20,14 +20,16 @@
   </div>
 
   <div class="issue-state">
-      <%= link_to issues_path(:state => "open"), class: "md-btn md-btn-primary md-btn-raised
-        #{'active' if params[:state] == nil || params[:state] == 'open'}" do %>
+    <div class="open <%= 'active' if params[:state] == nil || params[:state] == 'open' %>">
+      <%= link_to issues_path(:state => "open"), class: "md-btn md-btn-primary md-btn-raised" do %>
         <i class="fa fa-circle"> <%= @open_count %> Open</i>
       <% end %>
-      <%= link_to issues_path(:state => "closed"), class: "md-btn md-btn-danger md-btn-raised
-        #{'active' if params[:state] == 'closed'}" do %>
+    </div>
+    <div class="closed <%= 'active' if params[:state] == 'closed' %>">
+      <%= link_to issues_path(:state => "closed"), class: "md-btn md-btn-danger md-btn-raised" do %>
         <i class="fa fa-check"> <%= @closed_count %> Closed</i>
       <% end %>
+    </div>
   </div>
 
   <% @issues.each do |i| %>
