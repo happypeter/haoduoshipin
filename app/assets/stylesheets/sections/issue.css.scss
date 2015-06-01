@@ -110,7 +110,12 @@
 
 .issue-close-action {
   text-align: right;
+  .md-btn {
+    padding: 0;
+  }
   a {
+    display: block;
+    padding: 8px 30px;
     color: rgba(255, 255, 255, 0.84);
   }
 }
