@@ -36,7 +36,7 @@ class EpisodesController < ApplicationController
 
   def new
     @episode = Episode.new
-    @default_time = Episode.last.nil? ? Time.now : Episode.last.published_at + 7.days
+    @default_time = Time.now
   end
 
   def create
