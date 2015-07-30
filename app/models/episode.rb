@@ -12,7 +12,7 @@ class Episode < ActiveRecord::Base
   validates_presence_of :name, :tag_names
   scope :recent, -> { order(id: :desc) }
 
-  attr_accessible :name, :note, :published_at, :revision, :published, :description, :ratio, :seconds, :tag_names, :baidu
+  attr_accessible :name, :title, :note, :published_at, :revision, :published, :description, :ratio, :seconds, :tag_names, :baidu
 
   after_create :swiftype_index_episode
   after_create :set_ratio
