@@ -10,6 +10,10 @@
           <dd><%= f.text_field :name %></dd>
         </dl>
         <dl class="form">
+          <dt><%= f.label :title, "长标题" %></dt>
+          <dd><%= f.text_field :title %></dd>
+        </dl>
+        <dl class="form">
           <dt><%= f.label :revsion, "设置过期，更新版是" %></dt>
           <dd><%= f.text_field :revision, :placeholder => "e.g 36" %></dd>
         </dl>
