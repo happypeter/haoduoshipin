@@ -11,7 +11,7 @@
     <% @episodes.each do |e| %>
     <li class="list-group-item clearfix <%= "tooltip expired" if e.revision.present? %>"
       title="<%= "视频已经过期，改进版是#{e.revision}期" if e.revision.present? %>">
-      <%= link_to "##{e.id} " + e.title, episode_path(e.id) %>
+      <%= link_to "##{e.id} " + e.title.to_s, episode_path(e.id) %>
       <span class="badge">
         <%= render_episode_publish_time(e).chop %>
       </span>
