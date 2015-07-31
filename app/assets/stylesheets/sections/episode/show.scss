@@ -96,3 +96,50 @@
   background: #eee;
   height: 400px;
 }
+
+// big_big_card css
+.big-big-card-wrapper {
+  height: 400px;
+}
+.big-big-card {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  width: 960px;
+  margin: 0 auto;
+  margin-top: -60px;
+  background-color: #FFF;
+  img.poster {
+    display: block;
+    float: left;
+    height: 350px;
+    width: 560px;
+  }
+  .detail {
+    height: 100%;
+    width: 400px;
+    float: right;
+    text-align: center;
+    padding: 16px;
+    padding-bottom: 32px;
+    line-height: 1.8;
+    font-size: 15px;
+    .title {
+      font-size: 18px;
+    }
+    .desc {
+      margin: 20px 0 30px;
+    }
+  }
+ .play-btn {
+    display: block;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+    background-color: #f44336;
+    color: rgba(255,255,255,.84);
+    padding: 7px 20px;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    &:hover {
+      background-color: #f55549;
+    }
+  }
+}
