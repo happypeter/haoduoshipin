@@ -6,7 +6,11 @@
     <% end %>
     <div class="social btn btn-primary">
       <% title = episode.id.to_s + '期 ' + episode.name + ' ' + episode.description %>
-      <% image_url = "http://media.haoduoshipin.com/stills/#{episode.asset_name}.jpg" %>
+      <% if episode.id > 162 %>
+        <% image_url = "http://media.haoduoshipin.com/stills/#{episode.asset_name}.jpg" %>
+      <% else %>
+        <% image_url = "http://media.haoduoshipin.com/stills/#{episode.asset_name}.png" %>
+      <% end %>
       <% allowed_sites = ["weibo"] %>
       <%= social_share_button_tag title, { :image => image_url }, allowed_sites %>
     </div>

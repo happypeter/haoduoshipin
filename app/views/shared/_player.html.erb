@@ -3,7 +3,7 @@
     <div class="ep-meta clearfix">
       <ul>
         <% title = episode.id.to_s + '期 ' + episode.name + ' ' + episode.description %>
-        <% image_url = "http://7u2jok.com1.z0.glb.clouddn.com/#{episode.asset_name}.png" %>
+        <% image_url = "http://media.haoduoshipin.com/stills/#{episode.asset_name}.png" %>
         <% allowed_sites = ["weibo"] %>
         <li><%= social_share_button_tag title, { :image => image_url }, allowed_sites %></li>
         <li><%= link_to "下载", video_url(episode), :class => "download" %></li>

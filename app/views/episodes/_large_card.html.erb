@@ -1,11 +1,10 @@
 <div class="large show-header">
-  <h1 class="title">Gulp+Sass+Jekyll+Browsersync 搭建起来的前端开发环境</h1>
+  <h1 class="title"><%= @episode.title %></h1>
 </div>
 
 <div class="large-card-wrapper">
   <div class="large-card clearfix">
-    <%#= image_tag("http://media.haoduoshipin.com/stills/#{episode.asset_name}.jpg", :class => "poster") %>
-    <%= image_tag("http://media.haoduoshipin.com/stills/163-gulp-jekyll.jpg", :class => "poster") %>
+    <%= image_tag("http://media.haoduoshipin.com/stills/#{episode.asset_name}.jpg", :class => "poster") %>
     <div class="detail">
       <p class="desc"><%= episode.description %></p>
       <% if @episode.baidu.blank? %>
