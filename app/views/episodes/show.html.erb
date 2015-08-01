@@ -2,8 +2,8 @@
 
 <% if @episode.baidu.blank? && params[:autoplay] == 'true' %>
   <%= render "shared/player", :episode => @episode %>
-<% elsif @episode.id > 162 %>
-  <%= render "big_big_card", :episode => @episode %>
+<% elsif @episode.id > 120 %>
+  <%= render "large_card", :episode => @episode %>
 <% else %>
   <%= render "big_card", :episode => @episode %>
 <% end %>

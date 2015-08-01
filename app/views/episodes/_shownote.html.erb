@@ -4,6 +4,12 @@
     <% if current_user && current_user.admin?%>
       <%= link_to "Edit", edit_episode_path(episode), class: "edit-ep-btn btn btn-primary" %>
     <% end %>
+    <div class="social btn btn-primary">
+      <% title = episode.id.to_s + '期 ' + episode.name + ' ' + episode.description %>
+      <% image_url = "http://media.haoduoshipin.com/stills/#{episode.asset_name}.jpg" %>
+      <% allowed_sites = ["weibo"] %>
+      <%= social_share_button_tag title, { :image => image_url }, allowed_sites %>
+    </div>
     <div class="qrcode-wrap zhifubao">
       <%= link_to "javascript:;", class: "donate" do %>
         <i class="fa fa-coffee"></i>
