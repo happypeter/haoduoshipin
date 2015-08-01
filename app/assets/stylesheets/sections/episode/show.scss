@@ -41,6 +41,26 @@
 }
 
 $show-header: #00A9A9;
+@mixin play_button {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 2rem;
+  transition: all .3s ease-out;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2em;
+  background-color: #ff4081;
+  display: inline-block;
+  padding: .6em 1em;
+  border-radius: .3em;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  &:hover {
+    background-color: #ff6499;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+  }
+}
 // big_card.css
 
 .show-header {
@@ -68,17 +88,7 @@ $show-header: #00A9A9;
   padding: 11px;
 }
 .big-card .play-btn {
-  display: block;
-  box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
-  background-color: #f44336;
-  color: rgba(255,255,255,.84);
-  padding: 7px 20px;
-  width: 200px;
-  margin: 0 auto;
-  text-align: center;
-}
-.big-card .play-btn:hover {
-  background-color: #f55549;
+  @include play_button;
 }
 .big-card img.poster {
   display: block;
@@ -93,11 +103,12 @@ $show-header: #00A9A9;
   margin: 30px;
 }
 .big-card-wrapper {
-  background: #eee;
+  background: #fafafa;
   height: 400px;
 }
 
 // large_card css
+$play-btn: #ff4081;
 
 .large.show-header {
   height: 330px;
@@ -145,17 +156,7 @@ $show-header: #00A9A9;
     }
   }
  .play-btn {
-    display: block;
-    box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
-    background-color: #f44336;
-    color: rgba(255,255,255,.84);
-    padding: 7px 20px;
-    width: 200px;
-    margin: 0 auto;
-    text-align: center;
-    &:hover {
-      background-color: #f55549;
-    }
+    @include play_button;
   }
 }
 

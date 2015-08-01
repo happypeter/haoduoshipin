@@ -11,7 +11,10 @@
     <% if @episode.baidu.blank? %>
       <%= link_to "播放", "?autoplay=true" , :class => "play-btn" %>
     <% else %>
-      <%= link_to "到百度云盘下载", @episode.baidu, target: "_blank", class: "play-btn btn" %>
+      <%= link_to @episode.baidu, target: "_blank", class: "play-btn btn" do %>
+        <i class="fa fa-cloud-download"></i>
+        到百度云盘下载
+      <% end %>
     <% end %>
   </div>
 </div>

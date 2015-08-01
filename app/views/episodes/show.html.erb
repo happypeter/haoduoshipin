@@ -8,6 +8,13 @@
   <%= render "big_card", :episode => @episode %>
 <% end %>
 
+<div class="large-card-tags">
+  <ul class="large-tag-list">
+    <% @episode.tags.each do |t| %>
+      <li><%= link_to t.name, tag_path(t.name) %></li>
+    <% end %>
+  </ul>
+</div>
 
 <%= render partial: "shownote", locals: {episode: @episode} %>
 
