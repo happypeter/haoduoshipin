@@ -189,3 +189,72 @@ $tag-color: #00A9A9;
     font-size: 7em;
   }
 }
+
+// episode metadata part
+
+.ep-notice-wrapper {
+  width: 960px;
+  margin: 20px auto 40px;
+  text-align: center;
+  .ep-notice {
+    width: 580px;
+    margin: 0 auto;
+  }
+  .puppy {
+    display: block;
+    float: left;
+    width: 60px;
+  }
+  .content {
+    position: relative;
+    float: left;
+    color: #fff;
+    font-size: 1.5em;
+    background-color: #ff4081;
+    padding: 20px 0;
+    width: 500px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    &:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid #ff4081;
+      left: -10px;
+    }
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+
+.ep-metadata-wrapper {
+  width: 960px;
+  margin: 30px auto;
+  text-align: center;
+  li {
+    display: inline-block;
+    width: 290px;
+    padding-top: 20px;
+    margin: 0 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    svg {
+      width: 7em;
+      height: 7em;
+      fill: #666;
+    }
+    h3 {
+      font-size: 1.3em;
+      font-weight: 500;
+      color: #999;
+      line-height: 1;
+    }
+  }
+}

@@ -28,6 +28,7 @@ class EpisodesController < ApplicationController
   def show
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
+    @old_episode = Episode.find_by(revision: @episode.id)
     respond_to do |f|
       f.html
       f.json {render :json => @episode}
