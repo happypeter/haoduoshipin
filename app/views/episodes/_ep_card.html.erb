@@ -1,7 +1,7 @@
 <%= link_to episode do %>
 <div class="ep_card">
 <div class="screenshot">
-    <% elsif @episode.id > 162 %>
+    <% if @episode.id > 162 %>
       <%= image_tag("http://media.haoduoshipin.com/stills/#{episode.asset_name}.jpg") %>
     <% else %>
       <%= image_tag("http://media.haoduoshipin.com/stills/#{episode.asset_name}.png") %>
