@@ -111,7 +111,8 @@ $show-header: #00A9A9;
 $play-btn: #ff4081;
 
 .large.show-header {
-  height: 330px;
+  height: initial;
+  padding-bottom: 110px;
   color: #fff;
   text-align: center;
   .title {
