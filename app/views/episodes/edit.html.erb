@@ -7,32 +7,31 @@
         </dl>
         <dl class="form">
           <dt><%= f.label :name, "标题" %></dt>
-          <dd><%= f.text_field :name %></dd>
+          <dd><%= f.text_field :name, class: "ace-area short" %></dd>
         </dl>
         <dl class="form">
           <dt><%= f.label :title, "长标题" %></dt>
-          <dd><%= f.text_field :title %></dd>
+          <dd><%= f.text_field :title, class: "ace-area short" %></dd>
         </dl>
         <dl class="form">
           <dt><%= f.label :revsion, "设置过期，更新版是" %></dt>
-          <dd><%= f.text_field :revision, :placeholder => "e.g 36" %></dd>
+          <dd><%= f.text_field :revision, :placeholder => "e.g 36", class: "ace-area short" %></dd>
         </dl>
         <dl class="form">
           <dt><%= f.label :tag_names, "tags" %></dt>
-          <dd><%= f.text_field :tag_names %></dd>
+          <dd><%= f.text_field :tag_names, class: "ace-area short" %></dd>
         </dl>
         <dl class="form">
           <dt><%= f.label :baidu, "baidu" %></dt>
-          <dd><%= f.text_field :baidu %></dd>
+          <dd><%= f.text_field :baidu, class: "ace-area short" %></dd>
         </dl>
         <dl class="form">
           <dt><%= f.label :description, "概要" %></dt>
-          <dd><%= f.text_area :description, class: "desc" %></dd>
-          <div id="description"></div>
+          <dd><%= f.text_area :description, class: "ace-area desc" %></dd>
         </dl>
         <dl class="form">
           <dt><%= f.label :note, "笔记" %></dt>
-          <dd> <%= f.text_area :note %> </dd>
+          <dd> <%= f.text_area :note, class: "ace-area note" %> </dd>
         </dl>
         <p><%= f.submit "提交", :class => "episode-edit-button btn btn-primary" %></p>
     <% end %>
@@ -41,14 +40,24 @@
 
 <% content_for :template_js do %>
   <script>
-    var editor = ace.edit("description");
-    var textarea = $('textarea[name="episode[description]"]');
-    editor.session.setMode("ace/mode/markdown");
-    editor.setTheme("ace/theme/twilight");
+    $(function () {
+      $('.ace-area').each(function () {
+        var textarea = $(this);
+        var editDiv = $('<div>', {
+          height: textarea.height()
+        }).insertBefore(textarea);
 
-    editor.getSession().setValue(textarea.val());
-    editor.getSession().on('change', function(){
-      textarea.val(editor.getSession().getValue());
+        var editor = ace.edit(editDiv[0]);
+        editor.getSession().setValue(textarea.val());
+        editor.session.setMode("ace/mode/markdown");
+        editor.setTheme("ace/theme/twilight");
+        editor.$blockScrolling = Infinity;
+
+        editor.getSession().setValue(textarea.val());
+        editor.getSession().on('change', function(){
+          textarea.val(editor.getSession().getValue());
+        });
+      });
     });
   </script>
 <% end %>

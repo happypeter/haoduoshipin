@@ -32,10 +32,20 @@ form {
     line-height: normal;
     padding: 0;
   }
-.desc {
-  display: none;
-}
-.ace_editor {
-  height: 100px;
-}
+  .ace-area {
+    display: none;
+  }
+  .ace-area.short {
+    height: 100px;
+  }
+  .ace-area.desc {
+    height: 300px;
+  }
+  .ace-area.note {
+    height: 800px;
+  }
+  .ace_editor {
+    line-height: 2.5;
+    font-size: 15px;
+  }
 }
