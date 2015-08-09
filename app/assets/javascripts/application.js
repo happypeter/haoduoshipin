@@ -6,6 +6,9 @@
 //= require jquery.tooltipster.min.js
 //= require jquery.atwho
 //= require qrcode
+//= require vendor/ace/ace
+//= require vendor/ace/mode-markdown
+//= require vendor/ace/theme-twilight
 //= require material-design-button
 //= require_self
 

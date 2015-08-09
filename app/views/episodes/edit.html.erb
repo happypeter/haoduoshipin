@@ -27,7 +27,8 @@
         </dl>
         <dl class="form">
           <dt><%= f.label :description, "概要" %></dt>
-          <dd> <%= f.text_area :description %> </dd>
+          <dd><%= f.text_area :description, class: "desc" %></dd>
+          <div id="description"></div>
         </dl>
         <dl class="form">
           <dt><%= f.label :note, "笔记" %></dt>
@@ -38,4 +39,16 @@
   </div>
 </div>
 
+<% content_for :template_js do %>
+  <script>
+    var editor = ace.edit("description");
+    var textarea = $('textarea[name="episode[description]"]');
+    editor.session.setMode("ace/mode/markdown");
+    editor.setTheme("ace/theme/twilight");
 
+    editor.getSession().setValue(textarea.val());
+    editor.getSession().on('change', function(){
+      textarea.val(editor.getSession().getValue());
+    });
+  </script>
+<% end %>

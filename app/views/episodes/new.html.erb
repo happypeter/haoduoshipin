@@ -1,4 +1,3 @@
-
 <div class="single-form-container clearfix">
   <div class="signup-form">
     <%= form_for @episode do |f| %>
@@ -20,7 +19,8 @@
         </dl>
         <dl class="form">
           <dt><%= f.label :description, "概要" %></dt>
-          <dd> <%= f.text_area :description %> </dd>
+          <dd><%= f.text_area :description, class: "desc" %></dd>
+          <div id="description"></div>
         </dl>
         <dl class="form">
           <dt><%= f.label :note, "笔记" %></dt>
@@ -34,4 +34,3 @@
     <% end %>
   </div>
 </div>
-
