@@ -38,6 +38,10 @@
   .highlight pre {
     overflow: auto;
   }
+  ul {
+    list-style-type: disc;
+    margin-left: 30px;
+  }
 }
 
 $show-header: #00A9A9;
