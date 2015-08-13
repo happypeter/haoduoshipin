@@ -12,6 +12,13 @@
         font-weight: normal;
         font-size: 25px;
       }
+      a {
+        color: white;
+        text-decoration: underline;
+        &:hover {
+          color: #bada55;
+        }
+      }
     }
   }
 }
