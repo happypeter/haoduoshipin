@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title><%= content_for?(:title) ? yield(:title) : "好多视频网" %></title>
   <%= auto_discovery_link_tag(:rss, episodes_url(format: "rss")) %>
   <link href="/favicon.png" rel="icon" type="image/x-png" />
