@@ -46,8 +46,6 @@ class UsersController < ApplicationController
     # executed. that's the nature of ||
     if params[:provider] == "github"
       @user = User.find_by_github_uid(omniauth["uid"]) || User.create_from_omniauth(omniauth, params[:provider])
-    else
-      @user = User.find_by_google_uid(omniauth["uid"]) || User.create_from_omniauth(omniauth, params[:provider])
     end
     cookies.permanent[:token] = @user.token
     redirect_to_target_or_default root_url, :notice => "Signed in successfully"
