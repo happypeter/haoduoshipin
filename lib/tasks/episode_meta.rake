@@ -12,8 +12,8 @@ namespace :db do
       meta['ratio'] = e.ratio
       meta['baidu'] = e.baidu
       meta['revision'] = e.revision
-      meta['created_at'] = 'ISODate(' + e.created_at.iso8601 + ')'
-      meta['updated_at'] = 'ISODate(' + e.updated_at.iso8601 + ')'
+      meta['createdAt'] = 'ISODate(' + e.created_at.iso8601 + ')'
+      meta['updatedAt'] = 'ISODate(' + e.updated_at.iso8601 + ')'
       items << meta.to_json
     end
 
