@@ -28,6 +28,10 @@ class EpisodesController < ApplicationController
   def show
     session[:return_to] = request.url
     @episode = Episode.find(params[:id])
+    if @episode.blank?
+      render template: "pages/#{params[:id]}" , layout: false
+      return
+    end
     @old_episode = Episode.find_by(revision: @episode.id)
     respond_to do |f|
       f.html
