@@ -13,7 +13,7 @@ var getJsonData = function(file) {
   return require('./src/json/' + path.basename(file.path).replace(/html$/, 'json'));
 };
 
-gulp.task('build', function () {
+gulp.task('build-html', function () {
     return gulp.src('src/md/**/*.md')
         .pipe(markdown())
         .pipe(wrap({src: 'src/layout/default.html'}))
@@ -63,4 +63,6 @@ gulp.task('watch', function () {
     gulp.watch(['src/md/**/*.md', 'src/layout/*.html'], ['rebuild']);
     gulp.watch(['src/style/*'], ['sass']);
 });
+
+gulp.task('build', ['build-html','sass', 'cp-assets']);
 gulp.task('default', ['browser-sync','watch']);
