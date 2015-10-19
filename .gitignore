@@ -1,5 +1,6 @@
 *.swp
 log/
+dist/
 tmp/
 .sass-cache/
 *.sublime-workspace

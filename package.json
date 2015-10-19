@@ -1,0 +1,19 @@
+{
+  "name": "haoduoshipin",
+  "version": "1.0.0",
+  "description": "https://github.com/happypeter/haoduoshipin/issues/395",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happypeter/haoduoshipin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/happypeter/haoduoshipin/issues"
+  },
+  "homepage": "https://github.com/happypeter/haoduoshipin#readme"
+}
