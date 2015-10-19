@@ -37,6 +37,18 @@ a {
   color: deeppink;
 }
 
+ul {
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+li p {
+  margin: 0;
+}
+
+// section
+
 header {
   background-color: #00BCD4;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
@@ -61,6 +73,10 @@ h1 {
   font-size: 23px;
 }
 
+
+.main img {
+  max-width: 100%;
+}
 
 
 footer {
