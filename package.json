@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/happypeter/haoduoshipin/issues"
   },
-  "homepage": "https://github.com/happypeter/haoduoshipin#readme"
+  "homepage": "https://github.com/happypeter/haoduoshipin#readme",
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-data": "^1.2.0",
+    "gulp-markdown": "^1.1.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-swig": "^0.7.4",
+    "gulp-wrap": "^0.11.0"
+  }
 }
