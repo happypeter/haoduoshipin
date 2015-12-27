@@ -84,6 +84,8 @@ h1 {
 
 .main img {
   max-width: 100%;
+  display: block;
+  margin: 3em auto;
 }
 
 
@@ -98,4 +100,13 @@ footer {
 
 footer img {
   width: 9rem;
+}
+
+
+
+//  code
+
+pre code {
+    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+    font-size: 14px;
 }
