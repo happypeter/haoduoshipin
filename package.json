@@ -1,7 +1,7 @@
 {
   "name": "haoduoshipin",
   "version": "1.0.0",
-  "description": "https://github.com/happypeter/haoduoshipin/issues/395",
+  "description": "由 gulp 控制，最终导出成静态页面。",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,13 +17,12 @@
   },
   "homepage": "https://github.com/happypeter/haoduoshipin#readme",
   "devDependencies": {
-    "browser-sync": "^2.9.11",
+    "browser-sync": "^2.10.1",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-data": "^1.2.0",
-    "gulp-markdown": "^1.1.0",
-    "gulp-sass": "^2.1.0",
-    "gulp-swig": "^0.7.4",
+    "gulp-data": "^1.2.1",
+    "gulp-markdown": "^1.2.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-swig": "^0.8.0",
     "gulp-wrap": "^0.11.0"
   }
 }

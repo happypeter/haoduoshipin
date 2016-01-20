@@ -6,7 +6,7 @@ var gulp = require('gulp');
 var markdown = require('gulp-markdown');
 var wrap = require('gulp-wrap');
 var sass        = require('gulp-sass');
-var prefix      = require('gulp-autoprefixer');
+//var prefix      = require('gulp-autoprefixer');
 
 
 var getJsonData = function(file) {
@@ -36,7 +36,7 @@ gulp.task('sass', function () {
             includePaths: ['scss'],
             onError: browserSync.notify
         })) .on('error', handleError)
-        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        //.pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('dist/style'))
         .pipe(browserSync.reload({stream:true}));
 });
