@@ -1,0 +1,37 @@
+.home {
+  background: url('images/home-bg.jpg') no-repeat fixed center center / cover;
+  height: calc(100vh - 64px);
+  .overlay {
+    background: rgba(0,0,0,.7);
+    height: 100%;
+  }
+  .content {
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title {
+      font-size: 35px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      margin-top: 0;
+      text-align: center;
+      span {
+        display: block;
+      }
+    }
+    .name {
+      color: #00bcd4;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .home .content {
+    .title {
+      font-size: 55px;
+    }
+  }
+}

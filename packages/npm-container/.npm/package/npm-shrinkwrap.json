@@ -1,0 +1,662 @@
+{
+  "dependencies": {
+    "externalify": {
+      "version": "0.1.0",
+      "dependencies": {
+        "globo": {
+          "version": "1.0.2",
+          "dependencies": {
+            "accessory": {
+              "version": "1.0.1",
+              "dependencies": {
+                "dot-parts": {
+                  "version": "1.0.1"
+                }
+              }
+            },
+            "is-defined": {
+              "version": "1.0.0"
+            },
+            "ternary": {
+              "version": "1.0.0"
+            }
+          }
+        },
+        "map-obj": {
+          "version": "1.0.1"
+        },
+        "replace-require-functions": {
+          "version": "1.0.0",
+          "dependencies": {
+            "detective": {
+              "version": "4.1.1",
+              "dependencies": {
+                "acorn": {
+                  "version": "1.2.2"
+                },
+                "defined": {
+                  "version": "1.0.0"
+                },
+                "escodegen": {
+                  "version": "1.7.0",
+                  "dependencies": {
+                    "estraverse": {
+                      "version": "1.9.3"
+                    },
+                    "esutils": {
+                      "version": "2.0.2"
+                    },
+                    "esprima": {
+                      "version": "1.2.5"
+                    },
+                    "optionator": {
+                      "version": "0.5.0",
+                      "dependencies": {
+                        "prelude-ls": {
+                          "version": "1.1.2"
+                        },
+                        "deep-is": {
+                          "version": "0.1.3"
+                        },
+                        "wordwrap": {
+                          "version": "0.0.3"
+                        },
+                        "type-check": {
+                          "version": "0.3.1"
+                        },
+                        "levn": {
+                          "version": "0.2.5"
+                        },
+                        "fast-levenshtein": {
+                          "version": "1.0.7"
+                        }
+                      }
+                    },
+                    "source-map": {
+                      "version": "0.2.0",
+                      "dependencies": {
+                        "amdefine": {
+                          "version": "1.0.0"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "has-require": {
+              "version": "1.2.1",
+              "dependencies": {
+                "escape-string-regexp": {
+                  "version": "1.0.3"
+                }
+              }
+            },
+            "patch-text": {
+              "version": "1.0.2"
+            },
+            "xtend": {
+              "version": "4.0.1"
+            }
+          }
+        },
+        "through2": {
+          "version": "0.4.2",
+          "dependencies": {
+            "readable-stream": {
+              "version": "1.0.33",
+              "dependencies": {
+                "core-util-is": {
+                  "version": "1.0.1"
+                },
+                "isarray": {
+                  "version": "https://registry.npm.taobao.org/isarray/download/isarray-0.0.1.tgz"
+                },
+                "string_decoder": {
+                  "version": "0.10.31"
+                },
+                "inherits": {
+                  "version": "https://registry.npm.taobao.org/inherits/download/inherits-2.0.1.tgz"
+                }
+              }
+            },
+            "xtend": {
+              "version": "2.1.2",
+              "dependencies": {
+                "object-keys": {
+                  "version": "0.4.0"
+                }
+              }
+            }
+          }
+        },
+        "transformify": {
+          "version": "0.1.2",
+          "dependencies": {
+            "readable-stream": {
+              "version": "1.1.13",
+              "dependencies": {
+                "core-util-is": {
+                  "version": "1.0.1"
+                },
+                "isarray": {
+                  "version": "https://registry.npm.taobao.org/isarray/download/isarray-0.0.1.tgz"
+                },
+                "string_decoder": {
+                  "version": "0.10.31"
+                },
+                "inherits": {
+                  "version": "https://registry.npm.taobao.org/inherits/download/inherits-2.0.1.tgz"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "highlight.js": {
+      "version": "8.9.1"
+    },
+    "marked": {
+      "version": "0.3.5"
+    },
+    "material-ui": {
+      "version": "0.14.0",
+      "dependencies": {
+        "inline-style-prefixer": {
+          "version": "0.5.4",
+          "dependencies": {
+            "bowser": {
+              "version": "1.0.0"
+            },
+            "caniuse-api": {
+              "version": "1.4.1",
+              "dependencies": {
+                "browserslist": {
+                  "version": "1.1.1"
+                },
+                "caniuse-db": {
+                  "version": "1.0.30000388"
+                },
+                "lodash.memoize": {
+                  "version": "2.4.1",
+                  "dependencies": {
+                    "lodash.isfunction": {
+                      "version": "2.4.1"
+                    },
+                    "lodash._keyprefix": {
+                      "version": "2.4.2"
+                    }
+                  }
+                },
+                "lodash.uniq": {
+                  "version": "3.2.2",
+                  "dependencies": {
+                    "lodash._basecallback": {
+                      "version": "3.3.1",
+                      "dependencies": {
+                        "lodash._baseisequal": {
+                          "version": "3.0.7",
+                          "dependencies": {
+                            "lodash.istypedarray": {
+                              "version": "3.0.3"
+                            },
+                            "lodash.keys": {
+                              "version": "3.1.2",
+                              "dependencies": {
+                                "lodash.isarguments": {
+                                  "version": "3.0.5"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "lodash._bindcallback": {
+                          "version": "3.0.1"
+                        },
+                        "lodash.pairs": {
+                          "version": "3.0.1",
+                          "dependencies": {
+                            "lodash.keys": {
+                              "version": "3.1.2",
+                              "dependencies": {
+                                "lodash.isarguments": {
+                                  "version": "3.0.5"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "lodash._baseuniq": {
+                      "version": "3.0.3",
+                      "dependencies": {
+                        "lodash._baseindexof": {
+                          "version": "3.1.0"
+                        },
+                        "lodash._cacheindexof": {
+                          "version": "3.0.2"
+                        },
+                        "lodash._createcache": {
+                          "version": "3.1.2"
+                        }
+                      }
+                    },
+                    "lodash._getnative": {
+                      "version": "3.9.1"
+                    },
+                    "lodash._isiterateecall": {
+                      "version": "3.0.9"
+                    },
+                    "lodash.isarray": {
+                      "version": "3.0.4"
+                    }
+                  }
+                },
+                "shelljs": {
+                  "version": "0.5.3"
+                }
+              }
+            }
+          }
+        },
+        "lodash.merge": {
+          "version": "3.3.2",
+          "dependencies": {
+            "lodash._arraycopy": {
+              "version": "3.0.0"
+            },
+            "lodash._arrayeach": {
+              "version": "3.0.0"
+            },
+            "lodash._createassigner": {
+              "version": "3.1.1",
+              "dependencies": {
+                "lodash._bindcallback": {
+                  "version": "3.0.1"
+                },
+                "lodash._isiterateecall": {
+                  "version": "3.0.9"
+                },
+                "lodash.restparam": {
+                  "version": "3.6.1"
+                }
+              }
+            },
+            "lodash._getnative": {
+              "version": "3.9.1"
+            },
+            "lodash.isarguments": {
+              "version": "3.0.5"
+            },
+            "lodash.isarray": {
+              "version": "3.0.4"
+            },
+            "lodash.isplainobject": {
+              "version": "3.2.0",
+              "dependencies": {
+                "lodash._basefor": {
+                  "version": "3.0.3"
+                }
+              }
+            },
+            "lodash.istypedarray": {
+              "version": "3.0.3"
+            },
+            "lodash.keys": {
+              "version": "3.1.2"
+            },
+            "lodash.keysin": {
+              "version": "3.0.8"
+            },
+            "lodash.toplainobject": {
+              "version": "3.0.0",
+              "dependencies": {
+                "lodash._basecopy": {
+                  "version": "3.0.1"
+                }
+              }
+            }
+          }
+        },
+        "lodash.throttle": {
+          "version": "3.0.4",
+          "dependencies": {
+            "lodash.debounce": {
+              "version": "3.1.1",
+              "dependencies": {
+                "lodash._getnative": {
+                  "version": "3.9.1"
+                }
+              }
+            }
+          }
+        },
+        "react-addons-create-fragment": {
+          "version": "0.14.6"
+        },
+        "react-addons-pure-render-mixin": {
+          "version": "0.14.6"
+        },
+        "react-addons-transition-group": {
+          "version": "0.14.6"
+        },
+        "react-addons-update": {
+          "version": "0.14.6"
+        },
+        "warning": {
+          "version": "2.1.0",
+          "dependencies": {
+            "loose-envify": {
+              "version": "1.1.0",
+              "dependencies": {
+                "js-tokens": {
+                  "version": "1.0.2"
+                }
+              }
+            }
+          }
+        },
+        "react": {
+          "version": "0.14.6",
+          "dependencies": {
+            "envify": {
+              "version": "3.4.0",
+              "dependencies": {
+                "through": {
+                  "version": "2.3.8"
+                },
+                "jstransform": {
+                  "version": "10.1.0",
+                  "dependencies": {
+                    "base62": {
+                      "version": "0.1.1"
+                    },
+                    "esprima-fb": {
+                      "version": "13001.1001.0-dev-harmony-fb"
+                    },
+                    "source-map": {
+                      "version": "0.1.31",
+                      "dependencies": {
+                        "amdefine": {
+                          "version": "1.0.0"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "fbjs": {
+              "version": "0.6.1",
+              "dependencies": {
+                "core-js": {
+                  "version": "1.2.6"
+                },
+                "loose-envify": {
+                  "version": "1.1.0",
+                  "dependencies": {
+                    "js-tokens": {
+                      "version": "1.0.2"
+                    }
+                  }
+                },
+                "promise": {
+                  "version": "7.1.1",
+                  "dependencies": {
+                    "asap": {
+                      "version": "2.0.3"
+                    }
+                  }
+                },
+                "ua-parser-js": {
+                  "version": "0.7.10"
+                },
+                "whatwg-fetch": {
+                  "version": "0.9.0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "react": {
+      "version": "0.14.6",
+      "dependencies": {
+        "envify": {
+          "version": "3.4.0",
+          "dependencies": {
+            "through": {
+              "version": "2.3.8"
+            },
+            "jstransform": {
+              "version": "10.1.0",
+              "dependencies": {
+                "base62": {
+                  "version": "0.1.1"
+                },
+                "esprima-fb": {
+                  "version": "13001.1001.0-dev-harmony-fb"
+                },
+                "source-map": {
+                  "version": "0.1.31",
+                  "dependencies": {
+                    "amdefine": {
+                      "version": "1.0.0"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fbjs": {
+          "version": "0.6.1",
+          "dependencies": {
+            "core-js": {
+              "version": "1.2.6"
+            },
+            "loose-envify": {
+              "version": "1.1.0",
+              "dependencies": {
+                "js-tokens": {
+                  "version": "1.0.2"
+                }
+              }
+            },
+            "promise": {
+              "version": "7.1.1",
+              "dependencies": {
+                "asap": {
+                  "version": "2.0.3"
+                }
+              }
+            },
+            "ua-parser-js": {
+              "version": "0.7.10"
+            },
+            "whatwg-fetch": {
+              "version": "0.9.0"
+            }
+          }
+        }
+      }
+    },
+    "react-dom": {
+      "version": "0.14.6"
+    },
+    "react-router": {
+      "version": "2.0.0-rc4",
+      "dependencies": {
+        "invariant": {
+          "version": "2.2.0",
+          "dependencies": {
+            "loose-envify": {
+              "version": "1.1.0",
+              "dependencies": {
+                "js-tokens": {
+                  "version": "1.0.2"
+                }
+              }
+            }
+          }
+        },
+        "warning": {
+          "version": "2.1.0",
+          "dependencies": {
+            "loose-envify": {
+              "version": "1.1.0",
+              "dependencies": {
+                "js-tokens": {
+                  "version": "1.0.2"
+                }
+              }
+            }
+          }
+        },
+        "history": {
+          "version": "1.17.0",
+          "dependencies": {
+            "deep-equal": {
+              "version": "1.0.1"
+            },
+            "query-string": {
+              "version": "3.0.0",
+              "dependencies": {
+                "strict-uri-encode": {
+                  "version": "1.1.0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "react-tap-event-plugin": {
+      "version": "0.2.1",
+      "dependencies": {
+        "fbjs": {
+          "version": "0.2.1",
+          "dependencies": {
+            "core-js": {
+              "version": "1.2.6"
+            },
+            "promise": {
+              "version": "7.0.4",
+              "dependencies": {
+                "asap": {
+                  "version": "2.0.3"
+                }
+              }
+            },
+            "whatwg-fetch": {
+              "version": "0.9.0"
+            }
+          }
+        }
+      }
+    },
+    "video.js": {
+      "version": "5.2.1",
+      "dependencies": {
+        "global": {
+          "version": "4.3.0",
+          "dependencies": {
+            "min-document": {
+              "version": "2.17.0",
+              "dependencies": {
+                "dom-walk": {
+                  "version": "0.1.1"
+                }
+              }
+            },
+            "process": {
+              "version": "0.5.2"
+            }
+          }
+        },
+        "lodash-compat": {
+          "version": "3.10.1"
+        },
+        "object.assign": {
+          "version": "4.0.3",
+          "dependencies": {
+            "function-bind": {
+              "version": "1.0.2"
+            },
+            "object-keys": {
+              "version": "1.0.9"
+            },
+            "define-properties": {
+              "version": "1.1.2",
+              "dependencies": {
+                "foreach": {
+                  "version": "2.0.5"
+                }
+              }
+            }
+          }
+        },
+        "safe-json-parse": {
+          "version": "4.0.0",
+          "dependencies": {
+            "rust-result": {
+              "version": "1.0.0",
+              "dependencies": {
+                "individual": {
+                  "version": "2.0.0"
+                }
+              }
+            }
+          }
+        },
+        "tsml": {
+          "version": "1.0.1"
+        },
+        "videojs-font": {
+          "version": "1.4.0"
+        },
+        "videojs-ie8": {
+          "version": "1.1.0",
+          "dependencies": {
+            "es5-shim": {
+              "version": "4.3.1"
+            }
+          }
+        },
+        "videojs-swf": {
+          "version": "5.0.1"
+        },
+        "vtt.js": {
+          "version": "git+https://github.com/gkatsev/vtt.js.git#8ea664e257ec7b5c092f58ac989e3134ff536a7a"
+        },
+        "xhr": {
+          "version": "2.1.0",
+          "dependencies": {
+            "once": {
+              "version": "1.1.1"
+            },
+            "parse-headers": {
+              "version": "2.0.1",
+              "dependencies": {
+                "for-each": {
+                  "version": "0.3.2",
+                  "dependencies": {
+                    "is-function": {
+                      "version": "1.0.1"
+                    }
+                  }
+                },
+                "trim": {
+                  "version": "0.0.1"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
