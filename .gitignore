@@ -6,4 +6,3 @@ tmp/
 *.sublime-workspace
 *.sublime-project
 node_modules/
-private
