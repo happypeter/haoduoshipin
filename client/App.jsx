@@ -28,7 +28,7 @@ App = React.createClass({
 
   _getAppBar() {
     let title = this.context.router.isActive('/home') ? '首页' :
-      this.context.router.isActive('/video') ? '视频' :
+      this.context.router.isActive('/all') ? '视频列表' :
       this.context.router.isActive('/about') ? '关于' : '';
 
     return (

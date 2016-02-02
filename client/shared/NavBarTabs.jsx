@@ -30,7 +30,7 @@ NavBarTabs = React.createClass({
 
   _getSelectedIndex() {
     return this.context.router.isActive('/home') ? '/home' :
-      this.context.router.isActive('/video') ? '/video' :
+      this.context.router.isActive('/all') ? '/all' :
       this.context.router.isActive('/about') ? '/about' : '';
   },
 
@@ -65,8 +65,8 @@ NavBarTabs = React.createClass({
             value='/home'
             style={styles.tab} />
           <Tab
-            label='视频'
-            value='/video'
+            label='视频列表'
+            value='/all'
             style={styles.tab} />
           <Tab
             label='关于'

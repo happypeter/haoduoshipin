@@ -1,5 +1,5 @@
 const { Styles, CircularProgress } = mui;
-Video = React.createClass({
+AllVideos = React.createClass({
   getInitialState(){
     return {
       posts: [],
@@ -48,7 +48,7 @@ Video = React.createClass({
     return (
       <div>
         <div style={styles.hero}>
-          <div style={styles.title}>VIDEO</div>
+          <div style={styles.title}>ALL</div>
           <SearchBar
             inputText={this.state.inputText}
             onUserInput={this._handleInputChange} />

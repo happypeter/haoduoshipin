@@ -7,7 +7,7 @@ const {
 const Routes = (
   <Route path="/" component={App}>
     <Route path="about" component={About}/>
-    <Route path="video" component={Video}/>
+    <Route path="all" component={AllVideos}/>
     <Route path="/v/:id" component={Post} />
     <Route path="home" component={Home}/>
     <Route path="*" component={PageNotFound}/>

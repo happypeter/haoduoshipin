@@ -28,14 +28,14 @@ Post = React.createClass({
         return hljs.highlightAuto(code).value;
       }
     });
-    let html = marked(this.state.post, {sanitize: true});
+    let html = marked(this.state.post);
     let postId = parseInt(this.props.params.id);
     let videoSource = `http://7xnm4l.com1.z0.glb.clouddn.com/${this.state.metaData.name}.mp4`
     return (
       <div className="post-page">
         <PostHero metaData={this.state.metaData} />
         { this.state.metaData.name ? <Player src={videoSource} /> : '' }
-        <span className="post-content container" dangerouslySetInnerHTML={{__html: html}} />
+        <div className="post-content container" dangerouslySetInnerHTML={{__html: html}} />
       </div>
     );
   }
