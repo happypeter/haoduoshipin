@@ -22,6 +22,10 @@ Post = React.createClass({
     });
   },
 
+  componentDidUpdate() {
+    document.title = this.state.metaData.title;
+  },
+
   render() {
     marked.setOptions({
       highlight: function (code) {
