@@ -1,4 +1,4 @@
-const { Styles, CircularProgress } = mui;
+const { CircularProgress } = mui;
 AllVideos = React.createClass({
   getInitialState(){
     return {
@@ -57,10 +57,12 @@ AllVideos = React.createClass({
           mode="indeterminate"
           className="loader"
           style={styles.circle} />
-        <VideoList
-          inputText={this.state.inputText}
-          posts={this.state.posts.reverse()}
-          className="video-list container" />
+        <div style={{minHeight: '20em'}}>
+          <VideoList
+            inputText={this.state.inputText}
+            posts={this.state.posts.reverse()}
+            className="video-list container" />
+        </div>
       </div>
     );
   },

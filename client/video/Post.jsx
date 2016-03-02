@@ -1,3 +1,4 @@
+const { CircularProgress } = mui;
 Post = React.createClass({
   getInitialState() {
     return {
@@ -22,6 +23,12 @@ Post = React.createClass({
     });
   },
 
+  componentDidMount() {
+    $(".loader").delay(1000).fadeOut('slow', function() {
+      $(".video-post").fadeIn('slow');
+    });
+  },
+
   componentDidUpdate() {
     document.title = this.state.metaData.title;
   },
@@ -35,11 +42,26 @@ Post = React.createClass({
     let html = marked(this.state.post);
     let postId = parseInt(this.props.params.id);
     let videoSource = `http://7xnm4l.com1.z0.glb.clouddn.com/${this.state.metaData.name}.mp4`
+    let styles = {
+      circle: {
+        margin: '0 auto',
+        paddingTop: '100px',
+        display: 'block'
+      }
+    };
     return (
       <div className="post-page">
         <PostHero metaData={this.state.metaData} />
-        { this.state.metaData.name ? <Player src={videoSource} /> : '' }
-        <div className="post-content container" dangerouslySetInnerHTML={{__html: html}} />
+        <CircularProgress
+          mode="indeterminate"
+          className="loader"
+          style={styles.circle} />
+        <div style={{minHeight: '20em'}}>
+          <div className="video-post">
+            { this.state.metaData.name ? <Player src={videoSource} /> : '' }
+            <div className="post-content container" dangerouslySetInnerHTML={{__html: html}} />
+          </div>
+        </div>
       </div>
     );
   }

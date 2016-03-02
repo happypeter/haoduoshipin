@@ -17,11 +17,9 @@ App = React.createClass({
     return (
       <div>
         { this.state.renderTabs ? (<NavBarTabs />) : this._getAppBar() }
-
         <AppLeftNav ref="leftNav" />
-
         {this.props.children}
-
+        <Footer />
       </div>
     );
   },
