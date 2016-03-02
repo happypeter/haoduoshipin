@@ -9,8 +9,8 @@ Footer = React.createClass({
       },
       img: {
         display: 'block',
-        width: '200px',
-        height: '200px',
+        width: '100%',
+        maxWidth: '230px',
         margin: '20px auto',
       }
     };
