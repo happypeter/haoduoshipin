@@ -1,4 +1,4 @@
-.home {
+.home-slogan {
   background: url('images/home-bg.jpg') no-repeat fixed center center / cover;
   height: calc(100vh - 64px);
   .overlay {
@@ -6,6 +6,7 @@
     height: 100%;
   }
   .content {
+    text-align: center;
     height: 100%;
     color: #fff;
     display: flex;
@@ -27,9 +28,76 @@
     }
   }
 }
+.home {
+  .big-title {
+    text-align: center;
+    font-size: 1.9em;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    color: #606060;
+    line-height: 1;
+  }
+  .courses {
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+    position: relative;
+    border-radius: 4px;
+    img {
+      display: block;
+      max-width: 240px;
+      width: 100%;
+      margin: 0 auto;
+      border-right: 1px solid #e4e4e4;
+      border-left: 1px solid #e4e4e4;
+    }
+    .details {
+      max-width: 240px;
+      width: 100%;
+      margin: 0 auto;
+      color: #3a3a3a;
+      border-bottom: 1px solid #c9c9c9;
+      border-right: 1px solid #e4e4e4;
+      border-left: 1px solid #e4e4e4;
+    }
+    .title {
+      font-size: 16px;
+      font-weight: normal;
+      text-align: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+}
+@media (min-width: 560px) {
+  .home .courses .card {
+    width: 50%;
+  }
+}
 
-@media only screen and (min-width: 768px) {
-  .home .content {
+@media (min-width: 960px) {
+  .home .courses {
+    width: 960px;
+    .card {
+      width: 33.33333%;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .home .courses {
+    width: 1200px;
+    .card {
+      width: 25%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .home-slogan .content {
     .title {
       font-size: 55px;
     }
