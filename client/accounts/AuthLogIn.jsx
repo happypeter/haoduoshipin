@@ -75,9 +75,6 @@ AuthLogIn = Radium(React.createClass({
         marginTop: '50px',
         marginBottom: '15px'
       },
-      base: {
-        color: '#fff',
-      },
       a: {
         textDecration: 'none',
         color: 'gray',
@@ -115,7 +112,7 @@ AuthLogIn = Radium(React.createClass({
               primary={true} />
           </form>
 
-          <Link to="/signup" style={[styles.base, styles.a]}>没有账号？注册一个吧</Link>
+          <Link to="/signup" style={[styles.a]}>没有账号？注册一个吧</Link>
         </div>
       </div>
     );
