@@ -1,8 +1,8 @@
 .home-slogan {
-  background: url('images/home-bg.jpg') no-repeat fixed center center / cover;
-  height: calc(100vh - 64px);
+  background: url('/images/home-bg.jpg') no-repeat fixed center center/cover;
+  height: 100vh;
   .overlay {
-    background: rgba(0,0,0,.7);
+    background-color: rgba(0,0,0,.7);
     height: 100%;
   }
   .content {

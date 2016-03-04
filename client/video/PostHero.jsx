@@ -4,7 +4,7 @@ PostHero = React.createClass({
       root: {
         backgroundColor: '#00bcd4',
         textAlign: 'center',
-        paddingTop: '55px',
+        paddingTop: '120px',
         paddingBottom: '55px',
         marginBottom: '30px'
       },

@@ -4,6 +4,7 @@ Home = React.createClass({
   render() {
     return (
       <div className="home">
+        <Hamburger />
         <div className="home-slogan">
           <div className="overlay">
             <div className="content">

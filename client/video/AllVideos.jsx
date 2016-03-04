@@ -29,8 +29,8 @@ AllVideos = React.createClass({
       hero: {
         backgroundColor: '#00bcd4',
         textAlign: 'center',
-        paddingTop: '55px',
-        paddingBottom: '55px'
+        paddingTop: '120px',
+        paddingBottom: '55px',
       },
       title: {
         fontSize: '48px',
@@ -47,6 +47,7 @@ AllVideos = React.createClass({
 
     return (
       <div>
+        <Hamburger />
         <div style={styles.hero}>
           <div style={styles.title}>ALL</div>
           <SearchBar

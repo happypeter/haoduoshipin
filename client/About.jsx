@@ -9,6 +9,7 @@ About = React.createClass({
     };
     return (
       <div className="about">
+        <Hamburger iconColor='#00bcd4' />
         <div className="container clearfix">
           <div className="story">
             <h3>个人信息</h3>

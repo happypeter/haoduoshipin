@@ -51,6 +51,7 @@ Post = React.createClass({
     };
     return (
       <div className="post-page">
+        <Hamburger />
         <PostHero metaData={this.state.metaData} />
         <CircularProgress
           mode="indeterminate"

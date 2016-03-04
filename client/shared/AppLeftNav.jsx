@@ -27,8 +27,7 @@ AppLeftNav = React.createClass({
   },
 
   _getSelectedIndex() {
-    return this.context.router.isActive('/home') ? '/home' :
-      this.context.router.isActive('/all') ? '/all' :
+    return this.context.router.isActive('/all') ? '/all' :
       this.context.router.isActive('/about') ? '/about' : '';
   },
 
@@ -64,9 +63,6 @@ AppLeftNav = React.createClass({
           valueLink={{
             value: this.state.selectedIndex,
             requestChange: this.handleUpdateSelectedIndex, }}>
-          <ListItem
-            value="/home"
-            primaryText="首页" />
           <ListItem
             value='/all'
             primaryText='视频列表' />
