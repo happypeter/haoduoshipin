@@ -115,7 +115,7 @@ AuthSignUp = React.createClass({
     let styles = this.getStyles();
     return (
       <div className="signup-page">
-        <Hamburger />
+        <Hamburger iconColor='#00bcd4' />
         <div className="signup">
           <form onSubmit={ this._onSubmit }>
 

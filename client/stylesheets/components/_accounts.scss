@@ -1,0 +1,22 @@
+.signup, .login {
+  min-height: 400px;
+  text-align: center;
+  padding: 6em 2em;
+  form {
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  a {
+    text-decoration: none;
+    color: gray;
+    &:hover {
+      color: #00bcd4;
+    }
+  }
+}
+@media (min-width: 500px) {
+  .login, .signup {
+    width: 500px;
+    margin: 0 auto;
+  }
+}

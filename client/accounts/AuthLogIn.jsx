@@ -82,7 +82,7 @@ AuthLogIn = React.createClass({
 
     return (
       <div className="login-page">
-        <Hamburger />
+        <Hamburger iconColor='#00bcd4' />
         <div className="login">
           <form onSubmit={ this._onSubmit }>
             <AuthErrors errors={this.state.errors} />
