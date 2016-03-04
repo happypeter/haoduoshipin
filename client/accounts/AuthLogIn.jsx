@@ -5,7 +5,7 @@ const {
 } = mui;
 const { Link } = ReactRouter;
 
-AuthLogIn = React.createClass({
+AuthLogIn = Radium(React.createClass({
   getInitialState() {
     return {
       errors: {}
@@ -55,8 +55,9 @@ AuthLogIn = React.createClass({
       sAlert.success('恭喜您，登录成功了！', {effect: 'slide'});
     });
   },
-  getStyles() {
-    return {
+
+  render() {
+    let styles =  {
       textField: {
         display: 'block',
         width: '100%'
@@ -73,12 +74,16 @@ AuthLogIn = React.createClass({
         height: '50px',
         marginTop: '50px',
         marginBottom: '15px'
+      },
+      base: {
+        color: '#fff',
+      },
+      a: {
+        textDecration: 'none',
+        color: 'gray',
+        ':hover': {color: '#00bcd4'}
       }
     };
-  },
-
-  render() {
-    let styles = this.getStyles();
 
     return (
       <div className="login-page">
@@ -110,7 +115,7 @@ AuthLogIn = React.createClass({
               primary={true} />
           </form>
 
-          <Link to="/signup">没有账号？注册一个吧</Link>
+          <Link to="/signup" style={[styles.base, styles.a]}>没有账号？注册一个吧</Link>
         </div>
       </div>
     );
@@ -119,5 +124,4 @@ AuthLogIn = React.createClass({
   _handleFloatingErrorInputChange() {
     this.setState({errors: {}});
   }
-
-});
+}));
