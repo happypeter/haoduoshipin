@@ -87,7 +87,7 @@ AppLeftNav = React.createClass({
   },
 
   handleTouchTapHeader() {
-    this.context.router.push('/home');
+    this.context.router.push('/');
     this.setState({open: false});
   }
 });
