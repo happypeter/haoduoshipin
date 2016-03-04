@@ -6,6 +6,8 @@ const {
 
 const Routes = (
   <Route path="/" component={App}>
+    <Route path="login" component={AuthLogIn} />
+    <Route path="signup" component={AuthSignUp} />
     <Route path="about" component={About}/>
     <Route path="all" component={AllVideos}/>
     <Route path="/v/:id" component={Post} />
