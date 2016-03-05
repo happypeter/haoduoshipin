@@ -1,12 +1,12 @@
 const { IconButton } = mui;
-
-App = React.createClass({
+const StyleRoot = Radium.StyleRoot;
+App = Radium(React.createClass({
   render() {
     return (
-      <div>
+      <StyleRoot>
         { this.props.children }
         <Footer />
-      </div>
+      </StyleRoot>
     );
   }
-});
+}));
