@@ -28,6 +28,8 @@ AppLeftNav = React.createClass({
 
   _getSelectedIndex() {
     return this.context.router.isActive('/all') ? '/all' :
+      this.context.router.isActive('/signup') ? '/signup' :
+      this.context.router.isActive('/login') ? '/login' :
       this.context.router.isActive('/about') ? '/about' : '';
   },
 
@@ -40,22 +42,24 @@ AppLeftNav = React.createClass({
         lineHeight: '64px',
         fontWeight: '300',
         backgroundColor: '#00bcd4',
-        paddingLeft: '24px',
-        paddingTop: '0px',
         marginBottom: '8px',
+        textAlign: 'center',
       },
       selectedList: {
         color: '#ff4081',
         backgroundColor: 'rgba(0, 0, 0, 0.03)',
+      },
+      list: {
+        textAlign: 'center',
+        fontSize: '18px',
       }
     };
 
     return (
       <LeftNav open={this.state.open}
-               docked={false}
-               onRequestChange={open => this.setState({open})}>
-        <div style={styles.header}
-          onTouchTap={this.handleTouchTapHeader}>
+         docked={false}
+         onRequestChange={open => this.setState({open})}>
+        <div style={styles.header} onTouchTap={this.handleTouchTapHeader}>
           好多视频网
         </div>
         <SelectableList
@@ -64,11 +68,21 @@ AppLeftNav = React.createClass({
             value: this.state.selectedIndex,
             requestChange: this.handleUpdateSelectedIndex, }}>
           <ListItem
+            style={styles.list}
             value='/all'
             primaryText='视频列表' />
           <ListItem
+            style={styles.list}
             value='/about'
             primaryText='关于' />
+          <ListItem
+            style={styles.list}
+            value='/signup'
+            primaryText='注册' />
+          <ListItem
+            style={styles.list}
+            value='/login'
+            primaryText='登录' />
         </SelectableList>
       </LeftNav>
     );
