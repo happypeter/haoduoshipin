@@ -1,9 +1,14 @@
 const { IconButton } = mui;
 
 Hamburger = React.createClass({
+  mixins: [ReactMeteorData],
+  getMeteorData() {
+    return {
+      currentUser: Meteor.user()
+    }
+  },
   render() {
     let color = _.isEmpty(this.props.iconColor) ? '#fff' : this.props.iconColor;
-
     let styles = {
       iconButton: {
         width: '52px',
@@ -28,7 +33,7 @@ Hamburger = React.createClass({
           onTouchTap={this._onLeftIconButtonTouchTap}>
           <NavigationMenu />
         </IconButton>
-        <AppLeftNav ref="leftNav" />
+        <AppLeftNav ref="leftNav" currentUser={this.data.currentUser} />
       </section>
     );
   },

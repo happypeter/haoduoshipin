@@ -54,7 +54,7 @@ AppLeftNav = React.createClass({
         fontSize: '18px',
       }
     };
-
+    let currentUser = this.props.currentUser;
     return (
       <LeftNav open={this.state.open}
          docked={false}
@@ -75,14 +75,11 @@ AppLeftNav = React.createClass({
             style={styles.list}
             value='/about'
             primaryText='关于' />
+          { currentUser ? '' : <ListItem style={styles.list} value='/signup' primaryText='注册' />}
           <ListItem
             style={styles.list}
-            value='/signup'
-            primaryText='注册' />
-          <ListItem
-            style={styles.list}
-            value='/login'
-            primaryText='登录' />
+            value={ currentUser ? '退出' : '/login' }
+            primaryText={ currentUser ? '退出' : '登录' } />
         </SelectableList>
       </LeftNav>
     );
@@ -93,7 +90,13 @@ AppLeftNav = React.createClass({
   },
 
   handleUpdateSelectedIndex(e, index) {
-    this.context.router.push(index);
+    if(index === '退出') {
+      Meteor.logout();
+      this.context.router.push('/home');
+      sAlert.success('已经退出登录！', {effect: 'slide'});
+    } else {
+      this.context.router.push(index);
+    }
     this.setState({
       open: false,
       selectedIndex: index,
