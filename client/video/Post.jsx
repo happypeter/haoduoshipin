@@ -1,10 +1,22 @@
 const { CircularProgress } = mui;
 Post = React.createClass({
+  mixins: [ReactMeteorData],
   getInitialState() {
     return {
       metaData: {},
       post: ''
     };
+  },
+  getMeteorData() {
+    const postId = parseInt(this.props.params.id);
+    // subscribe to the comments
+    const commentsSubHandle = Meteor.subscribe("comments", postId);
+
+    return {
+      comments: Comments.find({}, {sort: {createdAt: 1}}).fetch(),
+      // TODO: check if the code below is needed
+      ready: !commentsSubHandle.ready()
+    }
   },
 
   componentWillMount() {
@@ -63,6 +75,7 @@ Post = React.createClass({
             <div className="post-content container" dangerouslySetInnerHTML={{__html: html}} />
           </div>
         </div>
+        <CommentBox comments={this.data.comments} postId={parseInt(this.props.params.id)} />
       </div>
     );
   }
