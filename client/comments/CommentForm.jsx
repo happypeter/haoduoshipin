@@ -1,11 +1,14 @@
 const { TextField, RaisedButton } = mui;
 
-CommentForm = React.createClass({
+CommentForm = Radium(React.createClass({
   getInitialState() {
     return {
       name: '',
       email: '',
-      comment: ''
+      comment: '',
+      nameErrorText: '',
+      emailErrorText: '',
+      commentErrorText: ''
     };
   },
 
@@ -14,42 +17,47 @@ CommentForm = React.createClass({
 
     let name = this.refs.name.getValue().trim();
     let email = this.refs.email.getValue().trim().toLowerCase();
-    let website = this.refs.website.getValue();
     let comment = this.refs.comment.getValue();
     let postId = this.props.postId;
     let error = false;
 
     if(! name) {
       error = true;
-      this.setState({name: '名字为空'})
+      this.setState({nameErrorText: '名字为空'})
     }
 
     if(! email) {
       error = true;
-      this.setState({email: '邮箱为空'})
+      this.setState({emailErrorText: '邮箱为空'})
     }
 
     if( ! comment) {
       error = true;
-      this.setState({comment: '评论为空'})
+      this.setState({commentErrorText: '评论为空'})
     }
 
     if(error) return;
 
-    Meteor.call('/comments/add', name, email, website, comment, postId, (err) => {
+    Meteor.call('/comments/add', name, email, comment, postId, (err) => {
       if (err) {
         alert("添加评论失败！");
         return;
       }
-      this.refs.name.clearValue();
-      this.refs.email.clearValue();
-      this.refs.website.clearValue();
-      this.refs.comment.clearValue();
+      this.setState({
+        name: '',
+        email: '',
+        comment: ''
+      });
     });
   },
 
   getStyles() {
     return {
+      root: {
+        '@media (min-width: 40em)': {
+          width: '40em'
+        }
+      },
       h3: {
         marginTop: '30px',
         marginBottom: '-15px',
@@ -77,16 +85,19 @@ CommentForm = React.createClass({
     };
   },
 
-  _handleFloatingErrorInputChange(textField) {
+  _handleInputChange(textField) {
     switch(textField){
       case 'name':
-        this.setState({name: ''});
+        this.setState({name: this.refs.name.getValue()});
+        this.setState({nameErrorText: ''});
         break;
       case 'email':
-        this.setState({email: ''});
+        this.setState({email: this.refs.email.getValue()});
+        this.setState({emailErrorText: ''});
         break;
       case 'comment':
-        this.setState({comment: ''});
+        this.setState({comment: this.refs.comment.getValue()});
+        this.setState({commentErrorText: ''});
         break;
     }
   },
@@ -97,37 +108,35 @@ CommentForm = React.createClass({
     return (
       <div>
         <h3 style={styles.h3}>留言板</h3>
-        <form onSubmit={ this._onSubmit }>
+        <form onSubmit={ this._onSubmit } style={styles.root}>
 
           <TextField
             ref="name"
+            value={this.state.name}
             style={styles.textField}
-            errorText={this.state.name}
+            errorText={this.state.nameErrorText}
             errorStyle={ styles.error }
             floatingLabelText="名字*"
-            onChange={this._handleFloatingErrorInputChange.bind(this, "name")} />
+            onChange={this._handleInputChange.bind(this, "name")} />
 
           <TextField
             ref="email"
+            value={this.state.email}
             style={styles.textField}
-            errorText={this.state.email}
+            errorText={this.state.emailErrorText}
             errorStyle={ styles.error }
             floatingLabelText="邮箱*"
-            onChange={this._handleFloatingErrorInputChange.bind(this, "email")} />
-
-          <TextField
-            ref="website"
-            style={styles.textField}
-            floatingLabelText="网站" />
+            onChange={this._handleInputChange.bind(this, "email")} />
 
           <TextField
             ref="comment"
+            value={this.state.comment}
             style={styles.textField}
-            errorText={this.state.comment}
+            errorText={this.state.commentErrorText}
             errorStyle={ styles.error }
             floatingLabelText="评论内容*"
             multiLine={true}
-            onChange={this._handleFloatingErrorInputChange.bind(this, "comment")} />
+            onChange={this._handleInputChange.bind(this, "comment")} />
 
           <RaisedButton
             style={styles.button}
@@ -139,4 +148,4 @@ CommentForm = React.createClass({
       </div>
     );
   }
-});
+}));
