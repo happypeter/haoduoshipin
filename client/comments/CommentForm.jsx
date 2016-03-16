@@ -104,7 +104,7 @@ CommentForm = Radium(React.createClass({
 
   render() {
     let styles = this.getStyles();
-
+    let currentUser = this.props.currentUser;
     return (
       <div>
         <h3 style={styles.h3}>留言板</h3>
@@ -112,7 +112,7 @@ CommentForm = Radium(React.createClass({
 
           <TextField
             ref="name"
-            value={this.state.name}
+            value={currentUser ? currentUser.username : this.state.name}
             style={styles.textField}
             errorText={this.state.nameErrorText}
             errorStyle={ styles.error }
@@ -121,7 +121,7 @@ CommentForm = Radium(React.createClass({
 
           <TextField
             ref="email"
-            value={this.state.email}
+            value={currentUser ? currentUser.email : this.state.email}
             style={styles.textField}
             errorText={this.state.emailErrorText}
             errorStyle={ styles.error }

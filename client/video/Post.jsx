@@ -13,6 +13,7 @@ Post = React.createClass({
     const commentsSubHandle = Meteor.subscribe("comments", postId);
 
     return {
+      currentUser: Meteor.user(),
       comments: Comments.find({}, {sort: {createdAt: 1}}).fetch(),
       // TODO: check if the code below is needed
       ready: !commentsSubHandle.ready()
@@ -75,7 +76,7 @@ Post = React.createClass({
             <div className="post-content container" dangerouslySetInnerHTML={{__html: html}} />
           </div>
         </div>
-        <CommentBox comments={this.data.comments} postId={parseInt(this.props.params.id)} />
+        <CommentBox comments={this.data.comments} postId={parseInt(this.props.params.id)} currentUser={this.data.currentUser} />
       </div>
     );
   }

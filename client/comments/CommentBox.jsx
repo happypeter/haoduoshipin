@@ -16,7 +16,7 @@ CommentBox = React.createClass({
       <div className="container">
         <h3 style={styles.h3}>发表评论 { this.props.comments.length }</h3>
         <CommentList comments={ this.props.comments } />
-        <CommentForm postId={ this.props.postId } />
+        <CommentForm postId={ this.props.postId } currentUser={this.props.currentUser} />
       </div>
     );
   }
