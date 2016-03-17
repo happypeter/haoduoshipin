@@ -47,7 +47,7 @@ Comment = Radium(React.createClass({
       content: {
         display: 'block',
         color: '#727272',
-        fontSize: '14px',
+        fontSize: '15px',
         marginTop: '20px',
         '@media (min-width: 700px)': {
           marginLeft: '80px',

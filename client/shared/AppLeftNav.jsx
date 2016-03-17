@@ -56,7 +56,7 @@ AppLeftNav = React.createClass({
       },
       name: {
         color: '#696969',
-        fontSize: '25px',
+        fontSize: '20px',
         margin: '10px 0'
       },
       img: {
@@ -64,7 +64,7 @@ AppLeftNav = React.createClass({
         width: '60px',
         height: '60px',
         borderRadius: '50%',
-        margin: '0 auto 20px'
+        margin: '0 auto'
       },
       selectedList: {
         color: '#ff4081',
@@ -80,8 +80,8 @@ AppLeftNav = React.createClass({
     if(!_.isEmpty(currentUser)) {
       avatar = (
         <div style={styles.avatar}>
-          <div style={styles.name}>{currentUser.username}</div>
           <img src={this.getGravatar(currentUser.emails[0].address)} style={styles.img} />
+          <div style={styles.name}>{currentUser.username}</div>
         </div>
       );
     }
