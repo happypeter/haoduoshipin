@@ -33,6 +33,11 @@ AppLeftNav = React.createClass({
       this.context.router.isActive('/about') ? '/about' : '';
   },
 
+  getGravatar(email) {
+    let md5Hash = Gravatar.hash(email);
+    return url = `http://gravatar.com/avatar/${md5Hash}.png?s=512&d=monsterid`
+  },
+
   render() {
     let styles = {
       header: {
@@ -45,6 +50,22 @@ AppLeftNav = React.createClass({
         marginBottom: '8px',
         textAlign: 'center',
       },
+      avatar: {
+        borderBottom: '1px solid #e0e0e0',
+        textAlign: 'center'
+      },
+      name: {
+        color: '#696969',
+        fontSize: '25px',
+        margin: '10px 0'
+      },
+      img: {
+        display: 'block',
+        width: '60px',
+        height: '60px',
+        borderRadius: '50%',
+        margin: '0 auto 20px'
+      },
       selectedList: {
         color: '#ff4081',
         backgroundColor: 'rgba(0, 0, 0, 0.03)',
@@ -55,6 +76,15 @@ AppLeftNav = React.createClass({
       }
     };
     let currentUser = this.props.currentUser;
+    let avatar;
+    if(!_.isEmpty(currentUser)) {
+      avatar = (
+        <div style={styles.avatar}>
+          <div style={styles.name}>{currentUser.username}</div>
+          <img src={this.getGravatar(currentUser.emails[0].address)} style={styles.img} />
+        </div>
+      );
+    }
     return (
       <LeftNav open={this.state.open}
          docked={false}
@@ -62,6 +92,7 @@ AppLeftNav = React.createClass({
         <div style={styles.header} onTouchTap={this.handleTouchTapHeader}>
           好多视频网
         </div>
+        { avatar }
         <SelectableList
           selectedItemStyle={styles.selectedList}
           valueLink={{
