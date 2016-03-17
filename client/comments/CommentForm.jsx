@@ -121,7 +121,7 @@ CommentForm = Radium(React.createClass({
 
           <TextField
             ref="email"
-            value={currentUser ? currentUser.email : this.state.email}
+            value={currentUser ? currentUser.emails[0].address : this.state.email}
             style={styles.textField}
             errorText={this.state.emailErrorText}
             errorStyle={ styles.error }
