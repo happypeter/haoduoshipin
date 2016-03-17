@@ -4,7 +4,8 @@ Post = React.createClass({
   getInitialState() {
     return {
       metaData: {},
-      post: ''
+      post: '',
+      validFile: true
     };
   },
   getMeteorData() {
@@ -26,7 +27,7 @@ Post = React.createClass({
 
     Meteor.call('/video/getPost', postId, function(err, res){
       if (err) {
-        console.log(`The post does not exist!`);
+        that.setState({validFile: false});
         return;
       }
       that.setState({
@@ -62,6 +63,7 @@ Post = React.createClass({
         display: 'block'
       }
     };
+    if (!this.state.validFile) return <PageNotFound />;
     return (
       <div className="post-page">
         <Hamburger />

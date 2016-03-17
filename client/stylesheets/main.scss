@@ -11,12 +11,11 @@
 }
 
 .page-not-found {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   .cartoon {
-    padding: 2em 1em;
+    margin: 6em 1em 3em;
     .tip {
       color: #ff4081;
       font-size: 25px;
