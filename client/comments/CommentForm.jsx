@@ -116,7 +116,7 @@ CommentForm = Radium(React.createClass({
             style={styles.textField}
             errorText={this.state.nameErrorText}
             errorStyle={ styles.error }
-            floatingLabelText="名字*"
+            floatingLabelText="名字 *"
             onChange={this._handleInputChange.bind(this, "name")} />
 
           <TextField
@@ -125,7 +125,7 @@ CommentForm = Radium(React.createClass({
             style={styles.textField}
             errorText={this.state.emailErrorText}
             errorStyle={ styles.error }
-            floatingLabelText="邮箱*"
+            floatingLabelText="邮箱 *"
             onChange={this._handleInputChange.bind(this, "email")} />
 
           <TextField
@@ -134,7 +134,7 @@ CommentForm = Radium(React.createClass({
             style={styles.textField}
             errorText={this.state.commentErrorText}
             errorStyle={ styles.error }
-            floatingLabelText="评论内容*"
+            floatingLabelText="评论内容 *"
             multiLine={true}
             onChange={this._handleInputChange.bind(this, "comment")} />
 
