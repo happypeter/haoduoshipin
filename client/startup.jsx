@@ -13,7 +13,7 @@ const Routes = (
     <Route path="/v/:id" component={Post} />
     <Route path="home" component={Home}/>
     <Route path="*" component={PageNotFound}/>
-    <IndexRoute component={Home}/>
+    <IndexRoute component={AllVideos}/>
   </Route>
 );
 
