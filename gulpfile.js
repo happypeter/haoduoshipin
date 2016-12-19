@@ -5,12 +5,11 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 
-
 gulp.task('build', function () {
-    return gulp.src('src/*.md')
+    return gulp.src('src/posts/*.md')
         .pipe(markdown())
         .pipe(wrap({src: 'src/layout/default.html'}))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/v/'));
 });
 
 function handleError(err) {
@@ -34,8 +33,6 @@ gulp.task('cp-assets', function () {
         .pipe(gulp.dest('dist/'));
 });
 
-
-
 gulp.task('rebuild', ['build'], function () {
     browserSync.reload();
 });
@@ -47,7 +44,6 @@ gulp.task('browser-sync', ['sass', 'cp-assets', 'build'], function() {
         }
     });
 });
-
 
 gulp.task('watch', function () {
     gulp.watch(['src/*.md', 'src/layout/*.html'], ['rebuild']);
