@@ -6,10 +6,17 @@ var prefix      = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 
 gulp.task('build', function () {
-    return gulp.src('src/posts/*.md')
+    return gulp.src('build/v/*.md')
         .pipe(markdown())
         .pipe(wrap({src: 'src/layout/default.html'}))
         .pipe(gulp.dest('dist/v/'));
+});
+
+gulp.task('index', function () {
+    return gulp.src('build/index.md')
+        .pipe(markdown())
+        .pipe(wrap({src: 'src/layout/default.html'}))
+        .pipe(gulp.dest('dist/'));
 });
 
 function handleError(err) {
@@ -37,7 +44,7 @@ gulp.task('rebuild', ['build'], function () {
     browserSync.reload();
 });
 
-gulp.task('browser-sync', ['sass', 'cp-assets', 'build'], function() {
+gulp.task('browser-sync', ['sass', 'cp-assets', 'index', 'build'], function() {
     browserSync({
         server: {
             baseDir: 'dist'
