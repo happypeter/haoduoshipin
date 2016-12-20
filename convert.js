@@ -18,15 +18,6 @@ function getPost(index) {
   return fs.readFileAsync(postPath);
 }
 
-function getAllPosts(count) {
-  var promises = [];
-  for (var i = 1; i <= count; i++) {
-    promises.push(getPost(i));
-  }
-
-  return Promise.all(promises);
-}
-
 function cardTemp(item) {
   return `<div>
   <a href="http://localhost:3000/v/${item.id}.html">
@@ -55,18 +46,18 @@ function video(item) {
 
 getPostList().then(function(list) {
   var arr = JSON.parse(list);
-  var cards = arr.reverse().map(function(item, i) {
+  var cards = arr.map(function(item, i) {
     return cardTemp(item);
   });
-  newPostList(cards.join('\n'));
+  newPostList(cards.reverse().join('\n'));
   var dir = __dirname + '/build/v';
   if(!fs.existsSync(dir)) fs.mkdirSync(dir);
-  getAllPosts(arr.length).then(function(posts) {
-    var cards = arr.forEach(function(item, i) {
-      var str = slogan(item);
-      var media = video(item);
-      var postPath = __dirname + `/build/v/${i+1}.md`;
-      fs.writeFileSync(postPath, str + media + posts[i]);
+  arr.forEach(function(item, i) {
+    var str = slogan(item);
+    var media = video(item);
+    var postPath = __dirname + `/build/v/${i+1}.md`;
+    getPost(i+1).then(function(content) {
+      fs.writeFileAsync(postPath, str + media + content);
     })
   })
 })
