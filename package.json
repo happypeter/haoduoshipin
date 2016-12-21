@@ -17,6 +17,7 @@
     "gulp-wrap": "^0.11.0"
   },
   "dependencies": {
-    "bluebird": "^3.4.6"
+    "bluebird": "^3.4.6",
+    "gulp-exec": "^2.1.3"
   }
 }

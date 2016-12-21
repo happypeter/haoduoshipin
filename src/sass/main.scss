@@ -1,4 +1,87 @@
 body {
   box-sizing: border-box;
-  background-color: #bafa55;
+  font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.header {
+  background: teal;
+}
+
+footer {
+  display: block;
+  background-color: #212121;
+  height: 100px;
+}
+
+@media (min-width: 970px){
+  .video-wrapper {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.video-wrapper {
+  display: block;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  video {
+    width: 100%;
+  }
+}
+
+nav {
+  background-color: #00bcd4;
+  padding-top: 29px;
+  a {
+    display: block;
+    margin-left: 30px;
+    padding: 10px;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.slogan {
+  background-color: #00bcd4;
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 55px;
+  margin-bottom: 30px;
+}
+
+.slogan .title {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.slogan .date {
+  color: #fff;
+}
+
+@media (min-width: 970px){
+  .post-content  {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.post-content  {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content h3 {
+  font-size: 1.2em;
+  font-weight: bold;
 }

@@ -19,7 +19,7 @@ function getPost(index) {
 }
 
 function cardTemp(item) {
-  return `<div>
+  return `<div class="header">
   <a href="http://localhost:3000/v/${item.id}.html">
     <div>${item.id}</div>
     <div>${item.title}</div>
@@ -29,15 +29,15 @@ function cardTemp(item) {
 }
 
 function slogan(item) {
-  return `<div>
-  <div>${item.title}</div>
-  <div>${item.created_at}</div>
+  return `<div class="slogan">
+  <div class="title">${item.title}</div>
+  <div class="date">${item.created_at}</div>
 </div>\n
 `
 }
 
 function video(item) {
-  return `<div>
+  return `<div class="video-wrapper">
   <video controls>
     <source src="http://7xnm4l.com1.z0.glb.clouddn.com/${item.name}.mp4" type="video/mp4" />
   </video>
@@ -61,4 +61,3 @@ getPostList().then(function(list) {
     })
   })
 })
-
