@@ -5,12 +5,27 @@ body {
   margin: 0;
 }
 
+a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
 .container {
   max-width: 960px;
   margin: 0 auto;
-  margin-top: 20px;
   margin-bottom: 20px;
-  border: 2px solid red;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -48,6 +63,17 @@ a.item {
   padding-top: 15px;
 }
 
+.slogan, nav, footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.slogan {
+  margin-top: 80px;
+}
+
+
 footer {
   display: block;
   background-color: #212121;
@@ -67,6 +93,7 @@ footer {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 370px;
   video {
     width: 100%;
   }
@@ -74,7 +101,8 @@ footer {
 
 nav {
   background-color: #00bcd4;
-  padding-top: 29px;
+  height: 80px;
+  line-height: 80px;
   a {
     display: block;
     margin-left: 30px;
