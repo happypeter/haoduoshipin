@@ -4,27 +4,33 @@ var wrap = require('gulp-wrap');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
-var exec = require('gulp-exec');
+var shell = require('gulp-shell');
 
 
+gulp.task('convert', shell.task([
+  'echo converting...',
+  'node convert.js'
+]))
 
-gulp.task('convert', function () {
-    return exec('node convert.js');
-});
-
-gulp.task('build', function () {
+gulp.task('markdown', function () {
     return gulp.src('build/v/*.md')
         .pipe(markdown())
         .pipe(wrap({src: 'src/layout/default.html'}))
         .pipe(gulp.dest('dist/v/'));
 });
 
+
 gulp.task('index', function () {
+    console.log('index...');
     return gulp.src('build/index.md')
         .pipe(markdown())
         .pipe(wrap({src: 'src/layout/default.html'}))
         .pipe(gulp.dest('dist/'));
 });
+
+gulp.task('build', ['convert','markdown', 'index']);
+// FIXME: 目前还是要运行两次 gulp build 才能得到 dist/
+
 
 function handleError(err) {
   console.log(err.toString());
@@ -51,7 +57,7 @@ gulp.task('rebuild', ['build'], function () {
     browserSync.reload();
 });
 
-gulp.task('browser-sync', ['sass', 'cp-assets', 'index', 'build'], function() {
+gulp.task('browser-sync', ['sass', 'cp-assets', 'build'], function() {
     browserSync({
         server: {
             baseDir: 'dist'
@@ -60,8 +66,7 @@ gulp.task('browser-sync', ['sass', 'cp-assets', 'index', 'build'], function() {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['src/*.md', 'src/layout/*.html'], ['convert','rebuild']);
-    gulp.watch(['convert.js'],['convert','rebuild']);
-    gulp.watch(['src/sass/*'], ['convert','sass']);
+    gulp.watch(['src/*.md', 'src/layout/*.html', 'convert.js'], ['rebuild']);
+    gulp.watch(['src/sass/*'], ['sass']);
 });
 gulp.task('default', ['browser-sync','watch']);

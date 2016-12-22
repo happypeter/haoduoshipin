@@ -19,13 +19,14 @@ function getPost(index) {
 }
 
 function cardTemp(item) {
-  return `<div class="header">
-  <a href="http://localhost:3000/v/${item.id}.html">
-    <div>${item.id}</div>
-    <div>${item.title}</div>
-    <div>${item.created_at}</div>
-  </a>
-</div>`
+  return `
+  <a class="item" href="http://localhost:3000/v/${item.id}.html">
+    <span class="left">${item.id}</span>
+    <span class="right">
+      <span class="title">${item.title}</span>
+      <span class="date">${item.created_at}</span>
+    </span>
+  </a>`
 }
 
 function slogan(item) {
