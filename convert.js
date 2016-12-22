@@ -33,8 +33,7 @@ function slogan(item) {
   return `<div class="slogan">
   <div class="title">${item.title}</div>
   <div class="date">${item.created_at}</div>
-</div>\n
-`
+</div>\n`
 }
 
 function video(item) {

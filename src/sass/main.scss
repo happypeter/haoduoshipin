@@ -21,7 +21,6 @@ a {
     clear: both;
 }
 
-
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -29,7 +28,6 @@ a {
   padding-left: 10px;
   padding-right: 10px;
 }
-
 
 a.item {
     width: 100%;
@@ -93,18 +91,17 @@ footer {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 370px;
+  margin-top: 350px;
   video {
     width: 100%;
   }
 }
 
-nav {
+nav, .nav {
   background-color: #00bcd4;
   height: 80px;
   line-height: 80px;
   a {
-    display: block;
     margin-left: 30px;
     padding: 10px;
     font-size: 1.5em;
@@ -116,10 +113,10 @@ nav {
   }
 }
 
-.slogan {
+.search, .slogan {
   background-color: #00bcd4;
   text-align: center;
-  padding-top: 120px;
+  padding-top: 100px;
   padding-bottom: 55px;
   margin-bottom: 30px;
 }
@@ -151,4 +148,29 @@ nav {
 .post-content h3 {
   font-size: 1.2em;
   font-weight: bold;
+}
+
+.search input {
+  height: 33px;
+  width: 50%;
+  max-width: 360px;
+  font-size: 16px;
+  border: 2px solid #00bcd4;
+  padding-left: 10px;
+  padding-right: 10px;
+  &:focus {
+    outline: none
+  }
+}
+
+.search button {
+  height: 35px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #ff4081;
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px
 }
