@@ -21,7 +21,6 @@ gulp.task('markdown', function () {
 
 
 gulp.task('index', function () {
-    console.log('index...');
     return gulp.src('build/index.md')
         .pipe(markdown())
         .pipe(wrap({src: 'src/layout/home.html'}))

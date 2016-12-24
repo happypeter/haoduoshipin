@@ -20,7 +20,7 @@ function getPost(index) {
 
 function cardTemp(item) {
   return `
-  <a class="item" href="http://localhost:3000/v/${item.id}.html">
+  <a class="item" href="/v/${item.id}.html">
     <span class="left">${item.id}</span>
     <span class="right">
       <span class="title">${item.title}</span>
