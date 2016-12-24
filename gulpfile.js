@@ -28,7 +28,7 @@ gulp.task('index', function () {
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('build', ['convert','markdown', 'index']);
+gulp.task('build', ['convert','markdown', 'index', 'cp-search-page']);
 // FIXME: 目前还是要运行两次 gulp build 才能得到 dist/
 
 
@@ -50,6 +50,12 @@ gulp.task('sass', function () {
 
 gulp.task('cp-assets', function () {
     return gulp.src('src/assets/**/*')
+        .pipe(gulp.dest('dist/'));
+});
+
+
+gulp.task('cp-search-page', function () {
+    return gulp.src('src/search.html')
         .pipe(gulp.dest('dist/'));
 });
 
