@@ -1222,5 +1222,11 @@
     "name": "204-es6",
     "title": "2016年底我的 ES6 使用情况",
     "created_at": "2016年12月19日"
+  },
+  {
+    "id": 205,
+    "name": "205-promise",
+    "title": "ES6 的 Promise 对象（第一部分）",
+    "created_at": "2017年1月7日"
   }
 ]
