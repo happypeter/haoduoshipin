@@ -128,8 +128,11 @@ let searchFilePath = __dirname + '/src/search.html';
 let distSearchFilePath = distDir + '/search.html';
 fs.createReadStream(searchFilePath).pipe(fs.createWriteStream(distSearchFilePath));
 
-
-// start express sereer
+///////////
+//
+//  启动服务器
+//
+////////////
 
 var express = require('express');
 var app = express();
