@@ -1,6 +1,11 @@
+///////////
+//
+//  全局使用的部分
+//
+////////////
+
 let marked = require('marked');
 let fs = require('fs');
-
 
 function getPostList() {
   let path = __dirname + "/src/posts.json";
@@ -8,8 +13,6 @@ function getPostList() {
 }
 
 let list = getPostList();
-
-
 
 
 ///////////
@@ -52,9 +55,7 @@ function genHomePage(list) {
   return fs.writeFileSync(path, content);
 }
 
-
 genHomePage(list); //  生成首页的 index.html
-
 
 ///////////
 //
@@ -89,13 +90,14 @@ function wrapPost(post) {
   return postContent;
 }
 
-
 var arr = JSON.parse(list);
 
 arr.forEach(function(item, i) {
   var str = slogan(item);
   var media = video(item);
-  var postPath = __dirname + `/tmp/v/${i+1}.html`;
+  var dir = __dirname + '/dist/v';
+  if(!fs.existsSync(dir)) fs.mkdirSync(dir);
+  var postPath = __dirname + `/dist/v/${i+1}.html`;
   let postContent = marked(getPost(i+1));
   let postPageContent = wrapPost(str + media + postContent);
   fs.writeFileSync(postPath, postPageContent);
