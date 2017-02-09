@@ -103,6 +103,7 @@ arr.forEach(function(item, i) {
   let media = video(item);
   let postPath = __dirname + `/dist/v/${i+1}.html`;
   let postContent = marked(getPost(i+1));
+  // TODO: add code highlighting
   let postPageContent = wrapPost(str + media + postContent);
   fs.writeFileSync(postPath, postPageContent);
 })
