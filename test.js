@@ -1,10 +1,10 @@
 let marked = require('marked');
-var Promise = require('bluebird');
-var fs = Promise.promisifyAll(require('fs'));
+let Promise = require('bluebird');
+let fs = Promise.promisifyAll(require('fs'));
 
 
 // function getPost(post) {
-//   var postPath = __dirname + `/src/posts/${post}.md`;
+//   let postPath = __dirname + `/src/posts/${post}.md`;
 //   return fs.readFileAsync(postPath);
 // }
 // getPost(1).then(function(content) {
@@ -24,26 +24,22 @@ function episodeCard(item) {
   </a>`
 }
 
-function newPostList(content) {
-  var dir = __dirname + '/tmp';
+
+function genHomePage(list) {
+  let arr = JSON.parse(list);
+  let cards = arr.map(function(item, i) {
+    return episodeCard(item);
+  });
+  let content = cards.reverse().join('\n');
+  let dir = __dirname + '/tmp';
   if(!fs.existsSync(dir)) fs.mkdirSync(dir);
-  var path = __dirname + "/tmp/index.html";
+  let path = __dirname + "/tmp/index.html";
   return fs.writeFileAsync(path, content);
 }
 
 
-
-function genHomePage(list) {
-  var arr = JSON.parse(list);
-  var cards = arr.map(function(item, i) {
-    return episodeCard(item);
-  });
-  newPostList(cards.reverse().join('\n'));
-}
-
-
 function getPostList() {
-  var path = __dirname + "/src/posts.json";
+  let path = __dirname + "/src/posts.json";
   return fs.readFileAsync(path);
 }
 
