@@ -25,8 +25,10 @@ function episodeCard(item) {
 
 
 function wrapContent(cardList) {
-  let template = cardList;
-  return cardList;
+  let templatePath = __dirname + '/src/layout/home.html'
+  let template = fs.readFileSync(templatePath).toString();
+  let indexContent = template.replace('<%= contents %>', cardList)
+  return indexContent;
 }
 
 function genHomePage(list) {
