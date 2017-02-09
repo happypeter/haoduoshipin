@@ -12,9 +12,6 @@ var fs = Promise.promisifyAll(require('fs'));
 // })
 
 
-
-
-
 // 现在来生成 index.html 也就是首页视频列表
 function episodeCard(item) {
   return `
