@@ -70,8 +70,4 @@ gulp.task('browser-sync', ['sass', 'cp-assets', 'build'], function() {
     });
 });
 
-gulp.task('watch', function () {
-    gulp.watch(['src/*.md', 'src/layout/*.html', 'convert.js'], ['rebuild']);
-    gulp.watch(['src/sass/*'], ['sass']);
-});
-gulp.task('default', ['browser-sync','watch']);
+gulp.task('default', ['browser-sync']);

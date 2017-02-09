@@ -1,3 +1,9 @@
+/*
+  本脚本实现的功能：
+    - 读取 posts.json 文件，生成 build/index.md
+    - 把  src 下的 xxx.md 中插入视频，存放到 build/ 中
+*/
+
 var Promise = require('bluebird');
 var fs = Promise.promisifyAll(require('fs'));
 
@@ -43,6 +49,8 @@ function video(item) {
   </video>
 </div>\n\n`
 }
+
+getHomePage(content)
 
 getPostList().then(function(list) {
   var arr = JSON.parse(list);
