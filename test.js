@@ -25,15 +25,23 @@ function episodeCard(item) {
 }
 
 
+function wrapContent(cardList) {
+  return cardList;
+}
+
 function genHomePage(list) {
   let arr = JSON.parse(list);
   let cards = arr.map(function(item, i) {
     return episodeCard(item);
   });
-  let content = cards.reverse().join('\n');
+  let cardList = cards.reverse().join('\n');
   let dir = __dirname + '/tmp';
   if(!fs.existsSync(dir)) fs.mkdirSync(dir);
   let path = __dirname + "/tmp/index.html";
+
+
+  let content = wrapContent(cardList);
+
   return fs.writeFileAsync(path, content);
 }
 
