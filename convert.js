@@ -13,6 +13,8 @@ function getPostList() {
 }
 
 let list = getPostList();
+let distDir = __dirname + '/dist';
+
 
 
 ///////////
@@ -90,18 +92,33 @@ function wrapPost(post) {
   return postContent;
 }
 
-var arr = JSON.parse(list);
+let arr = JSON.parse(list);
+
+if(!fs.existsSync(distDir)) fs.mkdirSync(distDir);
+
+if(!fs.existsSync(`${distDir}/v`)) fs.mkdirSync(`${distDir}/v`);
 
 arr.forEach(function(item, i) {
-  var str = slogan(item);
-  var media = video(item);
-  var dir = __dirname + '/dist';
-  if(!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
-    fs.mkdirSync(`${dir}/v`);
-  }
-  var postPath = __dirname + `/dist/v/${i+1}.html`;
+  let str = slogan(item);
+  let media = video(item);
+  let postPath = __dirname + `/dist/v/${i+1}.html`;
   let postContent = marked(getPost(i+1));
   let postPageContent = wrapPost(str + media + postContent);
   fs.writeFileSync(postPath, postPageContent);
 })
+
+
+///////////
+//
+//  拷贝 assets ： css ，图片等等
+//
+////////////
+
+let cssDir = __dirname + '/src/css';
+let distCssDir = __dirname + '/dist' + '/css';
+
+if(!fs.existsSync(distCssDir)){
+  fs.mkdirSync(distCssDir);
+}
+
+fs.createReadStream(`${cssDir}/main.css`).pipe(fs.createWriteStream(`${distCssDir}/main.css`));
