@@ -2,16 +2,23 @@ let marked = require('marked');
 let fs = require('fs');
 
 
-// function getPost(post) {
-//   let postPath = __dirname + `/src/posts/${post}.md`;
-//   return fs.readFileSync(postPath);
-// }
-// getPost(1).then(function(content) {
-//   console.log(marked(content.toString()));
-// })
+function getPostList() {
+  let path = __dirname + "/src/posts.json";
+  return fs.readFileSync(path);
+}
+
+let list = getPostList();
 
 
-// 现在来生成 index.html 也就是首页视频列表
+
+
+///////////
+//
+//  现在来生成 index.html 也就是首页视频列表
+//
+////////////
+
+
 function episodeCard(item) {
   return `
   <a class="item" href="/v/${item.id}.html">
@@ -24,7 +31,7 @@ function episodeCard(item) {
 }
 
 
-function wrapContent(cardList) {
+function wrapIndex(cardList) {
   let templatePath = __dirname + '/src/layout/home.html'
   let template = fs.readFileSync(templatePath).toString();
   let indexContent = template.replace('<%= contents %>', cardList)
@@ -40,18 +47,56 @@ function genHomePage(list) {
   let dir = __dirname + '/tmp';
   if(!fs.existsSync(dir)) fs.mkdirSync(dir);
   let path = __dirname + "/tmp/index.html";
-
-
-  let content = wrapContent(cardList);
+  let content = wrapIndex(cardList);
 
   return fs.writeFileSync(path, content);
 }
 
-function getPostList() {
-  let path = __dirname + "/src/posts.json";
-  return fs.readFileSync(path);
+
+genHomePage(list); //  生成首页的 index.html
+
+
+///////////
+//
+//  下面代码来生成各个视频的页面，例如 dist/v/1.html
+//
+////////////
+
+function slogan(item) {
+  return `<div class="slogan">
+  <div class="title">${item.title}</div>
+  <div class="date">${item.created_at}</div>
+</div>\n`
 }
 
-let list = getPostList();
+function video(item) {
+  return `<div class="video-wrapper">
+  <video controls>
+    <source src="http://haoduo-1253322599.costj.myqcloud.com/${item.name}.mp4" type="video/mp4" />
+  </video>
+</div>\n\n`
+}
 
-genHomePage(list)
+function getPost(post) {
+  let postPath = __dirname + `/src/posts/${post}.md`;
+  return fs.readFileSync(postPath).toString();
+}
+
+function wrapPost(post) {
+  let templatePath = __dirname + '/src/layout/default.html'
+  let template = fs.readFileSync(templatePath).toString();
+  let postContent = template.replace('<%= contents %>', post)
+  return postContent;
+}
+
+
+var arr = JSON.parse(list);
+
+arr.forEach(function(item, i) {
+  var str = slogan(item);
+  var media = video(item);
+  var postPath = __dirname + `/tmp/v/${i+1}.html`;
+  let postContent = marked(getPost(i+1));
+  let postPageContent = wrapPost(str + media + postContent);
+  fs.writeFileSync(postPath, postPageContent);
+})
