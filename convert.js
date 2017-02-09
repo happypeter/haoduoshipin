@@ -47,9 +47,9 @@ function genHomePage(list) {
     return episodeCard(item);
   });
   let cardList = cards.reverse().join('\n');
-  let dir = __dirname + '/tmp';
+  let dir = __dirname + '/dist';
   if(!fs.existsSync(dir)) fs.mkdirSync(dir);
-  let path = __dirname + "/tmp/index.html";
+  let path = `${dir}/index.html`;
   let content = wrapIndex(cardList);
 
   return fs.writeFileSync(path, content);
@@ -95,8 +95,11 @@ var arr = JSON.parse(list);
 arr.forEach(function(item, i) {
   var str = slogan(item);
   var media = video(item);
-  var dir = __dirname + '/dist/v';
-  if(!fs.existsSync(dir)) fs.mkdirSync(dir);
+  var dir = __dirname + '/dist';
+  if(!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+    fs.mkdirSync(`${dir}/v`);
+  }
   var postPath = __dirname + `/dist/v/${i+1}.html`;
   let postContent = marked(getPost(i+1));
   let postPageContent = wrapPost(str + media + postContent);
