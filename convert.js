@@ -39,7 +39,7 @@ function slogan(item) {
 function video(item) {
   return `<div class="video-wrapper">
   <video controls>
-    <source src="http://7xnm4l.com1.z0.glb.clouddn.com/${item.name}.mp4" type="video/mp4" />
+    <source src="http://haoduo-1253322599.costj.myqcloud.com/${item.name}.mp4" type="video/mp4" />
   </video>
 </div>\n\n`
 }
