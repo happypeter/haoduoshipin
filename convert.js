@@ -50,7 +50,9 @@ function video(item) {
 </div>\n\n`
 }
 
-getHomePage(content)
+getHomePage(content) {
+
+}
 
 getPostList().then(function(list) {
   var arr = JSON.parse(list);

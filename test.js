@@ -1,11 +1,10 @@
 let marked = require('marked');
-let Promise = require('bluebird');
-let fs = Promise.promisifyAll(require('fs'));
+let fs = require('fs');
 
 
 // function getPost(post) {
 //   let postPath = __dirname + `/src/posts/${post}.md`;
-//   return fs.readFileAsync(postPath);
+//   return fs.readFileSync(postPath);
 // }
 // getPost(1).then(function(content) {
 //   console.log(marked(content.toString()));
@@ -26,6 +25,7 @@ function episodeCard(item) {
 
 
 function wrapContent(cardList) {
+  let template = cardList;
   return cardList;
 }
 
@@ -42,15 +42,14 @@ function genHomePage(list) {
 
   let content = wrapContent(cardList);
 
-  return fs.writeFileAsync(path, content);
+  return fs.writeFileSync(path, content);
 }
-
 
 function getPostList() {
   let path = __dirname + "/src/posts.json";
-  return fs.readFileAsync(path);
+  return fs.readFileSync(path);
 }
 
-getPostList().then(function(list) {
-  genHomePage(list)
-})
+let list = getPostList();
+
+genHomePage(list)
