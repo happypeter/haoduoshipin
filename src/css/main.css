@@ -5,6 +5,13 @@ body {
   margin: 0;
 }
 
+::selection {
+    background: #e92c6c;
+    color: #fff;
+    fill: #fff;
+    text-shadow: 0 1px rgba(0,0,0,.2);
+}
+
 a {
   color: #00bcd4;
   text-decoration: none;
