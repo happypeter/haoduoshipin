@@ -5,6 +5,22 @@
 ////////////
 
 let marked = require('marked');
+let hljs = require("highlight.js");
+
+    marked.setOptions({
+    renderer: new marked.Renderer(),
+        gfm: true,
+        tables: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: false,
+        smartLists: true,
+        smartypants: false,
+        highlight:function(code){return hljs.highlightAuto(code).value;}
+    });
+
+
+
 let fs = require('fs');
 
 function getPostList() {
@@ -123,6 +139,7 @@ if(!fs.existsSync(distCssDir)){
 }
 
 fs.createReadStream(`${cssDir}/main.css`).pipe(fs.createWriteStream(`${distCssDir}/main.css`));
+fs.createReadStream(`${cssDir}/highlight.css`).pipe(fs.createWriteStream(`${distCssDir}/highlight.css`));
 
 let searchFilePath = __dirname + '/src/search.html';
 let distSearchFilePath = distDir + '/search.html';
