@@ -17,6 +17,13 @@ a {
   text-decoration: none;
 }
 
+blockquote {
+  border-left: 3px solid #00bcd4;
+  margin: 10px 0;
+  padding: 0 0 0 20px;
+  color: gray;
+}
+
 
 .clearfix:before,
 .clearfix:after {
