@@ -1,6 +1,10 @@
 body {
   box-sizing: border-box;
-  font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
+  font-size: 15px;
+  color: #404040;
+  background: #f7f8fa;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   line-height: 1.8;
   margin: 0;
 }
@@ -85,11 +89,11 @@ a.item {
   margin-top: 80px;
 }
 
-
 footer {
   display: block;
   background-color: #212121;
   height: 100px;
+  margin-top: 40px;
 }
 
 @media (min-width: 970px){
@@ -102,10 +106,11 @@ footer {
 
 .video-wrapper {
   display: block;
-  width: 960px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 350px;
+  margin-bottom: 35px;
 }
 
 .video-wrapper video {
