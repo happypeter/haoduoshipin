@@ -1,4 +1,11 @@
 
+
+@media (min-width: 1000px){
+  pre {
+    margin: 0 -40px;
+  }
+}
+
 pre {
   text-size-adjust: none;
   background: #fbf9ec;
@@ -7,7 +14,7 @@ pre {
   tab-size: 2;
   font-family: Consolas,Menlo,Monaco,'Lucida Console','Liberation Mono','DejaVu Sans Mono','Bitstream Vera Sans Mono','Courier New',monospace,serif;
   padding: 18px 50px;
-  margin: 0 -40px;
+  overflow: scroll;
 }
 
 

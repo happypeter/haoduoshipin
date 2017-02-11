@@ -123,10 +123,13 @@ nav, .nav {
   line-height: 80px;
 
 }
-
+@media (min-width: 970px){
+  nav a, .nav a {
+    margin-left: 30px;
+  }
+}
 
 nav a, .nav a {
-  margin-left: 30px;
   padding: 10px;
   font-size: 1.5em;
   text-decoration: none;
@@ -149,7 +152,7 @@ nav a:hover, .nav a:hover {
   font-size: 2em;
   color: #fff;
   margin-bottom: 15px;
-  line-height: 1.1;
+  line-height: 1.4;
 }
 
 .slogan .date {
