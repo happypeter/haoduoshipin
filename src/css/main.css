@@ -45,6 +45,7 @@ blockquote {
   margin-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: white;
 }
 
 a.item {
@@ -98,7 +99,6 @@ footer {
 
 @media (min-width: 970px){
   .video-wrapper {
-    width: 960px;
     margin-left: auto;
     margin-right: auto;
   }
