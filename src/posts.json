@@ -1294,5 +1294,11 @@
     "name": "216-module-2",
     "title": "ES6 模块的两种导出方式是什么？",
     "created_at": "2017年2月12日"
+  },
+  {
+    "id": 217,
+    "name": "217-compile-es6",
+    "title": "如何用 Webpack+Babel 来编译 ES6 ?",
+    "created_at": "2017年2月13日"
   }
 ]
