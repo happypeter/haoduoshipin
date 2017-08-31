@@ -1,2 +1,0 @@
-- <http://www.chekucafe.com/>
-- <http://david.heinemeierhansson.com/>
