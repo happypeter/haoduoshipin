@@ -1,0 +1,27 @@
+{
+  "name": "haoduoshipin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happypeter/haoduoshipin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/happypeter/haoduoshipin/issues"
+  },
+  "homepage": "https://github.com/happypeter/haoduoshipin#readme",
+  "dependencies": {
+    "next": "^3.2.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
