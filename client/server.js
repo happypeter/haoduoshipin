@@ -9,12 +9,15 @@ app.prepare()
 .then(() => {
   const server = express()
 
-
   server.get('/v/:id', (req, res) => {
+    const id = req.params.id.replace(/\.[^/.]+$/, "")
+    // v/1.html and v/1 will both work
     const actualPage = '/video'
-    const queryParams = { id: req.params.id }
+    const queryParams = { id }
     app.render(req, res, actualPage, queryParams)
   })
+
+
 
 
   server.get('*', (req, res) => {
