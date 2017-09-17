@@ -1,3 +1,7 @@
+export default ({ content }) => (
+  <div className='content'>
+    <div dangerouslySetInnerHTML={{__html: content}}></div>
+    <style jsx global>{`
 
 
 @media (min-width: 1000px){
@@ -39,3 +43,7 @@ pre {
 .hljs-function .hljs-keyword, .hljs-class .hljs-keyword:first-child, .hljs-constant, .css .hljs-attribute {
   color: #8959a8;
 }
+      `}
+    </style>
+  </div>
+)
