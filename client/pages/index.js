@@ -74,7 +74,7 @@ const Index = (props) => (
 )
 
 Index.getInitialProps = async function() {
-  const res = await fetch('https://raw.githubusercontent.com/happypeter/haoduoshipin/master/src/posts.json')
+  const res = await fetch('https://raw.githubusercontent.com/happypeter/haoduoshipin/master/data/index.json')
   // maybe I should use api.github.com ？
   const data = await res.json()
   console.log(data)

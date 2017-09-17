@@ -64,13 +64,13 @@ class Video extends React.Component {
 
 Video.getInitialProps = async function (context) {
   const { id } = context.query
-  const res = await fetch(`https://api.github.com/repos/happypeter/haoduoshipin/contents/src/posts/${id}.md`)
+  const res = await fetch(`https://api.github.com/repos/happypeter/haoduoshipin/contents/data/videos/${id}.md`)
   const show = await res.json()
   console.log(show.content)
   var utf8encoded = (new Buffer(show.content, 'base64')).toString('utf8');
   // see also: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/atob
   console.log('utf8 text:', utf8encoded)
-  const resIndex = await fetch('https://raw.githubusercontent.com/happypeter/haoduoshipin/master/src/posts.json')
+  const resIndex = await fetch('https://raw.githubusercontent.com/happypeter/haoduoshipin/master/data/index.json')
   // maybe I should use api.github.com ？
   const arr = await resIndex.json()
   const item = arr.find(t => t.id == id)
