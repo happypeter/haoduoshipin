@@ -74,12 +74,11 @@ const Index = (props) => (
 )
 
 Index.getInitialProps = async function() {
-  const res = await fetch('https://raw.githubusercontent.com/happypeter/haoduoshipin/master/data/index.json')
-  // maybe I should use api.github.com ？
+  const res = await fetch('https://api.github.com/repos/happypeter/haoduoshipin/contents/data/index.json')
   const data = await res.json()
-  // console.log(data)
+  const utf8encoded = (new Buffer(data.content, 'base64')).toString('utf8');
   return {
-    shows: data.reverse()
+    shows: JSON.parse(utf8encoded).reverse()
   }
 }
 
