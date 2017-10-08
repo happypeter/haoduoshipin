@@ -5,7 +5,7 @@ import fetch from 'isomorphic-unfetch'
 const Index = (props) => (
   <Layout>
     <ul className='card-list'>
-      {props.shows.reverse().map((show) => (
+      {props.shows.map((show) => (
         <li key={show.id}>
         <Link as={`/v/${show.id}`} href={`/video?id=${show.id}`}>
           <a className='card-item'>
@@ -77,9 +77,9 @@ Index.getInitialProps = async function() {
   const res = await fetch('https://raw.githubusercontent.com/happypeter/haoduoshipin/master/data/index.json')
   // maybe I should use api.github.com ？
   const data = await res.json()
-  console.log(data)
+  // console.log(data)
   return {
-    shows: data
+    shows: data.reverse()
   }
 }
 
