@@ -79,7 +79,7 @@ Index.getInitialProps = async function() {
   const data = await res.json()
   // console.log(data)
   return {
-    shows: data.posts.reverse()
+    shows: data.reverse()
   }
 }
 
