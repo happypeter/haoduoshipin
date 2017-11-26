@@ -1,1 +1,0 @@
-- <http://guides.rubyonrails.org/action_controller_overview.html>

@@ -1,1 +1,0 @@
-- <http://happypeter.github.io/dev-site/slideshow/>
