@@ -1,0 +1,32 @@
+{
+  "name": "gatsby-starter-hello-world",
+  "description": "Gatsby hello world starter",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "@dschau/particles.js": "^2.0.0",
+    "gatsby": "^1.9.73",
+    "gatsby-link": "^1.6.22",
+    "gatsby-plugin-catch-links": "^1.0.9",
+    "gatsby-plugin-nprogress": "^1.0.7",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-styled-components": "^1.0.5",
+    "gatsby-plugin-typography": "^1.7.10",
+    "gatsby-remark-autolink-headers": "^1.4.7",
+    "gatsby-remark-images": "^1.5.28",
+    "gatsby-remark-prismjs": "^1.2.9",
+    "gatsby-remark-smartypants": "^1.4.8",
+    "gatsby-source-filesystem": "^1.5.5",
+    "gatsby-transformer-json": "^1.0.11",
+    "gatsby-transformer-remark": "^1.7.18",
+    "lodash.debounce": "^4.0.8",
+    "react-icons": "^2.2.7",
+    "typography-breakpoint-constants": "^0.15.10",
+    "typography-plugin-code": "^0.15.11"
+  }
+}
