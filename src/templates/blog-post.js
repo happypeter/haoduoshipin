@@ -47,7 +47,7 @@ export default function BlogPost({ data = {}, location, pathContext }) {
 
   return (
     <Container>
-      <Helmet title={`happypeter- ${metaData.title}`} meta={meta} />
+      <Helmet title={`${metaData.title}`} meta={meta} />
       <Post
         html={videoArea + detail.html}
         linkTo='/'
