@@ -4,16 +4,12 @@ import Helmet from 'react-helmet'
 
 import Post from '../components/Post'
 
-import { fadeInBottom } from '../css/animations'
-
 import 'prismjs/themes/prism-okaidia.css'
 
 const Container = styled.div`
   max-width: 100%;
   transform: translateY(16px) scale(0.99);
   transform-origin: 50% 0;
-  opacity: 0;
-  animation: ${fadeInBottom} 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 `
 
 export default function BlogPost({ data = {}, location, pathContext }) {
