@@ -25,14 +25,7 @@ export default function BlogPost({ data = {}, location, pathContext }) {
   const prev = Number(pid) === posts.length ? false :  `/videos/${Number(pid) + 1}`
   const next = Number(pid) === 1 ? false : `/videos/${Number(pid) - 1}`
 
-  const videoArea = `
-    <div>
-      <video controls style='width: 100%'>
-        <source src="http://haoduo-1253322599.costj.myqcloud.com/${metaData.name}.mp4" type="video/mp4"></source>
-        <p>Your browser does not support the video element.</p>
-      </video>
-    </div>
-  `
+
 
   const meta = [
     {
@@ -45,7 +38,8 @@ export default function BlogPost({ data = {}, location, pathContext }) {
     <Container>
       <Helmet title={`${metaData.title}`} meta={meta} />
       <Post
-        html={videoArea + detail.html}
+        html={detail.html}
+        videoName={metaData.name}
         linkTo='/'
         title={metaData.title}
         date={metaData.created_at}

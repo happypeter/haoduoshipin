@@ -7,6 +7,9 @@ import Toolbar from './PostToolbar'
 import StyledLink from './Link'
 import { rhythm } from '../utils/typography'
 import '../css/posts.css'
+import Player from '../components/VideoPlayer'
+
+
 
 injectGlobal`
   h1.post-title {
@@ -118,8 +121,18 @@ export default function({
   prev,
   linkTo,
   issue,
+  videoName,
   ...rest
 }) {
+
+  const playerOptions = {
+    controls: true,
+    fluid: true,
+    sources: [{
+      src: `http://haoduo-1253322599.costj.myqcloud.com/${videoName}.mp4`,
+      type: 'video/mp4'
+    }]
+  }
   const isPost = (truthy, falsy = null) => {
     if (linkTo === '/') {
       return truthy
@@ -145,6 +158,7 @@ export default function({
       {
         isPost(
           <PostContents>
+            <Player { ...playerOptions } />
             <div className="post-content" dangerouslySetInnerHTML={{ __html }} />
             {children}
             <Divider />
