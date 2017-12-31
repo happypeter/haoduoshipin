@@ -6,6 +6,7 @@
     "dev": "gatsby develop",
     "develop": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
+    "deploy": "npm run build && sh ./scripts/deploy.sh",
     "serve": "gatsby serve"
   },
   "dependencies": {

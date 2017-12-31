@@ -1,0 +1,1 @@
+scp -r public/* peter@haoduoshipin.com:sites/haoduoshipin/public/
