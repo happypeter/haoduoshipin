@@ -21,6 +21,7 @@ export default function BlogPost({ data = {}, location, pathContext }) {
   const selected = posts.filter(({node: post}) => {
     return post.id === pid
   })
+  if(!selected[0]) return console.log('check your index.json file')
   const metaData = selected[0].node
   const prev = Number(pid) === posts.length ? false :  `/videos/${Number(pid) + 1}`
   const next = Number(pid) === 1 ? false : `/videos/${Number(pid) - 1}`
