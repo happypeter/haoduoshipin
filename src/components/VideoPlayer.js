@@ -1,6 +1,7 @@
 import React from 'react'
 import videojs from 'video.js'
 import 'video.js/dist/video-js.css'
+import styled from 'styled-components'
 
 export default class VideoPlayer extends React.Component {
   componentDidMount() {
@@ -22,9 +23,18 @@ export default class VideoPlayer extends React.Component {
   // see https://github.com/videojs/ video.js /pull/3856
   render() {
     return (
-      <div data-vjs-player>
-        <video ref={node => this.videoNode = node} className='video-js' />
-      </div>
+      <Wrap>
+        <div data-vjs-player>
+          <video ref={node => this.videoNode = node} className='video-js' />
+        </div>
+      </Wrap>
     )
   }
 }
+
+const Wrap = styled.div`
+  video {
+    width: 760px;
+    height: 475px;
+  }
+`
