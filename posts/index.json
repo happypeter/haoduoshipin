@@ -1432,5 +1432,11 @@
     "name": "239-generator",
     "title": "如何用 generator 实现异步操作？",
     "created_at": "2018年1月1日"
+  },
+  {
+    "id": "240",
+    "name": "240-reduce",
+    "title": "如何使用数组的 reduce 方法？",
+    "created_at": "2018年1月2日"
   }
 ]

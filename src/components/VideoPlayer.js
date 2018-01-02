@@ -33,8 +33,8 @@ export default class VideoPlayer extends React.Component {
 }
 
 const Wrap = styled.div`
+  width: 100%;
   video {
-    width: 760px;
-    height: 475px;
+    width: 100%;
   }
 `
