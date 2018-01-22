@@ -1,1 +1,1 @@
-scp -r public/* peter@haoduoshipin.com:sites/haoduoshipin/public/
+rsync -avr public/* peter@haoduoshipin.com:sites/haoduoshipin/public/
