@@ -28,6 +28,7 @@
     "gatsby-transformer-remark": "^1.7.18",
     "lodash.debounce": "^4.0.8",
     "react-icons": "^2.2.7",
+    "react-router-dom": "^4.2.2",
     "typography-breakpoint-constants": "^0.15.10",
     "typography-plugin-code": "^0.15.11",
     "video.js": "^6.4.0"
