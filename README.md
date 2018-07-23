@@ -1,3 +1,8 @@
+## 公告
+
+好多视频上的内容后续搬家到 https://www.zhihu.com/people/happypeter-84
+
+
 ### 项目根目录下要有 posts 目录
 
 posts 目录就是好多视频文字稿存放位置，中包含 index.json 文件，和 videos 目录
