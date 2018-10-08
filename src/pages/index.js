@@ -1,29 +1,30 @@
-import React from "react"
-import Link from 'gatsby-link'
-
+import React from 'react'
+import { graphql } from 'gatsby'
 import Preview from '../components/Preview'
+import Layout from '../components/layout'
 
-export default ({ data }) => {
-  const {edges: posts} = data.allIndexJson
-
+export default ({ data, location }) => {
+  const { edges: posts } = data.allIndexJson
   return (
-    <div>
-      {posts
-        .slice()
-        .reverse()
-        .map(({node: post}) => {
-          return (
-            <div key={post.id}>
-              <Preview
-                issue={post.id}
-                date={post.created_at}
-                title={post.title}
-                to={`/videos/${post.id}`}
-              />
-            </div>
-          )
-        })}
-    </div>
+    <Layout location={location}>
+      <div>
+        {posts
+          .slice()
+          .reverse()
+          .map(({ node: post }) => {
+            return (
+              <div key={post.id}>
+                <Preview
+                  issue={post.id}
+                  date={post.created_at}
+                  title={post.title}
+                  to={`/videos/${post.id}`}
+                />
+              </div>
+            )
+          })}
+      </div>
+    </Layout>
   )
 }
 
@@ -33,9 +34,9 @@ export const pageQuery = graphql`
     allIndexJson {
       edges {
         node {
-          id,
-          title,
-          name,
+          id
+          title
+          name
           created_at
         }
       }

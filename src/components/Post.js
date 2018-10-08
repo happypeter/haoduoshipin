@@ -1,15 +1,11 @@
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
-import MdListIcon from 'react-icons/lib/md/list'
-
+import { MdList } from 'react-icons/md'
 import PostTitle from './PostTitle'
 import Toolbar from './PostToolbar'
 import StyledLink from './Link'
 import { rhythm } from '../utils/typography'
 import '../css/posts.css'
-import Player from '../components/VideoPlayer'
-
-
 
 injectGlobal`
   h1.post-title {
@@ -92,7 +88,7 @@ const Divider = styled.hr`
   border-bottom: 1px solid #eee;
 `
 
-const ListIcon = styled(MdListIcon)`
+const ListIcon = styled(MdList)`
   font-size: 32px;
   margin-right: 0.5rem;
 `
@@ -124,15 +120,6 @@ export default function({
   videoName,
   ...rest
 }) {
-
-  const playerOptions = {
-    controls: true,
-    fluid: true,
-    sources: [{
-      src: `http://haoduo-1253322599.costj.myqcloud.com/${videoName}.mp4`,
-      type: 'video/mp4'
-    }]
-  }
   const isPost = (truthy, falsy = null) => {
     if (linkTo === '/') {
       return truthy
@@ -140,42 +127,38 @@ export default function({
     return falsy
   }
   return (
-    <Post className='post' {...rest}>
-      {
-        isPost(
-          <PostTitle title={title} to={isPost(false, linkTo)} issue={issue}>
-            <Toolbar
-              title={title}
-              date={date}
-              next={next}
-              prev={prev}
-            />
-          </PostTitle>,
-          <PostTitle title={title} to={linkTo} issue={issue}/>
-        )
-      }
+    <Post className="post" {...rest}>
+      {isPost(
+        <PostTitle title={title} to={isPost(false, linkTo)} issue={issue}>
+          <Toolbar title={title} date={date} next={next} prev={prev} />
+        </PostTitle>,
+        <PostTitle title={title} to={linkTo} issue={issue} />
+      )}
 
-      {
-        isPost(
-          <PostContents>
-            <Player { ...playerOptions } />
-            <div className="post-content" dangerouslySetInnerHTML={{ __html }} />
-            {children}
-            <Divider />
-          </PostContents>,
-          <PostContents>
-            <Divider />
-            <Title>{title}</Title>
-            <Divider />
-            <Date>{date}</Date>
-          </PostContents>
-        )
-      }
+      {isPost(
+        <PostContents>
+          <a
+            href={`http://haoduo-1253322599.costj.myqcloud.com/${videoName}.mp4`}
+          >
+            下载视频
+          </a>
+          <div className="post-content" dangerouslySetInnerHTML={{ __html }} />
+          {children}
+          <Divider />
+        </PostContents>,
+        <PostContents>
+          <Divider />
+          <Title>{title}</Title>
+          <Divider />
+          <Date>{date}</Date>
+        </PostContents>
+      )}
 
       <StyledLink to={linkTo} title={title}>
         {isPost(
           <AllPostsContainer>
-            <ListIcon />All posts
+            <ListIcon />
+            All posts
           </AllPostsContainer>,
           'Read more'
         )}

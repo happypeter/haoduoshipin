@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
-
+import { Link } from 'gatsby'
+import Layout from '../components/layout'
 import { fadeInBottom } from '../css/animations'
 
 import ImageShift from '../components/ImageShift'
@@ -61,20 +61,16 @@ const Image = styled(ImageShift)`
   left: 0;
 `
 
-export default class NoFoundPage extends Component {
-  render() {
-    return (
-      <div>
-        <Container>
-          <Link to="/">
-            <ImageContainer>
-              <Header>Oh no! 404!</Header>
-              <Description>点击回到首页</Description>
-              <Image src={FourOhFour} />
-            </ImageContainer>
-          </Link>
-        </Container>
-      </div>
-    )
-  }
-}
+export default ({ location }) => (
+  <Layout location={location}>
+    <Container>
+      <Link to="/">
+        <ImageContainer>
+          <Header>Oh no! 404!</Header>
+          <Description>点击回到首页</Description>
+          <Image src={FourOhFour} />
+        </ImageContainer>
+      </Link>
+    </Container>
+  </Layout>
+)

@@ -25,13 +25,13 @@ class ImageShift extends Component {
     })
     this.scrollListener = this.handleScroll()
     this.handleResize = this.handlePageResize()
-    addEventListener('scroll', this.scrollListener)
-    addEventListener('resize', this.handleResize)
+    window.addEventListener('scroll', this.scrollListener)
+    window.addEventListener('resize', this.handleResize)
   }
 
   componentWillUnmount() {
-    removeEventListener('scroll', this.scrollListener)
-    removeEventListener('resize', this.handleResize)
+    window.removeEventListener('scroll', this.scrollListener)
+    window.removeEventListener('resize', this.handleResize)
   }
 
   handleScroll() {

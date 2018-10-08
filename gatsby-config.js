@@ -6,8 +6,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/posts`,
-      },
+        path: `${__dirname}/posts`
+      }
     },
     'gatsby-transformer-json',
     {
@@ -22,15 +22,15 @@ module.exports = {
             options: {
               linkImagesToOriginal: false
             }
-          },
-        ],
+          }
+        ]
       }
     },
     {
       resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: 'src/utils/typography.js',
-      },
+        pathToConfigModule: 'src/utils/typography.js'
+      }
     },
     {
       resolve: 'gatsby-plugin-nprogress',

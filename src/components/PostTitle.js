@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 import { getColorFromString } from '../utils/color'
 import { rhythm } from '../utils/typography'
@@ -24,7 +24,6 @@ const toStyle = props => {
     }
   `
 }
-
 
 const TitleContainer = styled.div`
   display: flex;
@@ -61,7 +60,7 @@ const StyledLink = styled(Link)`
 `
 
 export default function PostTitle({ children, title, to, issue }) {
-  if(to) {
+  if (to) {
     return (
       <StyledLink to={to}>
         <TitleContainer title={title} to={to}>

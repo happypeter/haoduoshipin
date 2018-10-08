@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { rhythm } from '../utils/typography'
-
-// import SocialIcons from './SocialIcons'
-
+import Layout from '../components/layout'
 import me from '../images/peter.jpeg'
 
 const Root = styled.section`
@@ -77,15 +75,13 @@ const Description = styled.p`
   font-family: 'Bitter', sans-serif;
 `
 
-export default function About() {
-  return (
+export default ({ location }) => (
+  <Layout location={location}>
     <Root>
       <Container>
         <Image src={me} />
         <Details>
-          <Name>
-            happypeter
-          </Name>
+          <Name>happypeter</Name>
           <Description>
             <div>好奇猫CEO</div>
           </Description>
@@ -93,5 +89,5 @@ export default function About() {
         {/* <SocialIcons /> */}
       </Container>
     </Root>
-  )
-}
+  </Layout>
+)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import { animateBackground, animateShake } from '../css/animations'
@@ -72,21 +72,11 @@ const StyledLink = styled(Link)`
 `
 
 class BlogHeader extends Component {
-  componentDidMount() {
-    require.ensure(
-      '@dschau/particles.js',
-      () => {
-        this.Particles = require('@dschau/particles.js')
-        this.Particles(`blog-header`, particlesConfig)
-      },
-      '@dschau/particles.js'
+  async componentDidMount() {
+    this.Particles = await import('@dschau/particles.js').then(
+      ({ default: Particles }) => Particles
     )
-  }
-
-  componentWillUnmount() {
-    if (this.Particles) {
-      this.Particles.destroy()
-    }
+    this.Particles('blog-header', particlesConfig)
   }
 
   render() {
@@ -95,11 +85,9 @@ class BlogHeader extends Component {
         <Name className="name">
           <StyledLink to="/">
             <Domain>
-              {'好多视频网'
-                .split('')
-                .map((letter, index) => (
-                  <Letter key={`${letter}-${index}`}>{letter}</Letter>
-                ))}
+              {'好多视频网'.split('').map((letter, index) => (
+                <Letter key={`${letter}-${index}`}>{letter}</Letter>
+              ))}
             </Domain>
           </StyledLink>
         </Name>

@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
-import BackIcon from 'react-icons/lib/fa/chevron-left'
-import ForwardIcon from 'react-icons/lib/fa/chevron-right'
+import { Link } from 'gatsby'
+import { FaBackward, FaForward } from 'react-icons/fa'
 
 import { getColorFromString } from '../utils/color'
 import { rhythm } from '../utils/typography'
@@ -86,9 +85,9 @@ export default function BackButton({
   }
   return (
     <Container {...props}>
-      {prev && <BackIcon className="icon" />}
+      {prev && <FaBackward className="icon" />}
       <span className="content">{children}</span>
-      {next && <ForwardIcon className="icon" />}
+      {next && <FaForward className="icon" />}
     </Container>
   )
 }
