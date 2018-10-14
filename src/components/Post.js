@@ -126,6 +126,30 @@ export default function({
     }
     return falsy
   }
+
+  let videoLink = null
+  if (videoName) {
+    if (videoName.slice(0, 2) === 'av') {
+      videoLink = (
+        <a
+          href={`https://www.bilibili.com/video/${videoName}/`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          到 B 站观看视频
+        </a>
+      )
+    } else {
+      videoLink = (
+        <a
+          href={`http://haoduo-1253322599.costj.myqcloud.com/${videoName}.mp4`}
+        >
+          下载视频
+        </a>
+      )
+    }
+  }
+
   return (
     <Post className="post" {...rest}>
       {isPost(
@@ -137,11 +161,7 @@ export default function({
 
       {isPost(
         <PostContents>
-          <a
-            href={`http://haoduo-1253322599.costj.myqcloud.com/${videoName}.mp4`}
-          >
-            下载视频
-          </a>
+          {videoLink}
           <div className="post-content" dangerouslySetInnerHTML={{ __html }} />
           {children}
           <Divider />
