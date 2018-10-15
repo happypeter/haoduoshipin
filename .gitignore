@@ -10,3 +10,4 @@ private
 build
 *.log
 config.js
+deploy.sh

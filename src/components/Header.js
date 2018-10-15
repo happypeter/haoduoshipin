@@ -6,7 +6,6 @@ import { animateBackground, animateShake } from '../css/animations'
 import particlesConfig from '../data/particles-config.json'
 
 import '../css/particle-styles.css'
-import config from '../../config'
 
 const Header = styled.header`
   height: ${props => (props.isPost ? '15vh' : '25vh')};
@@ -72,19 +71,20 @@ const StyledLink = styled(Link)`
   color: inherit;
 `
 
+const SearchLink = styled.a`
+  display: 'block';
+  z-index: 99;
+  color: #fff;
+  margin-top: 8px;
+  opacity: 0.7;
+`
+
 class BlogHeader extends Component {
   async componentDidMount() {
     this.Particles = await import('@dschau/particles.js').then(
       ({ default: Particles }) => Particles
     )
     this.Particles('blog-header', particlesConfig)
-    const cx = '001989019782093346340:qmzhvdcc730'
-    const gcse = document.createElement('script')
-    gcse.type = 'text/javascript'
-    gcse.async = true
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx
-    const s = document.getElementsByTagName('script')[0]
-    s.parentNode.insertBefore(gcse, s)
   }
 
   render() {
@@ -99,13 +99,12 @@ class BlogHeader extends Component {
             </Domain>
           </StyledLink>
         </Name>
-        <div style={{ zIndex: 999 }}>
-          <div
-            className="gcse-searchbox-only"
-            data-resultsurl={config.returnUrl}
-            data-queryparametername="q"
-          />
-        </div>
+        <SearchLink
+          href="https://cse.google.com/cse?cx=001989019782093346340:qmzhvdcc730"
+          target="_blank"
+        >
+          使用谷歌搜索
+        </SearchLink>
       </Header>
     )
   }

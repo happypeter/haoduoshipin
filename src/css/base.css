@@ -23,7 +23,6 @@ table {
   margin-bottom: 0;
   line-height: 1;
 }
-
 td {
   border: none;
   padding: 0;
@@ -32,31 +31,4 @@ button {
   border-color: unset;
   border-style: unset;
   border-width: 0;
-}
-.gsc-control-searchbox-only {
-  padding: 16px;
-  width: 320px;
-}
-
-.gsib_a {
-  padding: 0 !important;
-  padding-right: 0 !important;
-}
-
-.gsib_b {
-  display: none;
-}
-
-.gsc-search-box-tools .gsc-search-box .gsc-input {
-  padding: 4px 8px !important;
-  margin: 0 !important;
-  height: 40px !important;
-}
-
-.cse .gsc-search-button-v2,
-.gsc-search-button-v2 {
-  padding: 8px 16px !important;
-  height: 40px !important;
-  background-color: #3079ed !important;
-  border-color: #3079ed !important;
 }
