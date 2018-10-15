@@ -12,18 +12,17 @@ const ToolbarContainer = styled.div`
 `
 
 export default function PostToolbar({ date, next, prev, title }) {
-
   const Buttons = () => {
     return (
       <div>
         {prev && (
           <NavigationButton title={title} to={prev} prev>
-            上一篇
+            后一篇
           </NavigationButton>
         )}
         {next && (
           <NavigationButton title={title} to={next} next>
-            下一篇
+            前一篇
           </NavigationButton>
         )}
       </div>
