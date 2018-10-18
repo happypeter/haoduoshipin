@@ -66,7 +66,6 @@ const PostContents = styled.div`
   padding: ${rhythm(3 / 4)} ${rhythm(1)};
   @media only screen and (min-width: 768px) {
     padding: ${rhythm(1)} ${rhythm(2)};
-    padding-top: ${rhythm(1)};
   }
 `
 
@@ -108,6 +107,15 @@ const Date = styled.div`
   }
 `
 
+const EditLink = styled.a`
+  color: #d85d15;
+  width: 100%;
+  text-align: right;
+  padding: 0 ${rhythm(2)} ${rhythm(1)};
+  margin-top: -${rhythm(1)};
+  font-size: 12px;
+`
+
 export default function({
   children,
   date,
@@ -118,6 +126,7 @@ export default function({
   linkTo,
   issue,
   videoName,
+  id,
   ...rest
 }) {
   const isPost = (truthy, falsy = null) => {
@@ -172,6 +181,14 @@ export default function({
           <Divider />
           <Date>{date}</Date>
         </PostContents>
+      )}
+
+      {isPost(
+        <EditLink
+          href={`https://github.com/happypeter/haoduoshipin/tree/master/posts/videos/${id}.md`}
+        >
+          Edit this page on GitHub
+        </EditLink>
       )}
 
       <StyledLink to={linkTo} title={title}>
