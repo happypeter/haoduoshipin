@@ -71,6 +71,14 @@ const StyledLink = styled(Link)`
   color: inherit;
 `
 
+const SearchLink = styled.a`
+  display: 'block';
+  z-index: 99;
+  color: #fff;
+  margin-top: 8px;
+  opacity: 0.7;
+`
+
 class BlogHeader extends Component {
   async componentDidMount() {
     this.Particles = await import('@dschau/particles.js').then(
@@ -91,6 +99,12 @@ class BlogHeader extends Component {
             </Domain>
           </StyledLink>
         </Name>
+        <SearchLink
+          href="https://cse.google.com/cse?cx=001989019782093346340:qmzhvdcc730"
+          target="_blank"
+        >
+          使用谷歌搜索
+        </SearchLink>
       </Header>
     )
   }

@@ -34,6 +34,7 @@ export default function BlogPost({ data = {}, location, pageContext }) {
     }
   ]
 
+  console.log('metaData...', metaData)
   return (
     <Layout location={location}>
       <Container>
@@ -46,6 +47,7 @@ export default function BlogPost({ data = {}, location, pageContext }) {
           date={metaData.created_at}
           prev={prev}
           next={next}
+          id={metaData.id}
         />
       </Container>
     </Layout>

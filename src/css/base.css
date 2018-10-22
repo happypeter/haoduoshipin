@@ -2,7 +2,9 @@
   box-sizing: border-box;
 }
 
-html, body, #___gatsby {
+html,
+body,
+#___gatsby {
   height: 100%;
 }
 
@@ -10,5 +12,23 @@ body {
   margin: 0;
   padding: 0;
   background-color: #002635;
-  font-family: STXihei,华文细黑,-apple-system,BlinkMacSystemFont,PingFang SC,Helvetica,Tahoma,Arial,Hiragino Sans GB,Microsoft YaHei,微软雅黑,SimSun,宋体,Heiti,黑体,sans-serif;
+  font-family: STXihei, 华文细黑, -apple-system, BlinkMacSystemFont, PingFang SC,
+    Helvetica, Tahoma, Arial, Hiragino Sans GB, Microsoft YaHei, 微软雅黑,
+    SimSun, 宋体, Heiti, 黑体, sans-serif;
+}
+form {
+  margin: 0;
+}
+table {
+  margin-bottom: 0;
+  line-height: 1;
+}
+td {
+  border: none;
+  padding: 0;
+}
+button {
+  border-color: unset;
+  border-style: unset;
+  border-width: 0;
 }

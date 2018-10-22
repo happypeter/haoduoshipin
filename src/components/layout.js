@@ -23,14 +23,15 @@ export default class Layout extends React.Component {
         <Helmet
           title="好多视频网"
           meta={[
-            {
-              name: 'description',
-              content: 'Web 开发视频播客'
-            },
+            { name: 'description', content: 'Web 开发视频播客' },
             {
               name: 'keywords',
               content:
                 'web, css, javascript, react, node, blockchain 设计, 编辑器, 开发工具'
+            },
+            {
+              name: 'google-site-verification',
+              content: 'CS4DJwWQwO-lJ3K4XTF40qC4UFnq-C1gu04d_yX2guo'
             }
           ]}
         />

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { FaBackward, FaForward } from 'react-icons/fa'
-
 import { getColorFromString } from '../utils/color'
 import { rhythm } from '../utils/typography'
 

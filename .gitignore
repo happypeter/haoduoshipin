@@ -9,3 +9,5 @@ node_modules/
 private
 build
 *.log
+config.js
+deploy.sh
