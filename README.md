@@ -1,22 +1,20 @@
-## 公告
 
-好多视频上的内容后续搬家到 https://www.zhihu.com/people/happypeter-84
-
-
-### 项目根目录下要有 posts 目录
+## NOTE
 
 posts 目录就是好多视频文字稿存放位置，中包含 index.json 文件，和 videos 目录
 
-### 安装 Npm 包
+## Deploy
 
 ```
-npm install
+yarn
+yarn build
 ```
 
-### 构建项目生成静态文件
+静态输出存放在输出 public 目录，即静态文件所在目录
 
-```
-npm run build
-```
+需要把
 
-根目录下出现一个 public 目录，即静态文件所在目录，上传服务器
+- public/*
+- utils/*
+
+都存放到 deployment repo 的顶级位置 https://github.com/haoduoshipin/haoduoshipin.github.io 。
