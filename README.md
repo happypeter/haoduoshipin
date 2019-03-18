@@ -14,7 +14,9 @@ yarn build
 
 需要把
 
-- public/*
-- utils/*
+```
+mv public/* ../haoduoshipin.github.io 
+cp -rf utils/* ../haoduoshipin.github.io 
+```
 
 都存放到 deployment repo 的顶级位置 https://github.com/haoduoshipin/haoduoshipin.github.io 。
