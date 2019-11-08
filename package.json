@@ -6,7 +6,6 @@
     "start": "cross-env NODE_ENV=development gatsby develop --open",
     "clean": "del-cli \"public/**/*\" \".cache/**/*\"",
     "build": "cross-env NODE_ENV=production gatsby build --prefix-paths",
-    "deploy": "npm run build && sh ./scripts/deploy.sh",
     "serve": "gatsby serve ./public -p 3000"
   },
   "dependencies": {
