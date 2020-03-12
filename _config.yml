@@ -1,0 +1,11 @@
+auto: false
+lsi: false
+permalink: none
+markdown: kramdown
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "post"

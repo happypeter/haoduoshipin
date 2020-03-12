@@ -1,0 +1,84 @@
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+.navbar {
+  padding: 1em;
+}
+
+#wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 20px;
+  padding-left: 1em;
+  padding-right: 1em;
+  word-break: break-word;
+}
+.typo .site-title {
+  text-align: center;
+  margin: 2em 0 1.5em;
+  font-weight: 600;
+}
+.typo .post-title {
+  text-align: center;
+  margin: 1em 0 1.5em;
+  font-weight: 600;
+}
+img {
+  width: 100%;
+  display: block;
+}
+footer {
+  font-size: 14px;
+  text-align: center;
+}
+#wrapper h2 {
+  font-size: 1.2em;
+  margin: 2em 0 1.5em;
+  font-weight: 600;
+}
+
+#menu {
+  position: relative;
+  background: #dbdbdb no-repeat;
+  height: 40px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 10px 0px;
+}
+
+#menu ul li {
+  display: inline;
+  line-height: 40px;
+  padding-left: 3px;
+}
+
+#menu ul li.first {
+  border-left: 0px;
+}
+
+#menu ul li a {
+  background-color: transparent;
+  background-repeat: repeat-x;
+  padding: 8px 12px 8px 12px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+ul.posts span {
+  color: #aaa;
+  font-family: Monaco, 'Courier New', monospace;
+  font-size: 80%;
+}
+
+@media (max-width: 480px) {
+  blockquote {
+    margin: 0;
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/typo.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://happypeter.github.io/favicon.ico"
+    />
+    <title>{{ page.title }}</title>
+  </head>
+  <div class="navbar">
+    <a href="https://haoduoshipin.com/">首页</a>
+  </div>
+
+  <div id="wrapper" class="typo">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {{ content }} <br />
+    <footer>
+      如果对本页有修正意见，欢迎
+      <a
+        href="https://github.com/happypeter/haoduoshipin/blob/gh-pages/{{ page.name }}"
+        >到 GitHub 上编辑本页</a
+      >
+    </footer>
+  </div>
+</html>
