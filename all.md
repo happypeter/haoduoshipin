@@ -369,4 +369,6 @@ title: 全部视频
 - 第364期 [什么是 NFT ?](364) 2021年9月28日  
 - 第365期 [Don't Work, Join A Cult 不必工作，加入趋势](365) 2021年9月29日  
 - 第366期 [Don't Work, Join A Cult 不必工作，加入趋势](366) 2021年9月30日  
-- 第367期 [Why I Love Linfo.org](367) 2021年9月30日  
+- 第367期 [Why I Love Linfo.org](367) 2021年10月1日  
+- 第368期 [How To Add A User On Ubuntu](368) 2021年10月2日  
+- 第369期 [Richard Stallman](369) 2021年10月3日  
