@@ -7,6 +7,7 @@ title: 好奇猫学院 B 站视频
 
 ## 最新发布
  
+- 第373期 [Tragedy of The Commons](373) 2021年10月7日  
 - 第372期 [My 3 Favorite Websites](372) 2021年10月6日  
 
 ## 全部视频
