@@ -7,6 +7,7 @@ title: 好奇猫学院 B 站视频
 
 ## 最新发布
 
+- 第375期 [China--One Big Open Standard](375) 2021年10月9日  
 - 第374期 [Network Effect](374) 2021年10月8日  
 - 第373期 [Tragedy of The Commons](373) 2021年10月7日  
 - 第372期 [My 3 Favorite Websites](372) 2021年10月6日  
