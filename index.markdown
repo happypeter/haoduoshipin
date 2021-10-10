@@ -7,6 +7,7 @@ title: 好奇猫学院 B 站视频
 
 ## 最新发布
 
+- 第376期 [碳基世界，硅基世界分离](376) 2021年10月11日  
 - 第375期 [China--One Big Open Standard](375) 2021年10月9日  
 - 第374期 [Network Effect](374) 2021年10月8日  
 - 第373期 [Tragedy of The Commons](373) 2021年10月7日  
