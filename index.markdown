@@ -7,7 +7,9 @@ title: 好奇猫学院 B 站视频
 
 ## 最新发布
 
-- 第377期 [Carbon Emission Trading](377) 2021年10月11d日  
+- 第379期 [More on Carbon Market](379) 2021年10月13日  
+- 第378期 [More on Carbon Market](378) 2021年10月12日  
+- 第377期 [Carbon Emission Trading](377) 2021年10月11日  
 - 第376期 [碳基世界，硅基世界分离](376) 2021年10月10日  
 - 第375期 [China--One Big Open Standard](375) 2021年10月9日  
 - 第374期 [Network Effect](374) 2021年10月8日  
