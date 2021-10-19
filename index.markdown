@@ -7,7 +7,8 @@ title: 好奇猫学院 B 站视频
 
 ## 最新发布
 
-- 第379期 [More on Carbon Market](379) 2021年10月13日  
+- 第380期 [Quantified self](380) 2021年10月19日  
+- 第379期 [PKI](379) 2021年10月13日  
 - 第378期 [More on Carbon Market](378) 2021年10月12日  
 - 第377期 [Carbon Emission Trading](377) 2021年10月11日  
 - 第376期 [碳基世界，硅基世界分离](376) 2021年10月10日  
