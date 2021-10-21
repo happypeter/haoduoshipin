@@ -7,6 +7,7 @@ title: 好奇猫学院 B 站视频
 
 ## 最新发布
 
+- 第381期 [Linux Guide for Complete Beginners 课程简介](381) 2021年10月21日  
 - 第380期 [Quantified self](380) 2021年10月19日  
 - 第379期 [PKI](379) 2021年10月13日  
 - 第378期 [More on Carbon Market](378) 2021年10月12日  
